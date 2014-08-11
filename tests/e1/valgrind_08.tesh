@@ -1,0 +1,6 @@
+! timeout 5
+! output ignore
+$ ./tests/scripts/valgrindtest ./main
+< +   return  string  while  -  return + +  do  input  return 
+<  float {{;] do [>)<] -  / ! while  = ; do      : - {   }>
+

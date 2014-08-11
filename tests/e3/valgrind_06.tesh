@@ -1,0 +1,9 @@
+! timeout 5
+! output ignore
+$ ./tests/scripts/valgrindtest ./main
+< /* comando if sem else */
+< int f()
+< {
+<   if ( 10 ) then {}
+< }
+

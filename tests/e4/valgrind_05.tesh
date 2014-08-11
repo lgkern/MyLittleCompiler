@@ -1,0 +1,7 @@
+! timeout 5
+! output ignore
+$ ./tests/scripts/valgrindtest ./main
+< /* IKS_ERROR_DECLARED */
+< int f(){}
+< int f(){}
+

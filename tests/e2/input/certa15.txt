@@ -1,0 +1,9 @@
+float variavel_flutuante;
+int variavel_inteira;
+char variavel_caractere;
+int f (int x) { return 2 * x ; } 
+float function ()
+{
+  a = 10;
+  v[a+1] = f(2);
+}
