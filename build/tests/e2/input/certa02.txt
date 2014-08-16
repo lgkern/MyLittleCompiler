@@ -1,0 +1,1 @@
+char variavel_cadeia[10];

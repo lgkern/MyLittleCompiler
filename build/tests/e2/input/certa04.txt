@@ -1,0 +1,5 @@
+float variavel_flutuante;
+int variavel_inteira;
+char variavel_caractere;
+int minha_funcao () float var_local; {}
+

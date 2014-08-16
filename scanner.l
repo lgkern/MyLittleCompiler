@@ -11,58 +11,58 @@ INTEGER [-?{DIGIT}+]
 %}
 
 /*Palavras Reservadas da Linguagem*/
-[intIDTERM]
-[floatIDTERM]
-[boolIDTERM]
-[charIDTERM]
-[stringIDTERM]
-[ifIDTERM]
-[thenIDTERM]
-[elseIDTERM]
-[whileIDTERM]
-[doIDTERM]
-[inputIDTERM]
-[outputIDTERM]
-[returnIDTERM]
+{intIDTERM}
+{floatIDTERM}
+{boolIDTERM}
+{charIDTERM}
+{stringIDTERM}
+{ifIDTERM}
+{thenIDTERM}
+{elseIDTERM}
+{whileIDTERM}
+{doIDTERM}
+{inputIDTERM}
+{outputIDTERM}
+{returnIDTERM}
 
 /*Caracteres Especiais*/
-[,]
-[;]
-[:]
-[(]
-[)]
-[\[]
-[\]]
-[{]
-[}]
-[+]
-[-]
-[*]
-[/]
-[<]
-[>]
-[=]
-[!]
-[&]
-[$]
+{,}
+{;}
+{:}
+{(}
+{)}
+{\[}
+{\]}
+{{}
+{}}
+{+}
+{-}
+{*}
+{/}
+{<}
+{>}
+{=}
+{!}
+{&}
+{$}
 
 /*Operadores Compostos*/
-[<=]
-[>=]
-[==]
-[!=]
-[&&]
-[\|\|]
+{<=}
+{>=}
+{==}
+{!=}
+{&&}
+{\|\|}
 
 /*Identificadores*/
-[{ALPHA_}{ALPHADIGIT_}*IDTERM]
+{{ALPHA_}{ALPHADIGIT_}*IDTERM}
 
 /*Literais*/
-[INTEGER]
-[INTEGER.{DIGIT}+]
-[(false)|(true)]
-['.']//. é qualquer caractere menos o new-line
-[".*"]
+{INTEGER}
+{INTEGER.{DIGIT}+}
+{(false)|(true)]}
+{'.'}//. é qualquer caractere menos o new-line
+{".*"}
 
 %%
 %%

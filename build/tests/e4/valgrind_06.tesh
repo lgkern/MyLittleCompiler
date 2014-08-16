@@ -1,0 +1,10 @@
+! timeout 5
+! output ignore
+$ ./tests/scripts/valgrindtest ./main
+< /* IKS_ERROR_VARIABLE */
+< int f()
+< int x;
+< {
+<   x[10] = 1;
+< }
+

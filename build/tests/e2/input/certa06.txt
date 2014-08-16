@@ -1,0 +1,11 @@
+float variavel_flutuante;
+int variavel_inteira;
+char variavel_caractere;
+int minha_funcao () 
+{
+ a=minha_funcao();
+ b=2.4;
+ c="teste";
+ k='l';
+ t[10]='k';
+}

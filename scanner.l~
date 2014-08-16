@@ -1,8 +1,68 @@
 /*
   Coloque aqui o identificador do grupo e dos seus membros
 */
+ALPHA	[A-Za-z]
+DIGIT	[0-9]
+IDTERM	[ |\t]
+INTEGER [-?{DIGIT}+]
+
 %{
 #include "parser.h" //arquivo automaticamente gerado pelo bison
 %}
+
+/*Palavras Reservadas da Linguagem*/
+{intIDTERM}
+{floatIDTERM}
+{boolIDTERM}
+{charIDTERM}
+{stringIDTERM}
+{ifIDTERM}
+{thenIDTERM}
+{elseIDTERM}
+{whileIDTERM}
+{doIDTERM}
+{inputIDTERM}
+{outputIDTERM}
+{returnIDTERM}
+
+/*Caracteres Especiais*/
+{,}
+{;}
+{:}
+{(}
+{)}
+[\[]
+[\]]
+[{]
+[}]
+[+]
+[-]
+[*]
+[/]
+[<]
+[>]
+[=]
+[!]
+[&]
+[$]
+
+/*Operadores Compostos*/
+[<=]
+[>=]
+[==]
+[!=]
+[&&]
+[\|\|]
+
+/*Identificadores*/
+[{ALPHA_}{ALPHADIGIT_}*IDTERM]
+
+/*Literais*/
+[INTEGER]
+[INTEGER.{DIGIT}+]
+[(false)|(true)]
+['.']//. é qualquer caractere menos o new-line
+[".*"]
+
 %%
 %%
