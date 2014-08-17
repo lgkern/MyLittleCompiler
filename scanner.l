@@ -55,7 +55,7 @@ returnIDTERM	return  TK_PR_RETURN;
 \|\|			return	TK_PR_OR;
 
 
-{{ALPHA}_}{ALPHADIGIT_}*IDTERM		{
+{{ALPHA}_}({ALPHA}{DIGIT}_)*IDTERM		{
 										p=(char *)calloc(strlen(yytext)+1,sizeof(char));
 										strcpy(p,yytext);
 										yylval.text=p;
@@ -95,5 +95,6 @@ true				{
 					
 \n					++numLines;
 					
-.					return TOKEN_ERRO;					
+.					return TOKEN_ERRO;		
+			
 %%
