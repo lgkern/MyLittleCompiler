@@ -1,14 +1,14 @@
 /*
   Coloque aqui o identificador do grupo e dos seus membros
 */
-%{
-#include "parser.h" //arquivo automaticamente gerado pelo bison
-%}
-
 ALPHA	[A-Za-z]
 DIGIT	[0-9]
 IDTERM	[ |\t]
 INTEGER [-?{DIGIT}+]
+
+%{
+#include "parser.h" //arquivo automaticamente gerado pelo bison
+%}
 
 %%
 /*Palavras Reservadas da Linguagem*/
