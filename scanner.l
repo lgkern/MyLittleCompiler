@@ -30,8 +30,8 @@ returnIDTERM	return  TK_PR_RETURN;
 ,				return	',';
 ;				return	';';
 :				return	':';
-(				return	'(';
-)				return	')';
+\(				return	'(';
+\)				return	')';
 \[				return	'[';
 \]				return	']';
 \{				return	'{';
@@ -39,15 +39,15 @@ returnIDTERM	return  TK_PR_RETURN;
 \+				return	'+';
 -				return	'-';
 \*				return	'*';
-/				return	'/';
-<				return	'<';
->				return	'>';
+\/				return	'/';
+\<				return	'<';
+\>				return	'>';
 =				return	'=';
 !				return	'!';
 &				return	'&';
-$				return	'$';
+\$				return	'$';
 
-<=				return	TK_PR_LE;
+\<=				return	TK_PR_LE;
 >=				return	TK_PR_GE;
 ==				return	TK_PR_EQ;
 !=				return	TK_PR_NE;
@@ -55,7 +55,7 @@ $				return	'$';
 \|\|			return	TK_PR_OR;
 
 
-{ALPHA_}{ALPHADIGIT_}*IDTERM		{
+{{ALPHA}_}{ALPHADIGIT_}*IDTERM		{
 										p=(char *)calloc(strlen(yytext)+1,sizeof(char));
 										strcpy(p,yytext);
 										yylval.text=p;
@@ -66,10 +66,9 @@ INTEGER				{
 						yylval.ival=atoi(yytext);
 						return	TK_LIT_INT;
 					}
-INTEGER.{DIGIT}+	{
-						p=(char *)calloc(strlen(yytext)+1,sizeof(char));
-						strcpy(p,yytext);
-						yylval.text=p;
+{INTEGER}"."{DIGIT}+	{
+						yylval.argument_data.str = yytext; 
+						yylval.argument_data.floatValue = atof(yytext);
 						return	TK_LIT_FLOAT;
 					}
 false				{
@@ -79,13 +78,13 @@ false				{
 true				{
 						return	TK_LIT_TRUE;
 					}
-'.'					{
+\'.\'				{
 						p=(char *)calloc(sizeof(char));
 						*p = yytext[1];
 						yylval.text=p;
 						return	TK_LIT_CHAR;
 					}
-".*"				{
+\".*\"				{
 						p=(char *)calloc(strlen(yytext)+1,sizeof(char));
 						strcpy(p,yytext);
 						p++;
