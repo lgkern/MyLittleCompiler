@@ -1,9 +1,12 @@
 #include "misc.h"
+#include <stdlib.h>
+
+extern int numLines;
 
 int getLineNumber (void)
 {
   //implemente esta função
-  return -1;
+  return numLines;
 }
 
 void yyerror (char const *mensagem)
@@ -12,7 +15,7 @@ void yyerror (char const *mensagem)
 }
 
 void main_init (int argc, char **argv)
-{
+{	
   //implemente esta função com rotinas de inicialização, se necessário
 }
 

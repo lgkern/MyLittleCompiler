@@ -7,6 +7,7 @@ INTEGER {-?{DIGIT}+}
 
 %{
 #include "parser.h" //arquivo automaticamente gerado pelo bison
+#include <stdlib.h>
 char *p;
 int numLines = 1;
 %}			
@@ -24,6 +25,7 @@ int numLines = 1;
 "*"				// Eat the lone star
 \n				++numLines;
 }
+
 
 "//".*			{ }
 "int"			return  TK_PR_INT;
@@ -76,6 +78,7 @@ int numLines = 1;
 						}
 
 ({ALPHA}|_)({ALPHA}|{DIGIT}|_)*		{
+
 											p=(char *)calloc(strlen(yytext)+1,sizeof(char));
 											strcpy(p,yytext);
 											yylval.text=p;
@@ -94,12 +97,14 @@ int numLines = 1;
 
 
 "\'"."\'"				{
+
 							p=(char *)calloc(1,sizeof(char));
 							*p = yytext[1];
 							yylval.text=p;
 							return	TK_LIT_CHAR;
 						}
-"\"".*"\""				{
+\"(\\.|[^\\"])*\"		{
+
 							p=(char *)calloc(strlen(yytext)+1,sizeof(char));
 							strcpy(p,yytext);
 							p++;

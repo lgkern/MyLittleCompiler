@@ -1,4 +1,5 @@
 #include "misc.h"
+#include <stdlib.h>
 
 extern int numLines;
 
@@ -14,7 +15,7 @@ void yyerror (char const *mensagem)
 }
 
 void main_init (int argc, char **argv)
-{
+{	
   //implemente esta função com rotinas de inicialização, se necessário
 }
 
