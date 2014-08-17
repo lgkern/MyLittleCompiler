@@ -12,7 +12,7 @@ INTEGER [-?{DIGIT}+]
 
 %%
 /*Palavras Reservadas da Linguagem*/
-{intIDTERM}
+intIDTERM       return  TK_PR_INT;
 {floatIDTERM}
 {boolIDTERM}
 {charIDTERM}
