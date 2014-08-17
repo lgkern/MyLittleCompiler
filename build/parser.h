@@ -77,7 +77,17 @@ extern int yydebug;
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
+typedef union YYSTYPE YYSTYPE;
+union YYSTYPE
+{
+#line 8 "parser.y" /* yacc.c:1909  */
+
+   int ival;
+   char *text;
+   float fval;
+
+#line 90 "/home/lgkern/repos/MyLittleCompiler/build/parser.h" /* yacc.c:1909  */
+};
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif

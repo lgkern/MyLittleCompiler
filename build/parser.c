@@ -133,7 +133,17 @@ extern int yydebug;
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
+typedef union YYSTYPE YYSTYPE;
+union YYSTYPE
+{
+#line 8 "parser.y" /* yacc.c:355  */
+
+   int ival;
+   char *text;
+   float fval;
+
+#line 146 "/home/lgkern/repos/MyLittleCompiler/build/parser.c" /* yacc.c:355  */
+};
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif
@@ -147,7 +157,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 151 "/home/lgkern/repos/MyLittleCompiler/build/parser.c" /* yacc.c:358  */
+#line 161 "/home/lgkern/repos/MyLittleCompiler/build/parser.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -447,7 +457,7 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    40,    40
+       0,    48,    48
 };
 #endif
 
@@ -1220,7 +1230,7 @@ yyreduce:
   switch (yyn)
     {
       
-#line 1224 "/home/lgkern/repos/MyLittleCompiler/build/parser.c" /* yacc.c:1646  */
+#line 1234 "/home/lgkern/repos/MyLittleCompiler/build/parser.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1448,5 +1458,5 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 42 "parser.y" /* yacc.c:1906  */
+#line 50 "parser.y" /* yacc.c:1906  */
 

@@ -8,6 +8,7 @@
 %union {
    int ival;
    char *text;
+   float fval;
 }
 
 /* Declaração dos tokens da linguagem */

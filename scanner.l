@@ -17,84 +17,85 @@ intIDTERM		return  TK_PR_INT;
 floatIDTERM		return  TK_PR_FLOAT;
 boolIDTERM		return  TK_PR_BOOL;
 charIDTERM		return  TK_PR_CHAR;
-stringIDTERM	return  TK_PR_STRING;
+stringIDTERM		return  TK_PR_STRING;
 ifIDTERM		return  TK_PR_IF;
 thenIDTERM		return  TK_PR_THEN;
 elseIDTERM		return  TK_PR_ELSE;
 whileIDTERM		return  TK_PR_WHILE;
 doIDTERM		return  TK_PR_DO;
 inputIDTERM		return  TK_PR_INPUT;
-outputIDTERM	return  TK_PR_OUTPUT;
-returnIDTERM	return  TK_PR_RETURN;
+outputIDTERM		return  TK_PR_OUTPUT;
+returnIDTERM		return  TK_PR_RETURN;
 
-,				return	',';
-;				return	';';
-:				return	':';
-\(				return	'(';
-\)				return	')';
-\[				return	'[';
-\]				return	']';
-\{				return	'{';
-\}				return	'}';
-\+				return	'+';
--				return	'-';
-\*				return	'*';
-\/				return	'/';
-\<				return	'<';
-\>				return	'>';
-=				return	'=';
-!				return	'!';
-&				return	'&';
-\$				return	'$';
+","				return	',';
+";"				return	';';
+":"				return	':';
+"("				return	'(';
+")"				return	')';
+"["				return	'[';
+"]"				return	']';
+"{"				return	'{';
+"}"				return	'}';
+"+"				return	'+';
+"-"				return	'-';
+"*"				return	'*';
+"/"				return	'/';
+"<"				return	'<';
+">"				return	'>';
+"="				return	'=';
+"!"				return	'!';
+"&"				return	'&';
+"$"				return	'$';
 
-\<=				return	TK_PR_LE;
->=				return	TK_PR_GE;
-==				return	TK_PR_EQ;
-!=				return	TK_PR_NE;
-&&				return	TK_PR_AND;
-\|\|			return	TK_PR_OR;
+"<="				return	TK_OC_LE;
+">="				return	TK_OC_GE;
+"=="				return	TK_OC_EQ;
+"!="				return	TK_OC_NE;
+"&&"				return	TK_OC_AND;
+"||"				return	TK_OC_OR;
 
 
 ({ALPHA}|_)({ALPHA}{DIGIT}_)*IDTERM		{
-										p=(char *)calloc(strlen(yytext)+1,sizeof(char));
-										strcpy(p,yytext);
-										yylval.text=p;
-										return	TK_IDENTIFICADOR
-									}
+											p=(char *)calloc(strlen(yytext)+1,sizeof(char));
+											strcpy(p,yytext);
+											yylval.text=p;
+											return	TK_IDENTIFICADOR;
+										}
 
-INTEGER				{
-						yylval.ival=atoi(yytext);
-						return	TK_LIT_INT;
-					}
+INTEGER					{
+							yylval.ival=atoi(yytext);
+							return	TK_LIT_INT;
+						}
+
 {INTEGER}"."{DIGIT}+	{
-						yylval.argument_data.str = yytext; 
-						yylval.argument_data.floatValue = atof(yytext);
-						return	TK_LIT_FLOAT;
-					}
-false				{
-						return	TK_LIT_FALSE;
-					}
+							yylval.fval = atof(yytext);
+							return	TK_LIT_FLOAT;
+						}
+
+false					{
+							return	TK_LIT_FALSE;
+						}
 					
-true				{
-						return	TK_LIT_TRUE;
-					}
-\'.\'				{
-						p=(char *)calloc(sizeof(char));
-						*p = yytext[1];
-						yylval.text=p;
-						return	TK_LIT_CHAR;
-					}
-\".*\"				{
-						p=(char *)calloc(strlen(yytext)+1,sizeof(char));
-						strcpy(p,yytext);
-						p++;
-						p[strlen(p)-1] = '\0';						
-						yylval.text=p;
-						return	TK_LIT_STRING;
-					}
+true					{
+							return	TK_LIT_TRUE;
+						}
+"\'"."\'"				{
+							p=(char *)calloc(1,sizeof(char));
+							*p = yytext[1];
+							yylval.text=p;
+							return	TK_LIT_CHAR;
+						}
+"\"".*"\""				{
+							p=(char *)calloc(strlen(yytext)+1,sizeof(char));
+							strcpy(p,yytext);
+							p++;
+							p[strlen(p)-1] = '\0';						
+							yylval.text=p;
+							return	TK_LIT_STRING;
+						}
 					
-\n					{++numLines;}
+\n						{++numLines;}
 					
-.					{return TOKEN_ERRO;}
+.						{return TOKEN_ERRO;}
 			
 %%
