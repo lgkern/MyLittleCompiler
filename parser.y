@@ -5,6 +5,11 @@
 #include <stdio.h>
 %}
 
+%union {
+   int ival;
+   char *text;
+}
+
 /* Declaração dos tokens da linguagem */
 %token TK_PR_INT
 %token TK_PR_FLOAT
@@ -33,6 +38,8 @@
 %token TK_LIT_STRING
 %token TK_IDENTIFICADOR
 %token TOKEN_ERRO
+
+
 
 %%
 /* Regras (e ações) da gramática */
