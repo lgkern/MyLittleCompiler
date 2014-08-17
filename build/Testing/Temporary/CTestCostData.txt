@@ -15,21 +15,21 @@ e1_avaliacao_14 0 0
 e1_avaliacao_15 0 0
 e1_avaliacao_16 0 0
 e1_valgrind_01 0 0
-e1_valgrind_02 1 0.504795
-e1_valgrind_03 1 0.473434
+e1_valgrind_02 8 0.0517737
+e1_valgrind_03 6 0
 e1_valgrind_04 0 0
-e1_valgrind_05 1 0.473607
-e1_valgrind_06 1 0.508982
-e1_valgrind_07 1 0.467763
-e1_valgrind_08 1 0.471421
+e1_valgrind_05 6 0
+e1_valgrind_06 6 0
+e1_valgrind_07 8 0.0512734
+e1_valgrind_08 8 0.0528366
 e1_valgrind_09 0 0
-e1_valgrind_10 1 0.490408
+e1_valgrind_10 8 0.0534378
 e1_valgrind_11 0 0
 e1_valgrind_12 0 0
-e1_valgrind_13 1 0.456768
+e1_valgrind_13 8 0.0514466
 e1_valgrind_14 0 0
-e1_valgrind_15 1 0.528045
-e1_valgrind_16 1 1.138
+e1_valgrind_15 8 0.0538804
+e1_valgrind_16 8 0.0523787
 ---
 e1_avaliacao_01
 e1_avaliacao_02
@@ -48,7 +48,10 @@ e1_avaliacao_14
 e1_avaliacao_15
 e1_avaliacao_16
 e1_valgrind_01
+e1_valgrind_03
 e1_valgrind_04
+e1_valgrind_05
+e1_valgrind_06
 e1_valgrind_09
 e1_valgrind_11
 e1_valgrind_12

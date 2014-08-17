@@ -1,9 +1,11 @@
 #include "misc.h"
 
+extern int numLines;
+
 int getLineNumber (void)
 {
   //implemente esta função
-  return -1;
+  return numLines;
 }
 
 void yyerror (char const *mensagem)
