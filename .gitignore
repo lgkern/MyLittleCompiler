@@ -24,3 +24,6 @@
 
 # Verbose dumps
 *.vdump
+
+#Linux lock files
+*~
