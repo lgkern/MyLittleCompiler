@@ -25,6 +25,7 @@ int numLines = 1;
 \n				++numLines;
 }
 
+"//".*			{ }
 "int"			return  TK_PR_INT;
 "float"			return  TK_PR_FLOAT;
 "bool"			return  TK_PR_BOOL;
