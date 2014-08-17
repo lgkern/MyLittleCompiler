@@ -11,7 +11,6 @@ INTEGER [-?{DIGIT}+]
 %}
 
 %%
-/*Palavras Reservadas da Linguagem*/
 intIDTERM       return  TK_PR_INT;
 {floatIDTERM}
 {boolIDTERM}
@@ -26,7 +25,6 @@ intIDTERM       return  TK_PR_INT;
 {outputIDTERM}
 {returnIDTERM}
 
-/*Caracteres Especiais*/
 {,}
 {;}
 {:}
@@ -47,7 +45,6 @@ intIDTERM       return  TK_PR_INT;
 {&}
 {$}
 
-/*Operadores Compostos*/
 {<=}
 {>=}
 {==}
@@ -55,14 +52,13 @@ intIDTERM       return  TK_PR_INT;
 {&&}
 {\|\|}
 
-/*Identificadores*/
+
 {{ALPHA_}{ALPHADIGIT_}*IDTERM}
 
-/*Literais*/
 {INTEGER}
 {INTEGER.{DIGIT}+}
 {(false)|(true)]}
-{'.'}//. é qualquer caractere menos o new-line
+{'.'}
 {".*"}
 
 %%
