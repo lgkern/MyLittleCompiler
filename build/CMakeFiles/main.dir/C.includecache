@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../include/misc.h
-stdio.h
--
-
 /home/lgkern/repos/MyLittleCompiler/build/parser.h
 
 /home/lgkern/repos/MyLittleCompiler/build/scanner.c
@@ -28,11 +24,5 @@ parser.h
 stdlib.h
 -
 unistd.h
--
-
-/home/lgkern/repos/MyLittleCompiler/src/misc.c
-misc.h
-/home/lgkern/repos/MyLittleCompiler/src/misc.h
-stdlib.h
 -
 

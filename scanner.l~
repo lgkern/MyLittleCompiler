@@ -9,6 +9,7 @@ INTEGER {-?{DIGIT}+}
 #include "parser.h" //arquivo automaticamente gerado pelo bison
 #include <stdlib.h>
 char *p;
+char sc;
 int numLines = 1;
 %}			
 %x IN_COMMENT
@@ -78,12 +79,9 @@ int numLines = 1;
 						}
 
 ({ALPHA}|_)({ALPHA}|{DIGIT}|_)*		{
-
-											p=(char *)calloc(strlen(yytext)+1,sizeof(char));
-											strcpy(p,yytext);
-											yylval.text=p;
+											yylval.text=yytext;
 											return	TK_IDENTIFICADOR;
-										}
+									}
 
 -?{DIGIT}+				{
 							yylval.ival=atoi(yytext);
@@ -97,10 +95,8 @@ int numLines = 1;
 
 
 "\'"."\'"				{
-
-							p=(char *)calloc(1,sizeof(char));
-							*p = yytext[1];
-							yylval.text=p;
+							sc = yytext[1];
+							yylval.text=strcat(sc,"\0";
 							return	TK_LIT_CHAR;
 						}
 \"(\\.|[^\\"])*\"		{
