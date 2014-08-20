@@ -6,9 +6,19 @@
 
 #IncludeRegexTransform: 
 
+../include/crc16.h
+
 ../include/symt.h
 
 /home/lgkern/repos/MyLittleCompiler/src/symt.c
 symt.h
 /home/lgkern/repos/MyLittleCompiler/src/symt.h
+crc16.h
+/home/lgkern/repos/MyLittleCompiler/src/crc16.h
+string.h
+-
+values.h
+-
+stdlib.h
+-
 

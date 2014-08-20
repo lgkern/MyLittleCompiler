@@ -4,10 +4,6 @@
 #include "symt.h"
 
 //Data definitions -------------------------------------------------------------------------
-typedef struct {
-	int		token;
-	char*	description
-}TOKEN;
 
 struct NODE{
 	TABLE*	data;
@@ -40,7 +36,7 @@ typedef struct {
 	struct NODE*	createNode();
 	int		destroyNode(struct NODE* node); 
 
-	int 	node_addSymbol(struct NODE* node, TOKEN* token);
+	int 	node_addSymbol(struct NODE* node, TOKEN* token, int line);
 	int 	node_retrieveLine(struct NODE* node, TOKEN* token);
 
 //-------------------------------------------------------------------------------------------

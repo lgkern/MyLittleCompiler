@@ -1,4 +1,8 @@
 FILE(REMOVE_RECURSE
+  "scanner.c"
+  "parser.c"
+  "parser.h"
+  "parser.output"
   "CMakeFiles/main.dir/scanner.c.o"
   "CMakeFiles/main.dir/parser.c.o"
   "CMakeFiles/main.dir/src/main.c.o"
@@ -9,10 +13,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/comp_tree.c.o"
   "CMakeFiles/main.dir/src/symbtable.c.o"
   "CMakeFiles/main.dir/src/symt.c.o"
-  "scanner.c"
-  "parser.c"
-  "parser.h"
-  "parser.output"
+  "CMakeFiles/main.dir/src/crc16.c.o"
   "main.pdb"
   "main"
 )

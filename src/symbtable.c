@@ -42,7 +42,7 @@
 	
 	}
 
-	int 	node_addSymbol(struct NODE* node, TOKEN* token)
+	int 	node_addSymbol(struct NODE* node, TOKEN* token, int line)
 	{
 	
 	}
