@@ -6,6 +6,9 @@
 	int		createTable()
 	{
 		myTree = calloc(1,sizeof(SYMBTREE));
+		struct NODE* node = createNode();
+		myTree->root = node;
+		myTree->current = node;
 	}
 	int		destroyTable()
 	{
@@ -51,7 +54,7 @@
 //Node API ----------------------------------------------------------------------------------
 	struct NODE*	createNode()
 	{
-		struct NODE* myNode = calloc(1, sizeof(NODE));
+		struct NODE* myNode = calloc(1, sizeof(struct NODE));
 		return myNode;
 	}
 	int		destroyNode(struct NODE* node)

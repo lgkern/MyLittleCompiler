@@ -6,19 +6,31 @@
 
 #IncludeRegexTransform: 
 
-../include/crc16.h
+../include/symbtable.h
+symt.h
+../include/symt.h
 
 ../include/symt.h
 
-/home/lgkern/repos/MyLittleCompiler/src/symt.c
-symt.h
-/home/lgkern/repos/MyLittleCompiler/src/symt.h
-crc16.h
-/home/lgkern/repos/MyLittleCompiler/src/crc16.h
+/home/leviathan/.git/MyLittleCompiler/build/parser.h
+
+/home/leviathan/.git/MyLittleCompiler/build/scanner.c
+stdio.h
+-
 string.h
 -
-values.h
+errno.h
 -
 stdlib.h
+-
+inttypes.h
+-
+parser.h
+/home/leviathan/.git/MyLittleCompiler/build/parser.h
+stdlib.h
+-
+symbtable.h
+/home/leviathan/.git/MyLittleCompiler/build/symbtable.h
+unistd.h
 -
 

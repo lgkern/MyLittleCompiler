@@ -6,6 +6,9 @@
 	int		createTable()
 	{
 		myTree = calloc(1,sizeof(SYMBTREE));
+		struct NODE* node = createNode();
+		myTree->root = node;
+		myTree->current = node;
 	}
 	int		destroyTable()
 	{
@@ -13,6 +16,7 @@
 		{
 			removeScope();
 		}
+		free(myTree);
 	}
 
 	int 	addSymbol(TOKEN* token, int line)

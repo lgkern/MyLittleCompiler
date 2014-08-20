@@ -8,6 +8,8 @@ INTEGER {-?{DIGIT}+}
 %{
 #include "parser.h" //arquivo automaticamente gerado pelo bison
 #include <stdlib.h>
+#include "symbtable.h"
+
 int numLines = 1;
 %}			
 %x IN_COMMENT
@@ -74,7 +76,14 @@ int numLines = 1;
 
 ({ALPHA}|_)({ALPHA}|{DIGIT}|_)*		return	TK_IDENTIFICADOR;								
 
--?{DIGIT}+				return	TK_LIT_INT;
+-?{DIGIT}+				{
+TOKEN* myToken = calloc(1,sizeof(TOKEN*));
+myToken->token = TK_LIT_INT;
+strcpy(myToken->description,yytext);
+addSymbol(myToken, numLines);
+return	TK_LIT_INT;
+
+					}//return	TK_LIT_INT;
 -?{DIGIT}+"."{DIGIT}+			return	TK_LIT_FLOAT;
 "\'"."\'"				return	TK_LIT_CHAR;
 

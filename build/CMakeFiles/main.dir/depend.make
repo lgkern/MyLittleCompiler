@@ -3,6 +3,8 @@
 
 CMakeFiles/main.dir/parser.c.o: parser.c
 
+CMakeFiles/main.dir/scanner.c.o: ../include/symbtable.h
+CMakeFiles/main.dir/scanner.c.o: ../include/symt.h
 CMakeFiles/main.dir/scanner.c.o: parser.h
 CMakeFiles/main.dir/scanner.c.o: scanner.c
 

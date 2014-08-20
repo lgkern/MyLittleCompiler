@@ -17,6 +17,7 @@ void yyerror (char const *mensagem)
 void main_init (int argc, char **argv)
 {	
   //implemente esta função com rotinas de inicialização, se necessário
+	createTable();
 }
 
 void main_finalize (void)
