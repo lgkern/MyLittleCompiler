@@ -1,0 +1,21 @@
+#include "symt.h"
+
+//Hash table API
+	TABLE*	createTable()
+	{
+	
+	}
+	int		destroyTable(TABLE* table)
+	{
+	
+	}
+
+	int		addElement(int token, char* description, int line)
+	{
+	
+	}
+	int		retrieveLine(int token, char* descripton)
+	{
+	
+	}
+

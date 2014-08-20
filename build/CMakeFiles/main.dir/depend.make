@@ -25,3 +25,10 @@ CMakeFiles/main.dir/src/main.c.o: parser.h
 CMakeFiles/main.dir/src/misc.c.o: ../include/misc.h
 CMakeFiles/main.dir/src/misc.c.o: ../src/misc.c
 
+CMakeFiles/main.dir/src/symbtable.c.o: ../include/symbtable.h
+CMakeFiles/main.dir/src/symbtable.c.o: ../include/symt.h
+CMakeFiles/main.dir/src/symbtable.c.o: ../src/symbtable.c
+
+CMakeFiles/main.dir/src/symt.c.o: ../include/symt.h
+CMakeFiles/main.dir/src/symt.c.o: ../src/symt.c
+

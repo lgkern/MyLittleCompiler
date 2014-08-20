@@ -247,6 +247,52 @@ CMakeFiles/main.dir/src/comp_tree.c.o.provides: CMakeFiles/main.dir/src/comp_tre
 
 CMakeFiles/main.dir/src/comp_tree.c.o.provides.build: CMakeFiles/main.dir/src/comp_tree.c.o
 
+CMakeFiles/main.dir/src/symbtable.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/symbtable.c.o: ../src/symbtable.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lgkern/repos/MyLittleCompiler/build/CMakeFiles $(CMAKE_PROGRESS_11)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/main.dir/src/symbtable.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/main.dir/src/symbtable.c.o   -c /home/lgkern/repos/MyLittleCompiler/src/symbtable.c
+
+CMakeFiles/main.dir/src/symbtable.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/symbtable.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /home/lgkern/repos/MyLittleCompiler/src/symbtable.c > CMakeFiles/main.dir/src/symbtable.c.i
+
+CMakeFiles/main.dir/src/symbtable.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/symbtable.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /home/lgkern/repos/MyLittleCompiler/src/symbtable.c -o CMakeFiles/main.dir/src/symbtable.c.s
+
+CMakeFiles/main.dir/src/symbtable.c.o.requires:
+.PHONY : CMakeFiles/main.dir/src/symbtable.c.o.requires
+
+CMakeFiles/main.dir/src/symbtable.c.o.provides: CMakeFiles/main.dir/src/symbtable.c.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symbtable.c.o.provides.build
+.PHONY : CMakeFiles/main.dir/src/symbtable.c.o.provides
+
+CMakeFiles/main.dir/src/symbtable.c.o.provides.build: CMakeFiles/main.dir/src/symbtable.c.o
+
+CMakeFiles/main.dir/src/symt.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/symt.c.o: ../src/symt.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/lgkern/repos/MyLittleCompiler/build/CMakeFiles $(CMAKE_PROGRESS_12)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/main.dir/src/symt.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/main.dir/src/symt.c.o   -c /home/lgkern/repos/MyLittleCompiler/src/symt.c
+
+CMakeFiles/main.dir/src/symt.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/symt.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /home/lgkern/repos/MyLittleCompiler/src/symt.c > CMakeFiles/main.dir/src/symt.c.i
+
+CMakeFiles/main.dir/src/symt.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/symt.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /home/lgkern/repos/MyLittleCompiler/src/symt.c -o CMakeFiles/main.dir/src/symt.c.s
+
+CMakeFiles/main.dir/src/symt.c.o.requires:
+.PHONY : CMakeFiles/main.dir/src/symt.c.o.requires
+
+CMakeFiles/main.dir/src/symt.c.o.provides: CMakeFiles/main.dir/src/symt.c.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symt.c.o.provides.build
+.PHONY : CMakeFiles/main.dir/src/symt.c.o.provides
+
+CMakeFiles/main.dir/src/symt.c.o.provides.build: CMakeFiles/main.dir/src/symt.c.o
+
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/scanner.c.o" \
@@ -256,7 +302,9 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/src/gv.c.o" \
 "CMakeFiles/main.dir/src/comp_dict.c.o" \
 "CMakeFiles/main.dir/src/comp_list.c.o" \
-"CMakeFiles/main.dir/src/comp_tree.c.o"
+"CMakeFiles/main.dir/src/comp_tree.c.o" \
+"CMakeFiles/main.dir/src/symbtable.c.o" \
+"CMakeFiles/main.dir/src/symt.c.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
@@ -269,6 +317,8 @@ main: CMakeFiles/main.dir/src/gv.c.o
 main: CMakeFiles/main.dir/src/comp_dict.c.o
 main: CMakeFiles/main.dir/src/comp_list.c.o
 main: CMakeFiles/main.dir/src/comp_tree.c.o
+main: CMakeFiles/main.dir/src/symbtable.c.o
+main: CMakeFiles/main.dir/src/symt.c.o
 main: CMakeFiles/main.dir/build.make
 main: /usr/lib/x86_64-linux-gnu/libfl.so
 main: CMakeFiles/main.dir/link.txt
@@ -287,6 +337,8 @@ CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/gv.c.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/comp_dict.c.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/comp_list.c.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/comp_tree.c.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/symbtable.c.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/symt.c.o.requires
 .PHONY : CMakeFiles/main.dir/requires
 
 CMakeFiles/main.dir/clean:

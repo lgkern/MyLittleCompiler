@@ -25,3 +25,10 @@ CMakeFiles/main.dir/src/main.c.o
 CMakeFiles/main.dir/src/misc.c.o
  ../include/misc.h
  /home/lgkern/repos/MyLittleCompiler/src/misc.c
+CMakeFiles/main.dir/src/symbtable.c.o
+ ../include/symbtable.h
+ ../include/symt.h
+ /home/lgkern/repos/MyLittleCompiler/src/symbtable.c
+CMakeFiles/main.dir/src/symt.c.o
+ ../include/symt.h
+ /home/lgkern/repos/MyLittleCompiler/src/symt.c

@@ -313,6 +313,54 @@ src/misc.c.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/misc.c.s
 .PHONY : src/misc.c.s
 
+src/symbtable.o: src/symbtable.c.o
+.PHONY : src/symbtable.o
+
+# target to build an object file
+src/symbtable.c.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symbtable.c.o
+.PHONY : src/symbtable.c.o
+
+src/symbtable.i: src/symbtable.c.i
+.PHONY : src/symbtable.i
+
+# target to preprocess a source file
+src/symbtable.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symbtable.c.i
+.PHONY : src/symbtable.c.i
+
+src/symbtable.s: src/symbtable.c.s
+.PHONY : src/symbtable.s
+
+# target to generate assembly for a file
+src/symbtable.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symbtable.c.s
+.PHONY : src/symbtable.c.s
+
+src/symt.o: src/symt.c.o
+.PHONY : src/symt.o
+
+# target to build an object file
+src/symt.c.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symt.c.o
+.PHONY : src/symt.c.o
+
+src/symt.i: src/symt.c.i
+.PHONY : src/symt.i
+
+# target to preprocess a source file
+src/symt.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symt.c.i
+.PHONY : src/symt.c.i
+
+src/symt.s: src/symt.c.s
+.PHONY : src/symt.s
+
+# target to generate assembly for a file
+src/symt.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symt.c.s
+.PHONY : src/symt.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -347,6 +395,12 @@ help:
 	@echo "... src/misc.o"
 	@echo "... src/misc.i"
 	@echo "... src/misc.s"
+	@echo "... src/symbtable.o"
+	@echo "... src/symbtable.i"
+	@echo "... src/symbtable.s"
+	@echo "... src/symt.o"
+	@echo "... src/symt.i"
+	@echo "... src/symt.s"
 .PHONY : help
 
 

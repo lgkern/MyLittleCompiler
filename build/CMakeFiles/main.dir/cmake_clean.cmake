@@ -11,6 +11,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/comp_dict.c.o"
   "CMakeFiles/main.dir/src/comp_list.c.o"
   "CMakeFiles/main.dir/src/comp_tree.c.o"
+  "CMakeFiles/main.dir/src/symbtable.c.o"
+  "CMakeFiles/main.dir/src/symt.c.o"
   "main.pdb"
   "main"
 )

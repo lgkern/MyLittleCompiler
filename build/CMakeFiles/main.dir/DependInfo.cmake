@@ -12,6 +12,8 @@ SET(CMAKE_DEPENDS_CHECK_C
   "/home/lgkern/repos/MyLittleCompiler/src/gv.c" "/home/lgkern/repos/MyLittleCompiler/build/CMakeFiles/main.dir/src/gv.c.o"
   "/home/lgkern/repos/MyLittleCompiler/src/main.c" "/home/lgkern/repos/MyLittleCompiler/build/CMakeFiles/main.dir/src/main.c.o"
   "/home/lgkern/repos/MyLittleCompiler/src/misc.c" "/home/lgkern/repos/MyLittleCompiler/build/CMakeFiles/main.dir/src/misc.c.o"
+  "/home/lgkern/repos/MyLittleCompiler/src/symbtable.c" "/home/lgkern/repos/MyLittleCompiler/build/CMakeFiles/main.dir/src/symbtable.c.o"
+  "/home/lgkern/repos/MyLittleCompiler/src/symt.c" "/home/lgkern/repos/MyLittleCompiler/build/CMakeFiles/main.dir/src/symt.c.o"
   )
 SET(CMAKE_C_COMPILER_ID "GNU")
 
