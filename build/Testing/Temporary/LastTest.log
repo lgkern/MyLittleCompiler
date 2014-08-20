@@ -1,595 +1,547 @@
-Start testing: Aug 19 15:38 BRT
+Start testing: Aug 20 13:48 BRT
 ----------------------------------------------------------
 1/298 Testing: e1_avaliacao_01
 1/298 Test: e1_avaliacao_01
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_01.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_01" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_01" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_01.tesh No such file or directory
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_01'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_01:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_01' OK
 <end of output>
-Test time =   0.11 sec
+Test time =   0.41 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_01" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_01" end time: Aug 20 13:48 BRT
 "e1_avaliacao_01" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 2/298 Testing: e1_avaliacao_02
 2/298 Test: e1_avaliacao_02
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_02.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_02" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_02" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_02'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_02:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_02' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_02.tesh No such file or directory
 <end of output>
-Test time =   0.11 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_02" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_02" end time: Aug 20 13:48 BRT
 "e1_avaliacao_02" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 3/298 Testing: e1_avaliacao_03
 3/298 Test: e1_avaliacao_03
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_03.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_03" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_03" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_03'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_03:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_03' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_03.tesh No such file or directory
 <end of output>
-Test time =   0.10 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_03" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_03" end time: Aug 20 13:48 BRT
 "e1_avaliacao_03" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 4/298 Testing: e1_avaliacao_04
 4/298 Test: e1_avaliacao_04
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_04.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_04" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_04" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_04'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_04:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_04' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_04.tesh No such file or directory
 <end of output>
-Test time =   0.10 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_04" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_04" end time: Aug 20 13:48 BRT
 "e1_avaliacao_04" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 5/298 Testing: e1_avaliacao_05
 5/298 Test: e1_avaliacao_05
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_05.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_05" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_05" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_05'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_05:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_05' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_05.tesh No such file or directory
 <end of output>
-Test time =   0.10 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_05" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_05" end time: Aug 20 13:48 BRT
 "e1_avaliacao_05" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 6/298 Testing: e1_avaliacao_06
 6/298 Test: e1_avaliacao_06
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_06.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_06" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_06" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_06'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_06:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_06' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_06.tesh No such file or directory
 <end of output>
-Test time =   0.10 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_06" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_06" end time: Aug 20 13:48 BRT
 "e1_avaliacao_06" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 7/298 Testing: e1_avaliacao_07
 7/298 Test: e1_avaliacao_07
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_07.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_07" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_07" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_07'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_07:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_07' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_07.tesh No such file or directory
 <end of output>
-Test time =   0.10 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_07" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_07" end time: Aug 20 13:48 BRT
 "e1_avaliacao_07" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 8/298 Testing: e1_avaliacao_08
 8/298 Test: e1_avaliacao_08
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_08.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_08" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_08" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_08'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_08:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_08' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_08.tesh No such file or directory
 <end of output>
-Test time =   0.12 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_08" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_08" end time: Aug 20 13:48 BRT
 "e1_avaliacao_08" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 9/298 Testing: e1_avaliacao_09
 9/298 Test: e1_avaliacao_09
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_09.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_09" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_09" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_09'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_09:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_09' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_09.tesh No such file or directory
 <end of output>
-Test time =   0.13 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_09" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_09" end time: Aug 20 13:48 BRT
 "e1_avaliacao_09" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 10/298 Testing: e1_avaliacao_10
 10/298 Test: e1_avaliacao_10
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_10.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_10" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_10" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_10.tesh No such file or directory
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_10'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_10:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_10' OK
 <end of output>
-Test time =   0.11 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_10" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_10" end time: Aug 20 13:48 BRT
 "e1_avaliacao_10" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 11/298 Testing: e1_avaliacao_11
 11/298 Test: e1_avaliacao_11
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_11.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_11" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_11" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_11'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_11:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_11' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_11.tesh No such file or directory
 <end of output>
-Test time =   0.85 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_11" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_11" end time: Aug 20 13:48 BRT
 "e1_avaliacao_11" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 12/298 Testing: e1_avaliacao_12
 12/298 Test: e1_avaliacao_12
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_12.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_12" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_12" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_12'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_12:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_12' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_12.tesh No such file or directory
 <end of output>
-Test time =   0.12 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_12" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_12" end time: Aug 20 13:48 BRT
 "e1_avaliacao_12" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 13/298 Testing: e1_avaliacao_13
 13/298 Test: e1_avaliacao_13
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_13.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_13" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_13" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_13'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_13:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_13' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_13.tesh No such file or directory
 <end of output>
-Test time =   0.12 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_13" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_13" end time: Aug 20 13:48 BRT
 "e1_avaliacao_13" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 14/298 Testing: e1_avaliacao_14
 14/298 Test: e1_avaliacao_14
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_14.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_14" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_14" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_14'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_14:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_14' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_14.tesh No such file or directory
 <end of output>
-Test time =   0.15 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_14" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_14" end time: Aug 20 13:48 BRT
 "e1_avaliacao_14" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 15/298 Testing: e1_avaliacao_15
 15/298 Test: e1_avaliacao_15
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_15.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_15" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_15" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_15'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_15:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_15' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_15.tesh No such file or directory
 <end of output>
-Test time =   0.10 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_15" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_15" end time: Aug 20 13:48 BRT
 "e1_avaliacao_15" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 16/298 Testing: e1_avaliacao_16
 16/298 Test: e1_avaliacao_16
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_16.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_avaliacao_16" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_avaliacao_16" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_16.tesh No such file or directory
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_16'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_16:2] ./main
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_16' OK
 <end of output>
-Test time =   0.10 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_avaliacao_16" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_avaliacao_16" end time: Aug 20 13:48 BRT
 "e1_avaliacao_16" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 17/298 Testing: e1_valgrind_01
 17/298 Test: e1_valgrind_01
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_01.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_01" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_01" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_01'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_01:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_01.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_01' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_01.tesh No such file or directory
 <end of output>
-Test time =   0.56 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_01" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_01" end time: Aug 20 13:48 BRT
 "e1_valgrind_01" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 18/298 Testing: e1_valgrind_02
 18/298 Test: e1_valgrind_02
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_02.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_02" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_02" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_02'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_02:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_02.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_02' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_02.tesh No such file or directory
 <end of output>
-Test time =   0.63 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_02" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_02" end time: Aug 20 13:48 BRT
 "e1_valgrind_02" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 19/298 Testing: e1_valgrind_03
 19/298 Test: e1_valgrind_03
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_03.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_03" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_03" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_03'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_03:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_03.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_03' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_03.tesh No such file or directory
 <end of output>
-Test time =   0.79 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_03" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_03" end time: Aug 20 13:48 BRT
 "e1_valgrind_03" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 20/298 Testing: e1_valgrind_04
 20/298 Test: e1_valgrind_04
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_04.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_04" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_04" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_04'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_04:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_04.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_04' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_04.tesh No such file or directory
 <end of output>
-Test time =   0.95 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_04" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_04" end time: Aug 20 13:48 BRT
 "e1_valgrind_04" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 21/298 Testing: e1_valgrind_05
 21/298 Test: e1_valgrind_05
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_05.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_05" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_05" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_05'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_05:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_05.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_05' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_05.tesh No such file or directory
 <end of output>
-Test time =   0.48 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_05" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_05" end time: Aug 20 13:48 BRT
 "e1_valgrind_05" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 22/298 Testing: e1_valgrind_06
 22/298 Test: e1_valgrind_06
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_06.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_06" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_06" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_06'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_06:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_06.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_06' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_06.tesh No such file or directory
 <end of output>
-Test time =   0.56 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_06" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_06" end time: Aug 20 13:48 BRT
 "e1_valgrind_06" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 23/298 Testing: e1_valgrind_07
 23/298 Test: e1_valgrind_07
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_07.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_07" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_07" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_07'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_07:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_07.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_07' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_07.tesh No such file or directory
 <end of output>
-Test time =   0.51 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_07" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_07" end time: Aug 20 13:48 BRT
 "e1_valgrind_07" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 24/298 Testing: e1_valgrind_08
 24/298 Test: e1_valgrind_08
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_08.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_08" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_08" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_08'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_08:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_08.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_08' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_08.tesh No such file or directory
 <end of output>
-Test time =   0.50 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_08" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_08" end time: Aug 20 13:48 BRT
 "e1_valgrind_08" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 25/298 Testing: e1_valgrind_09
 25/298 Test: e1_valgrind_09
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_09.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_09" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_09" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_09'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_09:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_09.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_09' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_09.tesh No such file or directory
 <end of output>
-Test time =   0.59 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_09" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_09" end time: Aug 20 13:48 BRT
 "e1_valgrind_09" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 26/298 Testing: e1_valgrind_10
 26/298 Test: e1_valgrind_10
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_10.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_10" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_10" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_10'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_10:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_10.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_10' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_10.tesh No such file or directory
 <end of output>
-Test time =   0.51 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_10" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_10" end time: Aug 20 13:48 BRT
 "e1_valgrind_10" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 27/298 Testing: e1_valgrind_11
 27/298 Test: e1_valgrind_11
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_11.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_11" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_11" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_11'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_11:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_11.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_11' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_11.tesh No such file or directory
 <end of output>
-Test time =   1.61 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_11" end time: Aug 19 15:38 BRT
-"e1_valgrind_11" time elapsed: 00:00:01
+Test Failed.
+"e1_valgrind_11" end time: Aug 20 13:48 BRT
+"e1_valgrind_11" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 28/298 Testing: e1_valgrind_12
 28/298 Test: e1_valgrind_12
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_12.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_12" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_12" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_12'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_12:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_12.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_12' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_12.tesh No such file or directory
 <end of output>
-Test time =   0.48 sec
+Test time =   0.06 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_12" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_12" end time: Aug 20 13:48 BRT
 "e1_valgrind_12" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 29/298 Testing: e1_valgrind_13
 29/298 Test: e1_valgrind_13
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_13.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_13" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_13" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_13'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_13:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_13.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_13' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_13.tesh No such file or directory
 <end of output>
-Test time =   0.53 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_13" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_13" end time: Aug 20 13:48 BRT
 "e1_valgrind_13" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 30/298 Testing: e1_valgrind_14
 30/298 Test: e1_valgrind_14
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_14.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_14" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_14" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_14'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_14:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_14.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_14' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_14.tesh No such file or directory
 <end of output>
-Test time =   0.74 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_14" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_14" end time: Aug 20 13:48 BRT
 "e1_valgrind_14" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 31/298 Testing: e1_valgrind_15
 31/298 Test: e1_valgrind_15
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_15.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_15" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_15" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_15'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_15:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_15.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_15' OK
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_15.tesh No such file or directory
 <end of output>
-Test time =   1.11 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_15" end time: Aug 19 15:38 BRT
-"e1_valgrind_15" time elapsed: 00:00:01
+Test Failed.
+"e1_valgrind_15" end time: Aug 20 13:48 BRT
+"e1_valgrind_15" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 32/298 Testing: e1_valgrind_16
 32/298 Test: e1_valgrind_16
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_16.tesh"
-Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e1_valgrind_16" start time: Aug 19 15:38 BRT
+Directory: /home/grad/hmroesler/MyLittleCompiler/build
+"e1_valgrind_16" start time: Aug 20 13:48 BRT
 Output:
 ----------------------------------------------------------
+[Tesh/CRITICAL] Unable to open /home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_16.tesh No such file or directory
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_16'
-[/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_16:3] ./tests/scripts/valgrindtest ./main
-(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_16.tesh:3> as requested)
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_16' OK
 <end of output>
-Test time =   0.56 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
-Test Passed.
-"e1_valgrind_16" end time: Aug 19 15:38 BRT
+Test Failed.
+"e1_valgrind_16" end time: Aug 20 13:48 BRT
 "e1_valgrind_16" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Aug 19 15:38 BRT
+End testing: Aug 20 13:48 BRT
