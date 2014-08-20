@@ -35,22 +35,22 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# Escaping for special characters.
-EQUALS = =
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lgkern/repos/MyLittleCompiler
+CMAKE_SOURCE_DIR = /home/grad/hmroesler/MyLittleCompiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lgkern/repos/MyLittleCompiler/build
+CMAKE_BINARY_DIR = /home/grad/hmroesler/MyLittleCompiler/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
-	/usr/bin/cmake -i .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -79,9 +79,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lgkern/repos/MyLittleCompiler/build/CMakeFiles /home/lgkern/repos/MyLittleCompiler/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/grad/hmroesler/MyLittleCompiler/build/CMakeFiles /home/grad/hmroesler/MyLittleCompiler/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lgkern/repos/MyLittleCompiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/grad/hmroesler/MyLittleCompiler/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -313,6 +313,54 @@ src/misc.c.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/misc.c.s
 .PHONY : src/misc.c.s
 
+src/symbtable.o: src/symbtable.c.o
+.PHONY : src/symbtable.o
+
+# target to build an object file
+src/symbtable.c.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symbtable.c.o
+.PHONY : src/symbtable.c.o
+
+src/symbtable.i: src/symbtable.c.i
+.PHONY : src/symbtable.i
+
+# target to preprocess a source file
+src/symbtable.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symbtable.c.i
+.PHONY : src/symbtable.c.i
+
+src/symbtable.s: src/symbtable.c.s
+.PHONY : src/symbtable.s
+
+# target to generate assembly for a file
+src/symbtable.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symbtable.c.s
+.PHONY : src/symbtable.c.s
+
+src/symt.o: src/symt.c.o
+.PHONY : src/symt.o
+
+# target to build an object file
+src/symt.c.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symt.c.o
+.PHONY : src/symt.c.o
+
+src/symt.i: src/symt.c.i
+.PHONY : src/symt.i
+
+# target to preprocess a source file
+src/symt.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symt.c.i
+.PHONY : src/symt.c.i
+
+src/symt.s: src/symt.c.s
+.PHONY : src/symt.s
+
+# target to generate assembly for a file
+src/symt.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/symt.c.s
+.PHONY : src/symt.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -347,6 +395,12 @@ help:
 	@echo "... src/misc.o"
 	@echo "... src/misc.i"
 	@echo "... src/misc.s"
+	@echo "... src/symbtable.o"
+	@echo "... src/symbtable.i"
+	@echo "... src/symbtable.s"
+	@echo "... src/symt.o"
+	@echo "... src/symt.i"
+	@echo "... src/symt.s"
 .PHONY : help
 
 
