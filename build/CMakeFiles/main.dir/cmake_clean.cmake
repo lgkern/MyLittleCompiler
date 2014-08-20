@@ -9,6 +9,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/comp_tree.c.o"
   "CMakeFiles/main.dir/src/symbtable.c.o"
   "CMakeFiles/main.dir/src/symt.c.o"
+  "CMakeFiles/main.dir/src/crc16.c.o"
   "scanner.c"
   "parser.c"
   "parser.h"

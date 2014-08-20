@@ -23,7 +23,6 @@
   Constantes a serem utilizadas para diferenciar os lexemas que estão
   registrados na tabela de símbolos.
 */
-#define IKS_SIMBOLO_INDEFINIDO     0
 #define IKS_SIMBOLO_LITERAL_INT    1
 #define IKS_SIMBOLO_LITERAL_FLOAT  2
 #define IKS_SIMBOLO_LITERAL_CHAR   3

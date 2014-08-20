@@ -2,15 +2,22 @@
 #define _SYMTABLE_
 
 typedef struct{
-//TODO: Hash table structure
+	void**	data;
 }TABLE;
+
+typedef struct {
+	int		token;
+	char*	description
+}TOKEN;
 
 
 //Hash table API
 TABLE*	createHashTable();
 int		destroyHashTable(TABLE* table);
 
-int		addHashElement(int token, char* description, int line);
-int		retrieveHashLine(int token, char* descripton);
+int		addHashElement(TABLE* table, TOKEN* token, int line);
+int		retrieveHashLine(TABLE* table, TOKEN* token);
+
+int		hash(TOKEN token);
 
 #endif

@@ -279,13 +279,36 @@ CMakeFiles/main.dir/src/symt.c.o.provides: CMakeFiles/main.dir/src/symt.c.o.requ
 
 CMakeFiles/main.dir/src/symt.c.o.provides.build: CMakeFiles/main.dir/src/symt.c.o
 
-scanner.c: ../scanner.l
+CMakeFiles/main.dir/src/crc16.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/crc16.c.o: ../src/crc16.c
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/grad/hmroesler/MyLittleCompiler/build/CMakeFiles $(CMAKE_PROGRESS_11)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/main.dir/src/crc16.c.o"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/main.dir/src/crc16.c.o   -c /home/grad/hmroesler/MyLittleCompiler/src/crc16.c
+
+CMakeFiles/main.dir/src/crc16.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/crc16.c.i"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/grad/hmroesler/MyLittleCompiler/src/crc16.c > CMakeFiles/main.dir/src/crc16.c.i
+
+CMakeFiles/main.dir/src/crc16.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/crc16.c.s"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/grad/hmroesler/MyLittleCompiler/src/crc16.c -o CMakeFiles/main.dir/src/crc16.c.s
+
+CMakeFiles/main.dir/src/crc16.c.o.requires:
+.PHONY : CMakeFiles/main.dir/src/crc16.c.o.requires
+
+CMakeFiles/main.dir/src/crc16.c.o.provides: CMakeFiles/main.dir/src/crc16.c.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/crc16.c.o.provides.build
+.PHONY : CMakeFiles/main.dir/src/crc16.c.o.provides
+
+CMakeFiles/main.dir/src/crc16.c.o.provides.build: CMakeFiles/main.dir/src/crc16.c.o
+
+scanner.c: ../scanner.l
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/grad/hmroesler/MyLittleCompiler/build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "[FLEX][scanner] Building scanner with flex 2.5.35"
 	cd /home/grad/hmroesler/MyLittleCompiler && /usr/bin/flex -o/home/grad/hmroesler/MyLittleCompiler/build/scanner.c scanner.l
 
 parser.c: ../parser.y
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/grad/hmroesler/MyLittleCompiler/build/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/grad/hmroesler/MyLittleCompiler/build/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "[BISON][parser] Building parser with bison 2.5"
 	cd /home/grad/hmroesler/MyLittleCompiler && /usr/bin/bison --verbose -d -o /home/grad/hmroesler/MyLittleCompiler/build/parser.c parser.y
 
@@ -304,7 +327,8 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/src/comp_list.c.o" \
 "CMakeFiles/main.dir/src/comp_tree.c.o" \
 "CMakeFiles/main.dir/src/symbtable.c.o" \
-"CMakeFiles/main.dir/src/symt.c.o"
+"CMakeFiles/main.dir/src/symt.c.o" \
+"CMakeFiles/main.dir/src/crc16.c.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
@@ -319,6 +343,7 @@ main: CMakeFiles/main.dir/src/comp_list.c.o
 main: CMakeFiles/main.dir/src/comp_tree.c.o
 main: CMakeFiles/main.dir/src/symbtable.c.o
 main: CMakeFiles/main.dir/src/symt.c.o
+main: CMakeFiles/main.dir/src/crc16.c.o
 main: /usr/lib/x86_64-linux-gnu/libfl.so
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
@@ -339,6 +364,7 @@ CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/comp_list.c.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/comp_tree.c.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/symbtable.c.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/symt.c.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/crc16.c.o.requires
 .PHONY : CMakeFiles/main.dir/requires
 
 CMakeFiles/main.dir/clean:

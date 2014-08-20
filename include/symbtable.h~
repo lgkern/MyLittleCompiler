@@ -40,7 +40,11 @@ typedef struct {
 	struct NODE*	createNode();
 	int		destroyNode(struct NODE* node); 
 
+<<<<<<< HEAD
 	int 	node_addSymbol(struct NODE* node, TOKEN* token);
+=======
+	int 	node_addSymbol(struct NODE* node, TOKEN* token, int line);
+>>>>>>> 7be21f8088484eb51c99066470d3db80c9dc18b1
 	int 	node_retrieveLine(struct NODE* node, TOKEN* token);
 
 //-------------------------------------------------------------------------------------------

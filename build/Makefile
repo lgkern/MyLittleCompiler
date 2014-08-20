@@ -241,6 +241,30 @@ src/comp_tree.c.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/comp_tree.c.s
 .PHONY : src/comp_tree.c.s
 
+src/crc16.o: src/crc16.c.o
+.PHONY : src/crc16.o
+
+# target to build an object file
+src/crc16.c.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/crc16.c.o
+.PHONY : src/crc16.c.o
+
+src/crc16.i: src/crc16.c.i
+.PHONY : src/crc16.i
+
+# target to preprocess a source file
+src/crc16.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/crc16.c.i
+.PHONY : src/crc16.c.i
+
+src/crc16.s: src/crc16.c.s
+.PHONY : src/crc16.s
+
+# target to generate assembly for a file
+src/crc16.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/crc16.c.s
+.PHONY : src/crc16.c.s
+
 src/gv.o: src/gv.c.o
 .PHONY : src/gv.o
 
@@ -386,6 +410,9 @@ help:
 	@echo "... src/comp_tree.o"
 	@echo "... src/comp_tree.i"
 	@echo "... src/comp_tree.s"
+	@echo "... src/crc16.o"
+	@echo "... src/crc16.i"
+	@echo "... src/crc16.s"
 	@echo "... src/gv.o"
 	@echo "... src/gv.i"
 	@echo "... src/gv.s"

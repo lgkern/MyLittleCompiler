@@ -12,6 +12,9 @@ CMakeFiles/main.dir/src/comp_list.c.o
  /home/grad/hmroesler/MyLittleCompiler/src/comp_list.c
 CMakeFiles/main.dir/src/comp_tree.c.o
  /home/grad/hmroesler/MyLittleCompiler/src/comp_tree.c
+CMakeFiles/main.dir/src/crc16.c.o
+ ../include/crc16.h
+ /home/grad/hmroesler/MyLittleCompiler/src/crc16.c
 CMakeFiles/main.dir/src/gv.c.o
  ../include/iks_ast.h
  /home/grad/hmroesler/MyLittleCompiler/src/gv.c

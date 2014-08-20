@@ -66,19 +66,15 @@ int main_avaliacao_etapa_1 (int argc, char **argv)
 
 int main_avaliacao_etapa_2 (int argc, char **argv)
 {
-  USER_INIT;
   int ret = yyparse();
-  USER_FINALIZE;
   return ret;
 }
 
 int main_avaliacao_etapa_3 (int argc, char **argv)
 {
-  USER_INIT;
   gv_init(NULL);
   int ret = yyparse();
   gv_close();
-  USER_FINALIZE;
   return ret;
 }
 
@@ -104,6 +100,7 @@ int main_avaliacao_etapa_7 (int argc, char **argv)
 
 int main (int argc, char **argv)
 {
+  USER_INIT;
 #ifdef AVALIACAO_ETAPA_1
   return main_avaliacao_etapa_1 (argc, argv);
 #elif AVALIACAO_ETAPA_2
@@ -121,4 +118,5 @@ int main (int argc, char **argv)
 #else
   return 0;
 #endif
+  USER_FINALIZE;
 }

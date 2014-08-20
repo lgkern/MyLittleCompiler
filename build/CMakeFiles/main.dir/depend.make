@@ -12,6 +12,9 @@ CMakeFiles/main.dir/src/comp_list.c.o: ../src/comp_list.c
 
 CMakeFiles/main.dir/src/comp_tree.c.o: ../src/comp_tree.c
 
+CMakeFiles/main.dir/src/crc16.c.o: ../include/crc16.h
+CMakeFiles/main.dir/src/crc16.c.o: ../src/crc16.c
+
 CMakeFiles/main.dir/src/gv.c.o: ../include/iks_ast.h
 CMakeFiles/main.dir/src/gv.c.o: ../src/gv.c
 
