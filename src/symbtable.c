@@ -11,7 +11,7 @@
 	{
 		while(myTree->root != NULL)
 		{
-			removeScope;
+			removeScope();
 		}
 	}
 
@@ -37,7 +37,7 @@
 //addScope adds a new level to myTree, while removeScope removes the last added level
 	int 	addScope()
 	{
-		struct NODE* new = createNode;
+		struct NODE* new = createNode();
 		myTree->current->child = new;
 		new->father = myTree->current;
 		myTree->current = new;
@@ -51,7 +51,7 @@
 //Node API ----------------------------------------------------------------------------------
 	struct NODE*	createNode()
 	{
-		struct NODE* myNode = calloc(1, sizeof(NODE));
+		struct NODE* myNode = calloc(1, sizeof(struct NODE));
 		return myNode;
 	}
 	int		destroyNode(struct NODE* node)
