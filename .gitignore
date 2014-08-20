@@ -27,3 +27,6 @@
 
 #Linux lock files
 *~
+
+#CMake Files
+CMakeFiles/
