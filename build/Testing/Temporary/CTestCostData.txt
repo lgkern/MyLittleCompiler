@@ -1,65 +1,33 @@
-e1_avaliacao_01 14 0
-e1_avaliacao_02 26 0
-e1_avaliacao_03 27 0
-e1_avaliacao_04 17 0
-e1_avaliacao_05 27 0
-e1_avaliacao_06 25 0
-e1_avaliacao_07 10 0
-e1_avaliacao_08 28 0
-e1_avaliacao_09 9 0
-e1_avaliacao_10 26 0
-e1_avaliacao_11 9 0
-e1_avaliacao_12 16 0
-e1_avaliacao_13 28 0
-e1_avaliacao_14 28 0
-e1_avaliacao_15 28 0
-e1_avaliacao_16 28 0
-e1_valgrind_01 10 0
-e1_valgrind_02 36 0
-e1_valgrind_03 22 0
-e1_valgrind_04 8 0
-e1_valgrind_05 22 0
-e1_valgrind_06 32 0
-e1_valgrind_07 23 0
-e1_valgrind_08 36 0
-e1_valgrind_09 8 0
-e1_valgrind_10 36 0
-e1_valgrind_11 8 0
-e1_valgrind_12 8 0
-e1_valgrind_13 36 0
-e1_valgrind_14 16 0
-e1_valgrind_15 36 0
-e1_valgrind_16 36 0
+e1_avaliacao_01 15 0.0032244
+e1_avaliacao_02 27 0.00241945
+e1_avaliacao_03 28 0.00216404
+e1_avaliacao_04 18 0.00336723
+e1_avaliacao_05 28 0.0018344
+e1_avaliacao_06 26 0.0022438
+e1_avaliacao_07 11 0.00746337
+e1_avaliacao_08 29 0.00226631
+e1_avaliacao_09 10 0.0064605
+e1_avaliacao_10 27 0.00204629
+e1_avaliacao_11 10 0.0843403
+e1_avaliacao_12 17 0.0029787
+e1_avaliacao_13 29 0.00238734
+e1_avaliacao_14 29 0.0023639
+e1_avaliacao_15 29 0.00214065
+e1_avaliacao_16 29 0.00217248
+e1_valgrind_01 11 0.0740579
+e1_valgrind_02 37 0.013729
+e1_valgrind_03 23 0.0207112
+e1_valgrind_04 9 0.0563868
+e1_valgrind_05 23 0.0229968
+e1_valgrind_06 33 0.0149152
+e1_valgrind_07 24 0.0201101
+e1_valgrind_08 37 0.013628
+e1_valgrind_09 9 0.0585
+e1_valgrind_10 37 0.0130161
+e1_valgrind_11 9 0.180005
+e1_valgrind_12 9 0.0550022
+e1_valgrind_13 37 0.0139411
+e1_valgrind_14 17 0.0300099
+e1_valgrind_15 37 0.013303
+e1_valgrind_16 37 0.0129727
 ---
-e1_avaliacao_01
-e1_avaliacao_02
-e1_avaliacao_03
-e1_avaliacao_04
-e1_avaliacao_05
-e1_avaliacao_06
-e1_avaliacao_07
-e1_avaliacao_08
-e1_avaliacao_09
-e1_avaliacao_10
-e1_avaliacao_11
-e1_avaliacao_12
-e1_avaliacao_13
-e1_avaliacao_14
-e1_avaliacao_15
-e1_avaliacao_16
-e1_valgrind_01
-e1_valgrind_02
-e1_valgrind_03
-e1_valgrind_04
-e1_valgrind_05
-e1_valgrind_06
-e1_valgrind_07
-e1_valgrind_08
-e1_valgrind_09
-e1_valgrind_10
-e1_valgrind_11
-e1_valgrind_12
-e1_valgrind_13
-e1_valgrind_14
-e1_valgrind_15
-e1_valgrind_16

@@ -51,7 +51,7 @@ int numLines = 1;
 "{"						return	'{';
 "}"						return	'}';
 "+"						return	'+';
-"-"/[ \t\n\r]			return	'-';
+"-"/[ \t\n\r]					return	'-';
 "*"						return	'*';
 "/"						return	'/';
 "<"						return	'<';
@@ -75,7 +75,7 @@ int numLines = 1;
 ({ALPHA}|_)({ALPHA}|{DIGIT}|_)*		return	TK_IDENTIFICADOR;								
 
 -?{DIGIT}+				return	TK_LIT_INT;
--?{DIGIT}+"."{DIGIT}+	return	TK_LIT_FLOAT;
+-?{DIGIT}+"."{DIGIT}+			return	TK_LIT_FLOAT;
 "\'"."\'"				return	TK_LIT_CHAR;
 
 \"(\\.|[^\\"])*\"		return	TK_LIT_STRING;
