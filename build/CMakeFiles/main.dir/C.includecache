@@ -6,23 +6,12 @@
 
 #IncludeRegexTransform: 
 
-../include/symbtable.h
-symt.h
-../include/symt.h
+../include/crc16.h
 
 ../include/symt.h
 
-/home/grad/hmroesler/MyLittleCompiler/src/symbtable.c
-symbtable.h
-/home/grad/hmroesler/MyLittleCompiler/src/symbtable.h
-stdlib.h
--
-
-/home/grad/hmroesler/MyLittleCompiler/src/symt.c
+/home/lgkern/repos/MyLittleCompiler/src/symt.c
 symt.h
-<<<<<<< HEAD
-/home/grad/hmroesler/MyLittleCompiler/src/symt.h
-=======
 /home/lgkern/repos/MyLittleCompiler/src/symt.h
 crc16.h
 /home/lgkern/repos/MyLittleCompiler/src/crc16.h
@@ -32,5 +21,4 @@ values.h
 -
 stdlib.h
 -
->>>>>>> 7be21f8088484eb51c99066470d3db80c9dc18b1
 

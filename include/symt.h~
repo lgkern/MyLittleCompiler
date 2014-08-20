@@ -1,14 +1,23 @@
 #ifndef _SYMTABLE_
 #define _SYMTABLE_
 
-typedef struct{
-//TODO: Hash table structure
-}TABLE;
-
 typedef struct {
 	int		token;
 	char*	description
 }TOKEN;
+
+typedef struct {
+	TOKEN*	token;
+	int		line;
+}DIC;
+
+typedef struct{
+	DIC**	data;
+}TABLE;
+
+
+
+
 
 
 //Hash table API

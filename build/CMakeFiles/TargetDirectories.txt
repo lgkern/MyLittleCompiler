@@ -1,1 +1,1 @@
-/home/grad/hmroesler/MyLittleCompiler/build/CMakeFiles/main.dir
+/home/lgkern/repos/MyLittleCompiler/build/CMakeFiles/main.dir

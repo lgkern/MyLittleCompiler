@@ -1,6 +1,6 @@
-#line 2 "/home/grad/hmroesler/MyLittleCompiler/build/scanner.c"
+#line 2 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 
-#line 4 "/home/grad/hmroesler/MyLittleCompiler/build/scanner.c"
+#line 4 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -547,7 +547,7 @@ char *yytext;
 #include <stdlib.h>
 int numLines = 1;
 
-#line 551 "/home/grad/hmroesler/MyLittleCompiler/build/scanner.c"
+#line 551 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 
 #define INITIAL 0
 #define IN_COMMENT 1
@@ -737,7 +737,7 @@ YY_DECL
     
 #line 16 "scanner.l"
 
-#line 741 "/home/grad/hmroesler/MyLittleCompiler/build/scanner.c"
+#line 741 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 
 	if ( !(yy_init) )
 		{
@@ -1105,7 +1105,7 @@ YY_RULE_SETUP
 #line 87 "scanner.l"
 ECHO;
 	YY_BREAK
-#line 1109 "/home/grad/hmroesler/MyLittleCompiler/build/scanner.c"
+#line 1109 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(IN_COMMENT):
 	yyterminate();

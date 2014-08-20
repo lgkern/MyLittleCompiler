@@ -32,6 +32,7 @@ CMakeFiles/main.dir/src/symbtable.c.o: ../include/symbtable.h
 CMakeFiles/main.dir/src/symbtable.c.o: ../include/symt.h
 CMakeFiles/main.dir/src/symbtable.c.o: ../src/symbtable.c
 
+CMakeFiles/main.dir/src/symt.c.o: ../include/crc16.h
 CMakeFiles/main.dir/src/symt.c.o: ../include/symt.h
 CMakeFiles/main.dir/src/symt.c.o: ../src/symt.c
 
