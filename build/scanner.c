@@ -1,6 +1,6 @@
-#line 2 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
+#line 2 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 
-#line 4 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
+#line 4 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -549,7 +549,7 @@ char *yytext;
 
 int numLines = 1;
 
-#line 553 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
+#line 553 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 
 #define INITIAL 0
 #define IN_COMMENT 1
@@ -739,7 +739,7 @@ YY_DECL
     
 #line 18 "scanner.l"
 
-#line 743 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
+#line 743 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 
 	if ( !(yy_init) )
 		{
@@ -1107,7 +1107,7 @@ YY_RULE_SETUP
 #line 90 "scanner.l"
 ECHO;
 	YY_BREAK
-#line 1111 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
+#line 1111 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(IN_COMMENT):
 	yyterminate();

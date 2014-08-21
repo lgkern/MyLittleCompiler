@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_YY_HOME_LEVIATHAN_GIT_MYLITTLECOMPILER_BUILD_PARSER_H_INCLUDED
-# define YY_YY_HOME_LEVIATHAN_GIT_MYLITTLECOMPILER_BUILD_PARSER_H_INCLUDED
+#ifndef YY_YY_HOME_LGKERN_REPOS_MYLITTLECOMPILER_BUILD_PARSER_H_INCLUDED
+# define YY_YY_HOME_LGKERN_REPOS_MYLITTLECOMPILER_BUILD_PARSER_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -86,7 +86,7 @@ union YYSTYPE
    char *text;
    float fval;
 
-#line 90 "/home/leviathan/.git/MyLittleCompiler/build/parser.h" /* yacc.c:1909  */
+#line 90 "/home/lgkern/repos/MyLittleCompiler/build/parser.h" /* yacc.c:1909  */
 };
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
@@ -97,4 +97,4 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_HOME_LEVIATHAN_GIT_MYLITTLECOMPILER_BUILD_PARSER_H_INCLUDED  */
+#endif /* !YY_YY_HOME_LGKERN_REPOS_MYLITTLECOMPILER_BUILD_PARSER_H_INCLUDED  */
