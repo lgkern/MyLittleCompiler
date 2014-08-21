@@ -18,14 +18,15 @@
 		int i;
 		for(i = 0; i < 2*MAXSHORT; i++)
 		{
-			if(&table[i] != NULL)
+			if(&table->data[i] != NULL)
 			{
 				free(table->data[i]->token->description);
 				free(table->data[i]->token);
 				free(table->data[i]);
 			}
-			free(table);
+			
 		}
+		free(table);
 	}
 
 	int	addHashElement(TABLE* table, TOKEN* token, int line)
@@ -37,6 +38,12 @@
 		tDic->line = line;
 
 		position = hash(token);
+		if(table->data[position]!= NULL)
+		{
+			free(table->data[position]->token->description);
+			free(table->data[position]->token);
+			free(table->data[position]);
+		}
 		//printf("\n\nPointer : %p\n\n", tDic);
 		table->data[position] = tDic;		
 	}

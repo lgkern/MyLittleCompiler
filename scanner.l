@@ -70,20 +70,18 @@ int numLines = 1;
 "&&"					return	TK_OC_AND;
 "||"					return	TK_OC_OR;
 
-"false"					return	TK_LIT_FALSE;			
-"true"					return	TK_LIT_TRUE;
+"false"                    {addSymbol(createToken(TK_LIT_FALSE, yytext), numLines);    return    TK_LIT_FALSE;}        
+"true"                    {addSymbol(createToken(TK_LIT_TRUE, yytext), numLines);        return    TK_LIT_TRUE;}
 
 
-({ALPHA}|_)({ALPHA}|{DIGIT}|_)*		return	TK_IDENTIFICADOR;								
+({ALPHA}|_)({ALPHA}|{DIGIT}|_)*    {addSymbol(createToken(TK_IDENTIFICADOR, yytext), numLines); return    TK_IDENTIFICADOR;}                
 
--?{DIGIT}+				{
-							addSymbol(createToken(TK_LIT_INT, yytext), numLines);
-							return	TK_LIT_INT;
-						}//return	TK_LIT_INT;
--?{DIGIT}+"."{DIGIT}+	return	TK_LIT_FLOAT;
-"\'"."\'"				return	TK_LIT_CHAR;
+-?{DIGIT}+                {addSymbol(createToken(TK_LIT_INT, yytext), numLines);        return    TK_LIT_INT;}
+-?{DIGIT}+"."{DIGIT}+    {addSymbol(createToken(TK_LIT_FLOAT, yytext), numLines);     return    TK_LIT_FLOAT;}
+"\'"."\'"                {addSymbol(createToken(TK_LIT_CHAR, yytext), numLines);     return    TK_LIT_CHAR;}
 
-\"(\\.|[^\\"])*\"		return	TK_LIT_STRING;
+\"(\\.|[^\\"])*\"        {addSymbol(createToken(TK_LIT_STRING, yytext), numLines); return    TK_LIT_STRING;}
+
 					
 \n						{++numLines;}
 [ \t]					{ }					

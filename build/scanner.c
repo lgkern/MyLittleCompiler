@@ -1,6 +1,6 @@
-#line 2 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
+#line 2 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
 
-#line 4 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
+#line 4 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -549,7 +549,7 @@ char *yytext;
 
 int numLines = 1;
 
-#line 553 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
+#line 553 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
 
 #define INITIAL 0
 #define IN_COMMENT 1
@@ -739,7 +739,7 @@ YY_DECL
     
 #line 18 "scanner.l"
 
-#line 743 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
+#line 743 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
 
 	if ( !(yy_init) )
 		{
@@ -1053,64 +1053,61 @@ return	TK_OC_OR;
 case 45:
 YY_RULE_SETUP
 #line 73 "scanner.l"
-return	TK_LIT_FALSE;			
+{addSymbol(createToken(TK_LIT_FALSE, yytext), numLines);    return    TK_LIT_FALSE;}        
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
 #line 74 "scanner.l"
-return	TK_LIT_TRUE;
+{addSymbol(createToken(TK_LIT_TRUE, yytext), numLines);        return    TK_LIT_TRUE;}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
 #line 77 "scanner.l"
-return	TK_IDENTIFICADOR;								
+{addSymbol(createToken(TK_IDENTIFICADOR, yytext), numLines); return    TK_IDENTIFICADOR;}                
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
 #line 79 "scanner.l"
-{
-							addSymbol(createToken(TK_LIT_INT, yytext), numLines);
-							return	TK_LIT_INT;
-						}//return	TK_LIT_INT;
+{addSymbol(createToken(TK_LIT_INT, yytext), numLines);        return    TK_LIT_INT;}
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 83 "scanner.l"
-return	TK_LIT_FLOAT;
+#line 80 "scanner.l"
+{addSymbol(createToken(TK_LIT_FLOAT, yytext), numLines);     return    TK_LIT_FLOAT;}
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 84 "scanner.l"
-return	TK_LIT_CHAR;
+#line 81 "scanner.l"
+{addSymbol(createToken(TK_LIT_CHAR, yytext), numLines);     return    TK_LIT_CHAR;}
 	YY_BREAK
 case 51:
 /* rule 51 can match eol */
 YY_RULE_SETUP
-#line 86 "scanner.l"
-return	TK_LIT_STRING;
+#line 83 "scanner.l"
+{addSymbol(createToken(TK_LIT_STRING, yytext), numLines); return    TK_LIT_STRING;}
 	YY_BREAK
 case 52:
 /* rule 52 can match eol */
 YY_RULE_SETUP
-#line 88 "scanner.l"
+#line 86 "scanner.l"
 {++numLines;}
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 89 "scanner.l"
+#line 87 "scanner.l"
 { }					
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 90 "scanner.l"
+#line 88 "scanner.l"
 {return TOKEN_ERRO;}
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 92 "scanner.l"
+#line 90 "scanner.l"
 ECHO;
 	YY_BREAK
-#line 1114 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
+#line 1111 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(IN_COMMENT):
 	yyterminate();
@@ -2109,7 +2106,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 92 "scanner.l"
+#line 90 "scanner.l"
 
 
 

@@ -23,4 +23,5 @@ void main_init (int argc, char **argv)
 void main_finalize (void)
 {
   //implemente esta função com rotinas de inicialização, se necessário
+	destroyTable();
 }
