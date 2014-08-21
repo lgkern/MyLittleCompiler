@@ -1,6 +1,6 @@
-#line 2 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
+#line 2 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 
-#line 4 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
+#line 4 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -549,7 +549,7 @@ char *yytext;
 
 int numLines = 1;
 
-#line 553 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
+#line 553 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 
 #define INITIAL 0
 #define IN_COMMENT 1
@@ -739,7 +739,7 @@ YY_DECL
     
 #line 18 "scanner.l"
 
-#line 743 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
+#line 743 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 
 	if ( !(yy_init) )
 		{
@@ -1069,52 +1069,48 @@ case 48:
 YY_RULE_SETUP
 #line 79 "scanner.l"
 {
-TOKEN* myToken = calloc(1,sizeof(TOKEN*));
-myToken->token = TK_LIT_INT;
-strcpy(myToken->description,yytext);
-addSymbol(myToken, numLines);
-return	TK_LIT_INT;
-
-					}//return	TK_LIT_INT;
+							addSymbol(createToken(TK_LIT_INT, yytext), numLines);
+							return	TK_LIT_INT;
+						}//return	TK_LIT_INT;
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 87 "scanner.l"
+#line 83 "scanner.l"
 return	TK_LIT_FLOAT;
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 88 "scanner.l"
+#line 84 "scanner.l"
 return	TK_LIT_CHAR;
 	YY_BREAK
 case 51:
 /* rule 51 can match eol */
 YY_RULE_SETUP
-#line 90 "scanner.l"
+#line 86 "scanner.l"
 return	TK_LIT_STRING;
 	YY_BREAK
 case 52:
 /* rule 52 can match eol */
 YY_RULE_SETUP
-#line 92 "scanner.l"
+#line 88 "scanner.l"
 {++numLines;}
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 93 "scanner.l"
+#line 89 "scanner.l"
 { }					
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 94 "scanner.l"
+#line 90 "scanner.l"
 {return TOKEN_ERRO;}
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 96 "scanner.l"
+#line 92 "scanner.l"
 ECHO;
 	YY_BREAK
-#line 1118 "/home/leviathan/.git/MyLittleCompiler/build/scanner.c"
+#line 1114 "/home/lgkern/repos/MyLittleCompiler/build/scanner.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(IN_COMMENT):
 	yyterminate();
@@ -2113,7 +2109,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 96 "scanner.l"
+#line 92 "scanner.l"
 
 
 

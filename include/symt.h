@@ -29,4 +29,6 @@ int		retrieveHashLine(TABLE* table, TOKEN* token);
 
 int		hash(TOKEN* token);
 
+TOKEN* createToken(int token, char* description);
+
 #endif

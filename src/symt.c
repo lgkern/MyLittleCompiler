@@ -3,12 +3,14 @@
 #include <string.h>
 #include <values.h>
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
 //Hash table API
 	TABLE*	createHashTable()
 	{
 		TABLE* myTable = calloc(1,sizeof(TABLE));
-		myTable->data = calloc(2*MAXSHORT,sizeof(DIC*));
+		myTable->data = calloc(2*32769,sizeof(DIC*));
 	}
 	int	destroyHashTable(TABLE* table)
 	{
@@ -34,7 +36,7 @@
 		tDic->line = line;
 
 		position = hash(token);
-
+		//printf("\n\nPosition: %d\n\n", sizeof(DIC));
 		table->data[position] = tDic;
 		
 	}
@@ -58,5 +60,13 @@
 		length += 4;
 
 		return crc16_ccitt((const void*)token,length);
+	}
+
+	TOKEN* createToken(int token, char* description)
+	{
+		TOKEN* myToken;
+		myToken = calloc(1,sizeof(TOKEN));
+		myToken->token = token;
+		myToken->description = strdup(description);
 	}
 
