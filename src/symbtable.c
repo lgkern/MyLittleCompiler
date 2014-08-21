@@ -56,6 +56,9 @@
 	struct NODE*	createNode()
 	{
 		struct NODE* myNode = calloc(1, sizeof(struct NODE));
+		myNode->data = createHashTable();
+		myNode->father = NULL;
+		myNode->child = NULL;
 		return myNode;
 	}
 	int		destroyNode(struct NODE* node)

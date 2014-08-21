@@ -16,6 +16,7 @@
 		{
 			removeScope();
 		}
+		free(myTree);
 	}
 
 	int 	addSymbol(TOKEN* token, int line)
@@ -55,6 +56,7 @@
 	struct NODE*	createNode()
 	{
 		struct NODE* myNode = calloc(1, sizeof(struct NODE));
+		myNode->data = createHashTable();
 		return myNode;
 	}
 	int		destroyNode(struct NODE* node)

@@ -11,6 +11,7 @@
 	{
 		TABLE* myTable = calloc(1,sizeof(TABLE));
 		myTable->data = calloc(2*32769,sizeof(DIC*));
+		//printf("\nAlocado %lu memoria\n",2*32769*sizeof(DIC*));
 	}
 	int	destroyHashTable(TABLE* table)
 	{
@@ -36,9 +37,8 @@
 		tDic->line = line;
 
 		position = hash(token);
-		//printf("\n\nPosition: %d\n\n", sizeof(DIC));
-		table->data[position] = tDic;
-		
+		//printf("\n\nPointer : %p\n\n", tDic);
+		table->data[position] = tDic;		
 	}
 	int	retrieveHashLine(TABLE* table, TOKEN* token)
 	{

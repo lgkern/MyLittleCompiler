@@ -17,9 +17,6 @@ typedef struct{
 
 
 
-
-
-
 //Hash table API
 TABLE*	createHashTable();
 int		destroyHashTable(TABLE* table);
