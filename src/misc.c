@@ -11,7 +11,7 @@ int getLineNumber (void)
 
 void yyerror (char const *mensagem)
 {
-  fprintf (stderr, "%s\n", mensagem); //altere para que apareça a linha
+  fprintf (stderr, "Erro na linha %d. Mensagem: %s\n", numLines, mensagem); //altere para que apareça a linha
 }
 
 void main_init (int argc, char **argv)

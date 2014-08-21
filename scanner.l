@@ -1,5 +1,5 @@
 /*
-  Coloque aqui o identificador do grupo e dos seus membros
+  Grupo MLC - Lucas e Helena
 */
 ALPHA	[A-Za-z]
 DIGIT	[0-9]
