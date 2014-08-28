@@ -102,7 +102,7 @@ Attribution:	ID '=' Expression
 
 Expression:	Literal
 		| Expression OP Expression
-		| UnaryOP Expression
+		/*| UnaryOP Expression*/
 		| '(' Expression ')'
 		| Call
 
@@ -129,9 +129,9 @@ OP: 		'+'
 		| "&&"
 		| "||"
 
-UnaryOP: 	'-'
+/*UnaryOP: 	'-'
 		|'!'
-
+*/
 Return: 	"RETURN" Expression
 
 FlowControl:	If
