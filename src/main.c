@@ -1,5 +1,6 @@
 #include "main.h"
 
+extern FILE *yyin;
 extern char *yytext;
 extern int getLineNumber();
 #define print_nome(TOKEN) printf("%d " #TOKEN " [%s]\n", getLineNumber(), yytext);
@@ -100,6 +101,14 @@ int main_avaliacao_etapa_7 (int argc, char **argv)
 
 int main (int argc, char **argv)
 {
+  //if some argument is provided, treat it as input
+  if (argc != 1){
+    yyin = fopen(argv[1], "r");
+    //if fopen fails, yyin continues to be stdin
+    if (yyin == NULL){
+      yyin = stdin;
+    }
+  }
   USER_INIT;
 #ifdef AVALIACAO_ETAPA_1
   return main_avaliacao_etapa_1 (argc, argv);

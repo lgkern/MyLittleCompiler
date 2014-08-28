@@ -1,3 +1,4 @@
+//comando de saída, expressões aritméticas
 float variavel_flutuante;
 int variavel_inteira;
 char variavel_caractere;

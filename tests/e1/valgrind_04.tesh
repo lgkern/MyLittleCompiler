@@ -1,13 +1,6 @@
+#! ./tesh
+
 ! timeout 5
 ! output ignore
-$ ./tests/scripts/valgrindtest ./main
-< "lucas"
-< "int"
-< "<="
-< "-123"
-< "1.23"
-< ".23"
-< ","
-< "="
-< "
 
+$ ./tests/scripts/valgrindtest ./main ./tests/e1/input/nivel4.tokens

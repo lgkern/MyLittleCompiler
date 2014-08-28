@@ -1,9 +1,8 @@
-float variavel_flutuante;
-int variavel_inteira;
-char variavel_caractere;
-int minha_funcao (float k, int l) 
+//função no meio de declarações de variáveis globais
+int v1;
+int f1 (float k, int l) 
 {
 
 }
-int variavel_k[ 100 ];
-char variavel_x;
+int v2[ 100 ];
+char v3;

@@ -1,12 +1,4 @@
-//
-//
-//
-//
-//
-//
-//
-//
-//
+//expressões lógicas, relacionais com while-do
 int a;
 float b;
 char v[15] ;

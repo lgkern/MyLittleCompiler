@@ -1,5 +1,10 @@
-float variavel_flutuante;
-int variavel_inteira;
-char variavel_caractere;
-int minha_funcao () float var_local; {}
+//função com comando simples de declaração de variável
+int f1 () 
+{
+  float v1;
+  int v2;
+  char v3;
+  bool v4;
+  string v5;
+}
 

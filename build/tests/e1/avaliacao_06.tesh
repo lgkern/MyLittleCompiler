@@ -1,13 +1,24 @@
-! timeout 5
-$ ./main
-< int // flutuando_no_comentario
-< flutuando /*
-< 	verdadeiro
-<   /*
-< 		teste
-< */
-< int
-> 1 TK_PR_INT [int]
-> 2 TK_IDENTIFICADOR [flutuando]
-> 7 TK_PR_INT [int]
+#! ./tesh
 
+! timeout 5
+
+$ ./main ./tests/e1/input/nivel6.tokens
+> 1 ,
+> 1 ;
+> 1 :
+> 1 (
+> 1 )
+> 1 [
+> 1 ]
+> 1 {
+> 1 }
+> 1 +
+> 1 -
+> 1 *
+> 1 /
+> 1 <
+> 1 >
+> 1 =
+> 1 !
+> 1 &
+> 1 $

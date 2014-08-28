@@ -1,9 +1,6 @@
+#! ./tesh
+
 ! timeout 5
 ! output ignore
-$ ./tests/scripts/valgrindtest ./main
-< _dsdw
-< dsdw
-< _123
-< 123
-< __abc
 
+$ ./tests/scripts/valgrindtest ./main ./tests/e1/input/nivel3.tokens

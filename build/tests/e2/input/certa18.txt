@@ -1,12 +1,4 @@
-//
-//
-//
-//
-//
-//
-//
-//
-//
+//com comentário no meio
 int a;
 float b;
 char v[15] ;

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 show_help(){
 	cat << EOF
 Usage: $0 [-m MAIN] [-r RETVAL] [-t TIMEOUT] [-i] TEST_INPUT TEST_CORRECT_OUTPUT [TESH_FILE]
@@ -62,24 +62,22 @@ while getopts ":m:r:t:idh" opt; do
 	esac
 done
 shift "$((OPTIND-1))"
-if [[ $# < 2 ]] || [[ $# > 3 ]]; then
+if [ $# -lt 2 -o $# -gt 3 ]; then
 	show_help
 	exit 1
 fi
 testinput=$1
 testoutput=$2
-if [[ $# -ge 3 ]]; then
+if [ $# -ge 3 ]; then
 	teshfile=$3
 fi
-
-
 
 #timeout
 echo "! timeout $timeout" > $teshfile
 
-if [[ 1 -eq $ignoreoutput ]]; then
+if [ 1 -eq $ignoreoutput ]; then
 	echo "! output ignore" >> $teshfile
-elif [[ 1 -eq $displayoutput ]]; then
+elif [ 1 -eq $displayoutput ]; then
 	echo "! output display" >> $teshfile
 fi
 

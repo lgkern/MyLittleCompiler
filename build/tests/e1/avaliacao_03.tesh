@@ -1,13 +1,7 @@
+#! ./tesh
+
 ! timeout 5
-$ ./main
-< _dsdw
-< dsdw
-< _123
-< 123
-< __abc
-> 1 TK_IDENTIFICADOR [_dsdw]
-> 2 TK_IDENTIFICADOR [dsdw]
-> 3 TK_IDENTIFICADOR [_123]
-> 4 TK_LIT_INT [123]
-> 5 TK_IDENTIFICADOR [__abc]
+
+$ ./main ./tests/e1/input/nivel3.tokens
+> 16 TK_PR_INT [int]
 

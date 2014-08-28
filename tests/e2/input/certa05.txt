@@ -1,9 +1,11 @@
-float variavel_flutuante;
-int variavel_inteira;
-char variavel_caractere;
-int minha_funcao () 
+//função com comandos de atribuição simples
+float b;
+string c;
+int f1 ()
 {
- a=5;
- b=0;
- c=0;
+ int a;
+
+ a = 5;
+ b = 0;
+ c= a + b * 0;
 }

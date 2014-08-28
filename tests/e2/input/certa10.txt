@@ -1,6 +1,4 @@
-float variavel_flutuante;
-int variavel_inteira;
-char variavel_caractere;
+//comando de fluxo de controle if com saída com declaração de variável local
 int minha_funcao (float k, int l) 
 {
         a=5;
@@ -9,5 +7,5 @@ int minha_funcao (float k, int l)
         then output x
         else output "nada";
         if (a==0)
-        then { output x; };
+        then { float x; output x; };
 }

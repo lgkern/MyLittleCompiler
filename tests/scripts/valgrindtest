@@ -1,9 +1,9 @@
 #!/bin/bash
-if [[ $# -ne 1 ]]; then
-	echo "Usage: $0 BINARY"
+if [[ $# -lt 1 ]]; then
+	echo "Usage: $0 BINARY PARAMETERS"
 	exit 2
 fi
-output=$(valgrind $1 2>&1 1>/dev/null)
+output=$(valgrind $* 2>&1 1>/dev/null)
 invalidwrites=$(grep "Invalid write"<<< "$output" | wc -l)
 invalidreads=$(grep "Invalid write"<<< "$output" | wc -l)
 conditional=$(grep "Conditional"<<< "$output" | wc -l)

@@ -1,3 +1,4 @@
+//com o separador de comandos ;
 int a;
 float b;
 char v [15] ;

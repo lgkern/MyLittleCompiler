@@ -1,3 +1,1 @@
-float variavel_flutuante
-int variavel_inteira
-char variavel_caractere
+float v1

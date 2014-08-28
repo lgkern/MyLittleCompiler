@@ -4,6 +4,7 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
+ADD_TEST(e1_avaliacao_00 "perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_00.tesh")
 ADD_TEST(e1_avaliacao_01 "perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_01.tesh")
 ADD_TEST(e1_avaliacao_02 "perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_02.tesh")
 ADD_TEST(e1_avaliacao_03 "perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_03.tesh")
@@ -20,6 +21,7 @@ ADD_TEST(e1_avaliacao_13 "perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/
 ADD_TEST(e1_avaliacao_14 "perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_14.tesh")
 ADD_TEST(e1_avaliacao_15 "perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_15.tesh")
 ADD_TEST(e1_avaliacao_16 "perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//avaliacao_16.tesh")
+ADD_TEST(e1_valgrind_00 "perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_00.tesh")
 ADD_TEST(e1_valgrind_01 "perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_01.tesh")
 ADD_TEST(e1_valgrind_02 "perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_02.tesh")
 ADD_TEST(e1_valgrind_03 "perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e1//valgrind_03.tesh")

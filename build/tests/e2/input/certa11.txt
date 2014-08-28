@@ -1,3 +1,4 @@
+//comando de laço while-do
 float variavel_flutuante;
 int variavel_inteira;
 char variavel_caractere;

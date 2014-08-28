@@ -1,12 +1,4 @@
-//
-//
-//
-//
-//
-//
-//
-//
-//
+//comando while-do com chamada de função
 int a;
 float b;
 char v[15] ;
