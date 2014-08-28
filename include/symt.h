@@ -3,7 +3,7 @@
 
 typedef struct {
 	int		token;
-	char*	description
+  char*	description;
 }TOKEN;
 
 typedef struct {
