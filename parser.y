@@ -45,16 +45,17 @@
 %%
 /* Regras (e ações) da gramática */
 
-Program: 	/*empty*/
-		|DeclStart Function 
-		|DeclStart Global 
+Program: 	stmts
 
-DeclStart:	Program Type "ID"
+stmts:		|stmts stmt
+
+stmt:		Global SC
+		|Function
 
 SC:	 	';'
 		/*| "Error : Expected ;" */
 
-Global:	 	Vector SC
+Global:	 	Type "ID" Vector 
 
 Type:		"INT"
 		|"FLOAT"
@@ -67,7 +68,7 @@ Vector: 	/*empty*/
 
 Function:	Header Body Program
 		
-Header:		List
+Header:		Type "ID" List
 
 List:		'(' ParaList ')'
 
@@ -106,9 +107,11 @@ Expression:	Literal
 		| Call
 
 Literal:	"ID" Vector
-		| Boolean
-		| "litInteger"
-		| "litFloat"
+		|Boolean
+		|"litInteger"
+		|"litFloat"
+		|"litChar"
+		|"litString"
 
 Boolean:	"false"
 		|"true"
@@ -120,6 +123,7 @@ OP: 		'+'
 		| '>'
 		| '<'
 		| "=="
+		| "!="
 		| ">="
 		| "<="
 		| "&&"
