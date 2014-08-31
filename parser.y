@@ -39,15 +39,22 @@
 %token TK_LIT_STRING	"litString"
 %token TK_IDENTIFICADOR	"ID"
 %token TOKEN_ERRO	"ERRO"
-
-
+%left '+'
+%left '-'
+%left '*'
+%left '/'
+%left '>'
+%left '<'
+%left "<=" ">=" "==" "!=" "&&" "||"
+%right "INT" "FLOAT" "BOOL" "CHAR" "STRING"
 
 %%
 /* Regras (e ações) da gramática */
 
-Program: 	stmts
+Program: 	|stmts
 
-stmts:		|stmts stmt
+stmts:		stmt
+			|stmts stmt
 
 stmt:		Global SC
 		|Function
@@ -66,7 +73,7 @@ Type:		"INT"
 Vector: 	/*empty*/
 		|'[' "litInt" ']'
 
-Function:	Header Body Program
+Function:	Header Body
 		
 Header:		Type "ID" List
 
@@ -101,7 +108,18 @@ ID:		"ID" Vector
 Attribution:	ID '=' Expression
 
 Expression:	Literal
-		| Expression OP Expression
+		| Expression '+' Expression
+		| Expression '-' Expression
+		| Expression '*' Expression
+		| Expression '/' Expression
+		| Expression '>' Expression
+		| Expression '<' Expression
+		| Expression "==" Expression
+		| Expression "!=" Expression
+		| Expression ">=" Expression
+		| Expression "<=" Expression
+		| Expression "&&" Expression
+		| Expression "||" Expression
 		/*| UnaryOP Expression*/
 		| '(' Expression ')'
 		| Call
@@ -116,18 +134,7 @@ Literal:	"ID" Vector
 Boolean:	"false"
 		|"true"
 
-OP: 		'+'
-		| '-'
-		| '*'
-		| '/'
-		| '>'
-		| '<'
-		| "=="
-		| "!="
-		| ">="
-		| "<="
-		| "&&"
-		| "||"
+
 
 /*UnaryOP: 	'-'
 		|'!'
