@@ -1,4 +1,5 @@
 #include "misc.h"
+#include "main.h"
 #include <stdlib.h>
 
 extern int numLines;
@@ -11,7 +12,7 @@ int getLineNumber (void)
 
 void yyerror (char const *mensagem)
 {
-  fprintf (stderr, "Erro na linha %d. Mensagem: %s\n", numLines, mensagem); //altere para que apareça a linha
+  printf ("Erro na linha %d. Mensagem: %s\n", numLines, mensagem); //altere para que apareça a linha
 }
 
 void main_init (int argc, char **argv)

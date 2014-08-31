@@ -29,7 +29,7 @@
 		free(table);
 	}
 
-	int	addHashElement(TABLE* table, TOKEN* token, int line)
+	DIC*	addHashElement(TABLE* table, TOKEN* token, int line)
 	{
 		//TODO testar se não teve conflito
 		int position = 0;
@@ -46,6 +46,7 @@
 		}
 		//printf("\n\nPointer : %p\n\n", tDic);
 		table->data[position] = tDic;		
+		return tDic;
 	}
 	int	retrieveHashLine(TABLE* table, TOKEN* token)
 	{

@@ -9,6 +9,7 @@ INTEGER {-?{DIGIT}+}
 #include "parser.h" //arquivo automaticamente gerado pelo bison
 #include <stdlib.h>
 #include "symbtable.h"
+#include "main.h"
 
 int numLines = 1;
 %}			
@@ -70,17 +71,17 @@ int numLines = 1;
 "&&"					return	TK_OC_AND;
 "||"					return	TK_OC_OR;
 
-"false"                    {addSymbol(createToken(TK_LIT_FALSE, yytext), numLines);    return    TK_LIT_FALSE;}        
-"true"                    {addSymbol(createToken(TK_LIT_TRUE, yytext), numLines);        return    TK_LIT_TRUE;}
+"false"                    {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_LITERAL_BOOL, yytext), numLines);    return    TK_LIT_FALSE;}        
+"true"                    {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_LITERAL_BOOL, yytext), numLines);        return    TK_LIT_TRUE;}
 
 
-({ALPHA}|_)({ALPHA}|{DIGIT}|_)*    {addSymbol(createToken(TK_IDENTIFICADOR, yytext), numLines); return    TK_IDENTIFICADOR;}                
+({ALPHA}|_)({ALPHA}|{DIGIT}|_)*    {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_IDENTIFICADOR, yytext), numLines); return    TK_IDENTIFICADOR;}                
 
--?{DIGIT}+                {addSymbol(createToken(TK_LIT_INT, yytext), numLines);        return    TK_LIT_INT;}
--?{DIGIT}+"."{DIGIT}+    {addSymbol(createToken(TK_LIT_FLOAT, yytext), numLines);     return    TK_LIT_FLOAT;}
-"\'"."\'"                {addSymbol(createToken(TK_LIT_CHAR, yytext), numLines);     return    TK_LIT_CHAR;}
+-?{DIGIT}+                {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_LITERAL_INT, yytext), numLines);        return    TK_LIT_INT;}
+-?{DIGIT}+"."{DIGIT}+    {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_LITERAL_FLOAT, yytext), numLines);     return    TK_LIT_FLOAT;}
+"\'"."\'"                {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_LITERAL_CHAR, yytext), numLines);     return    TK_LIT_CHAR;}
 
-\"(\\.|[^\\"])*\"        {addSymbol(createToken(TK_LIT_STRING, yytext), numLines); return    TK_LIT_STRING;}
+\"(\\.|[^\\"])*\"        {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_LITERAL_STRING, yytext), numLines); return    TK_LIT_STRING;}
 
 					
 \n						{++numLines;}

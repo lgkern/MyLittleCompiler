@@ -6,9 +6,7 @@
 %}
 
 %union {
-   int ival;
-   char *text;
-   float fval;
+   void* symbol;
 }
 
 /* Declaração dos tokens da linguagem */
@@ -48,6 +46,8 @@
 %left "<=" ">=" "==" "!=" "&&" "||"
 %right "INT" "FLOAT" "BOOL" "CHAR" "STRING"
 
+%error-verbose
+
 %%
 /* Regras (e ações) da gramática */
 
@@ -58,9 +58,17 @@ stmts:		stmt
 
 stmt:		Global SC
 		|Function
+		|error SC {yyerror("Invalid statement");
+					yyclearin;}
 
 SC:	 	';'
-		/*| "Error : Expected ;" */
+		|error {yyerror("Missing semicolon");
+				yyclearin;}
+
+/*{yyerrok;
+		 printf("Missing semicolon at line %d",getLineNumber());
+		 yyclearin;}
+		|*/
 
 Global:	 	Type "ID" Vector 
 

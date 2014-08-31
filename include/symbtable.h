@@ -24,7 +24,7 @@ typedef struct {
 	int		createTable();
 	int		destroyTable();
 
-	int 	addSymbol(TOKEN* token, int line);
+	void* 	addSymbol(TOKEN* token, int line);
 	int		retrieveLine(TOKEN* token);
 
 
@@ -36,7 +36,7 @@ typedef struct {
 	struct NODE*	createNode();
 	int		destroyNode(struct NODE* node); 
 
-	int 	node_addSymbol(struct NODE* node, TOKEN* token, int line);
+	void* 	node_addSymbol(struct NODE* node, TOKEN* token, int line);
 	int 	node_retrieveLine(struct NODE* node, TOKEN* token);
 
 //-------------------------------------------------------------------------------------------

@@ -19,9 +19,9 @@
 		free(myTree);
 	}
 
-	int 	addSymbol(TOKEN* token, int line)
+	void* 	addSymbol(TOKEN* token, int line)
 	{
-		node_addSymbol(myTree->current, token, line);	
+		return node_addSymbol(myTree->current, token, line);	
 	}
 	int		retrieveLine(TOKEN* token)
 	{
@@ -67,9 +67,9 @@
 		free(node);
 	}
 
-	int 	node_addSymbol(struct NODE* node, TOKEN* token, int line)
+	void* 	node_addSymbol(struct NODE* node, TOKEN* token, int line)
 	{
-		addHashElement(node->data, token, line);
+		return (void*)addHashElement(node->data, token, line);
 	}
 	int 	node_retrieveLine(struct NODE* node, TOKEN* token)
 	{
