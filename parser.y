@@ -54,18 +54,14 @@
 Program: 	|stmts
 
 stmts:		stmt
-			|stmts stmt
+		|stmts stmt
 
 stmt:		Global SC
 		|Function
-		//|error SC {yyerror("Invalid statement3");
-		//			yyclearin;}
+//		|error SC {yyerrok; yyclearin;}//yyclearin; yyerrok;}
 
 SC:	 	';'
-	//	|"ERRO" {yyerror("Missing semicolon1");
-	//			yyclearin;}
-	//	|error {yyerror("Missing semicolon2");
-	//			yyclearin;}
+//		|error {}//yyclearin; yyerrok;}
 
 /*{yyerrok;
 		 printf("Missing semicolon at line %d",getLineNumber());
