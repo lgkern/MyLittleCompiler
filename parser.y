@@ -98,17 +98,16 @@ Parameter: 	Local
 Body:	 	'{' Block '}'
 
 Block:		/*empty*/
-		|Block Command
+		|Command
+		|Command SC Block	
 
-		
-
-Command:	Local SC 
-		| Attribution SC
+Command:	Local  
+		| Attribution 
 		| FlowControl
-		| Input SC
-		| Output SC
-		| Return SC 
-		| Call SC 
+		| Input 
+		| Output 
+		| Return  
+		| Call  
 		| Body
 		| SC
 
