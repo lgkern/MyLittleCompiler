@@ -1,3 +1,8 @@
+Terminals unused in grammar
+
+   "ERRO"
+
+
 Grammar
 
     0 $accept: Program $end
@@ -10,151 +15,148 @@ Grammar
 
     5 stmt: Global SC
     6     | Function
-    7     | error SC
 
-    8 SC: ';'
-    9   | "ERRO"
-   10   | error
+    7 SC: ';'
 
-   11 Global: Type ID
+    8 Global: Type ID
 
-   12 ID: "ID" Vector
+    9 ID: "ID" Vector
 
-   13 Type: "INT"
-   14     | "FLOAT"
-   15     | "BOOL"
-   16     | "CHAR"
-   17     | "STRING"
+   10 Type: "INT"
+   11     | "FLOAT"
+   12     | "BOOL"
+   13     | "CHAR"
+   14     | "STRING"
 
-   18 Vector: %empty
-   19       | '[' Expression ']'
+   15 Vector: %empty
+   16       | '[' Expression ']'
 
-   20 Function: Header Body
+   17 Function: Header Body
 
-   21 Header: Type "ID" List
+   18 Header: Type "ID" List
 
-   22 List: '(' ParaList ')'
-   23     | '(' ')'
+   19 List: '(' ParaList ')'
+   20     | '(' ')'
 
-   24 ParaList: Parameter ',' ParaList
-   25         | Parameter
+   21 ParaList: Parameter ',' ParaList
+   22         | Parameter
 
-   26 Parameter: Local
+   23 Parameter: Local
 
-   27 Body: '{' Block '}'
+   24 Body: '{' Block '}'
 
-   28 Block: %empty
-   29      | Command
-   30      | Command SC Block
+   25 Block: %empty
+   26      | Command
+   27      | Command SC Block
 
-   31 Command: Local
-   32        | Attribution
-   33        | FlowControl
-   34        | Input
-   35        | Output
-   36        | Return
-   37        | Call
-   38        | Body
-   39        | SC
+   28 Command: Local
+   29        | Attribution
+   30        | FlowControl
+   31        | Input
+   32        | Output
+   33        | Return
+   34        | Call
+   35        | Body
+   36        | SC
 
-   40 Local: Type "ID"
+   37 Local: Type "ID"
 
-   41 Attribution: ID '=' Expression
+   38 Attribution: ID '=' Expression
 
-   42 Expression: Literal
-   43           | Expression '+' Expression
-   44           | Expression '-' Expression
-   45           | Expression '*' Expression
-   46           | Expression '/' Expression
-   47           | Expression '>' Expression
-   48           | Expression '<' Expression
-   49           | Expression "==" Expression
-   50           | Expression "!=" Expression
-   51           | Expression ">=" Expression
-   52           | Expression "<=" Expression
-   53           | Expression "&&" Expression
-   54           | Expression "||" Expression
-   55           | '(' Expression ')'
-   56           | Call
+   39 Expression: Literal
+   40           | Expression '+' Expression
+   41           | Expression '-' Expression
+   42           | Expression '*' Expression
+   43           | Expression '/' Expression
+   44           | Expression '>' Expression
+   45           | Expression '<' Expression
+   46           | Expression "==" Expression
+   47           | Expression "!=" Expression
+   48           | Expression ">=" Expression
+   49           | Expression "<=" Expression
+   50           | Expression "&&" Expression
+   51           | Expression "||" Expression
+   52           | '(' Expression ')'
+   53           | Call
 
-   57 Literal: ID
-   58        | Boolean
-   59        | "litInt"
-   60        | "litFloat"
-   61        | "litChar"
-   62        | "litString"
+   54 Literal: ID
+   55        | Boolean
+   56        | "litInt"
+   57        | "litFloat"
+   58        | "litChar"
+   59        | "litString"
 
-   63 Boolean: "false"
-   64        | "true"
+   60 Boolean: "false"
+   61        | "true"
 
-   65 Return: "RETURN" Expression
+   62 Return: "RETURN" Expression
 
-   66 FlowControl: If
-   67            | While
+   63 FlowControl: If
+   64            | While
 
-   68 If: "IF" '(' Expression ')' "THEN" Command
-   69   | "IF" '(' Expression ')' "THEN" Command "ELSE" Command
+   65 If: "IF" '(' Expression ')' "THEN" Command
+   66   | "IF" '(' Expression ')' "THEN" Command "ELSE" Command
 
-   70 While: "WHILE" '(' Expression ')' "DO" Command
-   71      | "DO" Command "WHILE" '(' Expression ')' SC
+   67 While: "WHILE" '(' Expression ')' "DO" Command
+   68      | "DO" Command "WHILE" '(' Expression ')' SC
 
-   72 Input: "INPUT" ID
+   69 Input: "INPUT" ID
 
-   73 Output: "OUTPUT" ExpList
+   70 Output: "OUTPUT" ExpList
 
-   74 Call: "ID" '(' ExpList ')'
-   75     | "ID" '(' ')'
+   71 Call: "ID" '(' ExpList ')'
+   72     | "ID" '(' ')'
 
-   76 ExpList: Expression ',' ExpList
-   77        | Expression
+   73 ExpList: Expression ',' ExpList
+   74        | Expression
 
 
 Terminals, with rules where they appear
 
 $end (0) 0
-'(' (40) 22 23 55 68 69 70 71 74 75
-')' (41) 22 23 55 68 69 70 71 74 75
-'*' (42) 45
-'+' (43) 43
-',' (44) 24 76
-'-' (45) 44
-'/' (47) 46
-';' (59) 8
-'<' (60) 48
-'=' (61) 41
-'>' (62) 47
-'[' (91) 19
-']' (93) 19
-'{' (123) 27
-'}' (125) 27
-error (256) 7 10
-"INT" (258) 13
-"FLOAT" (259) 14
-"BOOL" (260) 15
-"CHAR" (261) 16
-"STRING" (262) 17
-"IF" (263) 68 69
-"THEN" (264) 68 69
-"ELSE" (265) 69
-"WHILE" (266) 70 71
-"DO" (267) 70 71
-"INPUT" (268) 72
-"OUTPUT" (269) 73
-"RETURN" (270) 65
-"<=" (271) 52
-">=" (272) 51
-"==" (273) 49
-"!=" (274) 50
-"&&" (275) 53
-"||" (276) 54
-"litInt" (277) 59
-"litFloat" (278) 60
-"false" (279) 63
-"true" (280) 64
-"litChar" (281) 61
-"litString" (282) 62
-"ID" (283) 12 21 40 74 75
-"ERRO" (284) 9
+'(' (40) 19 20 52 65 66 67 68 71 72
+')' (41) 19 20 52 65 66 67 68 71 72
+'*' (42) 42
+'+' (43) 40
+',' (44) 21 73
+'-' (45) 41
+'/' (47) 43
+';' (59) 7
+'<' (60) 45
+'=' (61) 38
+'>' (62) 44
+'[' (91) 16
+']' (93) 16
+'{' (123) 24
+'}' (125) 24
+error (256)
+"INT" (258) 10
+"FLOAT" (259) 11
+"BOOL" (260) 12
+"CHAR" (261) 13
+"STRING" (262) 14
+"IF" (263) 65 66
+"THEN" (264) 65 66
+"ELSE" (265) 66
+"WHILE" (266) 67 68
+"DO" (267) 67 68
+"INPUT" (268) 69
+"OUTPUT" (269) 70
+"RETURN" (270) 62
+"<=" (271) 49
+">=" (272) 48
+"==" (273) 46
+"!=" (274) 47
+"&&" (275) 50
+"||" (276) 51
+"litInt" (277) 56
+"litFloat" (278) 57
+"false" (279) 60
+"true" (280) 61
+"litChar" (281) 58
+"litString" (282) 59
+"ID" (283) 9 18 37 71 72
+"ERRO" (284)
 
 
 Nonterminals, with rules where they appear
@@ -166,1961 +168,1909 @@ Program (46)
 stmts (47)
     on left: 3 4, on right: 2 4
 stmt (48)
-    on left: 5 6 7, on right: 3 4
+    on left: 5 6, on right: 3 4
 SC (49)
-    on left: 8 9 10, on right: 5 7 30 39 71
+    on left: 7, on right: 5 27 36 68
 Global (50)
-    on left: 11, on right: 5
+    on left: 8, on right: 5
 ID (51)
-    on left: 12, on right: 11 41 57 72
+    on left: 9, on right: 8 38 54 69
 Type (52)
-    on left: 13 14 15 16 17, on right: 11 21 40
+    on left: 10 11 12 13 14, on right: 8 18 37
 Vector (53)
-    on left: 18 19, on right: 12
+    on left: 15 16, on right: 9
 Function (54)
-    on left: 20, on right: 6
+    on left: 17, on right: 6
 Header (55)
-    on left: 21, on right: 20
+    on left: 18, on right: 17
 List (56)
-    on left: 22 23, on right: 21
+    on left: 19 20, on right: 18
 ParaList (57)
-    on left: 24 25, on right: 22 24
+    on left: 21 22, on right: 19 21
 Parameter (58)
-    on left: 26, on right: 24 25
+    on left: 23, on right: 21 22
 Body (59)
-    on left: 27, on right: 20 38
+    on left: 24, on right: 17 35
 Block (60)
-    on left: 28 29 30, on right: 27 30
+    on left: 25 26 27, on right: 24 27
 Command (61)
-    on left: 31 32 33 34 35 36 37 38 39, on right: 29 30 68 69 70 71
+    on left: 28 29 30 31 32 33 34 35 36, on right: 26 27 65 66 67 68
 Local (62)
-    on left: 40, on right: 26 31
+    on left: 37, on right: 23 28
 Attribution (63)
-    on left: 41, on right: 32
+    on left: 38, on right: 29
 Expression (64)
-    on left: 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56, on right:
-    19 41 43 44 45 46 47 48 49 50 51 52 53 54 55 65 68 69 70 71 76
-    77
+    on left: 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53, on right:
+    16 38 40 41 42 43 44 45 46 47 48 49 50 51 52 62 65 66 67 68 73
+    74
 Literal (65)
-    on left: 57 58 59 60 61 62, on right: 42
+    on left: 54 55 56 57 58 59, on right: 39
 Boolean (66)
-    on left: 63 64, on right: 58
+    on left: 60 61, on right: 55
 Return (67)
-    on left: 65, on right: 36
+    on left: 62, on right: 33
 FlowControl (68)
-    on left: 66 67, on right: 33
+    on left: 63 64, on right: 30
 If (69)
-    on left: 68 69, on right: 66
+    on left: 65 66, on right: 63
 While (70)
-    on left: 70 71, on right: 67
+    on left: 67 68, on right: 64
 Input (71)
-    on left: 72, on right: 34
+    on left: 69, on right: 31
 Output (72)
-    on left: 73, on right: 35
+    on left: 70, on right: 32
 Call (73)
-    on left: 74 75, on right: 37 56
+    on left: 71 72, on right: 34 53
 ExpList (74)
-    on left: 76 77, on right: 73 74 76
+    on left: 73 74, on right: 70 71 73
 
 
 State 0
 
     0 $accept: . Program $end
 
-    error     shift, and go to state 1
-    "INT"     shift, and go to state 2
-    "FLOAT"   shift, and go to state 3
-    "BOOL"    shift, and go to state 4
-    "CHAR"    shift, and go to state 5
-    "STRING"  shift, and go to state 6
+    "INT"     shift, and go to state 1
+    "FLOAT"   shift, and go to state 2
+    "BOOL"    shift, and go to state 3
+    "CHAR"    shift, and go to state 4
+    "STRING"  shift, and go to state 5
 
-    $end  reduce using rule 1 (Program)
+    $default  reduce using rule 1 (Program)
 
-    Program   go to state 7
-    stmts     go to state 8
-    stmt      go to state 9
-    Global    go to state 10
-    Type      go to state 11
-    Function  go to state 12
-    Header    go to state 13
+    Program   go to state 6
+    stmts     go to state 7
+    stmt      go to state 8
+    Global    go to state 9
+    Type      go to state 10
+    Function  go to state 11
+    Header    go to state 12
 
 
 State 1
 
-    7 stmt: error . SC
+   10 Type: "INT" .
 
-    error   shift, and go to state 14
-    "ERRO"  shift, and go to state 15
-    ';'     shift, and go to state 16
-
-    SC  go to state 17
+    $default  reduce using rule 10 (Type)
 
 
 State 2
 
-   13 Type: "INT" .
+   11 Type: "FLOAT" .
 
-    $default  reduce using rule 13 (Type)
+    $default  reduce using rule 11 (Type)
 
 
 State 3
 
-   14 Type: "FLOAT" .
+   12 Type: "BOOL" .
 
-    $default  reduce using rule 14 (Type)
+    $default  reduce using rule 12 (Type)
 
 
 State 4
 
-   15 Type: "BOOL" .
+   13 Type: "CHAR" .
 
-    $default  reduce using rule 15 (Type)
+    $default  reduce using rule 13 (Type)
 
 
 State 5
 
-   16 Type: "CHAR" .
+   14 Type: "STRING" .
 
-    $default  reduce using rule 16 (Type)
+    $default  reduce using rule 14 (Type)
 
 
 State 6
 
-   17 Type: "STRING" .
+    0 $accept: Program . $end
 
-    $default  reduce using rule 17 (Type)
+    $end  shift, and go to state 13
 
 
 State 7
 
-    0 $accept: Program . $end
-
-    $end  shift, and go to state 18
-
-
-State 8
-
     2 Program: stmts .
     4 stmts: stmts . stmt
 
-    error     shift, and go to state 1
-    "INT"     shift, and go to state 2
-    "FLOAT"   shift, and go to state 3
-    "BOOL"    shift, and go to state 4
-    "CHAR"    shift, and go to state 5
-    "STRING"  shift, and go to state 6
+    "INT"     shift, and go to state 1
+    "FLOAT"   shift, and go to state 2
+    "BOOL"    shift, and go to state 3
+    "CHAR"    shift, and go to state 4
+    "STRING"  shift, and go to state 5
 
-    $end  reduce using rule 2 (Program)
+    $default  reduce using rule 2 (Program)
 
-    stmt      go to state 19
-    Global    go to state 10
-    Type      go to state 11
-    Function  go to state 12
-    Header    go to state 13
+    stmt      go to state 14
+    Global    go to state 9
+    Type      go to state 10
+    Function  go to state 11
+    Header    go to state 12
 
 
-State 9
+State 8
 
     3 stmts: stmt .
 
     $default  reduce using rule 3 (stmts)
 
 
-State 10
+State 9
 
     5 stmt: Global . SC
 
-    error   shift, and go to state 14
-    "ERRO"  shift, and go to state 15
-    ';'     shift, and go to state 16
+    ';'  shift, and go to state 15
 
-    SC  go to state 20
+    SC  go to state 16
+
+
+State 10
+
+    8 Global: Type . ID
+   18 Header: Type . "ID" List
+
+    "ID"  shift, and go to state 17
+
+    ID  go to state 18
 
 
 State 11
-
-   11 Global: Type . ID
-   21 Header: Type . "ID" List
-
-    "ID"  shift, and go to state 21
-
-    ID  go to state 22
-
-
-State 12
 
     6 stmt: Function .
 
     $default  reduce using rule 6 (stmt)
 
 
+State 12
+
+   17 Function: Header . Body
+
+    '{'  shift, and go to state 19
+
+    Body  go to state 20
+
+
 State 13
-
-   20 Function: Header . Body
-
-    '{'  shift, and go to state 23
-
-    Body  go to state 24
-
-
-State 14
-
-   10 SC: error .
-
-    $default  reduce using rule 10 (SC)
-
-
-State 15
-
-    9 SC: "ERRO" .
-
-    $default  reduce using rule 9 (SC)
-
-
-State 16
-
-    8 SC: ';' .
-
-    $default  reduce using rule 8 (SC)
-
-
-State 17
-
-    7 stmt: error SC .
-
-    $default  reduce using rule 7 (stmt)
-
-
-State 18
 
     0 $accept: Program $end .
 
     $default  accept
 
 
-State 19
+State 14
 
     4 stmts: stmts stmt .
 
     $default  reduce using rule 4 (stmts)
 
 
-State 20
+State 15
+
+    7 SC: ';' .
+
+    $default  reduce using rule 7 (SC)
+
+
+State 16
 
     5 stmt: Global SC .
 
     $default  reduce using rule 5 (stmt)
 
 
+State 17
+
+    9 ID: "ID" . Vector
+   18 Header: Type "ID" . List
+
+    '['  shift, and go to state 21
+    '('  shift, and go to state 22
+
+    $default  reduce using rule 15 (Vector)
+
+    Vector  go to state 23
+    List    go to state 24
+
+
+State 18
+
+    8 Global: Type ID .
+
+    $default  reduce using rule 8 (Global)
+
+
+State 19
+
+   24 Body: '{' . Block '}'
+
+    "INT"     shift, and go to state 1
+    "FLOAT"   shift, and go to state 2
+    "BOOL"    shift, and go to state 3
+    "CHAR"    shift, and go to state 4
+    "STRING"  shift, and go to state 5
+    "IF"      shift, and go to state 25
+    "WHILE"   shift, and go to state 26
+    "DO"      shift, and go to state 27
+    "INPUT"   shift, and go to state 28
+    "OUTPUT"  shift, and go to state 29
+    "RETURN"  shift, and go to state 30
+    "ID"      shift, and go to state 31
+    ';'       shift, and go to state 15
+    '{'       shift, and go to state 19
+
+    $default  reduce using rule 25 (Block)
+
+    SC           go to state 32
+    ID           go to state 33
+    Type         go to state 34
+    Body         go to state 35
+    Block        go to state 36
+    Command      go to state 37
+    Local        go to state 38
+    Attribution  go to state 39
+    Return       go to state 40
+    FlowControl  go to state 41
+    If           go to state 42
+    While        go to state 43
+    Input        go to state 44
+    Output       go to state 45
+    Call         go to state 46
+
+
+State 20
+
+   17 Function: Header Body .
+
+    $default  reduce using rule 17 (Function)
+
+
 State 21
 
-   12 ID: "ID" . Vector
-   21 Header: Type "ID" . List
+   16 Vector: '[' . Expression ']'
 
-    '['  shift, and go to state 25
-    '('  shift, and go to state 26
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
 
-    $default  reduce using rule 18 (Vector)
-
-    Vector  go to state 27
-    List    go to state 28
+    ID          go to state 54
+    Expression  go to state 55
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 22
 
-   11 Global: Type ID .
+   19 List: '(' . ParaList ')'
+   20     | '(' . ')'
 
-    $default  reduce using rule 11 (Global)
+    "INT"     shift, and go to state 1
+    "FLOAT"   shift, and go to state 2
+    "BOOL"    shift, and go to state 3
+    "CHAR"    shift, and go to state 4
+    "STRING"  shift, and go to state 5
+    ')'       shift, and go to state 59
+
+    Type       go to state 34
+    ParaList   go to state 60
+    Parameter  go to state 61
+    Local      go to state 62
 
 
 State 23
 
-   27 Body: '{' . Block '}'
+    9 ID: "ID" Vector .
 
-    error     shift, and go to state 14
-    "INT"     shift, and go to state 2
-    "FLOAT"   shift, and go to state 3
-    "BOOL"    shift, and go to state 4
-    "CHAR"    shift, and go to state 5
-    "STRING"  shift, and go to state 6
-    "IF"      shift, and go to state 29
-    "WHILE"   shift, and go to state 30
-    "DO"      shift, and go to state 31
-    "INPUT"   shift, and go to state 32
-    "OUTPUT"  shift, and go to state 33
-    "RETURN"  shift, and go to state 34
-    "ID"      shift, and go to state 35
-    "ERRO"    shift, and go to state 15
-    ';'       shift, and go to state 16
-    '{'       shift, and go to state 23
-
-    '}'  reduce using rule 28 (Block)
-
-    SC           go to state 36
-    ID           go to state 37
-    Type         go to state 38
-    Body         go to state 39
-    Block        go to state 40
-    Command      go to state 41
-    Local        go to state 42
-    Attribution  go to state 43
-    Return       go to state 44
-    FlowControl  go to state 45
-    If           go to state 46
-    While        go to state 47
-    Input        go to state 48
-    Output       go to state 49
-    Call         go to state 50
+    $default  reduce using rule 9 (ID)
 
 
 State 24
 
-   20 Function: Header Body .
+   18 Header: Type "ID" List .
 
-    $default  reduce using rule 20 (Function)
+    $default  reduce using rule 18 (Header)
 
 
 State 25
 
-   19 Vector: '[' . Expression ']'
+   65 If: "IF" . '(' Expression ')' "THEN" Command
+   66   | "IF" . '(' Expression ')' "THEN" Command "ELSE" Command
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
-
-    ID          go to state 58
-    Expression  go to state 59
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    '('  shift, and go to state 63
 
 
 State 26
 
-   22 List: '(' . ParaList ')'
-   23     | '(' . ')'
+   67 While: "WHILE" . '(' Expression ')' "DO" Command
 
-    "INT"     shift, and go to state 2
-    "FLOAT"   shift, and go to state 3
-    "BOOL"    shift, and go to state 4
-    "CHAR"    shift, and go to state 5
-    "STRING"  shift, and go to state 6
-    ')'       shift, and go to state 63
-
-    Type       go to state 38
-    ParaList   go to state 64
-    Parameter  go to state 65
-    Local      go to state 66
+    '('  shift, and go to state 64
 
 
 State 27
 
-   12 ID: "ID" Vector .
+   68 While: "DO" . Command "WHILE" '(' Expression ')' SC
 
-    $default  reduce using rule 12 (ID)
+    "INT"     shift, and go to state 1
+    "FLOAT"   shift, and go to state 2
+    "BOOL"    shift, and go to state 3
+    "CHAR"    shift, and go to state 4
+    "STRING"  shift, and go to state 5
+    "IF"      shift, and go to state 25
+    "WHILE"   shift, and go to state 26
+    "DO"      shift, and go to state 27
+    "INPUT"   shift, and go to state 28
+    "OUTPUT"  shift, and go to state 29
+    "RETURN"  shift, and go to state 30
+    "ID"      shift, and go to state 31
+    ';'       shift, and go to state 15
+    '{'       shift, and go to state 19
+
+    SC           go to state 32
+    ID           go to state 33
+    Type         go to state 34
+    Body         go to state 35
+    Command      go to state 65
+    Local        go to state 38
+    Attribution  go to state 39
+    Return       go to state 40
+    FlowControl  go to state 41
+    If           go to state 42
+    While        go to state 43
+    Input        go to state 44
+    Output       go to state 45
+    Call         go to state 46
 
 
 State 28
 
-   21 Header: Type "ID" List .
+   69 Input: "INPUT" . ID
 
-    $default  reduce using rule 21 (Header)
+    "ID"  shift, and go to state 66
+
+    ID  go to state 67
 
 
 State 29
 
-   68 If: "IF" . '(' Expression ')' "THEN" Command
-   69   | "IF" . '(' Expression ')' "THEN" Command "ELSE" Command
+   70 Output: "OUTPUT" . ExpList
 
-    '('  shift, and go to state 67
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
+
+    ID          go to state 54
+    Expression  go to state 68
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
+    ExpList     go to state 69
 
 
 State 30
 
-   70 While: "WHILE" . '(' Expression ')' "DO" Command
+   62 Return: "RETURN" . Expression
 
-    '('  shift, and go to state 68
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
+
+    ID          go to state 54
+    Expression  go to state 70
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 31
 
-   71 While: "DO" . Command "WHILE" '(' Expression ')' SC
+    9 ID: "ID" . Vector
+   71 Call: "ID" . '(' ExpList ')'
+   72     | "ID" . '(' ')'
 
-    error     shift, and go to state 14
-    "INT"     shift, and go to state 2
-    "FLOAT"   shift, and go to state 3
-    "BOOL"    shift, and go to state 4
-    "CHAR"    shift, and go to state 5
-    "STRING"  shift, and go to state 6
-    "IF"      shift, and go to state 29
-    "WHILE"   shift, and go to state 30
-    "DO"      shift, and go to state 31
-    "INPUT"   shift, and go to state 32
-    "OUTPUT"  shift, and go to state 33
-    "RETURN"  shift, and go to state 34
-    "ID"      shift, and go to state 35
-    "ERRO"    shift, and go to state 15
-    ';'       shift, and go to state 16
-    '{'       shift, and go to state 23
+    '['  shift, and go to state 21
+    '('  shift, and go to state 71
 
-    SC           go to state 36
-    ID           go to state 37
-    Type         go to state 38
-    Body         go to state 39
-    Command      go to state 69
-    Local        go to state 42
-    Attribution  go to state 43
-    Return       go to state 44
-    FlowControl  go to state 45
-    If           go to state 46
-    While        go to state 47
-    Input        go to state 48
-    Output       go to state 49
-    Call         go to state 50
+    $default  reduce using rule 15 (Vector)
+
+    Vector  go to state 23
 
 
 State 32
 
-   72 Input: "INPUT" . ID
-
-    "ID"  shift, and go to state 70
-
-    ID  go to state 71
-
-
-State 33
-
-   73 Output: "OUTPUT" . ExpList
-
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
-
-    ID          go to state 58
-    Expression  go to state 72
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
-    ExpList     go to state 73
-
-
-State 34
-
-   65 Return: "RETURN" . Expression
-
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
-
-    ID          go to state 58
-    Expression  go to state 74
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
-
-
-State 35
-
-   12 ID: "ID" . Vector
-   74 Call: "ID" . '(' ExpList ')'
-   75     | "ID" . '(' ')'
-
-    '['  shift, and go to state 25
-    '('  shift, and go to state 75
-
-    $default  reduce using rule 18 (Vector)
-
-    Vector  go to state 27
-
-
-State 36
-
-   39 Command: SC .
-
-    $default  reduce using rule 39 (Command)
-
-
-State 37
-
-   41 Attribution: ID . '=' Expression
-
-    '='  shift, and go to state 76
-
-
-State 38
-
-   40 Local: Type . "ID"
-
-    "ID"  shift, and go to state 77
-
-
-State 39
-
-   38 Command: Body .
-
-    $default  reduce using rule 38 (Command)
-
-
-State 40
-
-   27 Body: '{' Block . '}'
-
-    '}'  shift, and go to state 78
-
-
-State 41
-
-   29 Block: Command .
-   30      | Command . SC Block
-
-    error   shift, and go to state 14
-    "ERRO"  shift, and go to state 15
-    ';'     shift, and go to state 16
-
-    '}'  reduce using rule 29 (Block)
-
-    SC  go to state 79
-
-
-State 42
-
-   31 Command: Local .
-
-    $default  reduce using rule 31 (Command)
-
-
-State 43
-
-   32 Command: Attribution .
-
-    $default  reduce using rule 32 (Command)
-
-
-State 44
-
-   36 Command: Return .
+   36 Command: SC .
 
     $default  reduce using rule 36 (Command)
 
 
-State 45
+State 33
 
-   33 Command: FlowControl .
+   38 Attribution: ID . '=' Expression
 
-    $default  reduce using rule 33 (Command)
-
-
-State 46
-
-   66 FlowControl: If .
-
-    $default  reduce using rule 66 (FlowControl)
+    '='  shift, and go to state 72
 
 
-State 47
+State 34
 
-   67 FlowControl: While .
+   37 Local: Type . "ID"
 
-    $default  reduce using rule 67 (FlowControl)
-
-
-State 48
-
-   34 Command: Input .
-
-    $default  reduce using rule 34 (Command)
+    "ID"  shift, and go to state 73
 
 
-State 49
+State 35
 
-   35 Command: Output .
+   35 Command: Body .
 
     $default  reduce using rule 35 (Command)
 
 
-State 50
+State 36
 
-   37 Command: Call .
+   24 Body: '{' Block . '}'
 
-    $default  reduce using rule 37 (Command)
-
-
-State 51
-
-   59 Literal: "litInt" .
-
-    $default  reduce using rule 59 (Literal)
+    '}'  shift, and go to state 74
 
 
-State 52
+State 37
 
-   60 Literal: "litFloat" .
+   26 Block: Command .
+   27      | Command . SC Block
 
-    $default  reduce using rule 60 (Literal)
+    ';'  shift, and go to state 15
 
+    $default  reduce using rule 26 (Block)
 
-State 53
-
-   63 Boolean: "false" .
-
-    $default  reduce using rule 63 (Boolean)
+    SC  go to state 75
 
 
-State 54
+State 38
 
-   64 Boolean: "true" .
+   28 Command: Local .
 
-    $default  reduce using rule 64 (Boolean)
-
-
-State 55
-
-   61 Literal: "litChar" .
-
-    $default  reduce using rule 61 (Literal)
+    $default  reduce using rule 28 (Command)
 
 
-State 56
+State 39
 
-   62 Literal: "litString" .
+   29 Command: Attribution .
 
-    $default  reduce using rule 62 (Literal)
-
-
-State 57
-
-   55 Expression: '(' . Expression ')'
-
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
-
-    ID          go to state 58
-    Expression  go to state 80
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    $default  reduce using rule 29 (Command)
 
 
-State 58
+State 40
 
-   57 Literal: ID .
+   33 Command: Return .
+
+    $default  reduce using rule 33 (Command)
+
+
+State 41
+
+   30 Command: FlowControl .
+
+    $default  reduce using rule 30 (Command)
+
+
+State 42
+
+   63 FlowControl: If .
+
+    $default  reduce using rule 63 (FlowControl)
+
+
+State 43
+
+   64 FlowControl: While .
+
+    $default  reduce using rule 64 (FlowControl)
+
+
+State 44
+
+   31 Command: Input .
+
+    $default  reduce using rule 31 (Command)
+
+
+State 45
+
+   32 Command: Output .
+
+    $default  reduce using rule 32 (Command)
+
+
+State 46
+
+   34 Command: Call .
+
+    $default  reduce using rule 34 (Command)
+
+
+State 47
+
+   56 Literal: "litInt" .
+
+    $default  reduce using rule 56 (Literal)
+
+
+State 48
+
+   57 Literal: "litFloat" .
 
     $default  reduce using rule 57 (Literal)
 
 
-State 59
+State 49
 
-   19 Vector: '[' Expression . ']'
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
+   60 Boolean: "false" .
 
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
-    '+'   shift, and go to state 87
-    '-'   shift, and go to state 88
-    '*'   shift, and go to state 89
-    '/'   shift, and go to state 90
-    '>'   shift, and go to state 91
-    '<'   shift, and go to state 92
-    ']'   shift, and go to state 93
+    $default  reduce using rule 60 (Boolean)
 
 
-State 60
+State 50
 
-   42 Expression: Literal .
+   61 Boolean: "true" .
 
-    $default  reduce using rule 42 (Expression)
+    $default  reduce using rule 61 (Boolean)
 
 
-State 61
+State 51
 
-   58 Literal: Boolean .
+   58 Literal: "litChar" .
 
     $default  reduce using rule 58 (Literal)
 
 
+State 52
+
+   59 Literal: "litString" .
+
+    $default  reduce using rule 59 (Literal)
+
+
+State 53
+
+   52 Expression: '(' . Expression ')'
+
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
+
+    ID          go to state 54
+    Expression  go to state 76
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
+
+
+State 54
+
+   54 Literal: ID .
+
+    $default  reduce using rule 54 (Literal)
+
+
+State 55
+
+   16 Vector: '[' Expression . ']'
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
+
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
+    '+'   shift, and go to state 83
+    '-'   shift, and go to state 84
+    '*'   shift, and go to state 85
+    '/'   shift, and go to state 86
+    '>'   shift, and go to state 87
+    '<'   shift, and go to state 88
+    ']'   shift, and go to state 89
+
+
+State 56
+
+   39 Expression: Literal .
+
+    $default  reduce using rule 39 (Expression)
+
+
+State 57
+
+   55 Literal: Boolean .
+
+    $default  reduce using rule 55 (Literal)
+
+
+State 58
+
+   53 Expression: Call .
+
+    $default  reduce using rule 53 (Expression)
+
+
+State 59
+
+   20 List: '(' ')' .
+
+    $default  reduce using rule 20 (List)
+
+
+State 60
+
+   19 List: '(' ParaList . ')'
+
+    ')'  shift, and go to state 90
+
+
+State 61
+
+   21 ParaList: Parameter . ',' ParaList
+   22         | Parameter .
+
+    ','  shift, and go to state 91
+
+    $default  reduce using rule 22 (ParaList)
+
+
 State 62
 
-   56 Expression: Call .
+   23 Parameter: Local .
 
-    $default  reduce using rule 56 (Expression)
+    $default  reduce using rule 23 (Parameter)
 
 
 State 63
 
-   23 List: '(' ')' .
+   65 If: "IF" '(' . Expression ')' "THEN" Command
+   66   | "IF" '(' . Expression ')' "THEN" Command "ELSE" Command
 
-    $default  reduce using rule 23 (List)
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
+
+    ID          go to state 54
+    Expression  go to state 92
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 64
 
-   22 List: '(' ParaList . ')'
+   67 While: "WHILE" '(' . Expression ')' "DO" Command
 
-    ')'  shift, and go to state 94
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
+
+    ID          go to state 54
+    Expression  go to state 93
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 65
 
-   24 ParaList: Parameter . ',' ParaList
-   25         | Parameter .
+   68 While: "DO" Command . "WHILE" '(' Expression ')' SC
 
-    ','  shift, and go to state 95
-
-    $default  reduce using rule 25 (ParaList)
+    "WHILE"  shift, and go to state 94
 
 
 State 66
 
-   26 Parameter: Local .
+    9 ID: "ID" . Vector
 
-    $default  reduce using rule 26 (Parameter)
+    '['  shift, and go to state 21
+
+    $default  reduce using rule 15 (Vector)
+
+    Vector  go to state 23
 
 
 State 67
 
-   68 If: "IF" '(' . Expression ')' "THEN" Command
-   69   | "IF" '(' . Expression ')' "THEN" Command "ELSE" Command
+   69 Input: "INPUT" ID .
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
-
-    ID          go to state 58
-    Expression  go to state 96
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    $default  reduce using rule 69 (Input)
 
 
 State 68
 
-   70 While: "WHILE" '(' . Expression ')' "DO" Command
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
+   73 ExpList: Expression . ',' ExpList
+   74        | Expression .
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
+    '+'   shift, and go to state 83
+    '-'   shift, and go to state 84
+    '*'   shift, and go to state 85
+    '/'   shift, and go to state 86
+    '>'   shift, and go to state 87
+    '<'   shift, and go to state 88
+    ','   shift, and go to state 95
 
-    ID          go to state 58
-    Expression  go to state 97
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    $default  reduce using rule 74 (ExpList)
 
 
 State 69
 
-   71 While: "DO" Command . "WHILE" '(' Expression ')' SC
+   70 Output: "OUTPUT" ExpList .
 
-    "WHILE"  shift, and go to state 98
+    $default  reduce using rule 70 (Output)
 
 
 State 70
 
-   12 ID: "ID" . Vector
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
+   62 Return: "RETURN" Expression .
 
-    '['  shift, and go to state 25
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
+    '+'   shift, and go to state 83
+    '-'   shift, and go to state 84
+    '*'   shift, and go to state 85
+    '/'   shift, and go to state 86
+    '>'   shift, and go to state 87
+    '<'   shift, and go to state 88
 
-    $default  reduce using rule 18 (Vector)
-
-    Vector  go to state 27
+    $default  reduce using rule 62 (Return)
 
 
 State 71
 
-   72 Input: "INPUT" ID .
+   71 Call: "ID" '(' . ExpList ')'
+   72     | "ID" '(' . ')'
 
-    $default  reduce using rule 72 (Input)
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
+    ')'          shift, and go to state 96
+
+    ID          go to state 54
+    Expression  go to state 68
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
+    ExpList     go to state 97
 
 
 State 72
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
-   76 ExpList: Expression . ',' ExpList
-   77        | Expression .
+   38 Attribution: ID '=' . Expression
 
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
-    '+'   shift, and go to state 87
-    '-'   shift, and go to state 88
-    '*'   shift, and go to state 89
-    '/'   shift, and go to state 90
-    '>'   shift, and go to state 91
-    '<'   shift, and go to state 92
-    ','   shift, and go to state 99
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
 
-    $default  reduce using rule 77 (ExpList)
+    ID          go to state 54
+    Expression  go to state 98
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 73
 
-   73 Output: "OUTPUT" ExpList .
+   37 Local: Type "ID" .
 
-    $default  reduce using rule 73 (Output)
+    $default  reduce using rule 37 (Local)
 
 
 State 74
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
-   65 Return: "RETURN" Expression .
+   24 Body: '{' Block '}' .
 
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
-    '+'   shift, and go to state 87
-    '-'   shift, and go to state 88
-    '*'   shift, and go to state 89
-    '/'   shift, and go to state 90
-    '>'   shift, and go to state 91
-    '<'   shift, and go to state 92
-
-    $default  reduce using rule 65 (Return)
+    $default  reduce using rule 24 (Body)
 
 
 State 75
 
-   74 Call: "ID" '(' . ExpList ')'
-   75     | "ID" '(' . ')'
+   27 Block: Command SC . Block
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
-    ')'          shift, and go to state 100
+    "INT"     shift, and go to state 1
+    "FLOAT"   shift, and go to state 2
+    "BOOL"    shift, and go to state 3
+    "CHAR"    shift, and go to state 4
+    "STRING"  shift, and go to state 5
+    "IF"      shift, and go to state 25
+    "WHILE"   shift, and go to state 26
+    "DO"      shift, and go to state 27
+    "INPUT"   shift, and go to state 28
+    "OUTPUT"  shift, and go to state 29
+    "RETURN"  shift, and go to state 30
+    "ID"      shift, and go to state 31
+    ';'       shift, and go to state 15
+    '{'       shift, and go to state 19
 
-    ID          go to state 58
-    Expression  go to state 72
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
-    ExpList     go to state 101
+    $default  reduce using rule 25 (Block)
+
+    SC           go to state 32
+    ID           go to state 33
+    Type         go to state 34
+    Body         go to state 35
+    Block        go to state 99
+    Command      go to state 37
+    Local        go to state 38
+    Attribution  go to state 39
+    Return       go to state 40
+    FlowControl  go to state 41
+    If           go to state 42
+    While        go to state 43
+    Input        go to state 44
+    Output       go to state 45
+    Call         go to state 46
 
 
 State 76
 
-   41 Attribution: ID '=' . Expression
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
+   52           | '(' Expression . ')'
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
-
-    ID          go to state 58
-    Expression  go to state 102
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
+    '+'   shift, and go to state 83
+    '-'   shift, and go to state 84
+    '*'   shift, and go to state 85
+    '/'   shift, and go to state 86
+    '>'   shift, and go to state 87
+    '<'   shift, and go to state 88
+    ')'   shift, and go to state 100
 
 
 State 77
 
-   40 Local: Type "ID" .
+   49 Expression: Expression "<=" . Expression
 
-    $default  reduce using rule 40 (Local)
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
+
+    ID          go to state 54
+    Expression  go to state 101
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 78
 
-   27 Body: '{' Block '}' .
+   48 Expression: Expression ">=" . Expression
 
-    $default  reduce using rule 27 (Body)
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
+
+    ID          go to state 54
+    Expression  go to state 102
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 79
 
-   30 Block: Command SC . Block
+   46 Expression: Expression "==" . Expression
 
-    error     shift, and go to state 14
-    "INT"     shift, and go to state 2
-    "FLOAT"   shift, and go to state 3
-    "BOOL"    shift, and go to state 4
-    "CHAR"    shift, and go to state 5
-    "STRING"  shift, and go to state 6
-    "IF"      shift, and go to state 29
-    "WHILE"   shift, and go to state 30
-    "DO"      shift, and go to state 31
-    "INPUT"   shift, and go to state 32
-    "OUTPUT"  shift, and go to state 33
-    "RETURN"  shift, and go to state 34
-    "ID"      shift, and go to state 35
-    "ERRO"    shift, and go to state 15
-    ';'       shift, and go to state 16
-    '{'       shift, and go to state 23
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
 
-    '}'  reduce using rule 28 (Block)
-
-    SC           go to state 36
-    ID           go to state 37
-    Type         go to state 38
-    Body         go to state 39
-    Block        go to state 103
-    Command      go to state 41
-    Local        go to state 42
-    Attribution  go to state 43
-    Return       go to state 44
-    FlowControl  go to state 45
-    If           go to state 46
-    While        go to state 47
-    Input        go to state 48
-    Output       go to state 49
-    Call         go to state 50
+    ID          go to state 54
+    Expression  go to state 103
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 80
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
-   55           | '(' Expression . ')'
+   47 Expression: Expression "!=" . Expression
 
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
-    '+'   shift, and go to state 87
-    '-'   shift, and go to state 88
-    '*'   shift, and go to state 89
-    '/'   shift, and go to state 90
-    '>'   shift, and go to state 91
-    '<'   shift, and go to state 92
-    ')'   shift, and go to state 104
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
+
+    ID          go to state 54
+    Expression  go to state 104
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 81
 
-   52 Expression: Expression "<=" . Expression
+   50 Expression: Expression "&&" . Expression
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
 
-    ID          go to state 58
+    ID          go to state 54
     Expression  go to state 105
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 82
 
-   51 Expression: Expression ">=" . Expression
+   51 Expression: Expression "||" . Expression
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
 
-    ID          go to state 58
+    ID          go to state 54
     Expression  go to state 106
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 83
 
-   49 Expression: Expression "==" . Expression
+   40 Expression: Expression '+' . Expression
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
 
-    ID          go to state 58
+    ID          go to state 54
     Expression  go to state 107
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 84
 
-   50 Expression: Expression "!=" . Expression
+   41 Expression: Expression '-' . Expression
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
 
-    ID          go to state 58
+    ID          go to state 54
     Expression  go to state 108
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 85
 
-   53 Expression: Expression "&&" . Expression
+   42 Expression: Expression '*' . Expression
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
 
-    ID          go to state 58
+    ID          go to state 54
     Expression  go to state 109
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 86
 
-   54 Expression: Expression "||" . Expression
+   43 Expression: Expression '/' . Expression
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
 
-    ID          go to state 58
+    ID          go to state 54
     Expression  go to state 110
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 87
 
-   43 Expression: Expression '+' . Expression
+   44 Expression: Expression '>' . Expression
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
 
-    ID          go to state 58
+    ID          go to state 54
     Expression  go to state 111
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 88
 
-   44 Expression: Expression '-' . Expression
+   45 Expression: Expression '<' . Expression
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
 
-    ID          go to state 58
+    ID          go to state 54
     Expression  go to state 112
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 89
 
-   45 Expression: Expression '*' . Expression
+   16 Vector: '[' Expression ']' .
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
-
-    ID          go to state 58
-    Expression  go to state 113
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    $default  reduce using rule 16 (Vector)
 
 
 State 90
 
-   46 Expression: Expression '/' . Expression
+   19 List: '(' ParaList ')' .
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
-
-    ID          go to state 58
-    Expression  go to state 114
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    $default  reduce using rule 19 (List)
 
 
 State 91
 
-   47 Expression: Expression '>' . Expression
+   21 ParaList: Parameter ',' . ParaList
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
+    "INT"     shift, and go to state 1
+    "FLOAT"   shift, and go to state 2
+    "BOOL"    shift, and go to state 3
+    "CHAR"    shift, and go to state 4
+    "STRING"  shift, and go to state 5
 
-    ID          go to state 58
-    Expression  go to state 115
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    Type       go to state 34
+    ParaList   go to state 113
+    Parameter  go to state 61
+    Local      go to state 62
 
 
 State 92
 
-   48 Expression: Expression '<' . Expression
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
+   65 If: "IF" '(' Expression . ')' "THEN" Command
+   66   | "IF" '(' Expression . ')' "THEN" Command "ELSE" Command
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
-
-    ID          go to state 58
-    Expression  go to state 116
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
+    '+'   shift, and go to state 83
+    '-'   shift, and go to state 84
+    '*'   shift, and go to state 85
+    '/'   shift, and go to state 86
+    '>'   shift, and go to state 87
+    '<'   shift, and go to state 88
+    ')'   shift, and go to state 114
 
 
 State 93
 
-   19 Vector: '[' Expression ']' .
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
+   67 While: "WHILE" '(' Expression . ')' "DO" Command
 
-    $default  reduce using rule 19 (Vector)
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
+    '+'   shift, and go to state 83
+    '-'   shift, and go to state 84
+    '*'   shift, and go to state 85
+    '/'   shift, and go to state 86
+    '>'   shift, and go to state 87
+    '<'   shift, and go to state 88
+    ')'   shift, and go to state 115
 
 
 State 94
 
-   22 List: '(' ParaList ')' .
+   68 While: "DO" Command "WHILE" . '(' Expression ')' SC
 
-    $default  reduce using rule 22 (List)
+    '('  shift, and go to state 116
 
 
 State 95
 
-   24 ParaList: Parameter ',' . ParaList
+   73 ExpList: Expression ',' . ExpList
 
-    "INT"     shift, and go to state 2
-    "FLOAT"   shift, and go to state 3
-    "BOOL"    shift, and go to state 4
-    "CHAR"    shift, and go to state 5
-    "STRING"  shift, and go to state 6
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
 
-    Type       go to state 38
-    ParaList   go to state 117
-    Parameter  go to state 65
-    Local      go to state 66
+    ID          go to state 54
+    Expression  go to state 68
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
+    ExpList     go to state 117
 
 
 State 96
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
-   68 If: "IF" '(' Expression . ')' "THEN" Command
-   69   | "IF" '(' Expression . ')' "THEN" Command "ELSE" Command
+   72 Call: "ID" '(' ')' .
 
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
-    '+'   shift, and go to state 87
-    '-'   shift, and go to state 88
-    '*'   shift, and go to state 89
-    '/'   shift, and go to state 90
-    '>'   shift, and go to state 91
-    '<'   shift, and go to state 92
-    ')'   shift, and go to state 118
+    $default  reduce using rule 72 (Call)
 
 
 State 97
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
-   70 While: "WHILE" '(' Expression . ')' "DO" Command
+   71 Call: "ID" '(' ExpList . ')'
 
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
-    '+'   shift, and go to state 87
-    '-'   shift, and go to state 88
-    '*'   shift, and go to state 89
-    '/'   shift, and go to state 90
-    '>'   shift, and go to state 91
-    '<'   shift, and go to state 92
-    ')'   shift, and go to state 119
+    ')'  shift, and go to state 118
 
 
 State 98
 
-   71 While: "DO" Command "WHILE" . '(' Expression ')' SC
+   38 Attribution: ID '=' Expression .
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
 
-    '('  shift, and go to state 120
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
+    '+'   shift, and go to state 83
+    '-'   shift, and go to state 84
+    '*'   shift, and go to state 85
+    '/'   shift, and go to state 86
+    '>'   shift, and go to state 87
+    '<'   shift, and go to state 88
+
+    $default  reduce using rule 38 (Attribution)
 
 
 State 99
 
-   76 ExpList: Expression ',' . ExpList
+   27 Block: Command SC Block .
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
-
-    ID          go to state 58
-    Expression  go to state 72
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
-    ExpList     go to state 121
+    $default  reduce using rule 27 (Block)
 
 
 State 100
 
-   75 Call: "ID" '(' ')' .
-
-    $default  reduce using rule 75 (Call)
-
-
-State 101
-
-   74 Call: "ID" '(' ExpList . ')'
-
-    ')'  shift, and go to state 122
-
-
-State 102
-
-   41 Attribution: ID '=' Expression .
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
-
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
-    '+'   shift, and go to state 87
-    '-'   shift, and go to state 88
-    '*'   shift, and go to state 89
-    '/'   shift, and go to state 90
-    '>'   shift, and go to state 91
-    '<'   shift, and go to state 92
-
-    $default  reduce using rule 41 (Attribution)
-
-
-State 103
-
-   30 Block: Command SC Block .
-
-    $default  reduce using rule 30 (Block)
-
-
-State 104
-
-   55 Expression: '(' Expression ')' .
-
-    $default  reduce using rule 55 (Expression)
-
-
-State 105
-
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   52           | Expression "<=" Expression .
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
+   52 Expression: '(' Expression ')' .
 
     $default  reduce using rule 52 (Expression)
 
 
+State 101
+
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   49           | Expression "<=" Expression .
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
+
+    $default  reduce using rule 49 (Expression)
+
+
+State 102
+
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   48           | Expression ">=" Expression .
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
+
+    $default  reduce using rule 48 (Expression)
+
+
+State 103
+
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   46           | Expression "==" Expression .
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
+
+    $default  reduce using rule 46 (Expression)
+
+
+State 104
+
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   47           | Expression "!=" Expression .
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
+
+    $default  reduce using rule 47 (Expression)
+
+
+State 105
+
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   50           | Expression "&&" Expression .
+   51           | Expression . "||" Expression
+
+    $default  reduce using rule 50 (Expression)
+
+
 State 106
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   51           | Expression ">=" Expression .
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
+   51           | Expression "||" Expression .
 
     $default  reduce using rule 51 (Expression)
 
 
 State 107
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   49           | Expression "==" Expression .
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
+   40 Expression: Expression . '+' Expression
+   40           | Expression '+' Expression .
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
 
-    $default  reduce using rule 49 (Expression)
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
+    '-'   shift, and go to state 84
+    '*'   shift, and go to state 85
+    '/'   shift, and go to state 86
+    '>'   shift, and go to state 87
+    '<'   shift, and go to state 88
+
+    $default  reduce using rule 40 (Expression)
 
 
 State 108
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   50           | Expression "!=" Expression .
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   41           | Expression '-' Expression .
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
 
-    $default  reduce using rule 50 (Expression)
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
+    '*'   shift, and go to state 85
+    '/'   shift, and go to state 86
+    '>'   shift, and go to state 87
+    '<'   shift, and go to state 88
+
+    $default  reduce using rule 41 (Expression)
 
 
 State 109
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   53           | Expression "&&" Expression .
-   54           | Expression . "||" Expression
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   42           | Expression '*' Expression .
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
 
-    $default  reduce using rule 53 (Expression)
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
+    '/'   shift, and go to state 86
+    '>'   shift, and go to state 87
+    '<'   shift, and go to state 88
+
+    $default  reduce using rule 42 (Expression)
 
 
 State 110
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
-   54           | Expression "||" Expression .
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   43           | Expression '/' Expression .
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
 
-    $default  reduce using rule 54 (Expression)
-
-
-State 111
-
-   43 Expression: Expression . '+' Expression
-   43           | Expression '+' Expression .
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
-
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
-    '-'   shift, and go to state 88
-    '*'   shift, and go to state 89
-    '/'   shift, and go to state 90
-    '>'   shift, and go to state 91
-    '<'   shift, and go to state 92
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
+    '>'   shift, and go to state 87
+    '<'   shift, and go to state 88
 
     $default  reduce using rule 43 (Expression)
 
 
-State 112
+State 111
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   44           | Expression '-' Expression .
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   44           | Expression '>' Expression .
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
 
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
-    '*'   shift, and go to state 89
-    '/'   shift, and go to state 90
-    '>'   shift, and go to state 91
-    '<'   shift, and go to state 92
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
+    '<'   shift, and go to state 88
 
     $default  reduce using rule 44 (Expression)
 
 
-State 113
+State 112
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   45           | Expression '*' Expression .
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   45           | Expression '<' Expression .
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
 
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
-    '/'   shift, and go to state 90
-    '>'   shift, and go to state 91
-    '<'   shift, and go to state 92
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
 
     $default  reduce using rule 45 (Expression)
 
 
+State 113
+
+   21 ParaList: Parameter ',' ParaList .
+
+    $default  reduce using rule 21 (ParaList)
+
+
 State 114
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   46           | Expression '/' Expression .
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
+   65 If: "IF" '(' Expression ')' . "THEN" Command
+   66   | "IF" '(' Expression ')' . "THEN" Command "ELSE" Command
 
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
-    '>'   shift, and go to state 91
-    '<'   shift, and go to state 92
-
-    $default  reduce using rule 46 (Expression)
+    "THEN"  shift, and go to state 119
 
 
 State 115
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   47           | Expression '>' Expression .
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
+   67 While: "WHILE" '(' Expression ')' . "DO" Command
 
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
-    '<'   shift, and go to state 92
-
-    $default  reduce using rule 47 (Expression)
+    "DO"  shift, and go to state 120
 
 
 State 116
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   48           | Expression '<' Expression .
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
+   68 While: "DO" Command "WHILE" '(' . Expression ')' SC
 
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
+    "litInt"     shift, and go to state 47
+    "litFloat"   shift, and go to state 48
+    "false"      shift, and go to state 49
+    "true"       shift, and go to state 50
+    "litChar"    shift, and go to state 51
+    "litString"  shift, and go to state 52
+    "ID"         shift, and go to state 31
+    '('          shift, and go to state 53
 
-    $default  reduce using rule 48 (Expression)
+    ID          go to state 54
+    Expression  go to state 121
+    Literal     go to state 56
+    Boolean     go to state 57
+    Call        go to state 58
 
 
 State 117
 
-   24 ParaList: Parameter ',' ParaList .
+   73 ExpList: Expression ',' ExpList .
 
-    $default  reduce using rule 24 (ParaList)
+    $default  reduce using rule 73 (ExpList)
 
 
 State 118
 
-   68 If: "IF" '(' Expression ')' . "THEN" Command
-   69   | "IF" '(' Expression ')' . "THEN" Command "ELSE" Command
+   71 Call: "ID" '(' ExpList ')' .
 
-    "THEN"  shift, and go to state 123
+    $default  reduce using rule 71 (Call)
 
 
 State 119
 
-   70 While: "WHILE" '(' Expression ')' . "DO" Command
+   65 If: "IF" '(' Expression ')' "THEN" . Command
+   66   | "IF" '(' Expression ')' "THEN" . Command "ELSE" Command
 
-    "DO"  shift, and go to state 124
+    "INT"     shift, and go to state 1
+    "FLOAT"   shift, and go to state 2
+    "BOOL"    shift, and go to state 3
+    "CHAR"    shift, and go to state 4
+    "STRING"  shift, and go to state 5
+    "IF"      shift, and go to state 25
+    "WHILE"   shift, and go to state 26
+    "DO"      shift, and go to state 27
+    "INPUT"   shift, and go to state 28
+    "OUTPUT"  shift, and go to state 29
+    "RETURN"  shift, and go to state 30
+    "ID"      shift, and go to state 31
+    ';'       shift, and go to state 15
+    '{'       shift, and go to state 19
+
+    SC           go to state 32
+    ID           go to state 33
+    Type         go to state 34
+    Body         go to state 35
+    Command      go to state 122
+    Local        go to state 38
+    Attribution  go to state 39
+    Return       go to state 40
+    FlowControl  go to state 41
+    If           go to state 42
+    While        go to state 43
+    Input        go to state 44
+    Output       go to state 45
+    Call         go to state 46
 
 
 State 120
 
-   71 While: "DO" Command "WHILE" '(' . Expression ')' SC
+   67 While: "WHILE" '(' Expression ')' "DO" . Command
 
-    "litInt"     shift, and go to state 51
-    "litFloat"   shift, and go to state 52
-    "false"      shift, and go to state 53
-    "true"       shift, and go to state 54
-    "litChar"    shift, and go to state 55
-    "litString"  shift, and go to state 56
-    "ID"         shift, and go to state 35
-    '('          shift, and go to state 57
+    "INT"     shift, and go to state 1
+    "FLOAT"   shift, and go to state 2
+    "BOOL"    shift, and go to state 3
+    "CHAR"    shift, and go to state 4
+    "STRING"  shift, and go to state 5
+    "IF"      shift, and go to state 25
+    "WHILE"   shift, and go to state 26
+    "DO"      shift, and go to state 27
+    "INPUT"   shift, and go to state 28
+    "OUTPUT"  shift, and go to state 29
+    "RETURN"  shift, and go to state 30
+    "ID"      shift, and go to state 31
+    ';'       shift, and go to state 15
+    '{'       shift, and go to state 19
 
-    ID          go to state 58
-    Expression  go to state 125
-    Literal     go to state 60
-    Boolean     go to state 61
-    Call        go to state 62
+    SC           go to state 32
+    ID           go to state 33
+    Type         go to state 34
+    Body         go to state 35
+    Command      go to state 123
+    Local        go to state 38
+    Attribution  go to state 39
+    Return       go to state 40
+    FlowControl  go to state 41
+    If           go to state 42
+    While        go to state 43
+    Input        go to state 44
+    Output       go to state 45
+    Call         go to state 46
 
 
 State 121
 
-   76 ExpList: Expression ',' ExpList .
+   40 Expression: Expression . '+' Expression
+   41           | Expression . '-' Expression
+   42           | Expression . '*' Expression
+   43           | Expression . '/' Expression
+   44           | Expression . '>' Expression
+   45           | Expression . '<' Expression
+   46           | Expression . "==" Expression
+   47           | Expression . "!=" Expression
+   48           | Expression . ">=" Expression
+   49           | Expression . "<=" Expression
+   50           | Expression . "&&" Expression
+   51           | Expression . "||" Expression
+   68 While: "DO" Command "WHILE" '(' Expression . ')' SC
 
-    $default  reduce using rule 76 (ExpList)
+    "<="  shift, and go to state 77
+    ">="  shift, and go to state 78
+    "=="  shift, and go to state 79
+    "!="  shift, and go to state 80
+    "&&"  shift, and go to state 81
+    "||"  shift, and go to state 82
+    '+'   shift, and go to state 83
+    '-'   shift, and go to state 84
+    '*'   shift, and go to state 85
+    '/'   shift, and go to state 86
+    '>'   shift, and go to state 87
+    '<'   shift, and go to state 88
+    ')'   shift, and go to state 124
 
 
 State 122
 
-   74 Call: "ID" '(' ExpList ')' .
+   65 If: "IF" '(' Expression ')' "THEN" Command .
+   66   | "IF" '(' Expression ')' "THEN" Command . "ELSE" Command
 
-    $default  reduce using rule 74 (Call)
+    "ELSE"  shift, and go to state 125
+
+    $default  reduce using rule 65 (If)
 
 
 State 123
 
-   68 If: "IF" '(' Expression ')' "THEN" . Command
-   69   | "IF" '(' Expression ')' "THEN" . Command "ELSE" Command
+   67 While: "WHILE" '(' Expression ')' "DO" Command .
 
-    error     shift, and go to state 14
-    "INT"     shift, and go to state 2
-    "FLOAT"   shift, and go to state 3
-    "BOOL"    shift, and go to state 4
-    "CHAR"    shift, and go to state 5
-    "STRING"  shift, and go to state 6
-    "IF"      shift, and go to state 29
-    "WHILE"   shift, and go to state 30
-    "DO"      shift, and go to state 31
-    "INPUT"   shift, and go to state 32
-    "OUTPUT"  shift, and go to state 33
-    "RETURN"  shift, and go to state 34
-    "ID"      shift, and go to state 35
-    "ERRO"    shift, and go to state 15
-    ';'       shift, and go to state 16
-    '{'       shift, and go to state 23
-
-    SC           go to state 36
-    ID           go to state 37
-    Type         go to state 38
-    Body         go to state 39
-    Command      go to state 126
-    Local        go to state 42
-    Attribution  go to state 43
-    Return       go to state 44
-    FlowControl  go to state 45
-    If           go to state 46
-    While        go to state 47
-    Input        go to state 48
-    Output       go to state 49
-    Call         go to state 50
+    $default  reduce using rule 67 (While)
 
 
 State 124
 
-   70 While: "WHILE" '(' Expression ')' "DO" . Command
+   68 While: "DO" Command "WHILE" '(' Expression ')' . SC
 
-    error     shift, and go to state 14
-    "INT"     shift, and go to state 2
-    "FLOAT"   shift, and go to state 3
-    "BOOL"    shift, and go to state 4
-    "CHAR"    shift, and go to state 5
-    "STRING"  shift, and go to state 6
-    "IF"      shift, and go to state 29
-    "WHILE"   shift, and go to state 30
-    "DO"      shift, and go to state 31
-    "INPUT"   shift, and go to state 32
-    "OUTPUT"  shift, and go to state 33
-    "RETURN"  shift, and go to state 34
-    "ID"      shift, and go to state 35
-    "ERRO"    shift, and go to state 15
-    ';'       shift, and go to state 16
-    '{'       shift, and go to state 23
+    ';'  shift, and go to state 15
 
-    SC           go to state 36
-    ID           go to state 37
-    Type         go to state 38
-    Body         go to state 39
-    Command      go to state 127
-    Local        go to state 42
-    Attribution  go to state 43
-    Return       go to state 44
-    FlowControl  go to state 45
-    If           go to state 46
-    While        go to state 47
-    Input        go to state 48
-    Output       go to state 49
-    Call         go to state 50
+    SC  go to state 126
 
 
 State 125
 
-   43 Expression: Expression . '+' Expression
-   44           | Expression . '-' Expression
-   45           | Expression . '*' Expression
-   46           | Expression . '/' Expression
-   47           | Expression . '>' Expression
-   48           | Expression . '<' Expression
-   49           | Expression . "==" Expression
-   50           | Expression . "!=" Expression
-   51           | Expression . ">=" Expression
-   52           | Expression . "<=" Expression
-   53           | Expression . "&&" Expression
-   54           | Expression . "||" Expression
-   71 While: "DO" Command "WHILE" '(' Expression . ')' SC
+   66 If: "IF" '(' Expression ')' "THEN" Command "ELSE" . Command
 
-    "<="  shift, and go to state 81
-    ">="  shift, and go to state 82
-    "=="  shift, and go to state 83
-    "!="  shift, and go to state 84
-    "&&"  shift, and go to state 85
-    "||"  shift, and go to state 86
-    '+'   shift, and go to state 87
-    '-'   shift, and go to state 88
-    '*'   shift, and go to state 89
-    '/'   shift, and go to state 90
-    '>'   shift, and go to state 91
-    '<'   shift, and go to state 92
-    ')'   shift, and go to state 128
+    "INT"     shift, and go to state 1
+    "FLOAT"   shift, and go to state 2
+    "BOOL"    shift, and go to state 3
+    "CHAR"    shift, and go to state 4
+    "STRING"  shift, and go to state 5
+    "IF"      shift, and go to state 25
+    "WHILE"   shift, and go to state 26
+    "DO"      shift, and go to state 27
+    "INPUT"   shift, and go to state 28
+    "OUTPUT"  shift, and go to state 29
+    "RETURN"  shift, and go to state 30
+    "ID"      shift, and go to state 31
+    ';'       shift, and go to state 15
+    '{'       shift, and go to state 19
+
+    SC           go to state 32
+    ID           go to state 33
+    Type         go to state 34
+    Body         go to state 35
+    Command      go to state 127
+    Local        go to state 38
+    Attribution  go to state 39
+    Return       go to state 40
+    FlowControl  go to state 41
+    If           go to state 42
+    While        go to state 43
+    Input        go to state 44
+    Output       go to state 45
+    Call         go to state 46
 
 
 State 126
 
-   68 If: "IF" '(' Expression ')' "THEN" Command .
-   69   | "IF" '(' Expression ')' "THEN" Command . "ELSE" Command
+   68 While: "DO" Command "WHILE" '(' Expression ')' SC .
 
-    "ELSE"  shift, and go to state 129
-
-    $default  reduce using rule 68 (If)
+    $default  reduce using rule 68 (While)
 
 
 State 127
 
-   70 While: "WHILE" '(' Expression ')' "DO" Command .
+   66 If: "IF" '(' Expression ')' "THEN" Command "ELSE" Command .
 
-    $default  reduce using rule 70 (While)
-
-
-State 128
-
-   71 While: "DO" Command "WHILE" '(' Expression ')' . SC
-
-    error   shift, and go to state 14
-    "ERRO"  shift, and go to state 15
-    ';'     shift, and go to state 16
-
-    SC  go to state 130
-
-
-State 129
-
-   69 If: "IF" '(' Expression ')' "THEN" Command "ELSE" . Command
-
-    error     shift, and go to state 14
-    "INT"     shift, and go to state 2
-    "FLOAT"   shift, and go to state 3
-    "BOOL"    shift, and go to state 4
-    "CHAR"    shift, and go to state 5
-    "STRING"  shift, and go to state 6
-    "IF"      shift, and go to state 29
-    "WHILE"   shift, and go to state 30
-    "DO"      shift, and go to state 31
-    "INPUT"   shift, and go to state 32
-    "OUTPUT"  shift, and go to state 33
-    "RETURN"  shift, and go to state 34
-    "ID"      shift, and go to state 35
-    "ERRO"    shift, and go to state 15
-    ';'       shift, and go to state 16
-    '{'       shift, and go to state 23
-
-    SC           go to state 36
-    ID           go to state 37
-    Type         go to state 38
-    Body         go to state 39
-    Command      go to state 131
-    Local        go to state 42
-    Attribution  go to state 43
-    Return       go to state 44
-    FlowControl  go to state 45
-    If           go to state 46
-    While        go to state 47
-    Input        go to state 48
-    Output       go to state 49
-    Call         go to state 50
-
-
-State 130
-
-   71 While: "DO" Command "WHILE" '(' Expression ')' SC .
-
-    $default  reduce using rule 71 (While)
-
-
-State 131
-
-   69 If: "IF" '(' Expression ')' "THEN" Command "ELSE" Command .
-
-    $default  reduce using rule 69 (If)
+    $default  reduce using rule 66 (If)

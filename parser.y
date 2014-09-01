@@ -58,14 +58,14 @@ stmts:		stmt
 
 stmt:		Global SC
 		|Function
-		|error SC {yyerror("Invalid statement");
-					yyclearin;}
+		//|error SC {yyerror("Invalid statement3");
+		//			yyclearin;}
 
 SC:	 	';'
-		|"ERRO" {yyerror("Missing semicolon");
-				yyclearin;}
-		|error {yyerror("Missing semicolon");
-				yyclearin;}
+	//	|"ERRO" {yyerror("Missing semicolon1");
+	//			yyclearin;}
+	//	|error {yyerror("Missing semicolon2");
+	//			yyclearin;}
 
 /*{yyerrok;
 		 printf("Missing semicolon at line %d",getLineNumber());
