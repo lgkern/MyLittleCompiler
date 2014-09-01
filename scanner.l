@@ -71,17 +71,17 @@ int numLines = 1;
 "&&"					return	TK_OC_AND;
 "||"					return	TK_OC_OR;
 
-"false"                    {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_LITERAL_BOOL, yytext), numLines);    return    TK_LIT_FALSE;}        
-"true"                    {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_LITERAL_BOOL, yytext), numLines);        return    TK_LIT_TRUE;}
+"false"                    {yylval.symbol = addSymbol(createIntToken(IKS_SIMBOLO_LITERAL_BOOL, 1), numLines);    return    TK_LIT_FALSE;}        
+"true"                    {yylval.symbol = addSymbol(createIntToken(IKS_SIMBOLO_LITERAL_BOOL, 0), numLines);        return    TK_LIT_TRUE;}
 
 
 ({ALPHA}|_)({ALPHA}|{DIGIT}|_)*    {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_IDENTIFICADOR, yytext), numLines); return    TK_IDENTIFICADOR;}                
 
--?{DIGIT}+                {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_LITERAL_INT, yytext), numLines);        return    TK_LIT_INT;}
--?{DIGIT}+"."{DIGIT}+    {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_LITERAL_FLOAT, yytext), numLines);     return    TK_LIT_FLOAT;}
-"\'"."\'"                {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_LITERAL_CHAR, yytext), numLines);     return    TK_LIT_CHAR;}
+-?{DIGIT}+                {yylval.symbol = addSymbol(createIntToken(IKS_SIMBOLO_LITERAL_INT, atoi(yytext)), numLines);        return    TK_LIT_INT;}
+-?{DIGIT}+"."{DIGIT}+    {yylval.symbol = addSymbol(createFltToken(IKS_SIMBOLO_LITERAL_FLOAT, atof(yytext)), numLines);     return    TK_LIT_FLOAT;}
+"\'"."\'"                {yylval.symbol = addSymbol(createChrToken(IKS_SIMBOLO_LITERAL_CHAR, yytext[1]), numLines);     return    TK_LIT_CHAR;}
 
-\"(\\.|[^\\"])*\"        {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_LITERAL_STRING, yytext), numLines); return    TK_LIT_STRING;}
+\"(\\.|[^\\"])*\"        {yylval.symbol = addSymbol(createStrToken(IKS_SIMBOLO_LITERAL_STRING, yytext), numLines); return    TK_LIT_STRING;}
 
 					
 \n						{++numLines;}

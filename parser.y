@@ -44,7 +44,7 @@
 %left '>'
 %left '<'
 %left "<=" ">=" "==" "!=" "&&" "||"
-%right "INT" "FLOAT" "BOOL" "CHAR" "STRING"
+%right "INT" "FLOAT" "BOOL" "CHAR" "STRING" "THEN" "ELSE"
 
 %error-verbose
 
@@ -70,7 +70,9 @@ SC:	 	';'
 		 yyclearin;}
 		|*/
 
-Global:	 	Type ID 
+Global:	 	Type ID
+
+ID:		"ID" Vector
 
 Type:		"INT"
 		|"FLOAT"
@@ -112,8 +114,6 @@ Command:	Local SC
 
 Local:		Type "ID"
 
-ID:		"ID" Vector
-
 Attribution:	ID '=' Expression
 
 Expression:	Literal
@@ -153,11 +153,8 @@ Return: 	"RETURN" Expression
 FlowControl:	If
 		| While
 
-If:		"IF" '(' Expression ')' "THEN" Command Else
-
-Else:		/*empty*/
-		|"ELSE" Command
-		
+If:		"IF" '(' Expression ')' "THEN" Command
+		|"IF" '(' Expression ')' "THEN" Command "ELSE" Command	
 
 While:	 	"WHILE" '(' Expression ')'  "DO" Command
 		| "DO" Command "WHILE" '(' Expression ')' SC

@@ -1,5 +1,6 @@
 #include "symt.h"
 #include "crc16.h"
+#include "main.h"
 #include <string.h>
 #include <values.h>
 #include <stdlib.h>
@@ -20,7 +21,9 @@
 		{
 			if(&table->data[i] != NULL)
 			{
-				free(table->data[i]->token->description);
+				if(table->data[i]->token->token == IKS_SIMBOLO_LITERAL_STRING 
+				 ||table->data[i]->token->token == IKS_SIMBOLO_IDENTIFICADOR)
+					free(table->data[i]->token->description.string);
 				free(table->data[i]->token);
 				free(table->data[i]);
 			}
@@ -39,8 +42,10 @@
 
 		position = hash(token);
 		if(table->data[position]!= NULL)
-		{
-			free(table->data[position]->token->description);
+		{				
+			if(table->data[position]->token->token == IKS_SIMBOLO_LITERAL_STRING 
+			 ||table->data[position]->token->token == IKS_SIMBOLO_IDENTIFICADOR)
+				free(table->data[position]->token->description.string);
 			free(table->data[position]->token);
 			free(table->data[position]);
 		}
@@ -64,7 +69,30 @@
 
 	int	hash(TOKEN* token)
 	{
-		int length = strlen(token->description);
+		int length = 0;
+		switch(token->token)		
+		{
+		case IKS_SIMBOLO_LITERAL_STRING:
+			length = strlen(token->description.string);
+			break;
+		case IKS_SIMBOLO_IDENTIFICADOR:
+			length = strlen(token->description.string);
+			break;
+		case IKS_SIMBOLO_LITERAL_BOOL:
+			length = sizeof(int);
+			break;
+		case IKS_SIMBOLO_LITERAL_FLOAT:
+			length = sizeof(float);
+			break;
+		case IKS_SIMBOLO_LITERAL_INT:
+			length = sizeof(int);
+			break;
+		case IKS_SIMBOLO_LITERAL_CHAR:
+			length = sizeof(char);
+			break;
+		default:
+			length = 0;			
+		}
 		length += 4;
 
 		return crc16_ccitt((const void*)token,length);
@@ -75,6 +103,42 @@
 		TOKEN* myToken;
 		myToken = calloc(1,sizeof(TOKEN));
 		myToken->token = token;
-		myToken->description = strdup(description);
+		myToken->description.string = strdup(description);
+	}
+
+	TOKEN* createIntToken(int token, int description)
+	{
+		TOKEN* myToken;
+		myToken = calloc(1,sizeof(TOKEN));
+		myToken->token = token;
+		myToken->description.integer = description;
+	}
+
+	TOKEN* createFltToken(int token, float description)
+	{
+		TOKEN* myToken;
+		myToken = calloc(1,sizeof(TOKEN));
+		myToken->token = token;
+		myToken->description.floating = description;
+	}
+
+	TOKEN* createChrToken(int token, char description)
+	{
+		TOKEN* myToken;
+		myToken = calloc(1,sizeof(TOKEN));
+		myToken->token = token;
+		myToken->description.character = description;
+	}
+
+	TOKEN* createStrToken(int token, char* description)
+	{
+		TOKEN* myToken;
+		int strsize = 0;
+		myToken = calloc(1,sizeof(TOKEN));
+		myToken->token = token;
+		strsize = strlen(description);
+		description[strsize-3] = '\0'; //remove the last quotation
+		myToken->description.string = strdup(description);
+		description[strsize-3] = 'a'; //put some trash back in so it doesn't lose the pointer
 	}
 
