@@ -70,7 +70,7 @@ SC:	 	';'
 		 yyclearin;}
 		|*/
 
-Global:	 	Type "ID" Vector 
+Global:	 	Type ID 
 
 Type:		"INT"
 		|"FLOAT"
@@ -79,13 +79,14 @@ Type:		"INT"
 		|"STRING"
 
 Vector: 	/*empty*/
-		|'[' "litInt" ']'
+		|'[' Expression ']'
 
 Function:	Header Body
 		
 Header:		Type "ID" List
 
 List:		'(' ParaList ')'
+		|'(' ')'
 
 ParaList:	Parameter ',' ParaList
 		| Parameter
@@ -101,7 +102,7 @@ Block:		/*empty*/
 
 Command:	Local SC 
 		| Attribution SC
-		| FlowControl SC
+		| FlowControl
 		| Input SC
 		| Output SC
 		| Return SC 
@@ -132,9 +133,9 @@ Expression:	Literal
 		| '(' Expression ')'
 		| Call
 
-Literal:	"ID" Vector
+Literal:	ID
 		|Boolean
-		|"litInteger"
+		|"litInt"
 		|"litFloat"
 		|"litChar"
 		|"litString"
@@ -152,20 +153,21 @@ Return: 	"RETURN" Expression
 FlowControl:	If
 		| While
 
-If:		"IF" '(' Expression ')' "THEN" Body Else
+If:		"IF" '(' Expression ')' "THEN" Command Else
 
 Else:		/*empty*/
-		|"ELSE" Body
+		|"ELSE" Command
 		
 
-While:	 	"WHILE" '(' Expression ')'  "DO" Body
-		| "DO" Body "WHILE" '(' Expression ')' SC
+While:	 	"WHILE" '(' Expression ')'  "DO" Command
+		| "DO" Command "WHILE" '(' Expression ')' SC
 
 Input:		"INPUT"  ID
 
 Output:		"OUTPUT" ExpList
 
-Call:		"ID" '(' ExpList ')'	
+Call:		"ID" '(' ExpList ')'
+		|"ID" '(' ')'	
 
 ExpList:	Expression ',' ExpList
 		| Expression
