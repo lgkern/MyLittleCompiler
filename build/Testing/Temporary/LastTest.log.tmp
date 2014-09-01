@@ -1,0 +1,549 @@
+Start testing: Sep 01 18:51 BRT
+----------------------------------------------------------
+33/298 Testing: e2_avaliacao_certa_01
+33/298 Test: e2_avaliacao_certa_01
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_01.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_01" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_01'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_01:2] ./main ./tests/e2/input/certa01.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_01' OK
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_01" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_01" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/298 Testing: e2_avaliacao_certa_02
+34/298 Test: e2_avaliacao_certa_02
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_02.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_02" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_02'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_02:2] ./main ./tests/e2/input/certa02.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_02' OK
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_02" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_02" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/298 Testing: e2_avaliacao_certa_03
+35/298 Test: e2_avaliacao_certa_03
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_03.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_03" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_03'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_03:2] ./main ./tests/e2/input/certa03.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_03' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_03" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_03" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/298 Testing: e2_avaliacao_certa_04
+36/298 Test: e2_avaliacao_certa_04
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_04.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_04" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_04'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_04:2] ./main ./tests/e2/input/certa04.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_04' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_04" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_04" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/298 Testing: e2_avaliacao_certa_05
+37/298 Test: e2_avaliacao_certa_05
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_05.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_05" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_05'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_05:2] ./main ./tests/e2/input/certa05.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_05' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_05" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_05" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/298 Testing: e2_avaliacao_certa_06
+38/298 Test: e2_avaliacao_certa_06
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_06.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_06" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_06'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_06:2] ./main ./tests/e2/input/certa06.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_06' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_06" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_06" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/298 Testing: e2_avaliacao_certa_07
+39/298 Test: e2_avaliacao_certa_07
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_07.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_07" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_07'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_07:2] ./main ./tests/e2/input/certa07.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_07' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_07" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_07" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/298 Testing: e2_avaliacao_certa_08
+40/298 Test: e2_avaliacao_certa_08
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_08.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_08" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_08'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_08:2] ./main ./tests/e2/input/certa08.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_08' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_08" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_08" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/298 Testing: e2_avaliacao_certa_09
+41/298 Test: e2_avaliacao_certa_09
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_09.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_09" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_09'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_09:2] ./main ./tests/e2/input/certa09.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_09' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_09" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_09" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/298 Testing: e2_avaliacao_certa_10
+42/298 Test: e2_avaliacao_certa_10
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_10.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_10" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_10'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_10:2] ./main ./tests/e2/input/certa10.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_10' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_10" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_10" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/298 Testing: e2_avaliacao_certa_11
+43/298 Test: e2_avaliacao_certa_11
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_11.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_11" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_11'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_11:2] ./main ./tests/e2/input/certa11.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_11' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_11" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_11" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/298 Testing: e2_avaliacao_certa_12
+44/298 Test: e2_avaliacao_certa_12
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_12.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_12" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_12'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_12:2] ./main ./tests/e2/input/certa12.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_12' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_12" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_12" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/298 Testing: e2_avaliacao_certa_13
+45/298 Test: e2_avaliacao_certa_13
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_13.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_13" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_13'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_13:2] ./main ./tests/e2/input/certa13.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_13' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_13" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_13" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/298 Testing: e2_avaliacao_certa_14
+46/298 Test: e2_avaliacao_certa_14
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_14.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_14" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_14'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_14:2] ./main ./tests/e2/input/certa14.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_14' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_14" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_14" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/298 Testing: e2_avaliacao_certa_15
+47/298 Test: e2_avaliacao_certa_15
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_15.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_15" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_15'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_15:2] ./main ./tests/e2/input/certa15.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_15' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_15" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_15" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/298 Testing: e2_avaliacao_certa_16
+48/298 Test: e2_avaliacao_certa_16
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_16.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_16" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_16'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_16:2] ./main ./tests/e2/input/certa16.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_16' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_16" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_16" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/298 Testing: e2_avaliacao_certa_17
+49/298 Test: e2_avaliacao_certa_17
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_17.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_17" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_17'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_17:2] ./main ./tests/e2/input/certa17.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_17' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_17" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_17" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/298 Testing: e2_avaliacao_certa_18
+50/298 Test: e2_avaliacao_certa_18
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_18.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_18" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_18'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_18:2] ./main ./tests/e2/input/certa18.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_18' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_18" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_18" time elapsed: 00:00:00
+----------------------------------------------------------
+
+51/298 Testing: e2_avaliacao_certa_19
+51/298 Test: e2_avaliacao_certa_19
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_19.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_19" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_19'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_19:2] ./main ./tests/e2/input/certa19.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_19' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_19" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_19" time elapsed: 00:00:00
+----------------------------------------------------------
+
+52/298 Testing: e2_avaliacao_certa_20
+52/298 Test: e2_avaliacao_certa_20
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_20.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_certa_20" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_20'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_20:2] ./main ./tests/e2/input/certa20.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_20' OK
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"e2_avaliacao_certa_20" end time: Sep 01 18:51 BRT
+"e2_avaliacao_certa_20" time elapsed: 00:00:00
+----------------------------------------------------------
+
+53/298 Testing: e2_avaliacao_errada_01
+53/298 Test: e2_avaliacao_errada_01
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_01.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_errada_01" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_01'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_01:4] ./main ./tests/e2/input/errada01.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_01.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_01.tesh:4> returned code 0)
+Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_01.tesh:4> so far:
+|| Erro na linha 2. Mensagem: syntax error, unexpected $end, expecting ';'
+(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_01.tesh:4> as requested)
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Failed.
+"e2_avaliacao_errada_01" end time: Sep 01 18:51 BRT
+"e2_avaliacao_errada_01" time elapsed: 00:00:00
+----------------------------------------------------------
+
+54/298 Testing: e2_avaliacao_errada_02
+54/298 Test: e2_avaliacao_errada_02
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_02.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_errada_02" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_02'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_02:4] ./main ./tests/e2/input/errada02.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_02.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_02.tesh:4> returned code 0)
+Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_02.tesh:4> so far:
+|| Erro na linha 1. Mensagem: syntax error, unexpected ';', expecting ID
+(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_02.tesh:4> as requested)
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Failed.
+"e2_avaliacao_errada_02" end time: Sep 01 18:51 BRT
+"e2_avaliacao_errada_02" time elapsed: 00:00:00
+----------------------------------------------------------
+
+55/298 Testing: e2_avaliacao_errada_03
+55/298 Test: e2_avaliacao_errada_03
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_03.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_errada_03" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_03'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_03:4] ./main ./tests/e2/input/errada03.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_03.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_03.tesh:4> returned code 0)
+Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_03.tesh:4> so far:
+|| Erro na linha 1. Mensagem: syntax error, unexpected ';'
+(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_03.tesh:4> as requested)
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Failed.
+"e2_avaliacao_errada_03" end time: Sep 01 18:51 BRT
+"e2_avaliacao_errada_03" time elapsed: 00:00:00
+----------------------------------------------------------
+
+56/298 Testing: e2_avaliacao_errada_04
+56/298 Test: e2_avaliacao_errada_04
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_04.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_errada_04" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_04'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_04:4] ./main ./tests/e2/input/errada04.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_04.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_04.tesh:4> returned code 0)
+Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_04.tesh:4> so far:
+|| Erro na linha 2. Mensagem: syntax error, unexpected FLOAT, expecting '{'
+|| Erro na linha 2. Mensagem: syntax error, unexpected ID
+|| Erro na linha 2. Mensagem: syntax error, unexpected ';'
+|| Erro na linha 3. Mensagem: syntax error, unexpected '{'
+|| Erro na linha 4. Mensagem: syntax error, unexpected DO
+|| Erro na linha 4. Mensagem: syntax error, unexpected OUTPUT
+|| Erro na linha 5. Mensagem: syntax error, unexpected ID
+|| Erro na linha 5. Mensagem: syntax error, unexpected '('
+|| Erro na linha 5. Mensagem: syntax error, unexpected litInt
+|| Erro na linha 5. Mensagem: syntax error, unexpected '-'
+|| Erro na linha 5. Mensagem: syntax error, unexpected litInt
+|| Erro na linha 5. Mensagem: syntax error, unexpected ')'
+|| Erro na linha 5. Mensagem: syntax error, unexpected ';'
+|| Erro na linha 6. Mensagem: syntax error, unexpected '}'
+(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_04.tesh:4> as requested)
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Failed.
+"e2_avaliacao_errada_04" end time: Sep 01 18:51 BRT
+"e2_avaliacao_errada_04" time elapsed: 00:00:00
+----------------------------------------------------------
+
+57/298 Testing: e2_avaliacao_errada_05
+57/298 Test: e2_avaliacao_errada_05
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_05.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_errada_05" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_05'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_05:4] ./main ./tests/e2/input/errada05.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_05.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_05.tesh:4> returned code 0)
+Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_05.tesh:4> so far:
+|| Erro na linha 4. Mensagem: syntax error, unexpected ID, expecting ';' or '}'
+(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_05.tesh:4> as requested)
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Failed.
+"e2_avaliacao_errada_05" end time: Sep 01 18:51 BRT
+"e2_avaliacao_errada_05" time elapsed: 00:00:00
+----------------------------------------------------------
+
+58/298 Testing: e2_avaliacao_errada_06
+58/298 Test: e2_avaliacao_errada_06
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_06.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_errada_06" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_06'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_06:4] ./main ./tests/e2/input/errada06.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_06.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_06.tesh:4> returned code 0)
+Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_06.tesh:4> so far:
+|| Erro na linha 4. Mensagem: syntax error, unexpected litInt, expecting ID
+(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_06.tesh:4> as requested)
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Failed.
+"e2_avaliacao_errada_06" end time: Sep 01 18:51 BRT
+"e2_avaliacao_errada_06" time elapsed: 00:00:00
+----------------------------------------------------------
+
+59/298 Testing: e2_avaliacao_errada_07
+59/298 Test: e2_avaliacao_errada_07
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_07.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_errada_07" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_07'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_07:4] ./main ./tests/e2/input/errada07.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_07.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_07.tesh:4> returned code 0)
+Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_07.tesh:4> so far:
+|| Erro na linha 1. Mensagem: syntax error, unexpected ')'
+|| Erro na linha 1. Mensagem: syntax error, unexpected '{'
+|| Erro na linha 1. Mensagem: syntax error, unexpected '}'
+(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_07.tesh:4> as requested)
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Failed.
+"e2_avaliacao_errada_07" end time: Sep 01 18:51 BRT
+"e2_avaliacao_errada_07" time elapsed: 00:00:00
+----------------------------------------------------------
+
+60/298 Testing: e2_avaliacao_errada_08
+60/298 Test: e2_avaliacao_errada_08
+Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_08.tesh"
+Directory: /home/lgkern/repos/MyLittleCompiler/build
+"e2_avaliacao_errada_08" start time: Sep 01 18:51 BRT
+Output:
+----------------------------------------------------------
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_08'
+[/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_08:4] ./main ./tests/e2/input/errada08.txt
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_08.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_08.tesh:4> returned code 0)
+Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_08.tesh:4> so far:
+|| Erro na linha 6. Mensagem: syntax error, unexpected ID
+|| Erro na linha 6. Mensagem: syntax error, unexpected '='
+|| Erro na linha 6. Mensagem: syntax error, unexpected litInt
+|| Erro na linha 6. Mensagem: syntax error, unexpected ';'
+|| Erro na linha 7. Mensagem: syntax error, unexpected '}'
+(ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_08.tesh:4> as requested)
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Failed.
+"e2_avaliacao_errada_08" end time: Sep 01 18:51 BRT
+"e2_avaliacao_errada_08" time elapsed: 00:00:00
+----------------------------------------------------------
+
