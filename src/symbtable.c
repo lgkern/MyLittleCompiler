@@ -1,5 +1,6 @@
 #include "symbtable.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 //Symbol Table API -------------------------------------------------------------------------
 

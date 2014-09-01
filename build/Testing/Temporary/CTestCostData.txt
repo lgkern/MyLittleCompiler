@@ -30,26 +30,26 @@ e1_valgrind_13 14 0.0462738
 e1_valgrind_14 14 0.0385085
 e1_valgrind_15 5 0.121907
 e1_valgrind_16 14 0.0372516
-e2_avaliacao_certa_01 10 0.0078784
-e2_avaliacao_certa_02 10 0.0079277
-e2_avaliacao_certa_03 10 0.00793321
-e2_avaliacao_certa_04 10 0.00777111
-e2_avaliacao_certa_05 10 0.0077709
-e2_avaliacao_certa_06 3 0
-e2_avaliacao_certa_07 10 0.00792642
-e2_avaliacao_certa_08 3 0
-e2_avaliacao_certa_09 10 0.00775859
-e2_avaliacao_certa_10 4 0.0196953
-e2_avaliacao_certa_11 10 0.00789561
-e2_avaliacao_certa_12 2 0.039286
-e2_avaliacao_certa_13 2 0.0395424
-e2_avaliacao_certa_14 10 0.00787311
-e2_avaliacao_certa_15 10 0.00791349
-e2_avaliacao_certa_16 10 0.00795951
-e2_avaliacao_certa_17 10 0.00797729
-e2_avaliacao_certa_18 10 0.00820961
-e2_avaliacao_certa_19 10 0.00775061
-e2_avaliacao_certa_20 0 0
+e2_avaliacao_certa_01 12 0.00651375
+e2_avaliacao_certa_02 12 0.0066455
+e2_avaliacao_certa_03 12 0.00659601
+e2_avaliacao_certa_04 12 0.00663926
+e2_avaliacao_certa_05 12 0.00660316
+e2_avaliacao_certa_06 4 0.019831
+e2_avaliacao_certa_07 12 0.00653682
+e2_avaliacao_certa_08 4 0.0199645
+e2_avaliacao_certa_09 12 0.00659601
+e2_avaliacao_certa_10 6 0.013039
+e2_avaliacao_certa_11 12 0.00659418
+e2_avaliacao_certa_12 4 0.0197735
+e2_avaliacao_certa_13 4 0.0197197
+e2_avaliacao_certa_14 12 0.00660783
+e2_avaliacao_certa_15 12 0.00656424
+e2_avaliacao_certa_16 12 0.00690434
+e2_avaliacao_certa_17 12 0.00642699
+e2_avaliacao_certa_18 12 0.00656376
+e2_avaliacao_certa_19 12 0.00658166
+e2_avaliacao_certa_20 1 0.079036
 e2_avaliacao_errada_01 0 0
 e2_avaliacao_errada_02 0 0
 e2_avaliacao_errada_03 0 0
@@ -58,7 +58,7 @@ e2_avaliacao_errada_05 0 0
 e2_avaliacao_errada_06 0 0
 e2_avaliacao_errada_07 0 0
 e2_avaliacao_errada_08 0 0
-e2_avaliacao_errada_09 10 0.00791428
+e2_avaliacao_errada_09 13 0.00625498
 e2_avaliacao_errada_10 0 0
 e2_avaliacao_errada_11 0 0
 e2_avaliacao_errada_12 0 0
@@ -70,50 +70,47 @@ e2_avaliacao_errada_17 0 0
 e2_avaliacao_errada_18 0 0
 e2_avaliacao_errada_19 0 0
 e2_avaliacao_errada_20 3 0
-e2_valgrind_certa_01 11 0.0857867
-e2_valgrind_certa_02 11 0.0814163
-e2_valgrind_certa_03 11 0.0858929
-e2_valgrind_certa_04 11 0.0802305
-e2_valgrind_certa_05 11 0.0819436
-e2_valgrind_certa_06 4 0
-e2_valgrind_certa_07 11 0.0820016
-e2_valgrind_certa_08 4 0
-e2_valgrind_certa_09 11 0.0865914
-e2_valgrind_certa_10 4 0
-e2_valgrind_certa_11 4 0
-e2_valgrind_certa_12 11 0.0816734
-e2_valgrind_certa_13 11 0.0811132
-e2_valgrind_certa_14 11 0.0860025
-e2_valgrind_certa_15 11 0.0814439
-e2_valgrind_certa_16 11 0.0813024
-e2_valgrind_certa_17 11 0.0859653
-e2_valgrind_certa_18 11 0.0811008
-e2_valgrind_certa_19 11 0.0862089
-e2_valgrind_certa_20 4 0
-e2_valgrind_errada_01 11 0.0836406
-e2_valgrind_errada_02 11 0.088997
-e2_valgrind_errada_03 11 0.0840772
-e2_valgrind_errada_04 11 0.0847386
-e2_valgrind_errada_05 11 0.0895306
-e2_valgrind_errada_06 11 0.0849837
-e2_valgrind_errada_07 11 0.0893227
-e2_valgrind_errada_08 11 0.0871905
-e2_valgrind_errada_09 11 0.0843539
-e2_valgrind_errada_10 4 0
-e2_valgrind_errada_11 4 0
-e2_valgrind_errada_12 11 0.0852571
-e2_valgrind_errada_13 11 0.0899812
-e2_valgrind_errada_14 11 0.0850395
-e2_valgrind_errada_15 11 0.0849962
-e2_valgrind_errada_16 11 0.0903341
-e2_valgrind_errada_17 11 0.0852323
-e2_valgrind_errada_18 11 0.0896926
-e2_valgrind_errada_19 11 0.0854921
-e2_valgrind_errada_20 4 0
+e2_valgrind_certa_01 14 0.0631577
+e2_valgrind_certa_02 14 0.0690982
+e2_valgrind_certa_03 14 0.0641826
+e2_valgrind_certa_04 14 0.063369
+e2_valgrind_certa_05 14 0.0642411
+e2_valgrind_certa_06 6 0.15187
+e2_valgrind_certa_07 14 0.0645152
+e2_valgrind_certa_08 6 0.150443
+e2_valgrind_certa_09 14 0.0637953
+e2_valgrind_certa_10 6 0.149035
+e2_valgrind_certa_11 6 0.148425
+e2_valgrind_certa_12 14 0.0642671
+e2_valgrind_certa_13 14 0.0667144
+e2_valgrind_certa_14 14 0.0645346
+e2_valgrind_certa_15 14 0.0640114
+e2_valgrind_certa_16 14 0.0645498
+e2_valgrind_certa_17 14 0.0633386
+e2_valgrind_certa_18 14 0.0640173
+e2_valgrind_certa_19 14 0.0639711
+e2_valgrind_certa_20 6 0.152323
+e2_valgrind_errada_01 14 0.0651784
+e2_valgrind_errada_02 14 0.0653542
+e2_valgrind_errada_03 14 0.06544
+e2_valgrind_errada_04 14 0.0661294
+e2_valgrind_errada_05 14 0.0662866
+e2_valgrind_errada_06 14 0.0701373
+e2_valgrind_errada_07 14 0.0667167
+e2_valgrind_errada_08 14 0.0671309
+e2_valgrind_errada_09 14 0.0659547
+e2_valgrind_errada_10 6 0.15693
+e2_valgrind_errada_11 6 0.154259
+e2_valgrind_errada_12 14 0.0659871
+e2_valgrind_errada_13 14 0.0660074
+e2_valgrind_errada_14 14 0.0671454
+e2_valgrind_errada_15 14 0.0658134
+e2_valgrind_errada_16 14 0.0677021
+e2_valgrind_errada_17 14 0.0670466
+e2_valgrind_errada_18 14 0.0662822
+e2_valgrind_errada_19 14 0.0665004
+e2_valgrind_errada_20 6 0.157106
 ---
-e2_avaliacao_certa_06
-e2_avaliacao_certa_08
-e2_avaliacao_certa_20
 e2_avaliacao_errada_01
 e2_avaliacao_errada_02
 e2_avaliacao_errada_03
@@ -133,11 +130,3 @@ e2_avaliacao_errada_17
 e2_avaliacao_errada_18
 e2_avaliacao_errada_19
 e2_avaliacao_errada_20
-e2_valgrind_certa_06
-e2_valgrind_certa_08
-e2_valgrind_certa_10
-e2_valgrind_certa_11
-e2_valgrind_certa_20
-e2_valgrind_errada_10
-e2_valgrind_errada_11
-e2_valgrind_errada_20

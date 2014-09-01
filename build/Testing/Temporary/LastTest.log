@@ -1,10 +1,10 @@
-Start testing: Sep 01 17:48 BRT
+Start testing: Sep 01 18:22 BRT
 ----------------------------------------------------------
 33/298 Testing: e2_avaliacao_certa_01
 33/298 Test: e2_avaliacao_certa_01
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_01.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_01" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_01" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_01'
@@ -14,7 +14,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_01' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_01" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_01" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_01" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -22,7 +22,7 @@ Test Passed.
 34/298 Test: e2_avaliacao_certa_02
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_02.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_02" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_02" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_02'
@@ -32,7 +32,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_02' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_02" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_02" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_02" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -40,7 +40,7 @@ Test Passed.
 35/298 Test: e2_avaliacao_certa_03
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_03.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_03" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_03" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_03'
@@ -50,7 +50,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_03' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_03" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_03" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_03" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -58,7 +58,7 @@ Test Passed.
 36/298 Test: e2_avaliacao_certa_04
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_04.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_04" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_04" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_04'
@@ -68,7 +68,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_04' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_04" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_04" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_04" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -76,7 +76,7 @@ Test Passed.
 37/298 Test: e2_avaliacao_certa_05
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_05.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_05" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_05" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_05'
@@ -86,7 +86,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_05' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_05" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_05" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_05" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -94,19 +94,17 @@ Test Passed.
 38/298 Test: e2_avaliacao_certa_06
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_06.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_06" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_06" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_06'
 [/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_06:2] ./main ./tests/e2/input/certa06.txt
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_06.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_06.tesh:2> got signal SIGSEGV)
-Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_06.tesh:2> so far:
-||
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_06' OK
 <end of output>
-Test time =   0.29 sec
+Test time =   0.08 sec
 ----------------------------------------------------------
-Test Failed.
-"e2_avaliacao_certa_06" end time: Sep 01 17:48 BRT
+Test Passed.
+"e2_avaliacao_certa_06" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_06" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -114,7 +112,7 @@ Test Failed.
 39/298 Test: e2_avaliacao_certa_07
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_07.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_07" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_07" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_07'
@@ -124,7 +122,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_07' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_07" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_07" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_07" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -132,19 +130,17 @@ Test Passed.
 40/298 Test: e2_avaliacao_certa_08
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_08.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_08" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_08" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_08'
 [/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_08:2] ./main ./tests/e2/input/certa08.txt
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_08.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_08.tesh:2> got signal SIGSEGV)
-Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_08.tesh:2> so far:
-||
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_08' OK
 <end of output>
-Test time =   0.30 sec
+Test time =   0.08 sec
 ----------------------------------------------------------
-Test Failed.
-"e2_avaliacao_certa_08" end time: Sep 01 17:48 BRT
+Test Passed.
+"e2_avaliacao_certa_08" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_08" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -152,7 +148,7 @@ Test Failed.
 41/298 Test: e2_avaliacao_certa_09
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_09.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_09" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_09" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_09'
@@ -162,7 +158,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_09' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_09" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_09" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_09" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -170,7 +166,7 @@ Test Passed.
 42/298 Test: e2_avaliacao_certa_10
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_10.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_10" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_10" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_10'
@@ -180,7 +176,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_10' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_10" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_10" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_10" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -188,7 +184,7 @@ Test Passed.
 43/298 Test: e2_avaliacao_certa_11
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_11.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_11" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_11" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_11'
@@ -198,7 +194,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_11' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_11" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_11" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_11" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -206,7 +202,7 @@ Test Passed.
 44/298 Test: e2_avaliacao_certa_12
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_12.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_12" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_12" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_12'
@@ -216,7 +212,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_12' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_12" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_12" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_12" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -224,7 +220,7 @@ Test Passed.
 45/298 Test: e2_avaliacao_certa_13
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_13.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_13" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_13" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_13'
@@ -234,7 +230,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_13' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_13" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_13" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_13" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -242,7 +238,7 @@ Test Passed.
 46/298 Test: e2_avaliacao_certa_14
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_14.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_14" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_14" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_14'
@@ -252,7 +248,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_14' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_14" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_14" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_14" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -260,7 +256,7 @@ Test Passed.
 47/298 Test: e2_avaliacao_certa_15
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_15.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_15" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_15" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_15'
@@ -270,7 +266,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_15' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_15" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_15" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_15" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -278,7 +274,7 @@ Test Passed.
 48/298 Test: e2_avaliacao_certa_16
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_16.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_16" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_16" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_16'
@@ -288,7 +284,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_16' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_16" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_16" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_16" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -296,7 +292,7 @@ Test Passed.
 49/298 Test: e2_avaliacao_certa_17
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_17.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_17" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_17" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_17'
@@ -306,7 +302,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_17' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_17" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_17" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_17" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -314,7 +310,7 @@ Test Passed.
 50/298 Test: e2_avaliacao_certa_18
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_18.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_18" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_18" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_18'
@@ -324,7 +320,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_18' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_18" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_18" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_18" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -332,7 +328,7 @@ Test Passed.
 51/298 Test: e2_avaliacao_certa_19
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_19.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_19" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_19" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_19'
@@ -342,7 +338,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_19' OK
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_certa_19" end time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_19" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_19" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -350,19 +346,17 @@ Test Passed.
 52/298 Test: e2_avaliacao_certa_20
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_20.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_certa_20" start time: Sep 01 17:48 BRT
+"e2_avaliacao_certa_20" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_20'
 [/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_20:2] ./main ./tests/e2/input/certa20.txt
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_20.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_20.tesh:2> got signal SIGSEGV)
-Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_20.tesh:2> so far:
-||
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_certa_20' OK
 <end of output>
-Test time =   0.29 sec
+Test time =   0.08 sec
 ----------------------------------------------------------
-Test Failed.
-"e2_avaliacao_certa_20" end time: Sep 01 17:48 BRT
+Test Passed.
+"e2_avaliacao_certa_20" end time: Sep 01 18:22 BRT
 "e2_avaliacao_certa_20" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -370,7 +364,7 @@ Test Failed.
 53/298 Test: e2_avaliacao_errada_01
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_01.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_01" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_01" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_01'
@@ -384,7 +378,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_01.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_01" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_01" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_01" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -392,7 +386,7 @@ Test Failed.
 54/298 Test: e2_avaliacao_errada_02
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_02.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_02" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_02" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_02'
@@ -406,7 +400,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_02.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_02" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_02" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_02" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -414,7 +408,7 @@ Test Failed.
 55/298 Test: e2_avaliacao_errada_03
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_03.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_03" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_03" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_03'
@@ -428,7 +422,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_03.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_03" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_03" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_03" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -436,7 +430,7 @@ Test Failed.
 56/298 Test: e2_avaliacao_errada_04
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_04.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_04" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_04" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_04'
@@ -464,7 +458,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_04.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_04" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_04" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_04" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -472,7 +466,7 @@ Test Failed.
 57/298 Test: e2_avaliacao_errada_05
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_05.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_05" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_05" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_05'
@@ -495,7 +489,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_05.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_05" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_05" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_05" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -503,7 +497,7 @@ Test Failed.
 58/298 Test: e2_avaliacao_errada_06
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_06.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_06" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_06" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_06'
@@ -517,7 +511,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_06.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_06" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_06" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_06" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -525,7 +519,7 @@ Test Failed.
 59/298 Test: e2_avaliacao_errada_07
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_07.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_07" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_07" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_07'
@@ -542,7 +536,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_07.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_07" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_07" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_07" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -550,7 +544,7 @@ Test Failed.
 60/298 Test: e2_avaliacao_errada_08
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_08.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_08" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_08" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_08'
@@ -569,7 +563,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_08.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_08" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_08" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_08" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -577,7 +571,7 @@ Test Failed.
 61/298 Test: e2_avaliacao_errada_09
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_09.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_09" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_09" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_09'
@@ -588,7 +582,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_09' O
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_avaliacao_errada_09" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_09" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_09" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -596,7 +590,7 @@ Test Passed.
 62/298 Test: e2_avaliacao_errada_10
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_10.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_10" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_10" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_10'
@@ -611,7 +605,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_10.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_10" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_10" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_10" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -619,7 +613,7 @@ Test Failed.
 63/298 Test: e2_avaliacao_errada_11
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_11.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_11" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_11" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_11'
@@ -639,7 +633,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_11.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_11" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_11" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_11" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -647,7 +641,7 @@ Test Failed.
 64/298 Test: e2_avaliacao_errada_12
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_12.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_12" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_12" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_12'
@@ -663,7 +657,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_12.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_12" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_12" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_12" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -671,7 +665,7 @@ Test Failed.
 65/298 Test: e2_avaliacao_errada_13
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_13.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_13" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_13" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_13'
@@ -687,7 +681,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_13.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_13" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_13" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_13" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -695,7 +689,7 @@ Test Failed.
 66/298 Test: e2_avaliacao_errada_14
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_14.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_14" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_14" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_14'
@@ -711,7 +705,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_14.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_14" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_14" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_14" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -719,7 +713,7 @@ Test Failed.
 67/298 Test: e2_avaliacao_errada_15
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_15.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_15" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_15" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_15'
@@ -733,7 +727,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_15.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_15" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_15" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_15" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -741,7 +735,7 @@ Test Failed.
 68/298 Test: e2_avaliacao_errada_16
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_16.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_16" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_16" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_16'
@@ -762,7 +756,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_16.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_16" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_16" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_16" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -770,7 +764,7 @@ Test Failed.
 69/298 Test: e2_avaliacao_errada_17
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_17.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_17" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_17" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_17'
@@ -792,7 +786,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_17.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_17" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_17" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_17" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -800,7 +794,7 @@ Test Failed.
 70/298 Test: e2_avaliacao_errada_18
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_18.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_18" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_18" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_18'
@@ -820,7 +814,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_18.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_18" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_18" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_18" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -828,7 +822,7 @@ Test Failed.
 71/298 Test: e2_avaliacao_errada_19
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_19.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_19" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_19" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_19'
@@ -845,7 +839,7 @@ Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_19.tes
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_19" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_19" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_19" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -853,20 +847,22 @@ Test Failed.
 72/298 Test: e2_avaliacao_errada_20
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_20.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_avaliacao_errada_20" start time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_20" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_20'
 [/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_20:4] ./main ./tests/e2/input/errada20.txt
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_20.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_20.tesh:4> got signal SIGSEGV)
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_20.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_20.tesh:4> returned code 0)
 Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_20.tesh:4> so far:
-||
+|| Erro na linha 9. Mensagem: syntax error, unexpected ',', expecting ERRO or ';' or '}'
+|| Erro na linha 9. Mensagem: Missing semicolon
+|| Erro na linha 9. Mensagem: Missing semicolon
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//avaliacao_errada_20.tesh:4> as requested)
 <end of output>
-Test time =   0.31 sec
+Test time =   0.08 sec
 ----------------------------------------------------------
 Test Failed.
-"e2_avaliacao_errada_20" end time: Sep 01 17:48 BRT
+"e2_avaliacao_errada_20" end time: Sep 01 18:22 BRT
 "e2_avaliacao_errada_20" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -874,7 +870,7 @@ Test Failed.
 73/298 Test: e2_valgrind_certa_01
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_01.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_01" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_01" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_01'
@@ -882,10 +878,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_01'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_01.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_01' OK
 <end of output>
-Test time =   0.94 sec
+Test time =   0.88 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_01" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_01" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_01" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -893,7 +889,7 @@ Test Passed.
 74/298 Test: e2_valgrind_certa_02
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_02.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_02" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_02" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_02'
@@ -901,10 +897,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_02'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_02.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_02' OK
 <end of output>
-Test time =   0.90 sec
+Test time =   0.97 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_02" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_02" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_02" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -912,7 +908,7 @@ Test Passed.
 75/298 Test: e2_valgrind_certa_03
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_03.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_03" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_03" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_03'
@@ -920,10 +916,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_03'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_03.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_03' OK
 <end of output>
-Test time =   0.94 sec
+Test time =   0.90 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_03" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_03" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_03" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -931,7 +927,7 @@ Test Passed.
 76/298 Test: e2_valgrind_certa_04
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_04.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_04" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_04" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_04'
@@ -939,10 +935,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_04'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_04.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_04' OK
 <end of output>
-Test time =   0.88 sec
+Test time =   0.89 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_04" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_04" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_04" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -950,7 +946,7 @@ Test Passed.
 77/298 Test: e2_valgrind_certa_05
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_05.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_05" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_05" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_05'
@@ -961,7 +957,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_05' OK
 Test time =   0.90 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_05" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_05" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_05" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -969,35 +965,26 @@ Test Passed.
 78/298 Test: e2_valgrind_certa_06
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_06.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_06" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_06" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_06'
 [/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_06:3] ./tests/scripts/valgrindtest ./main ./tests/e2/input/certa06.txt
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_06.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_06.tesh:3> returned code 1)
-Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_06.tesh:3> so far:
-|| invalid writes:
-|| 0
-|| invalid read:
-|| 0
-|| jumps/moves depending on uninitialized values:
-|| 0
-|| lost bytes:
-|| 16
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_06.tesh:3> as requested)
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_06' OK
 <end of output>
-Test time =   1.15 sec
+Test time =   0.91 sec
 ----------------------------------------------------------
-Test Failed.
-"e2_valgrind_certa_06" end time: Sep 01 17:48 BRT
-"e2_valgrind_certa_06" time elapsed: 00:00:01
+Test Passed.
+"e2_valgrind_certa_06" end time: Sep 01 18:22 BRT
+"e2_valgrind_certa_06" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 79/298 Testing: e2_valgrind_certa_07
 79/298 Test: e2_valgrind_certa_07
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_07.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_07" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_07" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_07'
@@ -1008,7 +995,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_07' OK
 Test time =   0.90 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_07" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_07" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_07" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1016,35 +1003,26 @@ Test Passed.
 80/298 Test: e2_valgrind_certa_08
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_08.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_08" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_08" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_08'
 [/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_08:3] ./tests/scripts/valgrindtest ./main ./tests/e2/input/certa08.txt
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_08.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_08.tesh:3> returned code 1)
-Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_08.tesh:3> so far:
-|| invalid writes:
-|| 0
-|| invalid read:
-|| 0
-|| jumps/moves depending on uninitialized values:
-|| 0
-|| lost bytes:
-|| 16
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_08.tesh:3> as requested)
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_08' OK
 <end of output>
-Test time =   1.10 sec
+Test time =   0.90 sec
 ----------------------------------------------------------
-Test Failed.
-"e2_valgrind_certa_08" end time: Sep 01 17:48 BRT
-"e2_valgrind_certa_08" time elapsed: 00:00:01
+Test Passed.
+"e2_valgrind_certa_08" end time: Sep 01 18:22 BRT
+"e2_valgrind_certa_08" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 81/298 Testing: e2_valgrind_certa_09
 81/298 Test: e2_valgrind_certa_09
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_09.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_09" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_09" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_09'
@@ -1052,10 +1030,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_09'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_09.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_09' OK
 <end of output>
-Test time =   0.95 sec
+Test time =   0.89 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_09" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_09" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_09" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1063,27 +1041,18 @@ Test Passed.
 82/298 Test: e2_valgrind_certa_10
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_10.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_10" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_10" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_10'
 [/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_10:3] ./tests/scripts/valgrindtest ./main ./tests/e2/input/certa10.txt
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_10.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_10.tesh:3> returned code 1)
-Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_10.tesh:3> so far:
-|| invalid writes:
-|| 0
-|| invalid read:
-|| 0
-|| jumps/moves depending on uninitialized values:
-|| 0
-|| lost bytes:
-|| 16
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_10.tesh:3> as requested)
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_10' OK
 <end of output>
 Test time =   0.89 sec
 ----------------------------------------------------------
-Test Failed.
-"e2_valgrind_certa_10" end time: Sep 01 17:48 BRT
+Test Passed.
+"e2_valgrind_certa_10" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_10" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1091,27 +1060,18 @@ Test Failed.
 83/298 Test: e2_valgrind_certa_11
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_11.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_11" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_11" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_11'
 [/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_11:3] ./tests/scripts/valgrindtest ./main ./tests/e2/input/certa11.txt
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_11.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_11.tesh:3> returned code 1)
-Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_11.tesh:3> so far:
-|| invalid writes:
-|| 0
-|| invalid read:
-|| 0
-|| jumps/moves depending on uninitialized values:
-|| 0
-|| lost bytes:
-|| 16
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_11.tesh:3> as requested)
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_11' OK
 <end of output>
-Test time =   0.96 sec
+Test time =   0.89 sec
 ----------------------------------------------------------
-Test Failed.
-"e2_valgrind_certa_11" end time: Sep 01 17:48 BRT
+Test Passed.
+"e2_valgrind_certa_11" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_11" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1119,7 +1079,7 @@ Test Failed.
 84/298 Test: e2_valgrind_certa_12
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_12.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_12" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_12" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_12'
@@ -1130,7 +1090,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_12' OK
 Test time =   0.90 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_12" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_12" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_12" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1138,7 +1098,7 @@ Test Passed.
 85/298 Test: e2_valgrind_certa_13
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_13.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_13" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_13" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_13'
@@ -1146,10 +1106,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_13'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_13.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_13' OK
 <end of output>
-Test time =   0.89 sec
+Test time =   0.93 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_13" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_13" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_13" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1157,7 +1117,7 @@ Test Passed.
 86/298 Test: e2_valgrind_certa_14
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_14.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_14" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_14" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_14'
@@ -1165,10 +1125,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_14'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_14.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_14' OK
 <end of output>
-Test time =   0.95 sec
+Test time =   0.90 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_14" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_14" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_14" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1176,7 +1136,7 @@ Test Passed.
 87/298 Test: e2_valgrind_certa_15
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_15.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_15" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_15" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_15'
@@ -1187,7 +1147,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_15' OK
 Test time =   0.90 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_15" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_15" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_15" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1195,7 +1155,7 @@ Test Passed.
 88/298 Test: e2_valgrind_certa_16
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_16.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_16" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_16" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_16'
@@ -1203,10 +1163,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_16'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_16.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_16' OK
 <end of output>
-Test time =   0.89 sec
+Test time =   0.90 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_16" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_16" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_16" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1214,7 +1174,7 @@ Test Passed.
 89/298 Test: e2_valgrind_certa_17
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_17.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_17" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_17" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_17'
@@ -1222,10 +1182,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_17'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_17.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_17' OK
 <end of output>
-Test time =   0.95 sec
+Test time =   0.89 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_17" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_17" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_17" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1233,7 +1193,7 @@ Test Passed.
 90/298 Test: e2_valgrind_certa_18
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_18.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_18" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_18" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_18'
@@ -1241,10 +1201,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_18'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_18.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_18' OK
 <end of output>
-Test time =   0.89 sec
+Test time =   0.90 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_18" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_18" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_18" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1252,7 +1212,7 @@ Test Passed.
 91/298 Test: e2_valgrind_certa_19
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_19.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_19" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_19" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_19'
@@ -1260,10 +1220,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_19'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_19.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_19' OK
 <end of output>
-Test time =   0.95 sec
+Test time =   0.90 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_certa_19" end time: Sep 01 17:48 BRT
+"e2_valgrind_certa_19" end time: Sep 01 18:22 BRT
 "e2_valgrind_certa_19" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1271,35 +1231,26 @@ Test Passed.
 92/298 Test: e2_valgrind_certa_20
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_20.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_certa_20" start time: Sep 01 17:48 BRT
+"e2_valgrind_certa_20" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_20'
 [/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_20:3] ./tests/scripts/valgrindtest ./main ./tests/e2/input/certa20.txt
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_20.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_20.tesh:3> returned code 1)
-Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_20.tesh:3> so far:
-|| invalid writes:
-|| 0
-|| invalid read:
-|| 0
-|| jumps/moves depending on uninitialized values:
-|| 0
-|| lost bytes:
-|| 16
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_20.tesh:3> as requested)
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_certa_20' OK
 <end of output>
-Test time =   1.11 sec
+Test time =   0.91 sec
 ----------------------------------------------------------
-Test Failed.
-"e2_valgrind_certa_20" end time: Sep 01 17:48 BRT
-"e2_valgrind_certa_20" time elapsed: 00:00:01
+Test Passed.
+"e2_valgrind_certa_20" end time: Sep 01 18:22 BRT
+"e2_valgrind_certa_20" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 93/298 Testing: e2_valgrind_errada_01
 93/298 Test: e2_valgrind_errada_01
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_01.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_01" start time: Sep 01 17:48 BRT
+"e2_valgrind_errada_01" start time: Sep 01 18:22 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_01'
@@ -1307,10 +1258,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_01'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_01.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_01' OK
 <end of output>
-Test time =   0.92 sec
+Test time =   0.91 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_01" end time: Sep 01 17:48 BRT
+"e2_valgrind_errada_01" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_01" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1318,7 +1269,7 @@ Test Passed.
 94/298 Test: e2_valgrind_errada_02
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_02.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_02" start time: Sep 01 17:48 BRT
+"e2_valgrind_errada_02" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_02'
@@ -1326,10 +1277,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_02'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_02.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_02' OK
 <end of output>
-Test time =   0.98 sec
+Test time =   0.91 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_02" end time: Sep 01 17:48 BRT
+"e2_valgrind_errada_02" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_02" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1337,7 +1288,7 @@ Test Passed.
 95/298 Test: e2_valgrind_errada_03
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_03.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_03" start time: Sep 01 17:48 BRT
+"e2_valgrind_errada_03" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_03'
@@ -1348,7 +1299,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_03' OK
 Test time =   0.92 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_03" end time: Sep 01 17:48 BRT
+"e2_valgrind_errada_03" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_03" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1356,7 +1307,7 @@ Test Passed.
 96/298 Test: e2_valgrind_errada_04
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_04.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_04" start time: Sep 01 17:48 BRT
+"e2_valgrind_errada_04" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_04'
@@ -1367,7 +1318,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_04' OK
 Test time =   0.93 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_04" end time: Sep 01 17:48 BRT
+"e2_valgrind_errada_04" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_04" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1375,7 +1326,7 @@ Test Passed.
 97/298 Test: e2_valgrind_errada_05
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_05.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_05" start time: Sep 01 17:48 BRT
+"e2_valgrind_errada_05" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_05'
@@ -1383,10 +1334,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_05'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_05.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_05' OK
 <end of output>
-Test time =   0.98 sec
+Test time =   0.93 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_05" end time: Sep 01 17:48 BRT
+"e2_valgrind_errada_05" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_05" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1394,7 +1345,7 @@ Test Passed.
 98/298 Test: e2_valgrind_errada_06
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_06.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_06" start time: Sep 01 17:48 BRT
+"e2_valgrind_errada_06" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_06'
@@ -1402,10 +1353,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_06'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_06.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_06' OK
 <end of output>
-Test time =   0.93 sec
+Test time =   0.98 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_06" end time: Sep 01 17:48 BRT
+"e2_valgrind_errada_06" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_06" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1413,7 +1364,7 @@ Test Passed.
 99/298 Test: e2_valgrind_errada_07
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_07.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_07" start time: Sep 01 17:48 BRT
+"e2_valgrind_errada_07" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_07'
@@ -1421,10 +1372,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_07'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_07.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_07' OK
 <end of output>
-Test time =   0.98 sec
+Test time =   0.93 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_07" end time: Sep 01 17:48 BRT
+"e2_valgrind_errada_07" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_07" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1432,7 +1383,7 @@ Test Passed.
 100/298 Test: e2_valgrind_errada_08
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_08.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_08" start time: Sep 01 17:48 BRT
+"e2_valgrind_errada_08" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_08'
@@ -1440,10 +1391,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_08'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_08.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_08' OK
 <end of output>
-Test time =   0.96 sec
+Test time =   0.94 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_08" end time: Sep 01 17:48 BRT
+"e2_valgrind_errada_08" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_08" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1451,7 +1402,7 @@ Test Passed.
 101/298 Test: e2_valgrind_errada_09
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_09.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_09" start time: Sep 01 17:48 BRT
+"e2_valgrind_errada_09" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_09'
@@ -1459,10 +1410,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_09'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_09.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_09' OK
 <end of output>
-Test time =   0.93 sec
+Test time =   0.92 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_09" end time: Sep 01 17:48 BRT
+"e2_valgrind_errada_09" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_09" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1470,27 +1421,18 @@ Test Passed.
 102/298 Test: e2_valgrind_errada_10
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_10.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_10" start time: Sep 01 17:48 BRT
+"e2_valgrind_errada_10" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_10'
 [/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_10:3] ./tests/scripts/valgrindtest ./main ./tests/e2/input/errada10.txt
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_10.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_10.tesh:3> returned code 1)
-Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_10.tesh:3> so far:
-|| invalid writes:
-|| 0
-|| invalid read:
-|| 0
-|| jumps/moves depending on uninitialized values:
-|| 0
-|| lost bytes:
-|| 32
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_10.tesh:3> as requested)
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_10' OK
 <end of output>
-Test time =   0.99 sec
+Test time =   0.94 sec
 ----------------------------------------------------------
-Test Failed.
-"e2_valgrind_errada_10" end time: Sep 01 17:49 BRT
+Test Passed.
+"e2_valgrind_errada_10" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_10" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1498,27 +1440,18 @@ Test Failed.
 103/298 Test: e2_valgrind_errada_11
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_11.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_11" start time: Sep 01 17:49 BRT
+"e2_valgrind_errada_11" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_11'
 [/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_11:3] ./tests/scripts/valgrindtest ./main ./tests/e2/input/errada11.txt
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_11.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_11.tesh:3> returned code 1)
-Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_11.tesh:3> so far:
-|| invalid writes:
-|| 0
-|| invalid read:
-|| 0
-|| jumps/moves depending on uninitialized values:
-|| 0
-|| lost bytes:
-|| 16
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_11.tesh:3> as requested)
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_11' OK
 <end of output>
-Test time =   0.94 sec
+Test time =   0.93 sec
 ----------------------------------------------------------
-Test Failed.
-"e2_valgrind_errada_11" end time: Sep 01 17:49 BRT
+Test Passed.
+"e2_valgrind_errada_11" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_11" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1526,7 +1459,7 @@ Test Failed.
 104/298 Test: e2_valgrind_errada_12
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_12.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_12" start time: Sep 01 17:49 BRT
+"e2_valgrind_errada_12" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_12'
@@ -1534,10 +1467,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_12'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_12.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_12' OK
 <end of output>
-Test time =   0.94 sec
+Test time =   0.92 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_12" end time: Sep 01 17:49 BRT
+"e2_valgrind_errada_12" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_12" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1545,7 +1478,7 @@ Test Passed.
 105/298 Test: e2_valgrind_errada_13
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_13.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_13" start time: Sep 01 17:49 BRT
+"e2_valgrind_errada_13" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_13'
@@ -1553,10 +1486,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_13'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_13.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_13' OK
 <end of output>
-Test time =   0.99 sec
+Test time =   0.92 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_13" end time: Sep 01 17:49 BRT
+"e2_valgrind_errada_13" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_13" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1564,7 +1497,7 @@ Test Passed.
 106/298 Test: e2_valgrind_errada_14
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_14.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_14" start time: Sep 01 17:49 BRT
+"e2_valgrind_errada_14" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_14'
@@ -1575,7 +1508,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_14' OK
 Test time =   0.94 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_14" end time: Sep 01 17:49 BRT
+"e2_valgrind_errada_14" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_14" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1583,7 +1516,7 @@ Test Passed.
 107/298 Test: e2_valgrind_errada_15
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_15.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_15" start time: Sep 01 17:49 BRT
+"e2_valgrind_errada_15" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_15'
@@ -1591,10 +1524,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_15'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_15.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_15' OK
 <end of output>
-Test time =   0.93 sec
+Test time =   0.92 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_15" end time: Sep 01 17:49 BRT
+"e2_valgrind_errada_15" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_15" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1602,7 +1535,7 @@ Test Passed.
 108/298 Test: e2_valgrind_errada_16
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_16.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_16" start time: Sep 01 17:49 BRT
+"e2_valgrind_errada_16" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_16'
@@ -1610,10 +1543,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_16'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_16.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_16' OK
 <end of output>
-Test time =   0.99 sec
+Test time =   0.95 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_16" end time: Sep 01 17:49 BRT
+"e2_valgrind_errada_16" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_16" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1621,7 +1554,7 @@ Test Passed.
 109/298 Test: e2_valgrind_errada_17
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_17.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_17" start time: Sep 01 17:49 BRT
+"e2_valgrind_errada_17" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_17'
@@ -1632,7 +1565,7 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_17' OK
 Test time =   0.94 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_17" end time: Sep 01 17:49 BRT
+"e2_valgrind_errada_17" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_17" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1640,7 +1573,7 @@ Test Passed.
 110/298 Test: e2_valgrind_errada_18
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_18.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_18" start time: Sep 01 17:49 BRT
+"e2_valgrind_errada_18" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_18'
@@ -1648,10 +1581,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_18'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_18.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_18' OK
 <end of output>
-Test time =   0.99 sec
+Test time =   0.93 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_18" end time: Sep 01 17:49 BRT
+"e2_valgrind_errada_18" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_18" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1659,7 +1592,7 @@ Test Passed.
 111/298 Test: e2_valgrind_errada_19
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_19.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_19" start time: Sep 01 17:49 BRT
+"e2_valgrind_errada_19" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_19'
@@ -1667,10 +1600,10 @@ Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_19'
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_19.tesh:3> as requested)
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_19' OK
 <end of output>
-Test time =   0.94 sec
+Test time =   0.93 sec
 ----------------------------------------------------------
 Test Passed.
-"e2_valgrind_errada_19" end time: Sep 01 17:49 BRT
+"e2_valgrind_errada_19" end time: Sep 01 18:23 BRT
 "e2_valgrind_errada_19" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1678,28 +1611,19 @@ Test Passed.
 112/298 Test: e2_valgrind_errada_20
 Command: "/usr/bin/perl" "-I" "./tests/scripts" "./tests/scripts/tesh" "/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_20.tesh"
 Directory: /home/lgkern/repos/MyLittleCompiler/build
-"e2_valgrind_errada_20" start time: Sep 01 17:49 BRT
+"e2_valgrind_errada_20" start time: Sep 01 18:23 BRT
 Output:
 ----------------------------------------------------------
 Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_20'
 [/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_20:3] ./tests/scripts/valgrindtest ./main ./tests/e2/input/errada20.txt
-Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_20.tesh': NOK (</home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_20.tesh:3> returned code 1)
-Output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_20.tesh:3> so far:
-|| invalid writes:
-|| 0
-|| invalid read:
-|| 0
-|| jumps/moves depending on uninitialized values:
-|| 0
-|| lost bytes:
-|| 16
 (ignoring the output of </home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_20.tesh:3> as requested)
+Test suite `/home/lgkern/repos/MyLittleCompiler/tests/e2//valgrind_errada_20' OK
 <end of output>
-Test time =   1.11 sec
+Test time =   0.94 sec
 ----------------------------------------------------------
-Test Failed.
-"e2_valgrind_errada_20" end time: Sep 01 17:49 BRT
-"e2_valgrind_errada_20" time elapsed: 00:00:01
+Test Passed.
+"e2_valgrind_errada_20" end time: Sep 01 18:23 BRT
+"e2_valgrind_errada_20" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Sep 01 17:49 BRT
+End testing: Sep 01 18:23 BRT

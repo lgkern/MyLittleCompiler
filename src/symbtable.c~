@@ -1,5 +1,6 @@
 #include "symbtable.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 //Symbol Table API -------------------------------------------------------------------------
 
@@ -19,9 +20,10 @@
 		free(myTree);
 	}
 
-	int 	addSymbol(TOKEN* token, int line)
+	void* 	addSymbol(TOKEN* token, int line)
 	{
-		node_addSymbol(myTree->current, token, line);	
+		printf("Token-> token = %d\n",token->token);
+		return node_addSymbol(myTree->current, token, line);	
 	}
 	int		retrieveLine(TOKEN* token)
 	{
@@ -57,6 +59,8 @@
 	{
 		struct NODE* myNode = calloc(1, sizeof(struct NODE));
 		myNode->data = createHashTable();
+		myNode->father = NULL;
+		myNode->child = NULL;
 		return myNode;
 	}
 	int		destroyNode(struct NODE* node)
@@ -65,9 +69,9 @@
 		free(node);
 	}
 
-	int 	node_addSymbol(struct NODE* node, TOKEN* token, int line)
+	void* 	node_addSymbol(struct NODE* node, TOKEN* token, int line)
 	{
-		addHashElement(node->data, token, line);
+		return (void*)addHashElement(node->data, token, line);
 	}
 	int 	node_retrieveLine(struct NODE* node, TOKEN* token)
 	{

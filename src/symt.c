@@ -104,6 +104,7 @@
 		myToken = calloc(1,sizeof(TOKEN));
 		myToken->token = token;
 		myToken->description.string = strdup(description);
+		return myToken;
 	}
 
 	TOKEN* createIntToken(int token, int description)
@@ -112,14 +113,16 @@
 		myToken = calloc(1,sizeof(TOKEN));
 		myToken->token = token;
 		myToken->description.integer = description;
+		return myToken;
 	}
 
 	TOKEN* createFltToken(int token, float description)
-	{
+	{		
 		TOKEN* myToken;
 		myToken = calloc(1,sizeof(TOKEN));
 		myToken->token = token;
 		myToken->description.floating = description;
+		return myToken;
 	}
 
 	TOKEN* createChrToken(int token, char description)
@@ -128,6 +131,7 @@
 		myToken = calloc(1,sizeof(TOKEN));
 		myToken->token = token;
 		myToken->description.character = description;
+		return myToken;
 	}
 
 	TOKEN* createStrToken(int token, char* description)
@@ -140,5 +144,6 @@
 		description[strsize-3] = '\0'; //remove the last quotation
 		myToken->description.string = strdup(description);
 		description[strsize-3] = 'a'; //put some trash back in so it doesn't lose the pointer
+		return myToken;
 	}
 

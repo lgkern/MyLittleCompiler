@@ -1,6 +1,3 @@
-38:e2_avaliacao_certa_06
-40:e2_avaliacao_certa_08
-52:e2_avaliacao_certa_20
 53:e2_avaliacao_errada_01
 54:e2_avaliacao_errada_02
 55:e2_avaliacao_errada_03
@@ -20,11 +17,3 @@
 70:e2_avaliacao_errada_18
 71:e2_avaliacao_errada_19
 72:e2_avaliacao_errada_20
-78:e2_valgrind_certa_06
-80:e2_valgrind_certa_08
-82:e2_valgrind_certa_10
-83:e2_valgrind_certa_11
-92:e2_valgrind_certa_20
-102:e2_valgrind_errada_10
-103:e2_valgrind_errada_11
-112:e2_valgrind_errada_20
