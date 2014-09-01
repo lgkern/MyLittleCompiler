@@ -12,8 +12,6 @@
 
 ../include/comp_tree.h
 
-../include/crc16.h
-
 ../include/main.h
 stdio.h
 -
@@ -26,25 +24,33 @@ comp_tree.h
 parser.h
 ../include/parser.h
 
+../include/symbtable.h
+symt.h
 ../include/symt.h
 
-/home/lgkern/repos/MyLittleCompiler/src/symt.c
-symt.h
-/home/lgkern/repos/MyLittleCompiler/src/symt.h
-crc16.h
-/home/lgkern/repos/MyLittleCompiler/src/crc16.h
-main.h
-/home/lgkern/repos/MyLittleCompiler/src/main.h
+../include/symt.h
+
+/home/lgkern/repos/MyLittleCompiler/build/parser.h
+
+/home/lgkern/repos/MyLittleCompiler/build/scanner.c
+stdio.h
+-
 string.h
 -
-values.h
+errno.h
 -
 stdlib.h
 -
-string.h
+inttypes.h
 -
-stdio.h
--
-
 parser.h
+/home/lgkern/repos/MyLittleCompiler/build/parser.h
+stdlib.h
+-
+symbtable.h
+/home/lgkern/repos/MyLittleCompiler/build/symbtable.h
+main.h
+/home/lgkern/repos/MyLittleCompiler/build/main.h
+unistd.h
+-
 

@@ -62,6 +62,8 @@ stmt:		Global SC
 					yyclearin;}
 
 SC:	 	';'
+		|"ERRO" {yyerror("Missing semicolon");
+				yyclearin;}
 		|error {yyerror("Missing semicolon");
 				yyclearin;}
 

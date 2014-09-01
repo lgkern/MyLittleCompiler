@@ -54,7 +54,7 @@ int numLines = 1;
 "{"						return	'{';
 "}"						return	'}';
 "+"						return	'+';
-"-"/[ \t\n\r]					return	'-';
+"-"/[^{DIGIT}]					return	'-';
 "*"						return	'*';
 "/"						return	'/';
 "<"						return	'<';
