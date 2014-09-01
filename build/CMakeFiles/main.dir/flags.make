@@ -4,5 +4,5 @@
 # compile C with /usr/bin/cc
 C_FLAGS = -g -I/home/lgkern/repos/MyLittleCompiler/build -I/home/lgkern/repos/MyLittleCompiler/include -I/home/lgkern/repos/MyLittleCompiler/src   
 
-C_DEFINES = 
+C_DEFINES = -DAVALIACAO_ETAPA_2=1
 

@@ -1,9 +1,0 @@
-! timeout 5
-! output ignore
-$ sh -c "./main ; exit $(( 1 - ( $? != 0 ) ))"
-< int minha_funcao ()
-< {
-<  b = 14;
-<  input 5;
-< }
-

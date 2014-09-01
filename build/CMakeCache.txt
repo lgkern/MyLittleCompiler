@@ -151,14 +151,11 @@ CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//No help, variable specified on the command line.
-ETAPA2:UNINITIALIZED=ON
-
 //The Etapa 1 compilation
 ETAPA_1:BOOL=OFF
 
 //The Etapa 2 compilation
-ETAPA_2:BOOL=OFF
+ETAPA_2:BOOL=ON
 
 //The Etapa 3 compilation
 ETAPA_3:BOOL=OFF

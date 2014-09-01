@@ -1,7 +1,0 @@
-! timeout 5
-! output ignore
-$ sh -c "./main ; exit $(( 1 - ( $? != 0 ) ))"
-< float variavel_flutuante
-< int variavel_inteira
-< char variavel_caractere
-

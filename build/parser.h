@@ -82,11 +82,9 @@ union YYSTYPE
 {
 #line 8 "parser.y" /* yacc.c:1909  */
 
-   int ival;
-   char *text;
-   float fval;
+   void* symbol;
 
-#line 90 "/home/lgkern/repos/MyLittleCompiler/build/parser.h" /* yacc.c:1909  */
+#line 88 "/home/lgkern/repos/MyLittleCompiler/build/parser.h" /* yacc.c:1909  */
 };
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1

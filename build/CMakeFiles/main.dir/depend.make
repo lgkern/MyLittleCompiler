@@ -3,6 +3,10 @@
 
 CMakeFiles/main.dir/parser.c.o: parser.c
 
+CMakeFiles/main.dir/scanner.c.o: ../include/comp_dict.h
+CMakeFiles/main.dir/scanner.c.o: ../include/comp_list.h
+CMakeFiles/main.dir/scanner.c.o: ../include/comp_tree.h
+CMakeFiles/main.dir/scanner.c.o: ../include/main.h
 CMakeFiles/main.dir/scanner.c.o: ../include/symbtable.h
 CMakeFiles/main.dir/scanner.c.o: ../include/symt.h
 CMakeFiles/main.dir/scanner.c.o: parser.h
@@ -27,14 +31,24 @@ CMakeFiles/main.dir/src/main.c.o: ../include/main.h
 CMakeFiles/main.dir/src/main.c.o: ../src/main.c
 CMakeFiles/main.dir/src/main.c.o: parser.h
 
+CMakeFiles/main.dir/src/misc.c.o: ../include/comp_dict.h
+CMakeFiles/main.dir/src/misc.c.o: ../include/comp_list.h
+CMakeFiles/main.dir/src/misc.c.o: ../include/comp_tree.h
+CMakeFiles/main.dir/src/misc.c.o: ../include/main.h
 CMakeFiles/main.dir/src/misc.c.o: ../include/misc.h
 CMakeFiles/main.dir/src/misc.c.o: ../src/misc.c
+CMakeFiles/main.dir/src/misc.c.o: parser.h
 
 CMakeFiles/main.dir/src/symbtable.c.o: ../include/symbtable.h
 CMakeFiles/main.dir/src/symbtable.c.o: ../include/symt.h
 CMakeFiles/main.dir/src/symbtable.c.o: ../src/symbtable.c
 
+CMakeFiles/main.dir/src/symt.c.o: ../include/comp_dict.h
+CMakeFiles/main.dir/src/symt.c.o: ../include/comp_list.h
+CMakeFiles/main.dir/src/symt.c.o: ../include/comp_tree.h
 CMakeFiles/main.dir/src/symt.c.o: ../include/crc16.h
+CMakeFiles/main.dir/src/symt.c.o: ../include/main.h
 CMakeFiles/main.dir/src/symt.c.o: ../include/symt.h
 CMakeFiles/main.dir/src/symt.c.o: ../src/symt.c
+CMakeFiles/main.dir/src/symt.c.o: parser.h
 

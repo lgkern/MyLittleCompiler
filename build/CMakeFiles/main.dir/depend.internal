@@ -4,6 +4,10 @@
 CMakeFiles/main.dir/parser.c.o
  /home/lgkern/repos/MyLittleCompiler/build/parser.c
 CMakeFiles/main.dir/scanner.c.o
+ ../include/comp_dict.h
+ ../include/comp_list.h
+ ../include/comp_tree.h
+ ../include/main.h
  ../include/symbtable.h
  ../include/symt.h
  /home/lgkern/repos/MyLittleCompiler/build/parser.h
@@ -28,13 +32,23 @@ CMakeFiles/main.dir/src/main.c.o
  /home/lgkern/repos/MyLittleCompiler/src/main.c
  parser.h
 CMakeFiles/main.dir/src/misc.c.o
+ ../include/comp_dict.h
+ ../include/comp_list.h
+ ../include/comp_tree.h
+ ../include/main.h
  ../include/misc.h
  /home/lgkern/repos/MyLittleCompiler/src/misc.c
+ parser.h
 CMakeFiles/main.dir/src/symbtable.c.o
  ../include/symbtable.h
  ../include/symt.h
  /home/lgkern/repos/MyLittleCompiler/src/symbtable.c
 CMakeFiles/main.dir/src/symt.c.o
+ ../include/comp_dict.h
+ ../include/comp_list.h
+ ../include/comp_tree.h
  ../include/crc16.h
+ ../include/main.h
  ../include/symt.h
  /home/lgkern/repos/MyLittleCompiler/src/symt.c
+ parser.h
