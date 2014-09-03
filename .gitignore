@@ -31,3 +31,6 @@
 #CMake Files
 CMakeFiles/
 CMakeCache.txt
+
+#Build files
+build/
