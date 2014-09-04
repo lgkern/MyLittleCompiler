@@ -1,9 +1,0 @@
-! timeout 5
-! output ignore
-$ ./main
-< /* IKS_SUCCESS */
-< char f()
-< {
-<    return f();
-< }
-

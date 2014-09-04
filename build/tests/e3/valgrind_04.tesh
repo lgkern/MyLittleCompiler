@@ -1,8 +1,0 @@
-! timeout 5
-! output ignore
-$ ./tests/scripts/valgrindtest ./main
-< /* lista de funções */
-< int f1() {}
-< int f2() {}
-< int f3() {}
-
