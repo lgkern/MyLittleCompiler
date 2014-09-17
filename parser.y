@@ -39,6 +39,7 @@
 %token TOKEN_ERRO	"ERRO"
 %left '+'
 %left '-'
+%left '!'
 %left '*'
 %left '/'
 %left '>'
@@ -126,7 +127,8 @@ Expression:	Literal
 		| Expression "<=" Expression
 		| Expression "&&" Expression
 		| Expression "||" Expression
-		/*| UnaryOP Expression*/
+		| '-' Expression
+		| '!' Expression
 		| '(' Expression ')'
 		| Call
 
@@ -140,11 +142,6 @@ Literal:	ID
 Boolean:	"false"
 		|"true"
 
-
-
-/*UnaryOP: 	'-'
-		|'!'
-*/
 Return: 	"RETURN" Expression
 
 FlowControl:	If
