@@ -19,8 +19,6 @@
         myAST->c3 = NULL;
 
 		gv_declare(IKS_AST_PROGRAMA, (void*)myAST, NULL);		
-
-		return;
     }
 
 	nodeAST* createNodeAST(int type, nodeAST* next, void* symTable, ...)
@@ -171,57 +169,51 @@
 
     void    trimNodeAST(nodeAST* node)//tudo ligado ao nodo, inclusive next
     {
-        if (node == NULL) //faz sentido dar free em null?
+        if (node != NULL) //faz sentido dar free em null?
         {
-            return;
-        }
-        if (node->c1 != NULL)
-        {
-            destroyNodeAST(node->c1);
-        }
-        if (node->c2 != NULL)
-        {
-            destroyNodeAST(node->c2);
-        }
-        if (node->c3 != NULL)
-        {
-            destroyNodeAST(node->c3);
-        }
-        if (node->next != NULL)
-        {
-            destroyNodeAST(node->next);
-        }
+		    if (node->c1 != NULL)
+		    {
+		        destroyNodeAST(node->c1);
+		    }
+		    if (node->c2 != NULL)
+		    {
+		        destroyNodeAST(node->c2);
+		    }
+		    if (node->c3 != NULL)
+		    {
+		        destroyNodeAST(node->c3);
+		    }
+		    if (node->next != NULL)
+		    {
+		        destroyNodeAST(node->next);
+		    }
         //ignora node->symTable já que a tabela ainda tem a referencia
-        free(node);
-
-        return;
+       	 	free(node);
+		}
     }
 
     nodeAST*    destroyNodeAST(nodeAST* node)//só o nodo, retorna next
     {
-        if (node == NULL) //faz sentido dar free em null?
+        if (node != NULL) //faz sentido dar free em null?
         {
-            return;
-        }
-        if (node->c1 != NULL)
-        {
-            destroyNodeAST(node->c1);
-        }
-        if (node->c2 != NULL)
-        {
-            destroyNodeAST(node->c2);
-        }
-        if (node->c3 != NULL)
-        {
-            destroyNodeAST(node->c3);
-        }
-        
-        nodeAST* next = calloc(1, sizeof(nodeAST));//??
-        next = node->next;
-        
-        free(node);
-
-        return next;
+		    if (node->c1 != NULL)
+		    {
+		        destroyNodeAST(node->c1);
+		    }
+		    if (node->c2 != NULL)
+		    {
+		        destroyNodeAST(node->c2);
+		    }
+		    if (node->c3 != NULL)
+		    {
+		        destroyNodeAST(node->c3);
+		    }		        
+        	nodeAST* next = calloc(1, sizeof(nodeAST));//??
+        	next = node->next;        
+		    free(node);
+		    return next;
+		}
+		return NULL;
     }
 
     void    modify(nodeAST* node, int index, ...)
@@ -260,6 +252,7 @@
 			case 4:
 				if(node->next != NULL){trimNodeAST(node->next);}
 				node->next = va_arg(arg,void*);
+				gv_connect(node,node->next);
 				break;
 			/*case 5:
 				node->type = va_start (arg, int);
