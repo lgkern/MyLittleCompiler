@@ -62,7 +62,8 @@
 
 AST:	Program {createAST($1);}
 
-Program: 	|Global SC Program 
+Program: 	{$$ = NULL;}
+			|Global SC Program 
 			|Function Program {$$ = createNodeAST(IKS_AST_FUNCAO, $2, yylval.symbol, $1); }	
 //			|error SC {yyerrok; yyclearin;}//yyclearin; yyerrok;}
 
@@ -76,7 +77,8 @@ SC:	 	';'
 
 Global:	 	Type ID
 
-ID:		"ID" Vector {nodeAST* this = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol); if ($2 != NULL){modify($2, 1, this);/*adiciona identificador como primeiro filho do vetor indexado*/ $$ = $2;} else $$ = this;}
+ID:		"ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol);}
+		|"ID" Vector {nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol); modify($2, 1, id); $$ = $2;}
 
 Type:	"INT"
 		|"FLOAT"
@@ -84,8 +86,7 @@ Type:	"INT"
 		|"CHAR"
 		|"STRING"
 
-Vector: 	/*empty*/	
-		|'[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL, $2);/*lembrando que esse filhote é o segundo e não o primeiro*/ }
+Vector: '[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL, $2);/*lembrando que esse filhote é o segundo e não o primeiro*/ }
 
 Function:	Header Body {$$ = $2;}
 		
@@ -101,9 +102,9 @@ Parameter: 	Local
 
 Body:	 	'{' Block '}' {$$ = $2;}
 
-Block:		/*empty*/
+Block:	{$$ = NULL;}	/*empty*/
 		|Command	{$$ = $1; /*pq não tem next mesmo*/ }
-		|Command SC Block	{modify($1, 4, $3); /*set $3 como next do comando*/ return $1; }
+		|Command SC Block	{modify($1, 4, $3); /*set $3 como next do comando*/ $$ = $1; }
 
 Command: Local  
 		| Attribution 

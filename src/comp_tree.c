@@ -15,6 +15,9 @@
         myAST->c1 = c1;
         myAST->c2 = NULL;
         myAST->c3 = NULL;
+
+		gv_declare(IKS_AST_PROGRAMA, (void*)myAST, NULL);		
+
 		return;
     }
 
@@ -94,7 +97,10 @@
 			}
 		}
 		else
+		{
 			gv_declare(type, (void*)node, NULL);
+			free(temp);
+		}
         
 		return node;
     }
