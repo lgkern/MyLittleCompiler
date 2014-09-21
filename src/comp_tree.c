@@ -23,7 +23,7 @@
 
 	nodeAST* createNodeAST(int type, nodeAST* next, void* symTable, ...)
     {
-		char* temp = (char*)calloc(32, sizeof(char));
+		char* temp = NULL;
         nodeAST* node = calloc(1, sizeof(nodeAST));
 		TOKEN* token = NULL;
 		if(symTable != NULL)		
@@ -83,42 +83,50 @@
 		va_end(arg);
 
 		if(type == IKS_AST_IDENTIFICADOR || type == IKS_AST_FUNCAO)
+		{
+			//gv_declare(type, (void*)node, (char*)token->description.string);
 			gv_declare(type, (void*)node, (char*)token->description.string);
+		}
 		else if(type == IKS_AST_LITERAL)
 		{
 			if(((DIC*)symTable)->token->token == IKS_SIMBOLO_LITERAL_STRING)
 				gv_declare(type, (void*)node, (char*)(((DIC*)symTable)->token->description.string));
 			else if(((DIC*)symTable)->token->token == IKS_SIMBOLO_LITERAL_FLOAT)
 			{
+				temp = (char*)calloc(32, sizeof(char));
 				sprintf(temp,"%f",(float)(((DIC*)symTable)->token->description.floating));
 				gv_declare(type, (void*)node, temp);
+				free(temp);
 			}
 			else if(((DIC*)symTable)->token->token == IKS_SIMBOLO_LITERAL_BOOL)
 			{
+				temp = (char*)calloc(32, sizeof(char));
 				if((int)(((DIC*)symTable)->token->description.integer) == 0)
 					temp = "true";
 				else if((int)(((DIC*)symTable)->token->description.integer) == 1)
 					temp = "false";
 				gv_declare(type, (void*)node, temp);
+				free(temp);
 			}
 			else if(((DIC*)symTable)->token->token == IKS_SIMBOLO_LITERAL_INT)
 			{
+				temp = (char*)calloc(32, sizeof(char));
 				sprintf(temp,"%d",(int)(((DIC*)symTable)->token->description.integer));
 				gv_declare(type, (void*)node, temp);
+				free(temp);
 			}
 			else if(((DIC*)symTable)->token->token == IKS_SIMBOLO_LITERAL_CHAR)
 			{
-				free(temp);
 				temp = (char*)calloc(2, sizeof(char));
 				temp[1] = '\0';
 				temp[0] = (char)(((DIC*)symTable)->token->description.character);
 				gv_declare(type, (void*)node, temp);
+				free(temp);
 			}
 		}
 		else
 		{
 			gv_declare(type, (void*)node, NULL);
-			free(temp);
 		}
 
 		if(node->next != NULL)
