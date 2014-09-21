@@ -54,6 +54,7 @@
 %type <symbol> AST Program SC Global ID Type Vector Function Header List ParaList Parameter Body Block Command
 %type <symbol> Local Attribution Expression Literal Boolean Return FlowControl If While Input Output Call FunctionID ExpList
 %type <symbol> TK_IDENTIFICADOR TK_LIT_STRING TK_LIT_CHAR TK_LIT_TRUE TK_LIT_FALSE TK_LIT_FLOAT TK_LIT_INT
+%type <symbol> "INT" "FLOAT" "BOOL" "CHAR" "STRING" ';' '(' ')'
 
 
 %%

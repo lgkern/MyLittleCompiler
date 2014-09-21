@@ -30,17 +30,35 @@
         node->c3 = NULL;
 
         va_list arg;
-        nodeAST* child = va_start (arg, next);
-		if(type == IKS_AST_VETOR_INDEXADO)
+       
+		
+		nodeAST* child = NULL
+		va_start (arg, symTable);
+
+		if(type == IKS_AST_PROGRAMA
+		 ||type == IKS_AST_FUNCAO 
+		 ||type == IKS_AST_INPUT 
+		 ||type == IKS_AST_OUTPUT 
+		 ||type == IKS_AST_ARIM_INVERSAO
+		 ||type == IKS_AST_LOGICO_COMP_NEGACAO
+		 ||type == IKS_AST_RETURN
+		 ||type == IKS_AST_BLOCO) //1 Child
 		{
-			node->c2 = child;
+			node->c1 = va_arg(arg,nodeAST*);
 		}
-		else
+		else if(type == IKS_AST_IF_ELSE) //3 Childs
 		{
-			node->c1 = child;
-			node->c2 = va_start (arg, next);
-			node->c3 = va_start (arg, next);
+			node->c1 = va_arg(arg,nodeAST*);
+			node->c2 = va_arg(arg,nodeAST*);
+			node->c3 = va_arg(arg,nodeAST*);
 		}
+		else //2 Childs
+		{
+			node->c1 = va_arg(arg,nodeAST*);
+			node->c2 = va_arg(arg,nodeAST*);
+		}
+
+		va_end(arg);
 
 		if(type == IKS_AST_IDENTIFICADOR || type == IKS_AST_FUNCAO)
 			gv_declare(type, (void*)node, (char*)(((DIC*)symTable)->token->description.string));
