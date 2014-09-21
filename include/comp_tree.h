@@ -2,6 +2,8 @@
 #define    _COMP_TREE_H_
 
 #include <stdarg.h>
+#include "iks_ast.h"
+
 typedef struct _nodeAST nodeAST;
 
 struct _nodeAST{
@@ -13,6 +15,9 @@ struct _nodeAST{
     void* symTable;
 };
 
+nodeAST* myAST;
+
+void		createAST(nodeAST* c1);
 nodeAST*     createNodeAST(int type, nodeAST* next, void* symTable, ...);
 void         insertNodeASTChild(nodeAST* parent, nodeAST* child, int index);
 void        trimNodeAST(nodeAST* node);

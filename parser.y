@@ -3,6 +3,8 @@
 */
 %{
 #include <stdio.h>
+#include "iks_ast.h"
+#include "comp_tree.h"
 %}
 
 %union {
@@ -52,14 +54,11 @@
 %%
 /* Regras (e ações) da gramática */
 
-Program: 	|stmts
+AST:	Program {createAST($1);}
 
-stmts:		stmt
-		|stmts stmt
-
-stmt:		Global SC
-		|Function
-//		|error SC {yyerrok; yyclearin;}//yyclearin; yyerrok;}
+Program: 	|Global SC Program 
+			|Function Program {$$ = createNodeAST(IKS_AST_FUNCAO, $2, yylval.symbol, $1); }	
+//			|error SC {yyerrok; yyclearin;}//yyclearin; yyerrok;}
 
 SC:	 	';'
 //		|error {}//yyclearin; yyerrok;}
@@ -71,22 +70,22 @@ SC:	 	';'
 
 Global:	 	Type ID
 
-ID:		"ID" Vector
+ID:		"ID" Vector {nodeAST* this = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol); if ($2 != NULL){modify($2, 1, this);/*adiciona identificador como primeiro filho do vetor indexado*/ $$ = $2;} else $$ = this;}
 
-Type:		"INT"
+Type:	"INT"
 		|"FLOAT"
 		|"BOOL"
 		|"CHAR"
 		|"STRING"
 
-Vector: 	/*empty*/
-		|'[' Expression ']'
+Vector: 	/*empty*/	
+		|'[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL, $2);/*lembrando que esse filhote é o segundo e não o primeiro*/ }
 
-Function:	Header Body
+Function:	Header Body {$$ = $2;}
 		
 Header:		Type "ID" List
 
-List:		'(' ParaList ')'
+List:	'(' ParaList ')'
 		|'(' ')'
 
 ParaList:	Parameter ',' ParaList
@@ -94,13 +93,13 @@ ParaList:	Parameter ',' ParaList
 
 Parameter: 	Local
 
-Body:	 	'{' Block '}'
+Body:	 	'{' Block '}' {$$ = $2;}
 
 Block:		/*empty*/
-		|Command
-		|Command SC Block	
+		|Command	{$$ = $1; /*pq não tem next mesmo*/ }
+		|Command SC Block	{modify($1, 4, $3); /*set $3 como next do comando*/ return $1; }
 
-Command:	Local  
+Command: Local  
 		| Attribution 
 		| FlowControl
 		| Input 
@@ -112,27 +111,27 @@ Command:	Local
 
 Local:		Type "ID"
 
-Attribution:	ID '=' Expression
+Attribution:	ID '=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $3); }
 
-Expression:	Literal
-		| Expression '+' Expression
-		| Expression '-' Expression
-		| Expression '*' Expression
-		| Expression '/' Expression
-		| Expression '>' Expression
-		| Expression '<' Expression
-		| Expression "==" Expression
-		| Expression "!=" Expression
-		| Expression ">=" Expression
-		| Expression "<=" Expression
-		| Expression "&&" Expression
-		| Expression "||" Expression
-		| '-' Expression
-		| '!' Expression
+Expression:	Literal {if($1 != NULL){$$=$1} else $$=createNodeAST(IKS_AST_LITERAL, NULL, yylval.symbol); }
+		| Expression '+' Expression {$$=createNodeAST(IKS_AST_ARIM_SOMA, NULL, NULL, $1, $3); }
+		| Expression '-' Expression {$$=createNodeAST(IKS_AST_ARIM_SUBTRACAO, NULL, NULL, $1, $3); }
+		| Expression '*' Expression {$$=createNodeAST(IKS_AST_ARIM_MULTIPLICACAO, NULL, NULL, $1, $3); }
+		| Expression '/' Expression {$$=createNodeAST(IKS_AST_ARIM_DIVISAO, NULL, NULL, $1, $3); }
+		| Expression '>' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_G, NULL, NULL, $1, $3); }
+		| Expression '<' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_L, NULL, NULL, $1, $3); }
+		| Expression "==" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_IGUAL, NULL, NULL, $1, $3); }
+		| Expression "!=" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_DIF, NULL, NULL, $1, $3); }
+		| Expression ">=" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_GE, NULL, NULL, $1, $3); }
+		| Expression "<=" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_LE, NULL, NULL, $1, $3); }
+		| Expression "&&" Expression {$$=createNodeAST(IKS_AST_LOGICO_E, NULL, NULL, $1, $3); }
+		| Expression "||" Expression {$$=createNodeAST(IKS_AST_LOGICO_OU, NULL, NULL, $1, $3); }
+		| '-' Expression {$$=createNodeAST(IKS_AST_ARIM_INVERSAO, NULL, NULL, $2); }
+		| '!' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_NEGACAO, NULL, NULL, $2); }
 		| '(' Expression ')'
 		| Call
 
-Literal:	ID
+Literal: ID
 		|Boolean
 		|"litInt"
 		|"litFloat"
@@ -140,27 +139,29 @@ Literal:	ID
 		|"litString"
 
 Boolean:	"false"
-		|"true"
+			|"true"
 
-Return: 	"RETURN" Expression
+Return: 	"RETURN" Expression {$$ = createNodeAST(IKS_AST_RETURN, NULL, NULL, $2); }
 
 FlowControl:	If
 		| While
 
-If:		"IF" '(' Expression ')' "THEN" Command
-		|"IF" '(' Expression ')' "THEN" Command "ELSE" Command	
+If:		"IF" '(' Expression ')' "THEN" Command {$$ = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, $3, $6); }
+		|"IF" '(' Expression ')' "THEN" Command "ELSE" Command	{$$ = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, $3, $6, $8); }
 
-While:	 	"WHILE" '(' Expression ')'  "DO" Command
-		| "DO" Command "WHILE" '(' Expression ')' SC
+While:	 "WHILE" '(' Expression ')'  "DO" Command {$$ = createNodeAST(IKS_AST_WHILE_DO, NULL, NULL, $3, $6); }
+		| "DO" Command "WHILE" '(' Expression ')' SC {$$ = createNodeAST(IKS_AST_DO_WHILE, NULL, NULL, $2, $5); }
 
-Input:		"INPUT"  ID
+Input:		"INPUT"  ID	{$$ = createNodeAST(IKS_AST_INPUT, NULL, NULL, $2); }
 
-Output:		"OUTPUT" ExpList
+Output:		"OUTPUT" ExpList {$$ = createNodeAST(IKS_AST_OUTPUT, NULL, NULL, $2); }
 
-Call:		"ID" '(' ExpList ')'
-		|"ID" '(' ')'	
+Call:	FunctionID '(' ExpList ')' {$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $3);}
+		|FunctionID '(' ')'	{$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL);}
 
-ExpList:	Expression ',' ExpList
+FunctionID: "ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol);}
+
+ExpList:	Expression ',' ExpList {modify($1, 4, $2); $$ = $1;}
 		| Expression
 
 
