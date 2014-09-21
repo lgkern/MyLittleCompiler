@@ -85,7 +85,7 @@ Type:	"INT"
 		|"STRING"
 
 Vector: 	/*empty*/	
-		|'[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL, $2);/*lembrando que esse filhote é o segundo e não o primeiro*/ }
+		|'[' Expression ']'	{nodeAST* this = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL); modify(this, 2, $2); $$ = this; }
 
 Function:	Header Body {$$ = $2;}
 		
