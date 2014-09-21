@@ -1,0 +1,21 @@
+int main()
+{
+	int a;
+	int b;
+	int delta;
+	float bhaskaraP;
+	float bhaskaraN;
+
+	output "a:";
+	intput a;
+	output "b:";
+	input b;
+	output "delta:";
+	input delta;
+
+	bhaskaraP = (- b + delta)/(2*a);
+	bhaskaraN = (- b - delta)/(2*a);
+
+	output "Positive root: ", bhaskaraP;
+	output "Negative root: ", bhaskaraN;
+}

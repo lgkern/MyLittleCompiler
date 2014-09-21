@@ -1,0 +1,38 @@
+int input[10];
+int output[10];
+
+int main()
+{
+	int i;
+	int amountSorted;
+	int lowest;
+
+	i = 9;
+	amountSorted = 0;
+	lowest = 10000;
+	
+	while(i < 9) 
+	do{
+		input[i] = 10 - i;
+		i = i + 1;
+	}
+
+	i = 0;
+
+	while(amountSorted < 10) 
+	do{
+		if(input[i] < lowest)
+		then{
+			lowest = input[i];
+		}
+			
+		if(i == amountSorted)
+		then{
+			output[amountSorted] = lowest;
+			amountSorted = amountSorted + 1;
+			i = 10;
+			lowest = 10000;
+		}
+		i = i - 1;
+	}		
+}
