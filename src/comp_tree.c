@@ -23,11 +23,24 @@
         node->c1 = NULL;
         node->c2 = NULL;
         node->c3 = NULL;
-        // va_list arg;
-        // va_start (arg, next);//NodeAST type
+
+        va_list arg;
+        nodeAST* child = va_start (arg, next);
+		if(type == IKS_AST_VETOR_INDEXADO)
+		{
+			node->c2 = child;
+		}
+		else
+		{
+			node->c1 = child;
+			node->c2 = va_start (arg, next);
+			node->c3 = va_start (arg, next);
+		}
+
+		return node;
     }
 
-    void insertNodeASTChild(nodeAST* parent, nodeAST* child, int index)
+    /*void insertNodeASTChild(nodeAST* parent, nodeAST* child, int index) //já tem no modify
     {
         switch (index)
         {
@@ -59,7 +72,7 @@
                 free(child);//hue
         }
         return;
-    }
+    }*/
 
     void    trimNodeAST(nodeAST* node)//tudo ligado ao nodo, inclusive next
     {
@@ -122,8 +135,36 @@
         {
             return;
         }
-        
-        return;//much done, very ready
+
+		va_list arg;        
+		switch (index)
+		{
+			case 0:
+				node->type = va_start (arg, index);
+				break;
+			case 1:
+				if(node->c1 != NULL){trimNodeAST(node->c1);}
+				node->c1 = va_start (arg, node);
+				break;
+			case 2:
+				if(node->c2 != NULL){trimNodeAST(node->c2);}
+				node->c2 = va_start (arg, node);
+				break;
+			case 3:
+				if(node->c3 != NULL){trimNodeAST(node->c3);}
+				node->c3 = va_start (arg, node);
+				break;
+			case 4:
+				if(node->next != NULL){trimNodeAST(node->next);}
+				node->next = va_start (arg, node);
+				break;
+			/*case 5:
+				node->type = va_start (arg, int);
+				break;*/
+
+		}
+		
+		return;//much done, very ready
     }
 
 

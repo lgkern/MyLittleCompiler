@@ -51,13 +51,16 @@
 
 %error-verbose
 
+%type <symbol> TK_PR_INT TK_PR_FLOAT TK_PR_BOOL TK_PR_CHAR TK_PR_STRING TK_PR_IF TK_PR_THEN TK_PR_ELSE TK_PR_WHILE TK_PR_DO TK_PR_INPUT TK_PR_OUTPUT TK_PR_RETURN TK_OC_LE TK_OC_GE TK_OC_EQ TK_OC_NE TK_OC_AND TK_OC_OR TK_LIT_INT TK_LIT_FLOAT TK_LIT_FALSE TK_LIT_TRUE TK_LIT_CHAR TK_LIT_STRING TK_IDENTIFICADOR TOKEN_ERRO
+
+
 %%
 /* Regras (e ações) da gramática */
 
 AST:	Program {createAST($1);}
 
 Program: 	|Global SC Program 
-			|Function Program {$$ = createNodeAST(IKS_AST_FUNCAO, $2, yylval.symbol, $1); }	
+			|Function Program {$$ = createNodeAST(IKS_AST_FUNCAO, $2, $1.symbol, $1); }	
 //			|error SC {yyerrok; yyclearin;}//yyclearin; yyerrok;}
 
 SC:	 	';'
@@ -70,7 +73,7 @@ SC:	 	';'
 
 Global:	 	Type ID
 
-ID:		"ID" Vector {nodeAST* this = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol); if ($2 != NULL){modify($2, 1, this);/*adiciona identificador como primeiro filho do vetor indexado*/ $$ = $2;} else $$ = this;}
+ID:		"ID" Vector {nodeAST* this = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1.symbol); if ($2 != NULL){modify($2, 1, this);/*adiciona identificador como primeiro filho do vetor indexado*/ $$ = $2;} else $$ = this;}
 
 Type:	"INT"
 		|"FLOAT"
@@ -113,7 +116,7 @@ Local:		Type "ID"
 
 Attribution:	ID '=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $3); }
 
-Expression:	Literal {if($1 != NULL){$$=$1} else $$=createNodeAST(IKS_AST_LITERAL, NULL, yylval.symbol); }
+Expression:	Literal {if($1 != NULL){$$=$1} else $$=createNodeAST(IKS_AST_LITERAL, NULL, $1.symbol); }
 		| Expression '+' Expression {$$=createNodeAST(IKS_AST_ARIM_SOMA, NULL, NULL, $1, $3); }
 		| Expression '-' Expression {$$=createNodeAST(IKS_AST_ARIM_SUBTRACAO, NULL, NULL, $1, $3); }
 		| Expression '*' Expression {$$=createNodeAST(IKS_AST_ARIM_MULTIPLICACAO, NULL, NULL, $1, $3); }
@@ -159,9 +162,9 @@ Output:		"OUTPUT" ExpList {$$ = createNodeAST(IKS_AST_OUTPUT, NULL, NULL, $2); }
 Call:	FunctionID '(' ExpList ')' {$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $3);}
 		|FunctionID '(' ')'	{$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL);}
 
-FunctionID: "ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol);}
+FunctionID: "ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1.symbol);}
 
-ExpList:	Expression ',' ExpList {modify($1, 4, $2); $$ = $1;}
+ExpList:	Expression ',' ExpList {modify($1, 4, $3); $$ = $1;}
 		| Expression
 
 
