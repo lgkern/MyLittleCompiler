@@ -51,7 +51,9 @@
 
 %error-verbose
 
-%type <symbol> TK_PR_INT TK_PR_FLOAT TK_PR_BOOL TK_PR_CHAR TK_PR_STRING TK_PR_IF TK_PR_THEN TK_PR_ELSE TK_PR_WHILE TK_PR_DO TK_PR_INPUT TK_PR_OUTPUT TK_PR_RETURN TK_OC_LE TK_OC_GE TK_OC_EQ TK_OC_NE TK_OC_AND TK_OC_OR TK_LIT_INT TK_LIT_FLOAT TK_LIT_FALSE TK_LIT_TRUE TK_LIT_CHAR TK_LIT_STRING TK_IDENTIFICADOR TOKEN_ERRO
+%type <symbol> AST Program SC Global ID Type Vector Function Header List ParaList Parameter Body Block Command
+%type <symbol> Local Attribution Expression Literal Boolean Return FlowControl If While Input Output Call FunctionID ExpList
+%type <symbol> TK_IDENTIFICADOR TK_LIT_STRING TK_LIT_CHAR TK_LIT_TRUE TK_LIT_FALSE TK_LIT_FLOAT TK_LIT_INT
 
 
 %%
