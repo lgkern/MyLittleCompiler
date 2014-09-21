@@ -2,7 +2,19 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-    nodeAST* createNodeAST(int type, nodeAST* next, void* symTable, ...)
+    void createAST(nodeAST* c1)
+    {
+        myAST = calloc(1, sizeof(nodeAST));
+        myAST->type = IKS_AST_PROGRAMA;
+        myAST->next = NULL;
+        myAST->symTable = NULL;
+        myAST->c1 = c1;
+        myAST->c2 = NULL;
+        myAST->c3 = NULL;
+		return;
+    }
+
+	nodeAST* createNodeAST(int type, nodeAST* next, void* symTable, ...)
     {
         nodeAST* node = calloc(1, sizeof(nodeAST));
         node->type = type;
