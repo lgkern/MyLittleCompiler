@@ -32,7 +32,7 @@
         va_list arg;
        
 		
-		nodeAST* child = NULL
+		nodeAST* child = NULL;
 		va_start (arg, symTable);
 
 		if(type == IKS_AST_PROGRAMA
@@ -198,33 +198,37 @@
             return;
         }
 
+	
 		va_list arg;        
+		va_start (arg, index);
 		switch (index)
 		{
 			case 0:
-				node->type = va_start (arg, index);
+				node->type = va_arg(arg,int);
 				break;
 			case 1:
 				if(node->c1 != NULL){trimNodeAST(node->c1);}
-				node->c1 = va_start (arg, node);
+				node->c1 = va_arg(arg,nodeAST*);
 				break;
 			case 2:
 				if(node->c2 != NULL){trimNodeAST(node->c2);}
-				node->c2 = va_start (arg, node);
+				node->c2 = va_arg(arg,nodeAST*);
 				break;
 			case 3:
 				if(node->c3 != NULL){trimNodeAST(node->c3);}
-				node->c3 = va_start (arg, node);
+				node->c3 = va_arg(arg,nodeAST*);
 				break;
 			case 4:
 				if(node->next != NULL){trimNodeAST(node->next);}
-				node->next = va_start (arg, node);
+				node->next = va_arg(arg,void*);
 				break;
 			/*case 5:
 				node->type = va_start (arg, int);
 				break;*/
 
 		}
+
+		va_end(arg);
 		
 		return;
     }
