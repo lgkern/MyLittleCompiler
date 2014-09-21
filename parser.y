@@ -75,7 +75,10 @@ SC:	 	';'
 		 yyclearin;}
 		|*/
 
-Global:	 	Type ID
+Global:	 	Type GlobalID
+
+GlobalID:	"ID" 
+			| "ID" '[' Expression ']'
 
 ID:		"ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol);}
 		|"ID" Vector {nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol); modify($2, 1, id); $$ = $2;}
@@ -86,7 +89,7 @@ Type:	"INT"
 		|"CHAR"
 		|"STRING"
 
-Vector: '[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL, $2);/*lembrando que esse filhote é o segundo e não o primeiro*/ }
+Vector: '[' Expression ']'	{nodeAST* this = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL); modify(this, 2, $2); $$ = this; }
 
 Function:	Header Body {$$ = $2;}
 		
