@@ -37,9 +37,6 @@
 
         va_list arg;
        
-				
-
-		nodeAST* child = NULL;
 		va_start (arg, symTable);
 
 		if(type == IKS_AST_PROGRAMA

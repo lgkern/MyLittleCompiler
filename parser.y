@@ -80,7 +80,7 @@ Global:	 	Type GlobalID
 GlobalID:	"ID" 
 			| "ID" '[' Expression ']'
 
-ID:		"ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol);}
+ID:		"ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol, NULL, NULL, NULL);}
 		|"ID" Vector {nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol); modify($2, 1, id); $$ = $2;}
 
 Type:	"INT"
@@ -123,7 +123,8 @@ Local:		Type "ID"
 
 Attribution:	ID '=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $3); }
 
-Expression:	Literal {if($1 != NULL){$$=$1;} else $$=createNodeAST(IKS_AST_LITERAL, NULL, yylval.symbol); }
+Expression:	ID
+		|Literal {$$=createNodeAST(IKS_AST_LITERAL, NULL, yylval.symbol); }
 		| Expression '+' Expression {$$=createNodeAST(IKS_AST_ARIM_SOMA, NULL, NULL, $1, $3); }
 		| Expression '-' Expression {$$=createNodeAST(IKS_AST_ARIM_SUBTRACAO, NULL, NULL, $1, $3); }
 		| Expression '*' Expression {$$=createNodeAST(IKS_AST_ARIM_MULTIPLICACAO, NULL, NULL, $1, $3); }
@@ -141,8 +142,7 @@ Expression:	Literal {if($1 != NULL){$$=$1;} else $$=createNodeAST(IKS_AST_LITERA
 		| '(' Expression ')'
 		| Call
 
-Literal: ID
-		|Boolean
+Literal: Boolean
 		|"litInt"
 		|"litFloat"
 		|"litChar"
@@ -166,8 +166,8 @@ Input:		"INPUT"  ID	{$$ = createNodeAST(IKS_AST_INPUT, NULL, NULL, $2); }
 
 Output:		"OUTPUT" ExpList {$$ = createNodeAST(IKS_AST_OUTPUT, NULL, NULL, $2); }
 
-Call:	FunctionID '(' ExpList ')' {$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $3);}
-		|FunctionID '(' ')'	{$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL);}
+Call:	FunctionID '(' ExpList ')' {$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, $3);}
+		|FunctionID '(' ')'	{$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, NULL);}
 
 FunctionID: "ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol);}
 
