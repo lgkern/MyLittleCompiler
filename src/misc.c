@@ -20,7 +20,7 @@ void main_init (int argc, char **argv)
 {	
   //implemente esta função com rotinas de inicialização, se necessário
 	createTable();
-	gv_init("output.dot");
+	//gv_init("output.dot");
 }
 
 void main_finalize (void)
