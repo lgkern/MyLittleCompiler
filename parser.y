@@ -116,7 +116,7 @@ Command: Local
 		| Output 
 		| Return  
 		| Call  
-		| Body
+		| Body { $$ = createNodeAST(IKS_AST_BLOCO,NULL,NULL,$1);}
 		| SC
 
 Local:		Type "ID"

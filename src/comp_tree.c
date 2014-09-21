@@ -13,6 +13,8 @@
         myAST->next = NULL;
         myAST->symTable = NULL;
         myAST->c1 = c1;
+		if(c1 != NULL)
+			gv_connect(myAST,c1);
         myAST->c2 = NULL;
         myAST->c3 = NULL;
 
@@ -25,6 +27,9 @@
     {
 		char* temp = (char*)calloc(32, sizeof(char));
         nodeAST* node = calloc(1, sizeof(nodeAST));
+		TOKEN* token = NULL;
+		if(symTable != NULL)		
+			token = ((DIC*)symTable)->token;
         node->type = type;
         node->next = next;
         node->symTable = symTable;
@@ -34,7 +39,8 @@
 
         va_list arg;
        
-		
+				
+
 		nodeAST* child = NULL;
 		va_start (arg, symTable);
 
@@ -48,23 +54,41 @@
 		 ||type == IKS_AST_BLOCO) //1 Child
 		{
 			node->c1 = va_arg(arg,nodeAST*);
+			if(node->c1 != NULL)
+			{
+				//printf("Creating link with 1 child: %p",node->c1);
+				gv_connect(node,node->c1);
+			}
 		}
 		else if(type == IKS_AST_IF_ELSE) //3 Childs
 		{
 			node->c1 = va_arg(arg,nodeAST*);
+			if(node->c1 != NULL)
+				gv_connect(node,node->c1);
+
 			node->c2 = va_arg(arg,nodeAST*);
+			if(node->c2 != NULL)
+				gv_connect(node,node->c2);
+
 			node->c3 = va_arg(arg,nodeAST*);
+			if(node->c3 != NULL)
+				gv_connect(node,node->c3);
 		}
 		else //2 Childs
 		{
 			node->c1 = va_arg(arg,nodeAST*);
+			if(node->c1 != NULL)
+				gv_connect(node,node->c1);
+
 			node->c2 = va_arg(arg,nodeAST*);
+			if(node->c2 != NULL)
+				gv_connect(node,node->c2);
 		}
 
 		va_end(arg);
 
 		if(type == IKS_AST_IDENTIFICADOR || type == IKS_AST_FUNCAO)
-			gv_declare(type, (void*)node, (char*)(((DIC*)symTable)->token->description.string));
+			gv_declare(type, (void*)node, (char*)token->description.string);
 		else if(type == IKS_AST_LITERAL)
 		{
 			if(((DIC*)symTable)->token->token == IKS_SIMBOLO_LITERAL_STRING)
@@ -101,6 +125,9 @@
 			gv_declare(type, (void*)node, NULL);
 			free(temp);
 		}
+
+		if(node->next != NULL)
+			gv_connect(node,node->next);
         
 		return node;
     }
@@ -215,14 +242,20 @@
 			case 1:
 				if(node->c1 != NULL){trimNodeAST(node->c1);}
 				node->c1 = va_arg(arg,nodeAST*);
+				if(node->c1 != NULL)
+					gv_connect(node,node->c2);
 				break;
 			case 2:
 				if(node->c2 != NULL){trimNodeAST(node->c2);}
 				node->c2 = va_arg(arg,nodeAST*);
+				if(node->c2 != NULL)
+					gv_connect(node,node->c2);
 				break;
 			case 3:
 				if(node->c3 != NULL){trimNodeAST(node->c3);}
 				node->c3 = va_arg(arg,nodeAST*);
+				if(node->c3 != NULL)
+					gv_connect(node,node->c3);
 				break;
 			case 4:
 				if(node->next != NULL){trimNodeAST(node->next);}
