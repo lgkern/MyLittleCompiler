@@ -49,36 +49,25 @@
 		 ||type == IKS_AST_BLOCO) //1 Child
 		{
 			node->c1 = va_arg(arg,nodeAST*);
-			if(node->c1 != NULL)
-			{
-				//printf("Creating link with 1 child: %p",node->c1);
-				gv_connect(node,node->c1);
-			}
 		}
 		else if(type == IKS_AST_IF_ELSE) //3 Childs
 		{
 			node->c1 = va_arg(arg,nodeAST*);
-			if(node->c1 != NULL)
-				gv_connect(node,node->c1);
-
 			node->c2 = va_arg(arg,nodeAST*);
-			if(node->c2 != NULL)
-				gv_connect(node,node->c2);
-
 			node->c3 = va_arg(arg,nodeAST*);
-			if(node->c3 != NULL)
-				gv_connect(node,node->c3);
 		}
 		else //2 Childs
 		{
 			node->c1 = va_arg(arg,nodeAST*);
-			if(node->c1 != NULL)
-				gv_connect(node,node->c1);
-
 			node->c2 = va_arg(arg,nodeAST*);
-			if(node->c2 != NULL)
-				gv_connect(node,node->c2);
 		}
+
+		if(node->c1 != NULL)
+			gv_connect(node,node->c1);
+		if(node->c2 != NULL)
+			gv_connect(node,node->c2);
+		if(node->c3 != NULL)
+			gv_connect(node,node->c3);
 
 		va_end(arg);
 

@@ -5,10 +5,12 @@
 #include <stdio.h>
 #include "iks_ast.h"
 #include "comp_tree.h"
+#include "symt.h"
 %}
 
 %union {
-   void* symbol;
+   DIC* symbol;
+   nodeAST* nAST;
 }
 
 /* Declaração dos tokens da linguagem */
@@ -51,10 +53,11 @@
 
 %error-verbose
 
-%type <symbol> AST Program SC Global ID Type Vector Function Header List ParaList Parameter Body Block Command
-%type <symbol> Local Attribution Expression Literal Boolean Return FlowControl If While Input Output Call FunctionID ExpList
-%type <symbol> TK_IDENTIFICADOR TK_LIT_STRING TK_LIT_CHAR TK_LIT_TRUE TK_LIT_FALSE TK_LIT_FLOAT TK_LIT_INT
-%type <symbol> "INT" "FLOAT" "BOOL" "CHAR" "STRING" ';' '(' ')'
+%type <nAST> AST Program SC Global ID Type Vector Function Header List ParaList Parameter Body Block Command
+%type <nAST> Local Attribution Expression  Return FlowControl If While Input Output Call FunctionID ExpList ';' '(' ')'
+%type <nAST> "INT" "FLOAT" "BOOL" "CHAR" "STRING" 
+%type <symbol> TK_IDENTIFICADOR TK_LIT_STRING TK_LIT_CHAR TK_LIT_TRUE TK_LIT_FALSE TK_LIT_FLOAT TK_LIT_INT Boolean Literal
+
 
 
 %%
@@ -64,7 +67,7 @@ AST:	Program {createAST($1);}
 
 Program: 	{$$ = NULL;}
 			|Global SC Program 
-			|Function Program {$$ = createNodeAST(IKS_AST_FUNCAO, $2, yylval.symbol, $1); }	
+			|Function Program {modify($1, 4, $2); $$ = $1;}	
 //			|error SC {yyerrok; yyclearin;}//yyclearin; yyerrok;}
 
 SC:	 	';'
@@ -91,9 +94,9 @@ Type:	"INT"
 
 Vector: '[' Expression ']'	{nodeAST* this = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL); modify(this, 2, $2); $$ = this; }
 
-Function:	Header Body {$$ = $2;}
+Function:	Header Body {$$ = createNodeAST(IKS_AST_FUNCAO, NULL, $1, $2);}
 		
-Header:		Type "ID" List
+Header:		Type "ID" List {$$ = $2;}
 
 List:	'(' ParaList ')'
 		|'(' ')'

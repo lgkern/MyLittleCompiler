@@ -7,7 +7,7 @@ int main()
 	float bhaskaraN;
 
 	output "a:";
-	intput a;
+	input a;
 	output "b:";
 	input b;
 	output "delta:";

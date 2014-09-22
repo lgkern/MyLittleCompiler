@@ -6,6 +6,8 @@ DIGIT	[0-9]
 INTEGER {-?{DIGIT}+}
 
 %{
+#include "comp_tree.h"
+#include "symt.h"
 #include "parser.h" //arquivo automaticamente gerado pelo bison
 #include <stdlib.h>
 #include "symbtable.h"
