@@ -58,22 +58,7 @@
 			node->c2 = va_arg(arg,nodeAST*);
 		}
 		printf("c1:%p        c2:%p            c3:%p\n",node->c1,node->c2,node->c3);
-		if(node->c1 != NULL)
-		{
-			printf("Chamado de createAST, c1\n");
-			gv_connect(node,node->c1);
-		}
-		if(node->c2 != NULL)
-		{
-			printf("Chamado de createAST, c2\n");
-			gv_connect(node,node->c2);
-		}
-		if(node->c3 != NULL)
-		{
-			printf("Chamado de createAST, c3\n");
-			gv_connect(node,node->c3);
-		}
-
+		
 		va_end(arg);
 
 		if(type == IKS_AST_IDENTIFICADOR || type == IKS_AST_FUNCAO)
@@ -125,6 +110,23 @@
 
 		if(node->next != NULL)
 			gv_connect(node,node->next);
+		if(node->c1 != NULL)
+		{
+			printf("Chamado de createAST, c1\n");
+			gv_connect(node,node->c1);
+		}
+		if(node->c2 != NULL)
+		{
+			printf("Chamado de createAST, c2\n");
+			gv_connect(node,node->c2);
+		}
+		if(node->c3 != NULL)
+		{
+			printf("Chamado de createAST, c3\n");
+			gv_connect(node,node->c3);
+		}
+
+		
         
 		return node;
     }
