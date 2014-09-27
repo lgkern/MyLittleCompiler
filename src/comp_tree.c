@@ -25,9 +25,6 @@
     {
 		char* temp = NULL;
         nodeAST* node = calloc(1, sizeof(nodeAST));
-		TOKEN* token = NULL;
-		if(symTable != NULL)		
-			token = ((DIC*)symTable)->token;
         node->type = type;
         node->next = next;
         node->symTable = symTable;
@@ -35,8 +32,7 @@
         node->c2 = NULL;
         node->c3 = NULL;
 
-        va_list arg;
-       
+        va_list arg;       
 		va_start (arg, symTable);
 
 		if(type == IKS_AST_PROGRAMA
@@ -61,54 +57,63 @@
 			node->c1 = va_arg(arg,nodeAST*);
 			node->c2 = va_arg(arg,nodeAST*);
 		}
-
+		printf("c1:%p        c2:%p            c3:%p\n",node->c1,node->c2,node->c3);
 		if(node->c1 != NULL)
+		{
+			printf("Chamado de createAST, c1\n");
 			gv_connect(node,node->c1);
+		}
 		if(node->c2 != NULL)
+		{
+			printf("Chamado de createAST, c2\n");
 			gv_connect(node,node->c2);
+		}
 		if(node->c3 != NULL)
-			gv_connect(node,node->c3);
+		{
+			printf("Chamado de createAST, c2\n");
+			gv_connect(node,node->c2);
+		}
 
 		va_end(arg);
 
 		if(type == IKS_AST_IDENTIFICADOR || type == IKS_AST_FUNCAO)
 		{
 			//gv_declare(type, (void*)node, (char*)token->description.string);
-			gv_declare(type, (void*)node, (char*)token->description.string);
+			gv_declare(type, (void*)node, (char*)symTable->token->description.string);
 		}
 		else if(type == IKS_AST_LITERAL)
 		{
-			if(((DIC*)symTable)->token->token == IKS_SIMBOLO_LITERAL_STRING)
-				gv_declare(type, (void*)node, (char*)(((DIC*)symTable)->token->description.string));
-			else if(((DIC*)symTable)->token->token == IKS_SIMBOLO_LITERAL_FLOAT)
+			if(symTable->token->token == IKS_SIMBOLO_LITERAL_STRING)
+				gv_declare(type, (void*)node, (char*)(symTable->token->description.string));
+			else if(symTable->token->token == IKS_SIMBOLO_LITERAL_FLOAT)
 			{
 				temp = (char*)calloc(32, sizeof(char));
-				sprintf(temp,"%f",(float)(((DIC*)symTable)->token->description.floating));
+				sprintf(temp,"%f",(float)symTable->token->description.floating);
 				gv_declare(type, (void*)node, temp);
 				free(temp);
 			}
-			else if(((DIC*)symTable)->token->token == IKS_SIMBOLO_LITERAL_BOOL)
+			else if(symTable->token->token == IKS_SIMBOLO_LITERAL_BOOL)
 			{
 				temp = (char*)calloc(32, sizeof(char));
-				if((int)(((DIC*)symTable)->token->description.integer) == 0)
+				if((int)(symTable->token->description.integer) == 0)
 					temp = "true";
-				else if((int)(((DIC*)symTable)->token->description.integer) == 1)
+				else if((int)(symTable->token->description.integer) == 1)
 					temp = "false";
 				gv_declare(type, (void*)node, temp);
 				free(temp);
 			}
-			else if(((DIC*)symTable)->token->token == IKS_SIMBOLO_LITERAL_INT)
+			else if(symTable->token->token == IKS_SIMBOLO_LITERAL_INT)
 			{
 				temp = (char*)calloc(32, sizeof(char));
-				sprintf(temp,"%d",(int)(((DIC*)symTable)->token->description.integer));
+				sprintf(temp,"%d",(int)(symTable->token->description.integer));
 				gv_declare(type, (void*)node, temp);
 				free(temp);
 			}
-			else if(((DIC*)symTable)->token->token == IKS_SIMBOLO_LITERAL_CHAR)
+			else if(symTable->token->token == IKS_SIMBOLO_LITERAL_CHAR)
 			{
 				temp = (char*)calloc(2, sizeof(char));
 				temp[1] = '\0';
-				temp[0] = (char)(((DIC*)symTable)->token->description.character);
+				temp[0] = (char)(symTable->token->description.character);
 				gv_declare(type, (void*)node, temp);
 				free(temp);
 			}
@@ -229,24 +234,37 @@
 				if(node->c1 != NULL){trimNodeAST(node->c1);}
 				node->c1 = va_arg(arg,nodeAST*);
 				if(node->c1 != NULL)
-					gv_connect(node,node->c2);
+				{
+					printf("Chamado de modify, c1\n");
+					gv_connect(node,node->c1);
+				}
 				break;
 			case 2:
 				if(node->c2 != NULL){trimNodeAST(node->c2);}
 				node->c2 = va_arg(arg,nodeAST*);
 				if(node->c2 != NULL)
+				{
+					printf("Chamado de modify, c2\n");
 					gv_connect(node,node->c2);
+				}
 				break;
 			case 3:
 				if(node->c3 != NULL){trimNodeAST(node->c3);}
 				node->c3 = va_arg(arg,nodeAST*);
 				if(node->c3 != NULL)
+				{
+					printf("Chamado de modify, c3\n");
 					gv_connect(node,node->c3);
+				}
 				break;
 			case 4:
 				if(node->next != NULL){trimNodeAST(node->next);}
-				node->next = va_arg(arg,void*);
-				gv_connect(node,node->next);
+				node->next = va_arg(arg,nodeAST*);
+				if(node->next != NULL)
+				{
+					printf("Chamado de modify, next\n");
+					gv_connect(node,node->next);
+				}
 				break;
 			/*case 5:
 				node->type = va_start (arg, int);
