@@ -70,15 +70,15 @@
 		}
 		if(node->c3 != NULL)
 		{
-			printf("Chamado de createAST, c2\n");
-			gv_connect(node,node->c2);
+			printf("Chamado de createAST, c3\n");
+			gv_connect(node,node->c3);
 		}
 
 		va_end(arg);
 
 		if(type == IKS_AST_IDENTIFICADOR || type == IKS_AST_FUNCAO)
 		{
-			//gv_declare(type, (void*)node, (char*)token->description.string);
+			printf("type:%d        node:%p            symTable:%p\n",type, (void*)node, symTable->token->description.string);
 			gv_declare(type, (void*)node, (char*)symTable->token->description.string);
 		}
 		else if(type == IKS_AST_LITERAL)
