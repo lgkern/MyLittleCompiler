@@ -1,5 +1,5 @@
-#ifndef _SYMTABLE_
-#define _SYMTABLE_
+#ifndef _COMP_DICT_
+#define _COMP_DICT_
 
 typedef union{
 	int	integer;

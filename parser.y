@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include "iks_ast.h"
 #include "comp_tree.h"
-#include "symt.h"
+#include "comp_dict.h"
 %}
 
 %union {
@@ -53,10 +53,10 @@
 
 %error-verbose
 
-%type <nAST> AST Program SC Global ID Type Vector Function Header List ParaList Parameter Body Block Command
+%type <nAST> AST Program SC Global ID Type Vector Function  List ParaList Parameter Body Block Command
 %type <nAST> Local Attribution Expression  Return FlowControl If While Input Output Call FunctionID ExpList ';' '(' ')'
 %type <nAST> "INT" "FLOAT" "BOOL" "CHAR" "STRING" 
-%type <symbol> TK_IDENTIFICADOR TK_LIT_STRING TK_LIT_CHAR TK_LIT_TRUE TK_LIT_FALSE TK_LIT_FLOAT TK_LIT_INT Boolean Literal
+%type <symbol> TK_IDENTIFICADOR TK_LIT_STRING TK_LIT_CHAR TK_LIT_TRUE TK_LIT_FALSE TK_LIT_FLOAT TK_LIT_INT Boolean Literal Header
 
 
 
@@ -83,8 +83,8 @@ Global:	 	Type GlobalID
 GlobalID:	"ID" 
 			| "ID" '[' Expression ']'
 
-ID:		"ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol, NULL, NULL, NULL);}
-		|"ID" Vector {nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol); modify($2, 1, id); $$ = $2;}
+ID:		"ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
+		|"ID" Vector {nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1); modify($2, 1, id); $$ = $2;}
 
 Type:	"INT"
 		|"FLOAT"
@@ -127,7 +127,7 @@ Local:		Type "ID"
 Attribution:	ID '=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $3); }
 
 Expression:	ID
-		|Literal {$$=createNodeAST(IKS_AST_LITERAL, NULL, yylval.symbol); }
+		|Literal {$$=createNodeAST(IKS_AST_LITERAL, NULL, $1); }
 		| Expression '+' Expression {$$=createNodeAST(IKS_AST_ARIM_SOMA, NULL, NULL, $1, $3); }
 		| Expression '-' Expression {$$=createNodeAST(IKS_AST_ARIM_SUBTRACAO, NULL, NULL, $1, $3); }
 		| Expression '*' Expression {$$=createNodeAST(IKS_AST_ARIM_MULTIPLICACAO, NULL, NULL, $1, $3); }
@@ -172,7 +172,7 @@ Output:		"OUTPUT" ExpList {$$ = createNodeAST(IKS_AST_OUTPUT, NULL, NULL, $2); }
 Call:	FunctionID '(' ExpList ')' {$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, $3);}
 		|FunctionID '(' ')'	{$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, NULL);}
 
-FunctionID: "ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, yylval.symbol);}
+FunctionID: "ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1);}
 
 ExpList:	Expression ',' ExpList {modify($1, 4, $3); $$ = $1;}
 		| Expression

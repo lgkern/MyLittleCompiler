@@ -3,6 +3,7 @@
 
 #include <stdarg.h>
 #include "iks_ast.h"
+#include "comp_dict.h"
 
 typedef struct _nodeAST nodeAST;
 
@@ -18,7 +19,7 @@ struct _nodeAST{
 nodeAST* myAST;
 
 void		createAST(nodeAST* c1);
-nodeAST*     createNodeAST(int type, nodeAST* next, void* symTable, ...);
+nodeAST*     createNodeAST(int type, nodeAST* next, DIC* symTable, ...);
 void         insertNodeASTChild(nodeAST* parent, nodeAST* child, int index);
 void        trimNodeAST(nodeAST* node);
 nodeAST*    destroyNodeAST(nodeAST* node);

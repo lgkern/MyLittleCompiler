@@ -1,7 +1,7 @@
 #ifndef _SYMB_TABLE_
 #define _SYMB_TABLE_
 
-#include "symt.h"
+#include "comp_dict.h"
 
 //Data definitions -------------------------------------------------------------------------
 

@@ -2,7 +2,7 @@
 #include "gv.h"
 #include "iks_ast.h"
 #include "main.h"
-#include "symt.h"
+#include "comp_dict.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -21,7 +21,7 @@
 		gv_declare(IKS_AST_PROGRAMA, (void*)myAST, NULL);		
     }
 
-	nodeAST* createNodeAST(int type, nodeAST* next, void* symTable, ...)
+	nodeAST* createNodeAST(int type, nodeAST* next, DIC* symTable, ...)
     {
 		char* temp = NULL;
         nodeAST* node = calloc(1, sizeof(nodeAST));

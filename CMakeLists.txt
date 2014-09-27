@@ -17,7 +17,6 @@ ADD_EXECUTABLE(main
   src/comp_list.c
   src/comp_tree.c
   src/symbtable.c
-  src/symt.c
   src/crc16.c
 )
 TARGET_LINK_LIBRARIES(main ${FLEX_LIBRARIES})
