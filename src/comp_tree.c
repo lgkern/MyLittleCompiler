@@ -17,8 +17,8 @@
 
 		gv_declare(IKS_AST_PROGRAMA, (void*)myAST, NULL);	
 
-		if(c1 != NULL)
-			gv_connect(myAST,c1);
+		if(myAST->c1 != NULL)
+			gv_connect(myAST,myAST->c1);
         myAST->c2 = NULL;
         myAST->c3 = NULL;
 

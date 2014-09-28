@@ -68,7 +68,7 @@
 AST:	Program {createAST($1);}
 
 Program: 	{$$ = NULL;}
-			|Global SC Program 
+			|Global SC Program {$$ = $3;}
 			|Function Program {modify($1, 4, $2); $$ = $1;}	
 //			|error SC {yyerrok; yyclearin;}//yyclearin; yyerrok;}
 
