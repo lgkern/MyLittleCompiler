@@ -41,15 +41,17 @@
 %token TK_LIT_STRING	"litString"
 %token TK_IDENTIFICADOR	"ID"
 %token TOKEN_ERRO	"ERRO"
-%left '+'
-%left '-'
-%left '!'
-%left '*'
-%left '/'
-%left '>'
-%left '<'
-%left "<=" ">=" "==" "!=" "&&" "||"
-%right "INT" "FLOAT" "BOOL" "CHAR" "STRING" "THEN" "ELSE"
+
+%right "THEN" "ELSE"
+%right "||"
+%right "&&"
+%left '>' '<' "==" "!=" "<=" ">="
+%left '-' '+'
+%left '*' '/'
+%right '!'
+%nonassoc '(' ')'
+
+%right "INT" "FLOAT" "BOOL" "CHAR" "STRING"
 
 %error-verbose
 
