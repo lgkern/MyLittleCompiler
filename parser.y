@@ -144,7 +144,7 @@ Expression:	ID
 		| Expression "||" Expression {$$=createNodeAST(IKS_AST_LOGICO_OU, NULL, NULL, $1, $3); }
 		| '-' Expression {$$=createNodeAST(IKS_AST_ARIM_INVERSAO, NULL, NULL, $2); }
 		| '!' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_NEGACAO, NULL, NULL, $2); }
-		| '(' Expression ')'
+		| '(' Expression ')' {$$ = $2;}
 		| Call
 
 Literal: Boolean
