@@ -1,9 +1,3 @@
 ! timeout 5
 ! output ignore
-$ ./tests/scripts/valgrindtest ./main
-< /* comando atribuição */
-< int f()
-< {
-< 	x = 10;
-< }
-
+$ ./tests/scripts/valgrindtest ./main ./tests/e3/input/i12.iks

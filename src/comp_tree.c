@@ -5,6 +5,7 @@
 #include "comp_dict.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
     void createAST(nodeAST* c1)
     {
@@ -13,12 +14,15 @@
         myAST->next = NULL;
         myAST->symTable = NULL;
         myAST->c1 = c1;
+
+		gv_declare(IKS_AST_PROGRAMA, (void*)myAST, NULL);	
+
 		if(c1 != NULL)
 			gv_connect(myAST,c1);
         myAST->c2 = NULL;
         myAST->c3 = NULL;
 
-		gv_declare(IKS_AST_PROGRAMA, (void*)myAST, NULL);		
+		//gv_declare(IKS_AST_PROGRAMA, (void*)myAST, NULL);		
     }
 
 	nodeAST* createNodeAST(int type, nodeAST* next, DIC* symTable, ...)
@@ -57,13 +61,13 @@
 			node->c1 = va_arg(arg,nodeAST*);
 			node->c2 = va_arg(arg,nodeAST*);
 		}
-		printf("c1:%p        c2:%p            c3:%p\n",node->c1,node->c2,node->c3);
+		//printf("c1:%p        c2:%p            c3:%p\n",node->c1,node->c2,node->c3);
 		
 		va_end(arg);
 
 		if(type == IKS_AST_IDENTIFICADOR || type == IKS_AST_FUNCAO)
 		{
-			printf("type:%d        node:%p            symTable:%p\n",type, (void*)node, symTable->token->description.string);
+			//printf("type:%d        node:%p            symTable:%p\n",type, (void*)node, symTable->token->description.string);
 			gv_declare(type, (void*)node, (char*)symTable->token->description.string);
 		}
 		else if(type == IKS_AST_LITERAL)
@@ -79,13 +83,19 @@
 			}
 			else if(symTable->token->token == IKS_SIMBOLO_LITERAL_BOOL)
 			{
-				temp = (char*)calloc(32, sizeof(char));
+				
 				if((int)(symTable->token->description.integer) == 0)
-					temp = "true";
+				{
+					temp = strdup("true");
+					gv_declare(type, (void*)node, temp);
+					free(temp);
+				}
 				else if((int)(symTable->token->description.integer) == 1)
-					temp = "false";
-				gv_declare(type, (void*)node, temp);
-				free(temp);
+				{
+					temp = strdup("false");
+					gv_declare(type, (void*)node, temp);
+					free(temp);
+				}
 			}
 			else if(symTable->token->token == IKS_SIMBOLO_LITERAL_INT)
 			{
@@ -112,17 +122,17 @@
 			gv_connect(node,node->next);
 		if(node->c1 != NULL)
 		{
-			printf("Chamado de createAST, c1\n");
+			//printf("Chamado de createAST, c1\n");
 			gv_connect(node,node->c1);
 		}
 		if(node->c2 != NULL)
 		{
-			printf("Chamado de createAST, c2\n");
+			//printf("Chamado de createAST, c2\n");
 			gv_connect(node,node->c2);
 		}
 		if(node->c3 != NULL)
 		{
-			printf("Chamado de createAST, c3\n");
+			//printf("Chamado de createAST, c3\n");
 			gv_connect(node,node->c3);
 		}
 
@@ -195,6 +205,7 @@
 
     nodeAST*    destroyNodeAST(nodeAST* node)//só o nodo, retorna next
     {
+        nodeAST* next;
         if (node != NULL) //faz sentido dar free em null?
         {
 		    if (node->c1 != NULL)
@@ -209,7 +220,7 @@
 		    {
 		        destroyNodeAST(node->c3);
 		    }		        
-        	nodeAST* next = calloc(1, sizeof(nodeAST));//??
+ 			// = calloc(1, sizeof(nodeAST));//??
         	next = node->next;        
 		    free(node);
 		    return next;
@@ -237,7 +248,7 @@
 				node->c1 = va_arg(arg,nodeAST*);
 				if(node->c1 != NULL)
 				{
-					printf("Chamado de modify, c1\n");
+					//printf("Chamado de modify, c1\n");
 					gv_connect(node,node->c1);
 				}
 				break;
@@ -246,7 +257,7 @@
 				node->c2 = va_arg(arg,nodeAST*);
 				if(node->c2 != NULL)
 				{
-					printf("Chamado de modify, c2\n");
+					//printf("Chamado de modify, c2\n");
 					gv_connect(node,node->c2);
 				}
 				break;
@@ -255,7 +266,7 @@
 				node->c3 = va_arg(arg,nodeAST*);
 				if(node->c3 != NULL)
 				{
-					printf("Chamado de modify, c3\n");
+					//printf("Chamado de modify, c3\n");
 					gv_connect(node,node->c3);
 				}
 				break;
@@ -264,7 +275,7 @@
 				node->next = va_arg(arg,nodeAST*);
 				if(node->next != NULL)
 				{
-					printf("Chamado de modify, next\n");
+					//printf("Chamado de modify, next\n");
 					gv_connect(node,node->next);
 				}
 				break;

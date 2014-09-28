@@ -84,7 +84,7 @@ GlobalID:	"ID"
 			| "ID" '[' Expression ']'
 
 ID:		"ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
-		|"ID" Vector {nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1); modify($2, 1, id); $$ = $2;}
+		|"ID" Vector {nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
 
 Type:	"INT"
 		|"FLOAT"
@@ -92,7 +92,7 @@ Type:	"INT"
 		|"CHAR"
 		|"STRING"
 
-Vector: '[' Expression ']'	{nodeAST* this = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL); modify(this, 2, $2); $$ = this; }
+Vector: '[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL, NULL, $2, NULL);}
 
 Function:	Header Body {$$ = createNodeAST(IKS_AST_FUNCAO, NULL, $1, $2);}
 		
@@ -172,7 +172,7 @@ Output:		"OUTPUT" ExpList {$$ = createNodeAST(IKS_AST_OUTPUT, NULL, NULL, $2); }
 Call:	FunctionID '(' ExpList ')' {$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, $3);}
 		|FunctionID '(' ')'	{$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, NULL);}
 
-FunctionID: "ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1);}
+FunctionID: "ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
 
 ExpList:	Expression ',' ExpList {modify($1, 4, $3); $$ = $1;}
 		| Expression

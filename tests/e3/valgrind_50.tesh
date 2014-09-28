@@ -1,16 +1,3 @@
 ! timeout 5
 ! output ignore
-$ ./tests/scripts/valgrindtest ./main
-< /* the recursive fatorial by ta gb */
-< int numero;
-< 
-< int main(){
-< 	output "Fatorial de ", numero, " = ", fatorial(numero);
-< 	return 0;
-< }
-< 
-< int fatorial(int  n){
-< 	if (n == 1) then return 1;
-< 	return n * fatorial(n-1);
-< }
-
+$ ./tests/scripts/valgrindtest ./main ./tests/e3/input/i49.iks

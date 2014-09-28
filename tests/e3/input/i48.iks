@@ -7,8 +7,8 @@ int fibonacci(int  n)
 }
 
 int main()
-int numero;
 {
+	int numero;
 	output "Insira um numero: ";
 	input numero;
 	output "O valor fibonacci eh: ", fibonacci(numero);
