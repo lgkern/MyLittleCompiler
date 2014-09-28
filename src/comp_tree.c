@@ -271,7 +271,11 @@
 				}
 				break;
 			case 4:
-				if(node->next != NULL){trimNodeAST(node->next);}
+				if(node->next != NULL)
+				{
+					//printf("%p: %d, %p, %p, %p, %p\n",node, node->type, node->next, node->c1, node->c2, node->c3);
+					trimNodeAST(node->next);	
+				}
 				node->next = va_arg(arg,nodeAST*);
 				if(node->next != NULL)
 				{
