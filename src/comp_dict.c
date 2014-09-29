@@ -213,9 +213,12 @@
         myToken = calloc(1,sizeof(TOKEN));
         myToken->token = token;
         strsize = strlen(description);
-        description[strsize-3] = '\0'; //remove the last quotation
+	description++;
+        description[strsize-2] = '\0'; //remove the last quotation
         myToken->description.string = strdup(description);
-        description[strsize-3] = 'a'; //put some trash back in so it doesn't lose the pointer
+        description[strsize-2] = 'a'; //put some trash back in so it doesn't lose the pointer
+	description--;
+//	printf("%s\n",myToken->description.string);
         return myToken;
     }
 

@@ -77,7 +77,7 @@
 			else if(symTable->token->token == IKS_SIMBOLO_LITERAL_FLOAT)
 			{
 				temp = (char*)calloc(32, sizeof(char));
-				sprintf(temp,"%f",(float)symTable->token->description.floating);
+				sprintf(temp,"%.2f",(float)symTable->token->description.floating);
 				gv_declare(type, (void*)node, temp);
 				free(temp);
 			}
