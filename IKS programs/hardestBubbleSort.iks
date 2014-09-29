@@ -15,7 +15,7 @@ int main()
 	do{
 		vinput[i] = 10 - i;
 		i = i + 1;
-	}
+	};
 
 	i = 0;
 
@@ -23,8 +23,8 @@ int main()
 	do{
 		if(vinput[i] < lowest)
 		then{
-			lowest = input[i];
-		}
+			lowest = vinput[i];
+	};
 			
 		if(i == amountSorted)
 		then{
@@ -32,7 +32,7 @@ int main()
 			amountSorted = amountSorted + 1;
 			i = 10;
 			lowest = 10000;
-		}
+		};
 		i = i - 1;
 	}		
 }

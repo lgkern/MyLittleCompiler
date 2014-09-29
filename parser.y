@@ -83,7 +83,7 @@ SC:	 	';'
 Global:	 	Type GlobalID
 
 GlobalID:	"ID" 
-			| "ID" '[' Expression ']'
+			| "ID" '[' Literal ']'
 
 ID:		"ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
 		|"ID" Vector {nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}

@@ -62,7 +62,7 @@
         tDic->next = NULL;
 
         position = hash(token);
-		printf("DIC position: %d\n", position);
+		//printf("DIC position: %d\n", position);
         if(table->data[position]!= NULL)
         {                
             tDic = addElementToBucket(table->data[position], tDic);
@@ -83,7 +83,7 @@
         {
             if (compareDICS(current, newDic))
             {
-				printf("same dics \n");
+				//printf("same dics \n");
                 current->line = newDic->line;
 				//destroyHashElement(newDic);
                 return newDic;
