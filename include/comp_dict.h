@@ -33,7 +33,7 @@ int		destroyHashTable(TABLE* table);
 DIC*	destroyHashElement(DIC* tDic);
 
 DIC*	addHashElement(TABLE* table, TOKEN* token, int line);
-int		addElementToBucket(DIC* first, DIC* dic);
+DIC*	addElementToBucket(DIC* first, DIC* dic);
 int	    compareDICS(DIC* dic1, DIC* dic2);
 int		retrieveHashLine(TABLE* table, TOKEN* token);
 

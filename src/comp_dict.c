@@ -62,9 +62,10 @@
         tDic->next = NULL;
 
         position = hash(token);
+		printf("DIC position: %d\n", position);
         if(table->data[position]!= NULL)
         {                
-            addElementToBucket(table->data[position], tDic);
+            tDic = addElementToBucket(table->data[position], tDic);
         }
 		else
 		{
@@ -75,25 +76,27 @@
         return tDic;
     }
 
-    int    addElementToBucket(DIC* first, DIC* newDic)
+    DIC*    addElementToBucket(DIC* first, DIC* newDic)
     {
         DIC* current = first;
         while(current != NULL)
         {
             if (compareDICS(current, newDic))
             {
+				printf("same dics \n");
                 current->line = newDic->line;
-                return 1;
+				//destroyHashElement(newDic);
+                return newDic;
             }
             if (current->next == NULL)
             {
                 current->next = newDic;
-                return 0;
+                return newDic;
             }
 
             current = current->next;
         }
-        return 1;
+        return newDic;
     }
 
     int    compareDICS(DIC* dic1, DIC* dic2)
@@ -145,10 +148,9 @@
         switch(token->token)        
         {
         case IKS_SIMBOLO_LITERAL_STRING:
-            length = strlen(token->description.string);
-            break;
         case IKS_SIMBOLO_IDENTIFICADOR:
             length = strlen(token->description.string);
+			return crc16_ccitt((const void*)token->description.string,length);
             break;
         case IKS_SIMBOLO_LITERAL_BOOL:
             length = sizeof(int);

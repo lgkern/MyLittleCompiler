@@ -88,7 +88,7 @@ GlobalID:	"ID"
 ID:		"ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
 		|"ID" Vector {nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
 
-Type:	"INT"
+Type:		"INT"
 		|"FLOAT"
 		|"BOOL"
 		|"CHAR"
@@ -112,9 +112,9 @@ Body:	 	'{' Block '}' {$$ = $2;}
 
 Block:	{$$ = NULL;}	/*empty*/
 		|Command	{$$ = $1; /*pq não tem next mesmo*/ }
-		|Command SC Block	{modify($1, 4, $3); /*set $3 como next do comando*/ $$ = $1; }
+		|Command SC Block	{if($1 == NULL) { $$ = $3; } else {modify($1, 4, $3); /*set $3 como next do comando*/ $$ = $1;} }
 
-Command: Local  
+Command: 	Local  
 		| Attribution 
 		| FlowControl
 		| Input 
@@ -124,7 +124,7 @@ Command: Local
 		| Body { $$ = createNodeAST(IKS_AST_BLOCO,NULL,NULL,$1);}
 		| SC
 
-Local:		Type "ID"
+Local:		Type "ID" { $$ = NULL;}
 
 Attribution:	ID '=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $3); }
 
