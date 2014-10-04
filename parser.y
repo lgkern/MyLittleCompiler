@@ -108,7 +108,7 @@ ParaList:	Parameter ',' ParaList
 
 Parameter: 	Local
 
-Body:	 	'{' Block '}' {$$ = $2;}
+Body:	 	'{' {addScope();} Block '}' {removeScope(); $$ = $2;}
 
 Block:	{$$ = NULL;}	/*empty*/
 		|Command	{$$ = $1; /*pq não tem next mesmo*/ }
