@@ -45,8 +45,8 @@ typedef struct {
 	void* 	node_addSymbol(struct NODE* node, TOKEN* token, int line);
 	int 	node_retrieveLine(struct NODE* node, TOKEN* token);
 
-	DIC*	node_lookup(NODE* node, int type, ...);
-	DIC*	node_recursiveLookup(NODE* node, int type, ...);
+	DIC*	node_lookup(struct NODE* node, int type, ...);
+	DIC*	node_recursiveLookup(struct NODE* node, int type, ...);
 
 //-------------------------------------------------------------------------------------------
 
