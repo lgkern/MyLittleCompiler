@@ -14,6 +14,8 @@ struct _nodeAST{
     nodeAST* c2;
     nodeAST* c3;
     void* symTable;
+//new to e4
+	int dataType;
 };
 
 nodeAST* myAST;

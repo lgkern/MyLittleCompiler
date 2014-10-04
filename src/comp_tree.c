@@ -283,9 +283,9 @@
 					gv_connect(node,node->next);
 				}
 				break;
-			/*case 5:
-				node->type = va_start (arg, int);
-				break;*/
+			case 5:
+				node->dataType = va_arg(arg,int);
+				break;
 
 		}
 

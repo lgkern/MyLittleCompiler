@@ -27,6 +27,12 @@ typedef struct {
 	void* 	addSymbol(TOKEN* token, int line);
 	int		retrieveLine(TOKEN* token);
 
+	//Lookup as (int type, <entry data type> description)
+	// e.g.:    (int type, string description)
+	//          (int type, char description)
+	DIC*	lookup(int type, ...);
+	DIC*	recursiveLookup(int type, ...);
+
 
 //addScope adds a new level to myTree, while removeScope removes the last added level
 	int 	addScope();
@@ -38,6 +44,9 @@ typedef struct {
 
 	void* 	node_addSymbol(struct NODE* node, TOKEN* token, int line);
 	int 	node_retrieveLine(struct NODE* node, TOKEN* token);
+
+	DIC*	node_lookup(NODE* node, int type, ...);
+	DIC*	node_recursiveLookup(NODE* node, int type, ...);
 
 //-------------------------------------------------------------------------------------------
 
