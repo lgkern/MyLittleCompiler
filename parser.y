@@ -11,6 +11,7 @@
 %union {
    DIC* symbol;
    nodeAST* nAST;
+   int VarType;
 }
 
 /* Declaração dos tokens da linguagem */
@@ -55,10 +56,10 @@
 
 %error-verbose
 
-%type <nAST> AST Program SC Global ID Type Vector Function  List ParaList Parameter Body Block Command
+%type <nAST> AST Program SC Global ID Vector Function  List ParaList Parameter Body Block Command
 %type <nAST> Local Attribution Expression  Return FlowControl If While Input Output Call FunctionID ExpList ';' '(' ')'
-%type <nAST> "INT" "FLOAT" "BOOL" "CHAR" "STRING" 
-%type <symbol> TK_IDENTIFICADOR TK_LIT_STRING TK_LIT_CHAR TK_LIT_TRUE TK_LIT_FALSE TK_LIT_FLOAT TK_LIT_INT Boolean Literal Header
+%type <VarType> "INT" "FLOAT" "BOOL" "CHAR" "STRING" Type
+%type <symbol> TK_IDENTIFICADOR TK_LIT_STRING TK_LIT_CHAR TK_LIT_TRUE TK_LIT_FALSE TK_LIT_FLOAT TK_LIT_INT Boolean Literal Header GlobalID
 
 
 
@@ -80,15 +81,15 @@ SC:	 	';'
 		 yyclearin;}
 		|*/
 
-Global:	 	Type GlobalID
+Global:	 	Type GlobalID {modifyIdType($2,$1); }
 
-GlobalID:	"ID" 
-			| "ID" '[' Literal ']'
+GlobalID:	"ID"  { modifyIdSpec($1, VARIABLE); $$ = $1;}
+			| "ID" '[' Literal ']'  {modifyIdSpec($1, VECTOR); $$ = $1;}
 
 ID:		"ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
 		|"ID" Vector {nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
 
-Type:		"INT"
+Type:	"INT"
 		|"FLOAT"
 		|"BOOL"
 		|"CHAR"
@@ -98,7 +99,7 @@ Vector: '[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NUL
 
 Function:	Header Body {$$ = createNodeAST(IKS_AST_FUNCAO, NULL, $1, $2);}
 		
-Header:		Type "ID" List {$$ = $2;}
+Header:		Type "ID" List { modifyIdType($2,$1); modifyIdSpec($1, FUNCTION); $$ = $2;}
 
 List:	'(' ParaList ')'
 		|'(' ')'
@@ -108,7 +109,7 @@ ParaList:	Parameter ',' ParaList
 
 Parameter: 	Local
 
-Body:	 	'{' {addScope();} Block '}' {removeScope(); $$ = $2;}
+Body:	 	'{' {addScope();} Block '}' {removeScope(); $$ = $3;}
 
 Block:	{$$ = NULL;}	/*empty*/
 		|Command	{$$ = $1; /*pq não tem next mesmo*/ }
@@ -124,7 +125,7 @@ Command: 	Local
 		| Body { $$ = createNodeAST(IKS_AST_BLOCO,NULL,NULL,$1);}
 		| SC
 
-Local:		Type "ID" { $$ = NULL;}
+Local:		Type "ID" {modifyIdType($2,$1); modifyIdSpec($1, VARIABLE); $$ = NULL;}
 
 Attribution:	ID '=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $3); }
 

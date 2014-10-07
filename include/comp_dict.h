@@ -1,6 +1,11 @@
 #ifndef _COMP_DICT_
 #define _COMP_DICT_
 
+
+#define		VARIABLE	0
+#define 	VECTOR		1
+#define		FUNCTION	2
+
 typedef union{
     int		integer;
     float	floating;
@@ -10,7 +15,7 @@ typedef union{
 
 typedef struct {
     int		token;
-    VALUE	description;
+    VALUE	description;	
 }TOKEN;
 
 typedef struct _DIC DIC;
@@ -18,6 +23,8 @@ typedef struct _DIC DIC;
 struct _DIC{
     TOKEN*	token;
     int		line;
+	int 	idSpec;
+	int 	idType;
     DIC*	next;
 };
 
@@ -33,6 +40,8 @@ int		destroyHashTable(TABLE* table);
 DIC*	destroyHashElement(DIC* tDic);
 
 DIC*	addHashElement(TABLE* table, TOKEN* token, int line);
+void    modifyIdSpec(DIC* dic, int newSpec);
+void    modifyIdType(DIC* dic, int newType);
 DIC*	addElementToBucket(DIC* first, DIC* dic);
 int	    compareDICS(DIC* dic1, DIC* dic2);
 int		retrieveHashLine(TABLE* table, TOKEN* token);

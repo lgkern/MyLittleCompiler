@@ -76,6 +76,18 @@
         return tDic;
     }
 
+    //TODO Check declaration clashes (int foo()  x  int foo)
+    void    modifyIdSpec(DIC* dic, int newSpec)
+    {
+        dic->idSpec = newSpec;
+        
+    }
+
+    void    modifyIdType(DIC* dic, int newType)
+    {
+        dic->idType = newType;
+    }
+
     DIC*    addElementToBucket(DIC* first, DIC* newDic)
     {
         DIC* current = first;
