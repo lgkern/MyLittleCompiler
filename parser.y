@@ -99,7 +99,7 @@ Vector: '[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NUL
 
 Function:	Header Body {$$ = createNodeAST(IKS_AST_FUNCAO, NULL, $1, $2);}
 		
-Header:		Type "ID" List { modifyIdType($2,$1); modifyIdSpec($1, FUNCTION); $$ = $2;}
+Header:		Type "ID" List { modifyIdType($2,$1); modifyIdSpec($2, FUNCTION); $$ = $2;}
 
 List:	'(' ParaList ')'
 		|'(' ')'
@@ -125,7 +125,7 @@ Command: 	Local
 		| Body { $$ = createNodeAST(IKS_AST_BLOCO,NULL,NULL,$1);}
 		| SC
 
-Local:		Type "ID" {modifyIdType($2,$1); modifyIdSpec($1, VARIABLE); $$ = NULL;}
+Local:		Type "ID" {modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); $$ = NULL;}
 
 Attribution:	ID '=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $3); }
 
