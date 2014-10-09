@@ -27,11 +27,6 @@
                     next = destroyHashElement(next);
                 }
                 while(next != NULL);
-                /*if(table->data[i]->token->token == IKS_SIMBOLO_LITERAL_STRING 
-                 ||table->data[i]->token->token == IKS_SIMBOLO_IDENTIFICADOR)
-                    free(table->data[i]->token->description.string);
-                free(table->data[i]->token);
-                free(table->data[i]);*/
             }
             
         }
@@ -51,6 +46,18 @@
             free(tDic);
         }
         return next;
+    }
+    
+    void destroyToken(TOKEN* token)
+    {
+    	if(token != NULL)
+    	{
+    		if(token->token == IKS_SIMBOLO_LITERAL_STRING 
+             ||token->token == IKS_SIMBOLO_IDENTIFICADOR)
+                free(token->description.string);
+            free(token);
+    	}
+    	return;    
     }
 
     DIC*    addHashElement(TABLE* table, TOKEN* token, int line)
@@ -113,7 +120,8 @@
 
     int    compareDICS(DIC* dic1, DIC* dic2)
     {
-        if(dic1->token->token == dic2->token->token)
+        return compareTokens(dic1->token, dic2->token);
+        /*if(dic1->token->token == dic2->token->token)
         {
             int compare = 1;
             switch (dic1->token->token)
@@ -137,8 +145,38 @@
             }
             return compare;
         }
+        return 1;*/
+    }
+    
+    int    compareTokens(TOKEN* token1, TOKEN* token2)
+    {
+        if(token1->token == token2->token)
+        {
+            int compare = 1;
+            switch (token1->token)
+            {
+                case IKS_SIMBOLO_LITERAL_STRING:
+                case IKS_SIMBOLO_IDENTIFICADOR:
+                    compare = strcmp(token1->description.string, token2->description.string);
+                    break;
+                case IKS_SIMBOLO_LITERAL_INT:
+                case IKS_SIMBOLO_LITERAL_BOOL:
+					compare = (token1->description.integer == token2->description.integer);
+					break;
+                case IKS_SIMBOLO_LITERAL_FLOAT:
+					compare = (token1->description.floating == token2->description.floating);
+					break;
+                case IKS_SIMBOLO_LITERAL_CHAR:
+                    compare = (token1->description.character == token2->description.character);
+                    break;
+                default:
+                    ;            
+            }
+            return compare;
+        }
         return 1;
     }
+
 
     int    retrieveHashLine(TABLE* table, TOKEN* token)
     {
@@ -159,25 +197,25 @@
         int length = 0;
         switch(token->token)        
         {
-        case IKS_SIMBOLO_LITERAL_STRING:
-        case IKS_SIMBOLO_IDENTIFICADOR:
-            length = strlen(token->description.string);
-			return crc16_ccitt((const void*)token->description.string,length);
-            break;
-        case IKS_SIMBOLO_LITERAL_BOOL:
-            length = sizeof(int);
-            break;
-        case IKS_SIMBOLO_LITERAL_FLOAT:
-            length = sizeof(float);
-            break;
-        case IKS_SIMBOLO_LITERAL_INT:
-            length = sizeof(int);
-            break;
-        case IKS_SIMBOLO_LITERAL_CHAR:
-            length = sizeof(char);
-            break;
-        default:
-            length = 0;            
+		    case IKS_SIMBOLO_LITERAL_STRING:
+		    case IKS_SIMBOLO_IDENTIFICADOR:
+		        length = strlen(token->description.string);
+				return crc16_ccitt((const void*)token->description.string,length);
+		        break;
+		    case IKS_SIMBOLO_LITERAL_BOOL:
+		        length = sizeof(int);
+		        break;
+		    case IKS_SIMBOLO_LITERAL_FLOAT:
+		        length = sizeof(float);
+		        break;
+		    case IKS_SIMBOLO_LITERAL_INT:
+		        length = sizeof(int);
+		        break;
+		    case IKS_SIMBOLO_LITERAL_CHAR:
+		        length = sizeof(char);
+		        break;
+		    default:
+		        length = 0;            
         }
         length += 4;
 
@@ -227,14 +265,59 @@
         myToken = calloc(1,sizeof(TOKEN));
         myToken->token = token;
         strsize = strlen(description);
-	description++;
+		description++;
         description[strsize-2] = '\0'; //remove the last quotation
         myToken->description.string = strdup(description);
         description[strsize-2] = 'a'; //put some trash back in so it doesn't lose the pointer
-	description--;
-//	printf("%s\n",myToken->description.string);
+		description--;
+		//printf("%s\n",myToken->description.string);
         return myToken;
     }
 
+	DIC*	table_lookup(TABLE* table, int type, ...)
+	{
+		TOKEN* myToken;
+		
+		va_list arg;       
+		va_start (arg, type);
+		
+		switch (type)
+        {
+            case IKS_SIMBOLO_LITERAL_STRING:
+            case IKS_SIMBOLO_IDENTIFICADOR:
+                myToken = createStrToken(type, va_arg(arg, char*));
+                break;
+            case IKS_SIMBOLO_LITERAL_INT:
+            case IKS_SIMBOLO_LITERAL_BOOL:
+				myToken = createIntToken(type, va_arg(arg, int));
+				break;
+            case IKS_SIMBOLO_LITERAL_FLOAT:
+				myToken = createFltToken(type, va_arg(arg, float));
+				break;
+            case IKS_SIMBOLO_LITERAL_CHAR:
+                myToken = createChrToken(type, va_arg(arg, char));
+                break;
+            default:
+                return NULL;          
+        }        
+        
+        int position = 0;
+        position = hash(myToken);
+        
+        DIC* current = table->data[position];
+        while(current != NULL)
+	    {
+	        if (compareTokens(current->token, myToken))
+	        {
+				destroyToken(myToken);
+				return current;
+	        }
+	        
+	        current = current->next;
+	    }
+       	
+       	destroyToken(myToken);
+        return NULL;	
+	}
 
 

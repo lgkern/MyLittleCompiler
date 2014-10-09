@@ -38,12 +38,14 @@ typedef struct{
 TABLE*	createHashTable();
 int		destroyHashTable(TABLE* table);
 DIC*	destroyHashElement(DIC* tDic);
+void	destroyToken(TOKEN* token);
 
 DIC*	addHashElement(TABLE* table, TOKEN* token, int line);
 void    modifyIdSpec(DIC* dic, int newSpec);
 void    modifyIdType(DIC* dic, int newType);
 DIC*	addElementToBucket(DIC* first, DIC* dic);
 int	    compareDICS(DIC* dic1, DIC* dic2);
+int		compareTokens(TOKEN* token1, TOKEN* token2);
 int		retrieveHashLine(TABLE* table, TOKEN* token);
 
 int		hash(TOKEN* token);
