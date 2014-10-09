@@ -67,6 +67,8 @@
         tDic->token = token;
         tDic->line = line;
         tDic->next = NULL;
+        tDic->idType = 0;
+        tDic->idSpec = 0;
 
         position = hash(token);
 		//printf("DIC position: %d\n", position);

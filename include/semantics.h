@@ -1,10 +1,14 @@
+#ifndef _SEMANTICS_
+#define _SEMANTICS_
+
 #include "error_codes.h"
 #include "comp_dict.h"
 #include "symbtable.h"
+#include "comp_tree.h"
 
 
 //A variable is valid to usage when it has a type and spec set
-void variableCheck(DIC* dicEntry);
+int variableCheck(DIC* dicEntry, int fatal);
 
 //Check if op1 and op2 are compatible, including coersion
 void typeCompatibility(nodeAST* op1, nodeAST* op2);
@@ -16,3 +20,6 @@ void functionCompatibility(nodeAST* parameterList, nodeAST* functionPrototype);
 void inputValidation(nodeAST* argument);
 void outputValidation(nodeAST* argument);
 void returnValidation(nodeAST* argument, int expectedReturn);
+
+
+#endif

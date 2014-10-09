@@ -1,3 +1,6 @@
+#ifndef _ERROR_CODES_
+#define _ERROR_CODES_
+
 #define IKS_SUCESS		            0
 
 //Verificação de declarações
@@ -23,3 +26,5 @@
 #define	IKS_ERROR_WRONG_PAR_INPUT   12  //Parâmetro não é identificador
 #define	IKS_ERROR_WRONG_PAR_OUTPUT  13  //parâmetro não é literal string ou expressão
 #define	IKS_ERROR_WRONG_PAR_RETURN  14  //parâmetro não é compatível com tipo do retorno
+
+#endif

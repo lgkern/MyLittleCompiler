@@ -5,6 +5,7 @@
 #define		VARIABLE	0
 #define 	VECTOR		1
 #define		FUNCTION	2
+#define     MULTIVECTOR 3
 
 typedef union{
     int		integer;

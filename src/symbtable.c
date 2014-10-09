@@ -50,7 +50,7 @@
 		va_list arg;       
 		va_start (arg, type);
 		
-		switch (type) //oddly enough, these warnings only occurred on this function and not on the table_lookup one
+		switch (type) 
         {
             case IKS_SIMBOLO_LITERAL_STRING:
             case IKS_SIMBOLO_IDENTIFICADOR:
@@ -61,10 +61,10 @@
 				result = node_lookup(myTree->current, type, va_arg(arg, int));
 				break;
             case IKS_SIMBOLO_LITERAL_FLOAT:
-				result = node_lookup(myTree->current, type, va_arg(arg, double));//va_arg(arg, float)); //make warning, float converted to double when passed through ... by default
+				result = node_lookup(myTree->current, type, (float)va_arg(arg, double));
 				break;
             case IKS_SIMBOLO_LITERAL_CHAR:
-                result = node_lookup(myTree->current, type, va_arg(arg, int));//va_arg(arg, char)); //make warning, char converted to int when passed through ... by default
+                result = node_lookup(myTree->current, type, (char)va_arg(arg, int));
                 break;
             default:
                 return NULL;          
@@ -82,7 +82,7 @@
 		
 		do
 		{
-			switch (type) //oddly enough, these warnings only occurred on this function and not on the table_lookup one
+			switch (type) 
 		    {
 		        case IKS_SIMBOLO_LITERAL_STRING:
 		        case IKS_SIMBOLO_IDENTIFICADOR:
@@ -93,10 +93,10 @@
 					result = node_lookup(parent, type, va_arg(arg, int));
 					break;
 		        case IKS_SIMBOLO_LITERAL_FLOAT:
-					result = node_lookup(parent, type, va_arg(arg, double));//va_arg(arg, float)); //make warning, float converted to double when passed through ... by default
+					result = node_lookup(parent, type, (float)va_arg(arg, double));
 					break;
 		        case IKS_SIMBOLO_LITERAL_CHAR:
-		            result = node_lookup(parent, type, va_arg(arg, int));//va_arg(arg, char)); //make warning, char converted to int when passed through ... by default
+		            result = node_lookup(parent, type, (char)va_arg(arg, int));
 		            break;
 		        default:
 		            return NULL;          
