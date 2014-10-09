@@ -292,10 +292,10 @@
 				myToken = createIntToken(type, va_arg(arg, int));
 				break;
             case IKS_SIMBOLO_LITERAL_FLOAT:
-				myToken = createFltToken(type, va_arg(arg, float));
+				myToken = createFltToken(type, (float)va_arg(arg, double));
 				break;
             case IKS_SIMBOLO_LITERAL_CHAR:
-                myToken = createChrToken(type, va_arg(arg, char));
+                myToken = createChrToken(type, (char)va_arg(arg, int));
                 break;
             default:
                 return NULL;          
