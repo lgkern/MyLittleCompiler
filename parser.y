@@ -85,17 +85,20 @@ SC:	 	';'
 
 Global:	 	Type GlobalID {modifyIdType($2,$1); }
 
-GlobalID:	"ID"  { modifyIdSpec($1, VARIABLE); $$ = $1;}
-			| "ID" '[' Literal ']'  {modifyIdSpec($1, VECTOR); $$ = $1;}
+GlobalID:	"ID"  { variableExists($1);
+					modifyIdSpec($1, VARIABLE); 
+					$$ = $1;
+					}
+			| "ID" '[' Literal ']'  {variableExists($1); modifyIdSpec($1, VECTOR); $$ = $1;}
 
 ID:		"ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
 		|"ID" Vector {nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
 
-Type:	"INT"
-		|"FLOAT"
-		|"BOOL"
-		|"CHAR"
-		|"STRING"
+Type:	"INT" 		{$$ = INT;}
+		|"FLOAT"	{$$ = FLOAT;}
+		|"BOOL"		{$$ = BOOL;}
+		|"CHAR"		{$$ = CHAR;}
+		|"STRING"	{$$ = STRING;}
 
 Vector: '[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL, NULL, $2, NULL);}
 
@@ -127,9 +130,9 @@ Command: 	Local
 		| Body { $$ = createNodeAST(IKS_AST_BLOCO,NULL,NULL,$1);}
 		| SC
 
-Local:		Type "ID" {modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); $$ = NULL;}
+Local:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); $$ = NULL;}
 
-Attribution:	ID {/*printf("Checking ID");*/ variableCheck(recursiveLookup(IKS_SIMBOLO_IDENTIFICADOR, ((DIC*)$1->symTable)->token->description),1);}'=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $4); }
+Attribution:	ID {variableCheck(recursiveLookup(IKS_SIMBOLO_IDENTIFICADOR, ((DIC*)$1->symTable)->token->description),1);}'=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $4); }
 
 Expression:	ID
 		| Literal {$$=createNodeAST(IKS_AST_LITERAL, NULL, $1, NULL, NULL, NULL); }
@@ -177,7 +180,8 @@ Output:		"OUTPUT" ExpList {$$ = createNodeAST(IKS_AST_OUTPUT, NULL, NULL, $2); }
 Call:	FunctionID '(' ExpList ')' {$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, $3);}
 		|FunctionID '(' ')'	{$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, NULL);}
 
-FunctionID: "ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
+FunctionID: "ID" {variableCheck(recursiveLookup(IKS_SIMBOLO_IDENTIFICADOR, $1->token->description),1);
+				  $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
 
 ExpList:	Expression ',' ExpList {modify($1, 4, $3); $$ = $1;}
 		| Expression

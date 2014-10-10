@@ -9,6 +9,7 @@
 
 //A variable is valid to usage when it has a type and spec set
 int variableCheck(DIC* dicEntry, int fatal);
+void variableExists(DIC* dicEntry);
 
 //Check if op1 and op2 are compatible, including coersion
 void typeCompatibility(nodeAST* op1, nodeAST* op2);

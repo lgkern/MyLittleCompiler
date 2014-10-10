@@ -2,10 +2,16 @@
 #define _COMP_DICT_
 
 
-#define		VARIABLE	0
-#define 	VECTOR		1
-#define		FUNCTION	2
-#define     MULTIVECTOR 3
+#define		VARIABLE	1
+#define 	VECTOR		2
+#define		FUNCTION	3
+#define     MULTIVECTOR 4
+
+#define 	INT			1
+#define 	FLOAT		2		
+#define		BOOL		3
+#define		CHAR		4
+#define		STRING		5
 
 typedef union{
     int		integer;

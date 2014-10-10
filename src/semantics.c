@@ -4,7 +4,7 @@
 
     int variableCheck(DIC* dicEntry, int fatal)
     {
-        if(dicEntry == NULL || dicEntry->idType == 0)
+        if(dicEntry == NULL || dicEntry->idSpec == 0)
         {
             if(fatal)
             {
@@ -13,4 +13,10 @@
             return 1;
         }         
         return 0;
+    }
+
+	void variableExists(DIC* dicEntry)
+    {
+        if(!variableCheck(dicEntry, 1))
+            exit(IKS_ERROR_DECLARED);
     }
