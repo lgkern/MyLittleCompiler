@@ -76,32 +76,56 @@
 	{
 		DIC* result = NULL;
 		struct NODE* parent = myTree->current;
-		
+		char*	strTmp = NULL;
+		int 	intTmp = 0;
+		char	chrTmp = '0';
+		float	fltTmp = 0.0f;
+	
 		va_list arg;       
 		va_start (arg, type);
-		
-		do
-		{
+	
+		switch (type) 
+	    {
+	        case IKS_SIMBOLO_LITERAL_STRING:
+	        case IKS_SIMBOLO_IDENTIFICADOR:
+				strTmp = va_arg(arg, char*);
+	            break;
+	        case IKS_SIMBOLO_LITERAL_INT:
+	        case IKS_SIMBOLO_LITERAL_BOOL:
+				intTmp = va_arg(arg, int);
+				break;
+	        case IKS_SIMBOLO_LITERAL_FLOAT:
+				fltTmp = (float)va_arg(arg, double);
+				break;
+	        case IKS_SIMBOLO_LITERAL_CHAR:
+				chrTmp = (char)va_arg(arg, int);
+	            break;
+	        default:
+	            return NULL;          
+	    }
+	    
+
+		do{
 			switch (type) 
-		    {
-		        case IKS_SIMBOLO_LITERAL_STRING:
-		        case IKS_SIMBOLO_IDENTIFICADOR:
-		            result = node_lookup(parent, type, va_arg(arg, char*));
-		            break;
-		        case IKS_SIMBOLO_LITERAL_INT:
-		        case IKS_SIMBOLO_LITERAL_BOOL:
-					result = node_lookup(parent, type, va_arg(arg, int));
+			{
+			    case IKS_SIMBOLO_LITERAL_STRING:
+			    case IKS_SIMBOLO_IDENTIFICADOR:
+			        result = node_lookup(parent, type, strTmp);
+			        break;
+			    case IKS_SIMBOLO_LITERAL_INT:
+			    case IKS_SIMBOLO_LITERAL_BOOL:
+					result = node_lookup(parent, type, intTmp);
 					break;
-		        case IKS_SIMBOLO_LITERAL_FLOAT:
-					result = node_lookup(parent, type, (float)va_arg(arg, double));
+			    case IKS_SIMBOLO_LITERAL_FLOAT:
+					result = node_lookup(parent, type, fltTmp);
 					break;
-		        case IKS_SIMBOLO_LITERAL_CHAR:
-		            result = node_lookup(parent, type, (char)va_arg(arg, int));
-		            break;
-		        default:
-		            return NULL;          
-		    }
-		    parent = parent->father;		
+			    case IKS_SIMBOLO_LITERAL_CHAR:
+			        result = node_lookup(parent, type, chrTmp);
+			        break;
+			    default:
+					; 
+			}
+			parent = parent->father;
 		}
 		while(parent != NULL && result == NULL);	
 		
@@ -156,7 +180,7 @@
 			va_list arg;       
 			va_start (arg, type);
 		
-			switch (type) //oddly enough, these warnings only occurred on this function and not on the table_lookup one
+			switch (type)
 		    {
 		        case IKS_SIMBOLO_LITERAL_STRING:
 		        case IKS_SIMBOLO_IDENTIFICADOR:
@@ -167,10 +191,10 @@
 					result = table_lookup(node->data, type, va_arg(arg, int));
 					break;
 		        case IKS_SIMBOLO_LITERAL_FLOAT:
-					result = table_lookup(node->data, type, va_arg(arg, double));//va_arg(arg, float)); //make warning, float converted to double when passed through ... by default
+					result = table_lookup(node->data, type, (float)va_arg(arg, double));
 					break;
 		        case IKS_SIMBOLO_LITERAL_CHAR:
-		            result = table_lookup(node->data, type, va_arg(arg, int));//va_arg(arg, char)); //make warning, char converted to int when passed through ... by default
+		            result = table_lookup(node->data, type, (char)va_arg(arg, int));
 		            break;
 		        default:
 		            return NULL;          

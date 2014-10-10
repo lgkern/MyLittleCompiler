@@ -279,7 +279,7 @@
 	DIC*	table_lookup(TABLE* table, int type, ...)
 	{
 		TOKEN* myToken;
-		
+		char*	tmpDesc;
 		va_list arg;       
 		va_start (arg, type);
 		
@@ -287,7 +287,8 @@
         {
             case IKS_SIMBOLO_LITERAL_STRING:
             case IKS_SIMBOLO_IDENTIFICADOR:
-                myToken = createStrToken(type, va_arg(arg, char*));
+				tmpDesc = va_arg(arg, char*);
+                myToken = createStrToken(type, tmpDesc);
                 break;
             case IKS_SIMBOLO_LITERAL_INT:
             case IKS_SIMBOLO_LITERAL_BOOL:
@@ -319,6 +320,7 @@
 	    }
        	
        	destroyToken(myToken);
+		va_end(arg);
         return NULL;	
 	}
 

@@ -129,7 +129,7 @@ Command: 	Local
 
 Local:		Type "ID" {modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); $$ = NULL;}
 
-Attribution:	ID {variableCheck(recursiveLookup(IKS_SIMBOLO_IDENTIFICADOR, ((DIC*)$1->symTable)->token->description),1);}'=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $4); }
+Attribution:	ID {/*printf("Checking ID");*/ variableCheck(recursiveLookup(IKS_SIMBOLO_IDENTIFICADOR, ((DIC*)$1->symTable)->token->description),1);}'=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $4); }
 
 Expression:	ID
 		| Literal {$$=createNodeAST(IKS_AST_LITERAL, NULL, $1, NULL, NULL, NULL); }
