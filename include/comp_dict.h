@@ -64,6 +64,7 @@ TOKEN*	createChrToken(int token, char description);
 TOKEN*	createStrToken(int token, char* description);
 
 DIC*	table_lookup(TABLE* table, int type, ...);
+DIC*	table_lookupDIC(TABLE* table, DIC* find);
 
 #endif
 

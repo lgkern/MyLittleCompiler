@@ -1,5 +1,5 @@
 #include "comp_tree.h"
-//#include "gv.h"
+#include "gv.h"
 #include "iks_ast.h"
 #include "main.h"
 #include "comp_dict.h"
@@ -15,10 +15,10 @@
         myAST->symTable = NULL;
         myAST->c1 = c1;
 
-		gv_declare(IKS_AST_PROGRAMA, (void*)myAST, NULL);	
+		//gv_declare(IKS_AST_PROGRAMA, (void*)myAST, NULL);	
 
 		if(myAST->c1 != NULL)
-			gv_connect(myAST,myAST->c1);
+			//gv_connect(myAST,myAST->c1);
         myAST->c2 = NULL;
         myAST->c3 = NULL;
 
@@ -119,21 +119,21 @@
 		}
 
 		if(node->next != NULL)
-			gv_connect(node,node->next);
+			//gv_connect(node,node->next);
 		if(node->c1 != NULL)
 		{
 			//printf("Chamado de createAST, c1\n");
-			gv_connect(node,node->c1);
+			//gv_connect(node,node->c1);
 		}
 		if(node->c2 != NULL)
 		{
 			//printf("Chamado de createAST, c2\n");
-			gv_connect(node,node->c2);
+			//gv_connect(node,node->c2);
 		}
 		if(node->c3 != NULL)
 		{
 			//printf("Chamado de createAST, c3\n");
-			gv_connect(node,node->c3);
+			//gv_connect(node,node->c3);
 		}
 
 */
@@ -151,7 +151,7 @@
                     trimNodeAST(parent->c1);
                 }
                 parent->c1 = child;
-				gv_connect((void*)parent,(void*)child);
+				//gv_connect((void*)parent,(void*)child);
                 break;
 
             case 2:
@@ -160,7 +160,7 @@
                     trimNodeAST(parent->c2);
                 }
                 parent->c2 = child;
-				gv_connect((void*)parent,(void*)child);
+				//gv_connect((void*)parent,(void*)child);
                 break;
 
             case 3:
@@ -169,7 +169,7 @@
                     trimNodeAST(parent->c3);
                 }
                 parent->c3 = child;
-				gv_connect((void*)parent,(void*)child);
+				//gv_connect((void*)parent,(void*)child);
                 break;
 
             default:
@@ -249,7 +249,7 @@
 /*				if(node->c1 != NULL)
 				{
 					//printf("Chamado de modify, c1\n");
-					gv_connect(node,node->c1);
+					//gv_connect(node,node->c1);
 				}*/
 				break;
 			case 2:
@@ -258,7 +258,7 @@
 /*				if(node->c2 != NULL)
 				{
 					//printf("Chamado de modify, c2\n");
-					gv_connect(node,node->c2);
+					//gv_connect(node,node->c2);
 				}*/
 				break;
 			case 3:
@@ -267,7 +267,7 @@
 /*				if(node->c3 != NULL)
 				{
 					//printf("Chamado de modify, c3\n");
-					gv_connect(node,node->c3);
+					//gv_connect(node,node->c3);
 				}*/
 				break;
 			case 4:
@@ -280,7 +280,7 @@
 /*				if(node->next != NULL)
 				{
 					//printf("Chamado de modify, next\n");
-					gv_connect(node,node->next);
+					//gv_connect(node,node->next);
 				}*/
 				break;
 			case 5:
