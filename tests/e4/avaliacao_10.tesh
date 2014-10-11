@@ -2,11 +2,5 @@
 ! output ignore
 ! expect return 8
 $ ./main
-< /* IKS_ERROR_CHAR_TO_X */
-< int x;
-< char c;
-< int f()
-< {
-<   x = c;
-< }
+$ ./main tests/e4/input/s09.iks
 
