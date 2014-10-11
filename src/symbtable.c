@@ -73,8 +73,6 @@
 	}
 	DIC*	lookupDIC(DIC* find)
 	{
-		DIC* result;
-		
 		return node_lookupDIC(myTree->current, find);
 	}
 	

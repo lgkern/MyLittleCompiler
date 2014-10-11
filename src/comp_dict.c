@@ -123,31 +123,6 @@
     int    compareDICS(DIC* dic1, DIC* dic2)
     {
         return compareTokens(dic1->token, dic2->token);
-        /*if(dic1->token->token == dic2->token->token)
-        {
-            int compare = 1;
-            switch (dic1->token->token)
-            {
-                case IKS_SIMBOLO_LITERAL_STRING:
-                case IKS_SIMBOLO_IDENTIFICADOR:
-                    compare = strcmp(dic1->token->description.string, dic2->token->description.string);
-                    break;
-                case IKS_SIMBOLO_LITERAL_INT:
-                case IKS_SIMBOLO_LITERAL_BOOL:
-					compare = (dic1->token->description.integer == dic2->token->description.integer);
-					break;
-                case IKS_SIMBOLO_LITERAL_FLOAT:
-					compare = (dic1->token->description.floating == dic2->token->description.floating);
-					break;
-                case IKS_SIMBOLO_LITERAL_CHAR:
-                    compare = (dic1->token->description.character == dic2->token->description.character);
-                    break;
-                default:
-                    ;            
-            }
-            return compare;
-        }
-        return 1;*/
     }
     
     int    compareTokens(TOKEN* token1, TOKEN* token2)
@@ -159,20 +134,20 @@
             {
                 case IKS_SIMBOLO_LITERAL_STRING:
                 case IKS_SIMBOLO_IDENTIFICADOR:
-                    compare = strcmp(token1->description.string, token2->description.string);
+                	compare = strcmp(token1->description.string, token2->description.string);
                     break;
                 case IKS_SIMBOLO_LITERAL_INT:
                 case IKS_SIMBOLO_LITERAL_BOOL:
-					compare = (token1->description.integer == token2->description.integer);
+                	compare = (token1->description.integer == token2->description.integer);
 					break;
                 case IKS_SIMBOLO_LITERAL_FLOAT:
-					compare = (token1->description.floating == token2->description.floating);
+                	compare = (token1->description.floating == token2->description.floating);
 					break;
                 case IKS_SIMBOLO_LITERAL_CHAR:
-                    compare = (token1->description.character == token2->description.character);
+                	compare = (token1->description.character == token2->description.character);
                     break;
                 default:
-                    ;            
+                	;            
             }
             return compare;
         }
@@ -324,6 +299,7 @@
         return NULL;	
 	}
 	
+/*Only returns a DIC entry that already has an idSpec*/	
 	DIC*	table_lookupDIC(TABLE* table, DIC* find)
 	{
 		int position = 0;
@@ -332,9 +308,10 @@
         DIC* current = table->data[position];
         while(current != NULL)
 	    {
-	        if (compareTokens(current->token, find->token))
+	        if (compareDICS(current, find) == 0)
 	        {
-				return current;
+	        	if(current->idSpec != 0)
+					return current;
 	        }
 	        
 	        current = current->next;
