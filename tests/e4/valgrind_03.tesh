@@ -1,9 +1,4 @@
 ! timeout 5
 ! output ignore
-$ ./tests/scripts/valgrindtest ./main
-< /* IKS_ERROR_UNDECLARED */
-< int f()
-< {
-<   g();
-< }
+$ ./tests/scripts/valgrindtest ./main ./tests/e4/input/s02.iks
 

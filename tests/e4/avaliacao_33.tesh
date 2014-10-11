@@ -1,15 +1,5 @@
 ! timeout 5
 ! output ignore
 ! expect return 1
-$ ./main
-< /* IKS_ERROR_UNDECLARED */
-< int f()
-< int x;
-< {
-< }
-< 
-< int g()
-< {
-<   x = 1;
-< }
+$ ./main tests/e4/input/s33.iks
 
