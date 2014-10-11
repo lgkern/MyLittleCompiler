@@ -323,5 +323,24 @@
 		va_end(arg);
         return NULL;	
 	}
+	
+	DIC*	table_lookupDIC(TABLE* table, DIC* find)
+	{
+		int position = 0;
+        position = hash(find->token);
+        
+        DIC* current = table->data[position];
+        while(current != NULL)
+	    {
+	        if (compareTokens(current->token, find->token))
+	        {
+				return current;
+	        }
+	        
+	        current = current->next;
+	    }
+       	
+       	return NULL;	
+	}
 
 

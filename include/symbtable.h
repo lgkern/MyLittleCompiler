@@ -31,6 +31,7 @@ typedef struct {
 	// e.g.:    (int type, string description)
 	//          (int type, char description)
 	DIC*	lookup(int type, ...);
+	DIC*	lookupDIC(DIC* find);
 	DIC*	recursiveLookup(int type, ...);
 
 
@@ -46,7 +47,7 @@ typedef struct {
 	int 	node_retrieveLine(struct NODE* node, TOKEN* token);
 
 	DIC*	node_lookup(struct NODE* node, int type, ...);
-	DIC*	node_recursiveLookup(struct NODE* node, int type, ...);
+	DIC*	node_lookupDIC(struct NODE* node, DIC* find);
 
 //-------------------------------------------------------------------------------------------
 

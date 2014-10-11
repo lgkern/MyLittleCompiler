@@ -71,6 +71,12 @@
         }
         return result;
 	}
+	DIC*	lookupDIC(DIC* find)
+	{
+		DIC* result;
+		
+		return node_lookupDIC(myTree->current, find);
+	}
 	
 	DIC*	recursiveLookup(int type, ...)
 	{
@@ -203,10 +209,13 @@
 		return result;
 	}
 	
-	DIC*	node_recursiveLookup(struct NODE* node, int type, ...)
+	DIC*	node_lookupDIC(struct NODE* node, DIC* find)
 	{
-		return NULL; 
-/*I don't understand the meaning of this function, since each node is a separate scope. I can see an use for recursive lookup for the tree as a whole by looking at the node's father whenever the token isn't found, however I can't really see how I could search recursively from a node. Checking the child wouldn't make any sense and checking the parent would be the up to the tree recursive lookup*/
+		if (node != NULL)
+		{		
+			return table_lookupDIC(node->data, find);
+		}
+		return NULL;
 	}
 	
 	
