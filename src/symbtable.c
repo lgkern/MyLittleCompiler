@@ -160,6 +160,11 @@
 		myTree->current = new;
 	}
 
+	int 	addScopeNonF()
+	{
+			addScope(myTree->current->returnType);
+	}
+
 	int 	removeScope()
 	{
 		myTree->current = myTree->current->father;

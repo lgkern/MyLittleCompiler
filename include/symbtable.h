@@ -39,6 +39,7 @@ typedef struct {
 
 //addScope adds a new level to myTree, while removeScope removes the last added level
 	int 	addScope(int returnType);
+	int 	addScopeNonF();
 	int 	removeScope();
 	int		retrieveReturnType();
 
