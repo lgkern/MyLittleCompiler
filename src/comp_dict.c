@@ -17,7 +17,7 @@
     int    destroyHashTable(TABLE* table)
     {
         int i;
-        for(i = 0; i < 2*MAXSHORT; i++)
+        for(i = 0; i < 2*32769; i++)
         {
             if(&table->data[i] != NULL)
             {
@@ -30,6 +30,7 @@
             }
             
         }
+		free(table->data);
         free(table);
     }
 

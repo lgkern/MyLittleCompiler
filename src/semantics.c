@@ -63,30 +63,32 @@
 		ARG* arguments = functionEntry->argList;
 		ARG* parameters = generateParameters(parameterList);
 
+		ARG* currParameter = parameters;
+
 		//printf("\nChecking parameters!\n");
 
-		while(arguments != NULL && parameters != NULL)
+		while(arguments != NULL && currParameter != NULL)
 		{
-			if(arguments->type != parameters->type)
+			if(arguments->type != currParameter->type)
 			{
 				//printf("\nFunction Expects: %d\n",arguments->type);
 			//	printf("\nFunction Received: %d\n",parameters->type);
-				printf("\nWrong type args!!\n");
+				//printf("\nWrong type args!!\n");
 				exit(IKS_ERROR_WRONG_TYPE_ARGS);
 			}
 			
 			arguments = arguments->next;
-			parameters = parameters->next;
+			currParameter = currParameter->next;
 		}
 		if(arguments != NULL)
 		{
-			printf("\nMissing Args!!\n");
+			//printf("\nMissing Args!!\n");
 			exit(IKS_ERROR_MISSING_ARGS);
 			
 		}
 		if(parameters != NULL)
 		{
-			printf("\nExcess args!!\n");
+			//printf("\nExcess args!!\n");
 			exit(IKS_ERROR_EXCESS_ARGS);		
 		}
 	}
