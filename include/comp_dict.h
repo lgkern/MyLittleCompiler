@@ -7,9 +7,10 @@
 #define		FUNCTION	3
 #define     MULTIVECTOR 4
 
-#define 	INT			1
-#define 	FLOAT		2		
-#define		BOOL		3
+#define 	NONE		0
+#define 	BOOL		1
+#define 	INT			2		
+#define		FLOAT		3
 #define		CHAR		4
 #define		STRING		5
 

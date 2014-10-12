@@ -21,7 +21,7 @@ struct _nodeAST{
 nodeAST* myAST;
 
 void		createAST(nodeAST* c1);
-nodeAST*     createNodeAST(int type, nodeAST* next, DIC* symTable, ...);
+nodeAST*     createNodeAST(int type, nodeAST* next, DIC* symTable, int dataType, ...);
 void         insertNodeASTChild(nodeAST* parent, nodeAST* child, int index);
 void        trimNodeAST(nodeAST* node);
 nodeAST*    destroyNodeAST(nodeAST* node);

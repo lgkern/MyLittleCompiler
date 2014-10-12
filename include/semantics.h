@@ -12,7 +12,8 @@ int variableCheck(DIC* dicEntry, int fatal);
 void variableExists(DIC* dicEntry);
 
 //Check if op1 and op2 are compatible, including coersion
-void typeCompatibility(nodeAST* op1, nodeAST* op2);
+int typeCompatibility(nodeAST* op1, nodeAST* op2);
+int coersion(int type1, int type2);
 
 //Check if the given arguments are compatible with the function
 void functionCompatibility(nodeAST* parameterList, nodeAST* functionPrototype);
@@ -24,6 +25,7 @@ void returnValidation(nodeAST* argument, int expectedReturn);
 
 //H messing around
 void specCheck(DIC* entry, int spec);
+int max(int v1, int v2);
 
 
 #endif

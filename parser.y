@@ -58,10 +58,10 @@
 
 %error-verbose
 
-%type <nAST> AST Program SC Global ID Vector Function  List ParaList Parameter Body Block Command
-%type <nAST> Local Attribution Expression  Return FlowControl If While Input Output Call FunctionID ExpList ';' '(' ')'
+%type <nAST> AST Program SC Global ID Vector Function  List ParaList Parameter Body Block Command Local 
+%type <nAST> Attribution Expression  Return FlowControl If While Input Output Call FunctionID ExpList ';' '(' ')'
 %type <VarType> "INT" "FLOAT" "BOOL" "CHAR" "STRING" Type
-%type <symbol> TK_IDENTIFICADOR TK_LIT_STRING TK_LIT_CHAR TK_LIT_TRUE TK_LIT_FALSE TK_LIT_FLOAT TK_LIT_INT Boolean Literal Header GlobalID
+%type <symbol> TK_IDENTIFICADOR TK_LIT_STRING TK_LIT_CHAR TK_LIT_TRUE TK_LIT_FALSE TK_LIT_FLOAT TK_LIT_INT Boolean Literal Header GlobalID 
 
 
 
@@ -91,8 +91,8 @@ GlobalID:	"ID"  { variableExists($1);
 					}
 			| "ID" '[' Literal ']'  {variableExists($1); modifyIdSpec($1, VECTOR); $$ = $1;}
 
-ID:		"ID" {specCheck(recursiveLookupDIC($1), VARIABLE); $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
-		|"ID" Vector {specCheck(recursiveLookupDIC($1), VECTOR); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
+ID:		"ID" {DIC* entry = recursiveLookupDIC($1); specCheck(entry, VARIABLE); $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, entry->idType,  NULL, NULL, NULL);}
+		|"ID" Vector {DIC* entry = recursiveLookupDIC($1); specCheck(entry, VECTOR); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, entry->idType, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
 
 Type:	"INT" 		{$$ = INT;}
 		|"FLOAT"	{$$ = FLOAT;}
@@ -100,9 +100,9 @@ Type:	"INT" 		{$$ = INT;}
 		|"CHAR"		{$$ = CHAR;}
 		|"STRING"	{$$ = STRING;}
 
-Vector: '[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL, NULL, $2, NULL);}
+Vector: '[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL,NONE, NULL, $2, NULL);}
 
-Function:	Header Body {$$ = createNodeAST(IKS_AST_FUNCAO, NULL, $1, $2);}
+Function:	Header Body {$$ = createNodeAST(IKS_AST_FUNCAO, NULL, $1, $1->idType, $2);}
 		
 Header:		Type "ID" List { variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, FUNCTION); $$ = $2;}
 
@@ -127,61 +127,61 @@ Command: 	Local
 		| Output 
 		| Return  
 		| Call  
-		| Body { $$ = createNodeAST(IKS_AST_BLOCO,NULL,NULL,$1);}
+		| Body { $$ = createNodeAST(IKS_AST_BLOCO,NULL,NULL, NONE,$1);}
 		| SC
 
-Local:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); $$ = NULL;}
+Local:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE);}
 
-Attribution:	ID '=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $3); }
+Attribution:	ID '=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, typeCompatibility($1, $3), $1, $3); }
 
 Expression:	ID
-		| Literal {$$=createNodeAST(IKS_AST_LITERAL, NULL, $1, NULL, NULL, NULL); }
-		| Expression '+' Expression {$$=createNodeAST(IKS_AST_ARIM_SOMA, NULL, NULL, $1, $3); }
-		| Expression '-' Expression {$$=createNodeAST(IKS_AST_ARIM_SUBTRACAO, NULL, NULL, $1, $3); }
-		| Expression '*' Expression {$$=createNodeAST(IKS_AST_ARIM_MULTIPLICACAO, NULL, NULL, $1, $3); }
-		| Expression '/' Expression {$$=createNodeAST(IKS_AST_ARIM_DIVISAO, NULL, NULL, $1, $3); }
-		| Expression '>' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_G, NULL, NULL, $1, $3); }
-		| Expression '<' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_L, NULL, NULL, $1, $3); }
-		| Expression "==" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_IGUAL, NULL, NULL, $1, $3); }
-		| Expression "!=" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_DIF, NULL, NULL, $1, $3); }
-		| Expression ">=" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_GE, NULL, NULL, $1, $3); }
-		| Expression "<=" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_LE, NULL, NULL, $1, $3); }
-		| Expression "&&" Expression {$$=createNodeAST(IKS_AST_LOGICO_E, NULL, NULL, $1, $3); }
-		| Expression "||" Expression {$$=createNodeAST(IKS_AST_LOGICO_OU, NULL, NULL, $1, $3); }
-		| '-' Expression {$$=createNodeAST(IKS_AST_ARIM_INVERSAO, NULL, NULL, $2); }
-		| '!' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_NEGACAO, NULL, NULL, $2); }
+		| Literal {$$=createNodeAST(IKS_AST_LITERAL, NULL, $1, $1->idType, NULL, NULL, NULL); }
+		| Expression '+' Expression {$$=createNodeAST(IKS_AST_ARIM_SOMA, NULL, NULL, typeCompatibility($1, $3), $1, $3); }
+		| Expression '-' Expression {$$=createNodeAST(IKS_AST_ARIM_SUBTRACAO, NULL, NULL, typeCompatibility($1, $3), $1, $3); }
+		| Expression '*' Expression {$$=createNodeAST(IKS_AST_ARIM_MULTIPLICACAO, NULL, NULL, typeCompatibility($1, $3), $1, $3); }
+		| Expression '/' Expression {$$=createNodeAST(IKS_AST_ARIM_DIVISAO, NULL, NULL, typeCompatibility($1, $3), $1, $3); }
+		| Expression '>' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_G, NULL, NULL, typeCompatibility($1, $3), $1, $3); }
+		| Expression '<' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_L, NULL, NULL, typeCompatibility($1, $3), $1, $3); }
+		| Expression "==" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_IGUAL, NULL, NULL, typeCompatibility($1, $3), $1, $3); }
+		| Expression "!=" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_DIF, NULL, NULL, typeCompatibility($1, $3), $1, $3); }
+		| Expression ">=" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_GE, NULL, NULL, typeCompatibility($1, $3), $1, $3); }
+		| Expression "<=" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_LE, NULL, NULL, typeCompatibility($1, $3), $1, $3); }
+		| Expression "&&" Expression {$$=createNodeAST(IKS_AST_LOGICO_E, NULL, NULL, typeCompatibility($1, $3), $1, $3); }
+		| Expression "||" Expression {$$=createNodeAST(IKS_AST_LOGICO_OU, NULL, NULL, typeCompatibility($1, $3), $1, $3); }
+		| '-' Expression {$$=createNodeAST(IKS_AST_ARIM_INVERSAO, NULL, NULL, $2->dataType, $2); }
+		| '!' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_NEGACAO, NULL, NULL, $2->dataType, $2); }
 		| '(' Expression ')' {$$ = $2;}
 		| Call
 
-Literal: Boolean
-		|"litInt"
-		|"litFloat"
-		|"litChar"
-		|"litString"
+Literal: Boolean		{modifyIdType($1,BOOL); $$ = $1;}
+		|"litInt"		{modifyIdType($1,INT); $$ = $1;}
+		|"litFloat"		{modifyIdType($1,FLOAT); $$ = $1;}
+		|"litChar"		{modifyIdType($1,CHAR); $$ = $1;}
+		|"litString"	{modifyIdType($1,STRING); $$ = $1;}
 
 Boolean:	"false"
 			|"true"
 
-Return: 	"RETURN" Expression {$$ = createNodeAST(IKS_AST_RETURN, NULL, NULL, $2); }
+Return: 	"RETURN" Expression {$$ = createNodeAST(IKS_AST_RETURN, NULL, NULL, $2->dataType, $2); }
 
 FlowControl:	If
 		| While
 
-If:		"IF" '(' Expression ')' "THEN" Command {$$ = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, $3, $6, NULL); }
-		|"IF" '(' Expression ')' "THEN" Command "ELSE" Command	{$$ = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, $3, $6, $8); }
+If:		"IF" '(' Expression ')' "THEN" Command {$$ = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, NONE, $3, $6, NULL); }
+		|"IF" '(' Expression ')' "THEN" Command "ELSE" Command	{$$ = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, NONE, $3, $6, $8); }
 
-While:	 "WHILE" '(' Expression ')'  "DO" Command {$$ = createNodeAST(IKS_AST_WHILE_DO, NULL, NULL, $3, $6); }
-		| "DO" Command "WHILE" '(' Expression ')' SC {$$ = createNodeAST(IKS_AST_DO_WHILE, NULL, NULL, $2, $5); }
+While:	 "WHILE" '(' Expression ')'  "DO" Command {$$ = createNodeAST(IKS_AST_WHILE_DO, NULL, NULL, NONE, $3, $6); }
+		| "DO" Command "WHILE" '(' Expression ')' SC {$$ = createNodeAST(IKS_AST_DO_WHILE, NULL, NULL, NONE, $2, $5); }
 
-Input:		"INPUT"  ID	{$$ = createNodeAST(IKS_AST_INPUT, NULL, NULL, $2); }
+Input:		"INPUT"  ID	{$$ = createNodeAST(IKS_AST_INPUT, NULL, NULL, NONE, $2); }
 
-Output:		"OUTPUT" ExpList {$$ = createNodeAST(IKS_AST_OUTPUT, NULL, NULL, $2); }
+Output:		"OUTPUT" ExpList {$$ = createNodeAST(IKS_AST_OUTPUT, NULL, NULL, NONE, $2); }
 
-Call:	FunctionID '(' ExpList ')' {$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, $3);}
-		|FunctionID '(' ')'	{$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, NULL);}
+Call:	FunctionID '(' ExpList ')' {$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1->dataType, $1, $3);}
+		|FunctionID '(' ')'	{$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1->dataType, $1, NULL);}
 
-FunctionID: "ID" {specCheck(recursiveLookupDIC($1),FUNCTION);
-				  $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
+FunctionID: "ID" {DIC* entry = recursiveLookupDIC($1); specCheck(entry,FUNCTION);
+				  $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, entry->idType, NULL, NULL, NULL);}
 
 ExpList:	Expression ',' ExpList {modify($1, 4, $3); $$ = $1;}
 		| Expression

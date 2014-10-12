@@ -11,6 +11,7 @@
     {
         myAST = calloc(1, sizeof(nodeAST));
         myAST->type = IKS_AST_PROGRAMA;
+        myAST->dataType = NONE;
         myAST->next = NULL;
         myAST->symTable = NULL;
         myAST->c1 = c1;
@@ -25,11 +26,12 @@
 		//gv_declare(IKS_AST_PROGRAMA, (void*)myAST, NULL);		
     }
 
-	nodeAST* createNodeAST(int type, nodeAST* next, DIC* symTable, ...)
+	nodeAST* createNodeAST(int type, nodeAST* next, DIC* symTable, int dataType, ...)
     {
 		char* temp = NULL;
         nodeAST* node = calloc(1, sizeof(nodeAST));
         node->type = type;
+        node->dataType = dataType;
         node->next = next;
         node->symTable = symTable;
         node->c1 = NULL;
@@ -37,7 +39,7 @@
         node->c3 = NULL;
 
         va_list arg;       
-		va_start (arg, symTable);
+		va_start (arg, dataType);
 
 		if(type == IKS_AST_PROGRAMA
 		 ||type == IKS_AST_FUNCAO 
@@ -140,43 +142,6 @@
         
 		return node;
     }
-
-    /*void insertNodeASTChild(nodeAST* parent, nodeAST* child, int index) //já tem no modify
-    {
-        switch (index)
-        {
-            case 1:
-                if (parent->c1 != NULL)
-                {
-                    trimNodeAST(parent->c1);
-                }
-                parent->c1 = child;
-				//gv_connect((void*)parent,(void*)child);
-                break;
-
-            case 2:
-                if (parent->c2 != NULL)
-                {
-                    trimNodeAST(parent->c2);
-                }
-                parent->c2 = child;
-				//gv_connect((void*)parent,(void*)child);
-                break;
-
-            case 3:
-                if (parent->c3 != NULL)
-                {
-                    trimNodeAST(parent->c3);
-                }
-                parent->c3 = child;
-				//gv_connect((void*)parent,(void*)child);
-                break;
-
-            default:
-                free(child);//hue
-        }
-        return;
-    }*/
 
     void    trimNodeAST(nodeAST* node)//tudo ligado ao nodo, inclusive next
     {
