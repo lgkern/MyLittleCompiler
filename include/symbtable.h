@@ -9,6 +9,7 @@ struct NODE{
 	TABLE*	data;
 	struct NODE*	child;
 	struct NODE*	father;
+	int		returnType;
 };
 
 typedef struct {
@@ -37,8 +38,9 @@ typedef struct {
 
 
 //addScope adds a new level to myTree, while removeScope removes the last added level
-	int 	addScope();
+	int 	addScope(int returnType);
 	int 	removeScope();
+	int		retrieveReturnType();
 
 //Node API ----------------------------------------------------------------------------------
 	struct NODE*	createNode();

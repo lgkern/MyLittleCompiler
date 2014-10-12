@@ -106,7 +106,7 @@ Vector: '[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NUL
 
 Function:	Header Body {$$ = createNodeAST(IKS_AST_FUNCAO, NULL, $1, $2);}
 		
-Header:		Type "ID" List { variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, FUNCTION); addFunctionArg($2,$3);/* printf("\nFunction Declared: = %p\n",$2);*/ $$ = $2;}
+Header:		Type "ID" {addScope($1);} List { variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, FUNCTION); addFunctionArg($2,$4);/* printf("\nFunction Declared: = %p\n",$2);*/ $$ = $2;}
 
 List:	'(' ParaList ')' {$$ = $2;}
 		|'(' ')' {$$ = NULL;}
@@ -116,7 +116,7 @@ ParaList:	Parameter ',' ParaList {$1->next = $3; $$ = $1;}
 
 Parameter: 	LocalFoo {$$ = createArg($1);}
 
-Body:	 	'{' {addScope();} Block '}' {removeScope(); $$ = $3;}
+Body:	 	'{' Block '}' {removeScope(); $$ = $2;}
 
 Block:	{$$ = NULL;}	/*empty*/
 		|Command	{$$ = $1; /*pq não tem next mesmo*/ }
@@ -167,7 +167,7 @@ Literal: Boolean
 Boolean:	"false"
 			|"true"
 
-Return: 	"RETURN" Expression {$$ = createNodeAST(IKS_AST_RETURN, NULL, NULL, $2); }
+Return: 	"RETURN" Expression {returnValidation($2); $$ = createNodeAST(IKS_AST_RETURN, NULL, NULL, $2); }
 
 FlowControl:	If
 		| While
@@ -180,7 +180,7 @@ While:	 "WHILE" '(' Expression ')'  "DO" Command {$$ = createNodeAST(IKS_AST_WHI
 
 Input:		"INPUT"  ID	{$$ = createNodeAST(IKS_AST_INPUT, NULL, NULL, $2); }
 
-Output:		"OUTPUT" ExpList {$$ = createNodeAST(IKS_AST_OUTPUT, NULL, NULL, $2); }
+Output:		"OUTPUT" ExpList {outputValidation($2); $$ = createNodeAST(IKS_AST_OUTPUT, NULL, NULL, $2); }
 
 Call:	FunctionID '(' ExpList ')' {functionCompatibility($1, $3); $$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, $3);}
 		|FunctionID '(' ')'	{functionCompatibility($1, NULL); $$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, NULL);}

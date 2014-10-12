@@ -100,3 +100,25 @@
 
 		return newArg;
 	}
+
+	void outputValidation(nodeAST* arguments)
+	{
+		nodeAST* current = arguments;
+		while(current != NULL)
+		{
+			if(current->dataType != STRING && current->dataType != FLOAT && current->dataType != INT && current->dataType != BOOL)
+			{
+				exit(IKS_ERROR_WRONG_PAR_OUTPUT);
+			}
+			current = current->next;
+		}
+	}
+
+	void returnValidation(nodeAST* argument)
+	{
+		if(argument->dataType != retrieveReturnType())
+		{
+			printf("\nReturnType = %d",retrieveReturnType());
+			exit(IKS_ERROR_WRONG_PAR_RETURN);
+		}
+	}

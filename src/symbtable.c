@@ -151,13 +151,15 @@
 	}
 
 //addScope adds a new level to myTree, while removeScope removes the last added level
-	int 	addScope()
+	int 	addScope(int returnType)
 	{
 		struct NODE* new = createNode();
 		myTree->current->child = new;
 		new->father = myTree->current;
+		new->returnType = returnType;
 		myTree->current = new;
 	}
+
 	int 	removeScope()
 	{
 		myTree->current = myTree->current->father;
@@ -171,6 +173,7 @@
 		myNode->data = createHashTable();
 		myNode->father = NULL;
 		myNode->child = NULL;
+		myNode->returnType = INT;
 		return myNode;
 	}
 	int		destroyNode(struct NODE* node)
@@ -228,6 +231,11 @@
 			return table_lookupDIC(node->data, find);
 		}
 		return NULL;
+	}
+
+	int		retrieveReturnType()
+	{
+		return myTree->current->returnType;
 	}
 	
 	

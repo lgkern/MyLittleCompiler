@@ -20,8 +20,8 @@ ARG* 	generateParameters(nodeAST* parameterList);
 
 //Command validators
 void inputValidation(nodeAST* argument);
-void outputValidation(nodeAST* argument);
-void returnValidation(nodeAST* argument, int expectedReturn);
+void outputValidation(nodeAST* arguments);
+void returnValidation(nodeAST* argument);
 
 //H messing around
 void specCheck(DIC* entry, int spec);
