@@ -230,68 +230,63 @@
 
     void    modify(nodeAST* node, int index, ...)
     {
-        if (node == NULL)
-        {
-            return;
-        }
+        if (node != NULL)
+		{	
+			va_list arg;        
+			va_start (arg, index);
+			switch (index)
+			{
+				case 0:
+					node->type = va_arg(arg,int);
+					break;
+				case 1:
+					if(node->c1 != NULL){trimNodeAST(node->c1);}
+					node->c1 = va_arg(arg,nodeAST*);
+	/*				if(node->c1 != NULL)
+					{
+						//printf("Chamado de modify, c1\n");
+						//gv_connect(node,node->c1);
+					}*/
+					break;
+				case 2:
+					if(node->c2 != NULL){trimNodeAST(node->c2);}
+					node->c2 = va_arg(arg,nodeAST*);
+	/*				if(node->c2 != NULL)
+					{
+						//printf("Chamado de modify, c2\n");
+						//gv_connect(node,node->c2);
+					}*/
+					break;
+				case 3:
+					if(node->c3 != NULL){trimNodeAST(node->c3);}
+					node->c3 = va_arg(arg,nodeAST*);
+	/*				if(node->c3 != NULL)
+					{
+						//printf("Chamado de modify, c3\n");
+						//gv_connect(node,node->c3);
+					}*/
+					break;
+				case 4:
+					if(node->next != NULL)
+					{
+						//printf("%p: %d, %p, %p, %p, %p\n",node, node->type, node->next, node->c1, node->c2, node->c3);
+						trimNodeAST(node->next);	
+					}
+					node->next = va_arg(arg,nodeAST*);
+	/*				if(node->next != NULL)
+					{
+						//printf("Chamado de modify, next\n");
+						//gv_connect(node,node->next);
+					}*/
+					break;
+				case 5:
+					node->dataType = va_arg(arg,int);
+					break;
 
-	
-		va_list arg;        
-		va_start (arg, index);
-		switch (index)
-		{
-			case 0:
-				node->type = va_arg(arg,int);
-				break;
-			case 1:
-				if(node->c1 != NULL){trimNodeAST(node->c1);}
-				node->c1 = va_arg(arg,nodeAST*);
-/*				if(node->c1 != NULL)
-				{
-					//printf("Chamado de modify, c1\n");
-					//gv_connect(node,node->c1);
-				}*/
-				break;
-			case 2:
-				if(node->c2 != NULL){trimNodeAST(node->c2);}
-				node->c2 = va_arg(arg,nodeAST*);
-/*				if(node->c2 != NULL)
-				{
-					//printf("Chamado de modify, c2\n");
-					//gv_connect(node,node->c2);
-				}*/
-				break;
-			case 3:
-				if(node->c3 != NULL){trimNodeAST(node->c3);}
-				node->c3 = va_arg(arg,nodeAST*);
-/*				if(node->c3 != NULL)
-				{
-					//printf("Chamado de modify, c3\n");
-					//gv_connect(node,node->c3);
-				}*/
-				break;
-			case 4:
-				if(node->next != NULL)
-				{
-					//printf("%p: %d, %p, %p, %p, %p\n",node, node->type, node->next, node->c1, node->c2, node->c3);
-					trimNodeAST(node->next);	
-				}
-				node->next = va_arg(arg,nodeAST*);
-/*				if(node->next != NULL)
-				{
-					//printf("Chamado de modify, next\n");
-					//gv_connect(node,node->next);
-				}*/
-				break;
-			case 5:
-				node->dataType = va_arg(arg,int);
-				break;
+			}
 
+			va_end(arg);
 		}
-
-		va_end(arg);
-		
-		return;
     }
 
 

@@ -128,7 +128,7 @@ Command: 	Local
 		| Input 
 		| Output 
 		| Return  
-		| Call  
+		| Call { $$ = $1; } 
 		| Body { $$ = createNodeAST(IKS_AST_BLOCO,NULL,NULL,$1);}
 		| SC
 
