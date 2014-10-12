@@ -119,8 +119,11 @@
 	{
 		if(argument->dataType != retrieveReturnType())
 		{
-			printf("\nReturnType = %d",retrieveReturnType());
-			exit(IKS_ERROR_WRONG_PAR_RETURN);
+			if(argument->dataType > 3) //No Coersion available
+				exit(IKS_ERROR_WRONG_PAR_RETURN);
+			if(argument->dataType > 0) //Coersion possible!
+				if(!(retrieveReturnType() < 4 && retrieveReturnType() > 0)) //Return type isn't coersible 
+					exit(IKS_ERROR_WRONG_PAR_RETURN);
 		}
 	}
   	
