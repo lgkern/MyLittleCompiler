@@ -137,7 +137,7 @@ Command: 	Local
 		| Output 
 		| Return  
 		| Call { $$ = $1; }  
-		| {addScopeNonF();} Body { $$ = createNodeAST(IKS_AST_BLOCO,NULL,NULL, NONE,$2);}
+		| {addScopeNonF();} Body {removeScope(); $$ = createNodeAST(IKS_AST_BLOCO,NULL,NULL, NONE,$2);}
 		| SC
 
 Local:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE);}
