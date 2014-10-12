@@ -131,7 +131,7 @@
   	
   	int typeCompatibility(nodeAST* op1, nodeAST* op2)
   	{
-  		printf("\ttypecomp: %d vs %d\n", op1->dataType, op2->dataType);
+  		//printf("\ttypecomp: %d vs %d\n", op1->dataType, op2->dataType);
   		if (op1->dataType != op2->dataType)
   		{
   			return coersion(op1->dataType, op2->dataType);
