@@ -33,6 +33,7 @@ typedef struct {
 	DIC*	lookup(int type, ...);
 	DIC*	lookupDIC(DIC* find);
 	DIC*	recursiveLookup(int type, ...);
+	DIC*	recursiveLookupDIC(DIC* find);
 
 
 //addScope adds a new level to myTree, while removeScope removes the last added level

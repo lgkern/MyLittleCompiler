@@ -135,6 +135,20 @@
 		
 		return result;
 	}
+	
+	DIC*	recursiveLookupDIC(DIC* find)
+	{
+		DIC* result = NULL;
+		struct NODE* parent = myTree->current;
+		
+		do{
+			result = node_lookupDIC(parent, find);
+			parent = parent->father;
+		}
+		while(parent != NULL && result == NULL);	
+		
+		return result;
+	}
 
 //addScope adds a new level to myTree, while removeScope removes the last added level
 	int 	addScope()

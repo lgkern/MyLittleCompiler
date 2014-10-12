@@ -91,8 +91,8 @@ GlobalID:	"ID"  { variableExists($1);
 					}
 			| "ID" '[' Literal ']'  {variableExists($1); modifyIdSpec($1, VECTOR); $$ = $1;}
 
-ID:		"ID" {variableCheck($1, 1); $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
-		|"ID" Vector {variableCheck($1, 1); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
+ID:		"ID" {specCheck(recursiveLookupDIC($1), VARIABLE); $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
+		|"ID" Vector {specCheck(recursiveLookupDIC($1), VECTOR); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
 
 Type:	"INT" 		{$$ = INT;}
 		|"FLOAT"	{$$ = FLOAT;}
@@ -132,7 +132,7 @@ Command: 	Local
 
 Local:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); $$ = NULL;}
 
-Attribution:	ID {variableCheck(recursiveLookup(IKS_SIMBOLO_IDENTIFICADOR, ((DIC*)$1->symTable)->token->description),1);}'=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $4); }
+Attribution:	ID '=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $3); }
 
 Expression:	ID
 		| Literal {$$=createNodeAST(IKS_AST_LITERAL, NULL, $1, NULL, NULL, NULL); }
@@ -180,7 +180,7 @@ Output:		"OUTPUT" ExpList {$$ = createNodeAST(IKS_AST_OUTPUT, NULL, NULL, $2); }
 Call:	FunctionID '(' ExpList ')' {$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, $3);}
 		|FunctionID '(' ')'	{$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, NULL);}
 
-FunctionID: "ID" {variableCheck(recursiveLookup(IKS_SIMBOLO_IDENTIFICADOR, $1->token->description),1);
+FunctionID: "ID" {specCheck(recursiveLookupDIC($1),FUNCTION);
 				  $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
 
 ExpList:	Expression ',' ExpList {modify($1, 4, $3); $$ = $1;}

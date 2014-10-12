@@ -22,5 +22,8 @@ void inputValidation(nodeAST* argument);
 void outputValidation(nodeAST* argument);
 void returnValidation(nodeAST* argument, int expectedReturn);
 
+//H messing around
+void specCheck(DIC* entry, int spec);
+
 
 #endif
