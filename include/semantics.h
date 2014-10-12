@@ -28,5 +28,8 @@ void returnValidation(nodeAST* argument);
 void specCheck(DIC* entry, int spec);
 int max(int v1, int v2);
 
+//Vector indexer check
+void checkIndexer(nodeAST* indexer);
+
 
 #endif

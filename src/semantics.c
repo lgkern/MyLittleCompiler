@@ -169,3 +169,14 @@
   			return v1;
   		return v2;
   	}
+
+
+	void checkIndexer(nodeAST* indexer)
+	{
+			if(indexer->dataType == CHAR)
+				exit(IKS_ERROR_CHAR_TO_X);
+			if(indexer->dataType == STRING)
+				exit(IKS_ERROR_STRING_TO_X);
+
+	
+	}

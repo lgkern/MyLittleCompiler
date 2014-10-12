@@ -8,6 +8,7 @@
 #include "comp_dict.h"
 #include "semantics.h"
 #include "main.h"
+#include <stdlib.h>
 %}
 
 %union {
@@ -102,7 +103,7 @@ Type:	"INT" 		{$$ = INT;}
 		|"CHAR"		{$$ = CHAR;}
 		|"STRING"	{$$ = STRING;}
 
-Vector: '[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL,NONE, NULL, $2, NULL);}
+Vector: '[' Expression ']'	{checkIndexer($2); $$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL,NONE, NULL, $2, NULL);}
 
 Function:	Header Body {$$ = createNodeAST(IKS_AST_FUNCAO, NULL, $1, $1->idType, $2);}
 		
