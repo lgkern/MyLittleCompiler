@@ -7,7 +7,7 @@
 #include "comp_tree.h"
 
 
-//A variable is valid to usage when it has a type and spec set
+//A variable is valid for usage when it has a type and spec set
 int variableCheck(DIC* dicEntry, int fatal);
 void variableExists(DIC* dicEntry);
 

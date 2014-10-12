@@ -1,6 +1,6 @@
 ! timeout 5
 ! output ignore
 ! expect return 1
-$ ./main tests/e3/input/s00.iks
+$ ./main tests/e4/input/s00.iks
 
 

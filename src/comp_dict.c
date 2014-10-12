@@ -97,17 +97,17 @@
         dic->idType = newType;
     }
 
+/*assumes first NOT NULL*/    
     DIC*    addElementToBucket(DIC* first, DIC* newDic)
     {
         DIC* current = first;
         while(current != NULL)
         {
-            if (compareDICS(current, newDic))
+            if (compareDICS(current, newDic) == 0)
             {
-				//printf("same dics \n");
-                current->line = newDic->line;
-				//destroyHashElement(newDic);
-                return newDic;
+				current->line = newDic->line;
+				destroyHashElement(newDic);
+                return current;
             }
             if (current->next == NULL)
             {

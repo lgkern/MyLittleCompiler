@@ -91,8 +91,8 @@ GlobalID:	"ID"  { variableExists($1);
 					}
 			| "ID" '[' Literal ']'  {variableExists($1); modifyIdSpec($1, VECTOR); $$ = $1;}
 
-ID:		"ID" {$$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
-		|"ID" Vector {nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
+ID:		"ID" {variableCheck($1, 1); $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
+		|"ID" Vector {variableCheck($1, 1); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
 
 Type:	"INT" 		{$$ = INT;}
 		|"FLOAT"	{$$ = FLOAT;}
@@ -104,7 +104,7 @@ Vector: '[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NUL
 
 Function:	Header Body {$$ = createNodeAST(IKS_AST_FUNCAO, NULL, $1, $2);}
 		
-Header:		Type "ID" List { modifyIdType($2,$1); modifyIdSpec($2, FUNCTION); $$ = $2;}
+Header:		Type "ID" List { variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, FUNCTION); $$ = $2;}
 
 List:	'(' ParaList ')'
 		|'(' ')'

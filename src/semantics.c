@@ -17,6 +17,6 @@
 
 	void variableExists(DIC* dicEntry)
     {
-        if(!variableCheck(dicEntry, 1))
+        if(variableCheck(dicEntry, 0) == 0)
             exit(IKS_ERROR_DECLARED);
     }
