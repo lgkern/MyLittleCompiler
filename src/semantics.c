@@ -174,6 +174,16 @@
   			return v1;
   		return v2;
   	}
+ 
+/*Assumes type compatibility was already checked*/ 	
+  	int coerced(int v1, int v2)
+  	{
+  		if (v1 < v2)
+  			return v1;
+  		if (v2 < v1)
+  			return v2;
+  		return NONE;
+  	}
 
 
 	void checkIndexer(nodeAST* indexer)

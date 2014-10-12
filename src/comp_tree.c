@@ -12,6 +12,7 @@
         myAST = calloc(1, sizeof(nodeAST));
         myAST->type = IKS_AST_PROGRAMA;
         myAST->dataType = NONE;
+        myAST->coersion = NONE;
         myAST->next = NULL;
         myAST->symTable = NULL;
         myAST->c1 = c1;
@@ -26,12 +27,13 @@
 		//gv_declare(IKS_AST_PROGRAMA, (void*)myAST, NULL);		
     }
 
-	nodeAST* createNodeAST(int type, nodeAST* next, DIC* symTable, int dataType, ...)
+	nodeAST* createNodeAST(int type, nodeAST* next, DIC* symTable, int dataType, int coersion, ...)
     {
 		char* temp = NULL;
         nodeAST* node = calloc(1, sizeof(nodeAST));
         node->type = type;
         node->dataType = dataType;
+        node->coersion = coersion;
         node->next = next;
         node->symTable = symTable;
         node->c1 = NULL;
@@ -39,7 +41,7 @@
         node->c3 = NULL;
 
         va_list arg;       
-		va_start (arg, dataType);
+		va_start (arg, coersion);
 
 		if(type == IKS_AST_PROGRAMA
 		 ||type == IKS_AST_FUNCAO 
@@ -248,6 +250,9 @@
 					break;
 				case 5:
 					node->dataType = va_arg(arg,int);
+					break;
+				case 6:
+					node->coersion = va_arg(arg,int);
 					break;
 
 			}

@@ -27,6 +27,7 @@ void returnValidation(nodeAST* argument);
 //H messing around
 void specCheck(DIC* entry, int spec);
 int max(int v1, int v2);
+int coerced(int v1, int v2);
 
 //Vector indexer check
 void checkIndexer(nodeAST* indexer);

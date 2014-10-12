@@ -16,12 +16,13 @@ struct _nodeAST{
     void* symTable;
 //new to e4
 	int dataType;
+	int coersion;
 };
 
 nodeAST* myAST;
 
 void		createAST(nodeAST* c1);
-nodeAST*     createNodeAST(int type, nodeAST* next, DIC* symTable, int dataType, ...);
+nodeAST*     createNodeAST(int type, nodeAST* next, DIC* symTable, int dataType, int coersion, ...);
 void         insertNodeASTChild(nodeAST* parent, nodeAST* child, int index);
 void        trimNodeAST(nodeAST* node);
 nodeAST*    destroyNodeAST(nodeAST* node);
