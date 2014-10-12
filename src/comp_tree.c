@@ -199,6 +199,7 @@
 		{	
 			va_list arg;        
 			va_start (arg, index);
+			//printf("Modify node:%p\n\n", node);
 			switch (index)
 			{
 				case 0:
@@ -238,6 +239,7 @@
 						trimNodeAST(node->next);	
 					}
 					node->next = va_arg(arg,nodeAST*);
+					
 	/*				if(node->next != NULL)
 					{
 						//printf("Chamado de modify, next\n");
