@@ -25,6 +25,15 @@ typedef struct {
     VALUE	description;	
 }TOKEN;
 
+
+typedef struct _ARG ARG;
+
+struct _ARG{
+	int type;
+	ARG* next;
+};
+
+
 typedef struct _DIC DIC;
 
 struct _DIC{
@@ -32,13 +41,13 @@ struct _DIC{
     int		line;
 	int 	idSpec;
 	int 	idType;
+	ARG*	argList;
     DIC*	next;
 };
 
 typedef struct{
     DIC**	data;
 }TABLE;
-
 
 
 //Hash table API
@@ -65,6 +74,10 @@ TOKEN*	createStrToken(int token, char* description);
 
 DIC*	table_lookup(TABLE* table, int type, ...);
 DIC*	table_lookupDIC(TABLE* table, DIC* find);
+
+ARG*	createArg(int type);
+void	addFunctionArg(DIC* fooEntry, ARG* argList);
+//void 	checkFunctionArg(DIC* fooEntry, int type, int reset, int isFinal);
 
 #endif
 
