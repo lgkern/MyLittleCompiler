@@ -121,7 +121,14 @@ Body:	 	'{' Block '}' {removeScope(); $$ = $2;}
 
 Block:	{$$ = NULL;}	/*empty*/
 		|Command	{$$ = $1; /*pq não tem next mesmo*/ }
-		|Command SC Block	{if($1 == NULL) { $$ = $3; } else {modify($1, 4, $3); /*set $3 como next do comando*/ $$ = $1;} }
+		|Command SC Block	{if($1 == NULL) {
+								$$ = $3; 
+							 } else {
+								if($3 != NULL){									
+								modify($1, 4, $3); /*set $3 como next do comando*/ 
+								$$ = $1;
+								} 
+							} }
 
 Command: 	Local  
 		| Attribution 
