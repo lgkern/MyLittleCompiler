@@ -15,7 +15,8 @@ void variableExists(DIC* dicEntry);
 void typeCompatibility(nodeAST* op1, nodeAST* op2);
 
 //Check if the given arguments are compatible with the function
-void functionCompatibility(nodeAST* parameterList, nodeAST* functionPrototype);
+void functionCompatibility(nodeAST* functionName, nodeAST* parameterList);
+ARG* 	generateParameters(nodeAST* parameterList);
 
 //Command validators
 void inputValidation(nodeAST* argument);

@@ -1,6 +1,7 @@
 #include "semantics.h"
 #include "error_codes.h"
 #include <stdlib.h>
+#include <stdio.h>
 
     int variableCheck(DIC* dicEntry, int fatal)
     {
@@ -47,3 +48,55 @@
   			}
   		}
   	}
+
+	void 	functionCompatibility(nodeAST* functionName, nodeAST* parameterList)
+	{
+		//printf("\nLooking for the function:%s\n",((DIC*)functionName->symTable)->token->description.string);
+		DIC* functionEntry = recursiveLookupDIC((DIC*)functionName->symTable);
+		if(functionEntry == NULL)
+		{
+			printf("This shouldn't ever EVER happen");
+			exit(IKS_ERROR_UNDECLARED);
+		}
+
+		ARG* arguments = functionEntry->argList;
+		ARG* parameters = generateParameters(parameterList);
+
+		printf("\nChecking parameters!\n");
+
+		while(arguments != NULL && parameters != NULL)
+		{
+			if(arguments->type != parameters->type)
+			{
+				//printf("\nFunction Expects: %d\n",arguments->type);
+			//	printf("\nFunction Received: %d\n",parameters->type);
+				printf("\nWrong type args!!\n");
+				exit(IKS_ERROR_WRONG_TYPE_ARGS);
+			}
+			
+			arguments = arguments->next;
+			parameters = parameters->next;
+		}
+		if(arguments != NULL)
+		{
+			printf("\nMissing Args!!\n");
+			exit(IKS_ERROR_MISSING_ARGS);
+			
+		}
+		if(parameters != NULL)
+		{
+			printf("\nExcess args!!\n");
+			exit(IKS_ERROR_EXCESS_ARGS);		
+		}
+	}
+
+	ARG* 	generateParameters(nodeAST* parameterList)
+	{
+		if(parameterList == NULL)
+			return NULL;
+
+		ARG* newArg = createArg(parameterList->dataType);
+		newArg->next = generateParameters(parameterList->next);
+
+		return newArg;
+	}

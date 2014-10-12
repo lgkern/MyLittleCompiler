@@ -310,6 +310,8 @@
 	    {
 	        if (compareDICS(current, find) == 0)
 	        {
+				//printf("current = %p\nfind = %p\n",current, find);
+				//printf("\nCurrent idSpec: %d\n", current->idSpec);
 	        	if(current->idSpec != 0)
 					return current;
 	        }
@@ -320,4 +322,21 @@
        	return NULL;	
 	}
 
+	ARG*	createArg(int type)
+	{
+		ARG* newARG = calloc(1,sizeof(ARG));
+		newARG->type = type;
+		newARG->next = NULL;
 
+		return newARG;
+	}
+
+	void	addFunctionArg(DIC* fooEntry, ARG* argList)
+	{
+		fooEntry->argList = argList;
+	}
+	/*void 	checkFunctionArg(DIC* fooEntry, int type, int reset, int isFinal)
+	{
+		
+	}
+*/

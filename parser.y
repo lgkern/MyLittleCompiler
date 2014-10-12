@@ -14,6 +14,7 @@
    DIC* symbol;
    nodeAST* nAST;
    int VarType;
+   ARG* argList;
 }
 
 /* Declaração dos tokens da linguagem */
@@ -58,10 +59,11 @@
 
 %error-verbose
 
-%type <nAST> AST Program SC Global ID Vector Function  List ParaList Parameter Body Block Command
-%type <nAST> Local Attribution Expression  Return FlowControl If While Input Output Call FunctionID ExpList ';' '(' ')'
-%type <VarType> "INT" "FLOAT" "BOOL" "CHAR" "STRING" Type
+%type <nAST> AST Program SC Global ID Vector Function Body Block Command Local
+%type <nAST>  Attribution Expression  Return FlowControl If While Input Output Call FunctionID ExpList ';' '(' ')'
+%type <VarType> "INT" "FLOAT" "BOOL" "CHAR" "STRING" Type LocalFoo 
 %type <symbol> TK_IDENTIFICADOR TK_LIT_STRING TK_LIT_CHAR TK_LIT_TRUE TK_LIT_FALSE TK_LIT_FLOAT TK_LIT_INT Boolean Literal Header GlobalID
+%type <argList> List ParaList Parameter
 
 
 
@@ -104,15 +106,15 @@ Vector: '[' Expression ']'	{$$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NUL
 
 Function:	Header Body {$$ = createNodeAST(IKS_AST_FUNCAO, NULL, $1, $2);}
 		
-Header:		Type "ID" List { variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, FUNCTION); $$ = $2;}
+Header:		Type "ID" List { variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, FUNCTION); addFunctionArg($2,$3);/* printf("\nFunction Declared: = %p\n",$2);*/ $$ = $2;}
 
-List:	'(' ParaList ')'
-		|'(' ')'
+List:	'(' ParaList ')' {$$ = $2;}
+		|'(' ')' {$$ = NULL;}
 
-ParaList:	Parameter ',' ParaList
-		| Parameter
+ParaList:	Parameter ',' ParaList {$1->next = $3; $$ = $1;}
+		| Parameter {$$ = $1;}
 
-Parameter: 	Local
+Parameter: 	LocalFoo {$$ = createArg($1);}
 
 Body:	 	'{' {addScope();} Block '}' {removeScope(); $$ = $3;}
 
@@ -130,7 +132,10 @@ Command: 	Local
 		| Body { $$ = createNodeAST(IKS_AST_BLOCO,NULL,NULL,$1);}
 		| SC
 
-Local:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); $$ = NULL;}
+Local:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE);}
+
+LocalFoo:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); $$ = $1;}
+
 
 Attribution:	ID '=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, $1, $3); }
 
@@ -177,14 +182,14 @@ Input:		"INPUT"  ID	{$$ = createNodeAST(IKS_AST_INPUT, NULL, NULL, $2); }
 
 Output:		"OUTPUT" ExpList {$$ = createNodeAST(IKS_AST_OUTPUT, NULL, NULL, $2); }
 
-Call:	FunctionID '(' ExpList ')' {$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, $3);}
-		|FunctionID '(' ')'	{$$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, NULL);}
+Call:	FunctionID '(' ExpList ')' {functionCompatibility($1, $3); $$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, $3);}
+		|FunctionID '(' ')'	{functionCompatibility($1, NULL); $$ = createNodeAST(IKS_AST_CHAMADA_DE_FUNCAO, NULL, NULL, $1, NULL);}
 
 FunctionID: "ID" {specCheck(recursiveLookupDIC($1),FUNCTION);
 				  $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, NULL, NULL, NULL);}
 
 ExpList:	Expression ',' ExpList {modify($1, 4, $3); $$ = $1;}
-		| Expression
+		| Expression { $$ = $1; }
 
 
 
