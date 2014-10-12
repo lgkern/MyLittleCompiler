@@ -65,7 +65,7 @@
 
 		ARG* currParameter = parameters;
 
-		printf("\nChecking parameters!\n");
+		//printf("\nChecking parameters!\n");
 
 		while(arguments != NULL && currParameter != NULL)
 		{

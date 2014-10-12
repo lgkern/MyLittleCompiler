@@ -153,6 +153,7 @@
 //addScope adds a new level to myTree, while removeScope removes the last added level
 	int 	addScope(int returnType)
 	{
+		//printf("\nAdded Scope\n");
 		struct NODE* new = createNode();
 		myTree->current->child = new;
 		new->father = myTree->current;
@@ -167,6 +168,7 @@
 
 	int 	removeScope()
 	{
+		//printf("\nRemoved Scope\n");
 		myTree->current = myTree->current->father;
 		destroyNode(myTree->current->child);
 	}
