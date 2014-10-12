@@ -27,5 +27,5 @@ void main_finalize (void)
 {
   //implemente esta função com rotinas de inicialização, se necessário
 	destroyTable();
-	gv_close();
+//	gv_close();
 }
