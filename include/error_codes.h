@@ -27,4 +27,7 @@
 #define	IKS_ERROR_WRONG_PAR_OUTPUT  13  //parâmetro não é literal string ou expressão
 #define	IKS_ERROR_WRONG_PAR_RETURN  14  //parâmetro não é compatível com tipo do retorno
 
+//Multi vetores
+#define IKS_ERROR_MISSING_DIMENSIONS 15 //faltam dimensões no multi arranjo
+#define IKS_ERROR_EXCESS_DIMENSIONS 16  //sobram dimensões no multi arranjo
 #endif
