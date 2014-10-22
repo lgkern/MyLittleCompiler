@@ -191,7 +191,34 @@
 			if(indexer->dataType == CHAR)
 				exit(IKS_ERROR_CHAR_TO_X);
 			if(indexer->dataType == STRING)
-				exit(IKS_ERROR_STRING_TO_X);
-
-	
+				exit(IKS_ERROR_STRING_TO_X);	
 	}
+
+	void checkMultiIndexer(DIC* variable, nodeAST* indexers)
+	{
+/*Convert from nodeAST to ARG* list
+		ARG* varDimensions = variable->argList;
+		ARG* givenArgs = indexers;
+		
+		while(varDimensions != NULL && givenArgs != NULL)
+		{			
+			varDimensions = varDimensions->next;
+			givenArgs = givenArgs->next;
+		}
+		if(varDimensions != NULL)
+		{
+			//printf("\nMissing Args!!\n");
+			exit(IKS_ERROR_MISSING_DIMENSIONS);
+			
+		}
+		if(givenArgs != NULL)
+		{
+			//printf("\nExcess args!!\n");
+			exit(IKS_ERROR_EXCESS_DIMENSIONS);		
+		}
+*/
+	}
+
+
+
+

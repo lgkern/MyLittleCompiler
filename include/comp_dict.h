@@ -34,7 +34,6 @@ struct _ARG{
 	ARG* next;
 };
 
-
 typedef struct _DIC DIC;
 
 struct _DIC{
@@ -43,7 +42,7 @@ struct _DIC{
 	int 	idSpec;
 	int 	idType;
 	ARG*	argList;
-    DIC*	next;
+    DIC*	next;	
 };
 
 typedef struct{
@@ -79,6 +78,8 @@ DIC*	table_lookupDIC(TABLE* table, DIC* find);
 ARG*	createArg(int type);
 void	addFunctionArg(DIC* fooEntry, ARG* argList);
 //void 	checkFunctionArg(DIC* fooEntry, int type, int reset, int isFinal);
+
+ARG*	createMultiVector(DIC* type);
 
 #endif
 

@@ -336,6 +336,15 @@
 	{
 		fooEntry->argList = argList;
 	}
+
+	ARG*	createMultiVector(DIC* type)
+	{
+		ARG* newARG = calloc(1,sizeof(ARG));
+		newARG->type = -1;
+		newARG->next = NULL;
+
+		return newARG;		
+	}
 	/*void 	checkFunctionArg(DIC* fooEntry, int type, int reset, int isFinal)
 	{
 		

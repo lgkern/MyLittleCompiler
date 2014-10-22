@@ -31,6 +31,6 @@ int coerced(int v1, int v2);
 
 //Vector indexer check
 void checkIndexer(nodeAST* indexer);
-
+void checkMultiIndexer(DIC* variable, nodeAST* indexers);
 
 #endif
