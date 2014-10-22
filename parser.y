@@ -60,11 +60,11 @@
 
 %error-verbose
 
-%type <nAST> AST Program SC Global ID Vector Function Body Block Command Local 
-%type <nAST> Attribution Expression  Return FlowControl If While Input Output Call FunctionID ExpList ';' '(' ')'
+%type <nAST> AST Program SC Global ID Vector Function Body Block Command Local MVector
+%type <nAST> Attribution Expression  Return FlowControl If While Input Output Call FunctionID ExpList ';' '(' ')' 
 %type <VarType> "INT" "FLOAT" "BOOL" "CHAR" "STRING" Type LocalFoo
 %type <symbol> TK_IDENTIFICADOR TK_LIT_STRING TK_LIT_CHAR TK_LIT_TRUE TK_LIT_FALSE TK_LIT_FLOAT TK_LIT_INT Boolean Literal Header GlobalID 
-%type <argList> List ParaList Parameter
+%type <argList> List ParaList Parameter LitList VExpList
 
 
 
@@ -93,9 +93,14 @@ GlobalID:	"ID"  { variableExists($1);
 					$$ = $1;
 					}
 			| "ID" '[' Literal ']'  {variableExists($1); modifyIdSpec($1, VECTOR); $$ = $1;}
+			| "ID" '[' LitList ']'  {variableExists($1); modifyIdSpec($1, MULTIVECTOR); addFunctionArg($1,$3); $$ = $1;}
+
+LitList:	Literal ',' Literal		{ARG* e1 = createMultiVector($1); ARG* e2 = createMultiVector($3); e1->next = e2; $$ = e1;}
+			|Literal ',' LitList	{ARG* e1 = createMultiVector($1); e1->next = $3; $$ = e1;}
 
 ID:		"ID" {DIC* entry = recursiveLookupDIC($1); specCheck(entry, VARIABLE); $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, entry->idType, NONE,  NULL, NULL, NULL);}
 		|"ID" Vector {DIC* entry = recursiveLookupDIC($1); specCheck(entry, VECTOR); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, entry->idType, NONE, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
+		|"ID" MVector {DIC* entry = recursiveLookupDIC($1); specCheck(entry, MULTIVECTOR); checkMultiIndexer(entry, $2); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, entry->idType, NONE, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
 
 Type:	"INT" 		{$$ = INT;}
 		|"FLOAT"	{$$ = FLOAT;}
@@ -103,7 +108,11 @@ Type:	"INT" 		{$$ = INT;}
 		|"CHAR"		{$$ = CHAR;}
 		|"STRING"	{$$ = STRING;}
 
-Vector: '[' Expression ']'	{checkIndexer($2); $$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL,NONE, NONE, NULL, $2, NULL);}
+Vector: '[' Expression ']'	{checkIndexer($2); $$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL, NONE, NONE, NULL, $2, NULL);}
+MVector: '[' VExpList ']'	{$$ = createNodeAST(IKS_AST_MULTI_VETOR, NULL, NULL, NONE, NONE, NULL, $2, NULL);}
+
+VExpList:	Expression ',' Expression 	{}//criar nodes para $1 e $3 e linká-los
+			|Expression ',' VExpList	{}//criar node para $1 e linkar com o resultado de $3
 
 Function:	Header Body {$$ = createNodeAST(IKS_AST_FUNCAO, NULL, $1, $1->idType, NONE, $2);}
 		
