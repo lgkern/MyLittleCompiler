@@ -1,6 +1,12 @@
 #ifndef    _COMP_TREE_H_
 #define    _COMP_TREE_H_
 
+#define TYPE	0
+#define C1		1
+#define C2		2
+#define C3		3
+#define NEXT	4
+
 #include <stdarg.h>
 #include "iks_ast.h"
 #include "comp_dict.h"
