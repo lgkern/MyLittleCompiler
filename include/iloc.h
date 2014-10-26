@@ -33,17 +33,14 @@ struct _ILIST{
 void 	printInstruction(INST* inst);
 void 	printArg(INST* inst, int index);
 
-/*
- * The first 3 arguments define what type of arguments the instruction will have
- * tArg1 being 1, means that the first left-oriented argument from the TAC will be a register
- * tArg2 being 3, means that the second left-oriented argument from the TAC will be a label and so on...
- */
-
-INST*	createInstruction(int tArg1, int tArg2, int tArg3, ...);
+INST*	createInstruction(int instruction, ...);
 void	destroyInstruction(INST* inst);
+//Do not free label after calling addInstructionLabel
 void 	addInstructionLabel(INST* inst, char* label);
 
-void	mergeInstructionLists(ILIST* l1, ILIST* l2);
+ILIST*	createInstructionList(INST* inst);
+void	addInstruction(ILIST* l, INST* instruction);
+ILIST*	mergeInstructionLists(ILIST* l1, ILIST* l2);
 void 	destroyInstructionList(ILIST* l);
 
 #endif

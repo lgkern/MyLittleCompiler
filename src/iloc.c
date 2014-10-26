@@ -1,6 +1,7 @@
 #include "iloc.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdarg.h>
 
 void 	defaultPrintArgs(INST* inst)
 {
@@ -326,4 +327,188 @@ void printArg(INST* inst, int index)
 			printf("%s", inst->labels[index]);
 			break;
 	}
+}
+
+INST*	createInstruction(int instruction, ...)
+{
+	va_list arg;       
+	va_start (arg, instruction);
+
+	INST* newInst = calloc(1,sizeof(INST));
+	
+	newInst->instruction = instruction;
+	newInst->instLabel = NULL;
+	newInst->labels[0] = NULL;
+	newInst->labels[1] = NULL;
+	newInst->labels[2] = NULL;
+
+	switch(instruction)
+	{
+	//Three registers
+		case ADD:
+		case SUB:
+		case MULT:
+		case DIV:
+		case LSHIFT:
+		case RSHIFT:
+		case LOADA0:
+		case CLOADA0:
+		case AND:
+		case OR:
+		case XOR:
+		case STOREA0:
+		case CSTOREA0:
+		case CMP_LT:
+		case CMP_LE:
+		case CMP_EQ:
+		case CMP_GE:
+		case CMP_GT:
+		case CMP_NE:
+			newInst->argType[0] = IREGISTER;
+			newInst->argType[1] = IREGISTER;
+			newInst->argType[2] = IREGISTER;
+			newInst->regs[0] = va_arg(arg,int);
+			newInst->regs[1] = va_arg(arg,int);
+			newInst->regs[2] = va_arg(arg,int);
+			break;
+	//Register Constant Register
+		case ADDI:
+		case SUBI:
+		case RSUBI:
+		case MULTI:
+		case DIVI:
+		case RDIVI:
+		case LSHIFTI:
+		case RSHIFTI:
+		case ANDI:
+		case ORI:
+		case XORI:
+		case LOADAI:
+		case CLOADAI:
+			newInst->argType[0] = IREGISTER;
+			newInst->argType[1] = ICONSTANT;
+			newInst->argType[2] = IREGISTER;
+			newInst->regs[0] = va_arg(arg,int);
+			newInst->consts[1] = va_arg(arg,int);
+			newInst->regs[2] = va_arg(arg,int);
+			break;
+	//Register Register Constant
+		case STOREAI:
+		case CSTOREAI:
+			newInst->argType[0] = IREGISTER;
+			newInst->argType[1] = IREGISTER;
+			newInst->argType[2] = ICONSTANT;
+			newInst->regs[0] = va_arg(arg,int);
+			newInst->regs[1] = va_arg(arg,int);
+			newInst->consts[2] = va_arg(arg,int);
+			break;
+	//Register Label Label
+		case CBR:
+			newInst->argType[0] = IREGISTER;
+			newInst->argType[1] = ILABEL;
+			newInst->argType[2] = ILABEL;
+			newInst->regs[0] = va_arg(arg,int);
+			newInst->labels[1] = va_arg(arg,char*);
+			newInst->labels[2] = va_arg(arg,char*);
+			break;
+	//Two Registers
+		case LOAD:
+		case CLOAD:
+		case STORE:
+		case CSTORE:
+		case I2I:
+		case C2C:
+		case C2I:
+		case I2C:
+			newInst->argType[0] = IREGISTER;
+			newInst->argType[1] = IREGISTER;
+			newInst->regs[0] = va_arg(arg,int);
+			newInst->regs[1] = va_arg(arg,int);
+			break;
+	//Constant Register
+		case LOADI:
+			newInst->argType[0] = ICONSTANT;
+			newInst->argType[1] = IREGISTER;
+			newInst->consts[0] = va_arg(arg,int);
+			newInst->regs[1] = va_arg(arg,int);
+			break;
+	//Single Register
+		case JUMP:
+			newInst->argType[0] = IREGISTER;
+			newInst->regs[0] = va_arg(arg,int);
+			break;
+	//Single Label
+		case JUMPI:
+			newInst->argType[0] = ILABEL;
+			newInst->labels[0] = va_arg(arg,char*);
+			break;
+	}
+	return newInst;	
+}
+
+void	destroyInstruction(INST* inst)
+{
+	int i;
+	for(i = 0; i < 3; i++)
+	{
+		if(inst->argType[i] == ILABEL)
+			free(inst->labels[i]);	
+	}
+	if(inst->instLabel != NULL)
+		free(inst->instLabel);
+	free(inst);
+}
+
+void 	addInstructionLabel(INST* inst, char* label)
+{
+	inst->instLabel = label;
+}
+
+ILIST*	mergeInstructionLists(ILIST* l1, ILIST* l2)
+{
+	ILIST* tempList = l1;
+
+	if(l1 == NULL)
+	{
+		return l2;
+	}
+
+	while(tempList->next != NULL){tempList = tempList->next;}
+
+	tempList->next = l2;
+	return l1;
+}
+
+void 	destroyInstructionList(ILIST* l)
+{
+	ILIST* tempList = l;
+	ILIST* nextList;
+	if(l != NULL)
+	{
+		while(tempList != NULL)
+		{
+			destroyInstruction(tempList->instruction);
+			nextList = tempList->next;
+			free(tempList);
+			tempList = nextList;
+		}
+	}
+}
+
+ILIST*	createInstructionList(INST* inst)
+{
+	ILIST* myList = calloc(1,sizeof(ILIST));
+	myList->instruction = inst;
+	myList->next = NULL;
+	return myList;
+}
+
+void	addInstruction(ILIST* l, INST* instruction)
+{
+	ILIST* tempList = l;
+
+	while(tempList->next != NULL){tempList = tempList->next;}
+
+	ILIST* newList = createInstructionList(instruction);
+	mergeInstructionLists(l, newList);
 }

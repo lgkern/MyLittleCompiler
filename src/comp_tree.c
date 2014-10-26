@@ -3,10 +3,10 @@
 #include "iks_ast.h"
 #include "main.h"
 #include "comp_dict.h"
+#include "iloc.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "iloc.h"
 
     void createAST(nodeAST* c1)
     {
