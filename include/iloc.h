@@ -7,6 +7,11 @@
 #define ICONSTANT 	2
 #define ILABEL		3
 
+//Special Registers
+#define		FP		-1		//Frame pointer
+#define		RBSS	-2		//Base Register for Global Variables
+#define		RARP	-3		//Current Activation Register
+
 typedef struct 
 {
 	char* 	instLabel;
