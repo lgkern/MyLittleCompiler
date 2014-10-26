@@ -1,18 +1,20 @@
 #ifndef _ILOC_H_
 #define _ILOC_H_
 
+#include "ilocInstructions.h"
+
 #define IREGISTER 	1
 #define ICONSTANT 	2
 #define ILABEL		3
 
-typedef struct INST
+typedef struct 
 {
 	int instruction;
 	int argType[3];
 	int regs[3];
 	int consts[3];
 	char* labels[3];
-};
+}INST;
 
 typedef struct _ILIST ILIST;
 
