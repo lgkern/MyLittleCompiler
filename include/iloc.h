@@ -9,11 +9,13 @@
 
 typedef struct 
 {
-	int instruction;
-	int argType[3];
-	int regs[3];
-	int consts[3];
-	char* labels[3];
+	char* 	instLabel;
+	int 	instruction;
+	int 	argType[3];
+	int 	regs[3];
+	int 	consts[3];
+	char* 	labels[3];
+
 }INST;
 
 typedef struct _ILIST ILIST;
@@ -24,6 +26,7 @@ struct _ILIST{
 };
 
 void 	printInstruction(INST* inst);
+void 	printArg(INST* inst, int index);
 
 /*
  * The first 3 arguments define what type of arguments the instruction will have
@@ -33,6 +36,7 @@ void 	printInstruction(INST* inst);
 
 INST*	createInstruction(int tArg1, int tArg2, int tArg3, ...);
 void	destroyInstruction(INST* inst);
+void 	addInstructionLabel(INST* inst, char* label);
 
 void	mergeInstructionLists(ILIST* l1, ILIST* l2);
 void 	destroyInstructionList(ILIST* l);
