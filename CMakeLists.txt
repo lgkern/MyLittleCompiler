@@ -19,6 +19,7 @@ ADD_EXECUTABLE(main
   src/symbtable.c
   src/crc16.c
   src/semantics.c
+  src/iloc.c
 )
 TARGET_LINK_LIBRARIES(main ${FLEX_LIBRARIES})
 
