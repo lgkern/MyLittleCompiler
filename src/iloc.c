@@ -1,4 +1,5 @@
 #include "iloc.h"
+#include "generators.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
@@ -15,8 +16,8 @@ void 	defaultPrintArgs(INST* inst)
 
 void 	printInstruction(INST* inst)
 {
-	if(inst->instLabel != NULL)
-		printf("%s:",inst->instLabel);
+	if(inst->instLabel != -1)
+		printf("L%d:",inst->instLabel);
 
 	switch(inst->instruction)
 	{
@@ -311,20 +312,29 @@ void printArg(INST* inst, int index)
 	switch(inst->argType[index])
 	{
 		case IREGISTER:
-			if(inst->regs[index] == FP)
-				printf("fp");
-			else if(inst->regs[index] == RBSS)
-				printf("rbss");
-			else if(inst->regs[index] == RARP)
-				printf("rarp");
-			else
-				printf("t%d", inst->regs[index]);
+			if(inst->specialReg[index] == FP)
+				printf("fp+");
+			else if(inst->specialReg[index] == RBSS)
+				printf("rbss+");
+			else if(inst->specialReg[index] == RARP)
+				printf("rarp+");
+			
+			printf("t%d", inst->args[index]);
 			break;
+
 		case ICONSTANT:
-			printf("%d", inst->consts[index]);
+			if(inst->specialReg[index] == FP)
+				printf("fp+");
+			else if(inst->specialReg[index] == RBSS)
+				printf("rbss+");
+			else if(inst->specialReg[index] == RARP)
+				printf("rarp+");
+
+			printf("%d", inst->args[index]);
 			break;
+
 		case ILABEL:
-			printf("%s", inst->labels[index]);
+			printf("L%d", inst->args[index]);
 			break;
 	}
 }
@@ -337,10 +347,7 @@ INST*	createInstruction(int instruction, ...)
 	INST* newInst = calloc(1,sizeof(INST));
 	
 	newInst->instruction = instruction;
-	newInst->instLabel = NULL;
-	newInst->labels[0] = NULL;
-	newInst->labels[1] = NULL;
-	newInst->labels[2] = NULL;
+	newInst->instLabel = -1;
 
 	switch(instruction)
 	{
@@ -367,9 +374,9 @@ INST*	createInstruction(int instruction, ...)
 			newInst->argType[0] = IREGISTER;
 			newInst->argType[1] = IREGISTER;
 			newInst->argType[2] = IREGISTER;
-			newInst->regs[0] = va_arg(arg,int);
-			newInst->regs[1] = va_arg(arg,int);
-			newInst->regs[2] = va_arg(arg,int);
+			newInst->args[0] = va_arg(arg,int);
+			newInst->args[1] = va_arg(arg,int);
+			newInst->args[2] = va_arg(arg,int);
 			break;
 	//Register Constant Register
 		case ADDI:
@@ -388,9 +395,9 @@ INST*	createInstruction(int instruction, ...)
 			newInst->argType[0] = IREGISTER;
 			newInst->argType[1] = ICONSTANT;
 			newInst->argType[2] = IREGISTER;
-			newInst->regs[0] = va_arg(arg,int);
-			newInst->consts[1] = va_arg(arg,int);
-			newInst->regs[2] = va_arg(arg,int);
+			newInst->args[0] = va_arg(arg,int);
+			newInst->args[1] = va_arg(arg,int);
+			newInst->args[2] = va_arg(arg,int);
 			break;
 	//Register Register Constant
 		case STOREAI:
@@ -398,18 +405,18 @@ INST*	createInstruction(int instruction, ...)
 			newInst->argType[0] = IREGISTER;
 			newInst->argType[1] = IREGISTER;
 			newInst->argType[2] = ICONSTANT;
-			newInst->regs[0] = va_arg(arg,int);
-			newInst->regs[1] = va_arg(arg,int);
-			newInst->consts[2] = va_arg(arg,int);
+			newInst->args[0] = va_arg(arg,int);
+			newInst->args[1] = va_arg(arg,int);
+			newInst->args[2] = va_arg(arg,int);
 			break;
 	//Register Label Label
 		case CBR:
 			newInst->argType[0] = IREGISTER;
 			newInst->argType[1] = ILABEL;
 			newInst->argType[2] = ILABEL;
-			newInst->regs[0] = va_arg(arg,int);
-			newInst->labels[1] = va_arg(arg,char*);
-			newInst->labels[2] = va_arg(arg,char*);
+			newInst->args[0] = va_arg(arg,int);
+			newInst->args[1] = va_arg(arg,int);
+			newInst->args[2] = va_arg(arg,int);
 			break;
 	//Two Registers
 		case LOAD:
@@ -422,25 +429,25 @@ INST*	createInstruction(int instruction, ...)
 		case I2C:
 			newInst->argType[0] = IREGISTER;
 			newInst->argType[1] = IREGISTER;
-			newInst->regs[0] = va_arg(arg,int);
-			newInst->regs[1] = va_arg(arg,int);
+			newInst->args[0] = va_arg(arg,int);
+			newInst->args[1] = va_arg(arg,int);
 			break;
 	//Constant Register
 		case LOADI:
 			newInst->argType[0] = ICONSTANT;
 			newInst->argType[1] = IREGISTER;
-			newInst->consts[0] = va_arg(arg,int);
-			newInst->regs[1] = va_arg(arg,int);
+			newInst->args[0] = va_arg(arg,int);
+			newInst->args[1] = va_arg(arg,int);
 			break;
 	//Single Register
 		case JUMP:
 			newInst->argType[0] = IREGISTER;
-			newInst->regs[0] = va_arg(arg,int);
+			newInst->args[0] = va_arg(arg,int);
 			break;
 	//Single Label
 		case JUMPI:
 			newInst->argType[0] = ILABEL;
-			newInst->labels[0] = va_arg(arg,char*);
+			newInst->args[0] = va_arg(arg,int);
 			break;
 	}
 	return newInst;	
@@ -448,20 +455,20 @@ INST*	createInstruction(int instruction, ...)
 
 void	destroyInstruction(INST* inst)
 {
-	int i;
-	for(i = 0; i < 3; i++)
-	{
-		if(inst->argType[i] == ILABEL)
-			free(inst->labels[i]);	
-	}
-	if(inst->instLabel != NULL)
-		free(inst->instLabel);
 	free(inst);
 }
 
-void 	addInstructionLabel(INST* inst, char* label)
+void 	addInstructionLabel(INST* inst, int label)
 {
 	inst->instLabel = label;
+}
+
+void	addInstructionSpecialRegister(INST* inst, int index, int reg)
+{
+	if(reg <= FP && reg >= RARP) //Check if register is valid
+	{
+		inst->specialReg[index] = reg;
+	}
 }
 
 ILIST*	mergeInstructionLists(ILIST* l1, ILIST* l2)

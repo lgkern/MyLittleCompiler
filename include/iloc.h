@@ -14,13 +14,11 @@
 
 typedef struct 
 {
-	char* 	instLabel;
+	int 	instLabel;
 	int 	instruction;
 	int 	argType[3];
-	int 	regs[3];
-	int 	consts[3];
-	char* 	labels[3];
-
+	int 	args[3];
+	int		specialReg[3];
 }INST;
 
 typedef struct _ILIST ILIST;
@@ -35,8 +33,8 @@ void 	printArg(INST* inst, int index);
 
 INST*	createInstruction(int instruction, ...);
 void	destroyInstruction(INST* inst);
-//Do not free label after calling addInstructionLabel
-void 	addInstructionLabel(INST* inst, char* label);
+void 	addInstructionLabel(INST* inst, int label);
+void	addInstructionSpecialRegister(INST* inst, int index, int reg);
 
 ILIST*	createInstructionList(INST* inst);
 void	addInstruction(ILIST* l, INST* instruction);
