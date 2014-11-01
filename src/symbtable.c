@@ -1,6 +1,7 @@
 #include "symbtable.h"
 #include "main.h"
 #include "comp_dict.h"
+#include "iloc.h"
 #include <string.h>
 #include <values.h>
 #include <stdlib.h>
@@ -15,6 +16,7 @@
 		struct NODE* node = createNode();
 		myTree->root = node;
 		myTree->current = node;
+		node->defaultRegister = RBSS;
 	}
 	int		destroyTable()
 	{
@@ -181,8 +183,11 @@
 		myNode->father = NULL;
 		myNode->child = NULL;
 		myNode->returnType = INT;
+		myNode->defaultRegister = FP;
+		myNode->currentDeviation = 0;
 		return myNode;
 	}
+
 	int		destroyNode(struct NODE* node)
 	{
 		destroyHashTable(node->data);
@@ -243,6 +248,42 @@
 	int		retrieveReturnType()
 	{
 		return myTree->current->returnType;
+	}
+
+	int 	memory(int type)
+	{
+		switch(type)
+		{
+			case BOOL:
+			case CHAR:
+			case STRING:
+				return 1;
+			case INT:
+				return 4;
+			case FLOAT:
+				return 8;
+		}
+	}
+
+	int		allocateMemory(DIC* variable)
+	{
+		int oldMemPtr = myTree->current->currentDeviation;
+		int mem = memory(variable->idType);
+		int multiplier = 1;
+
+		if(variable->idSpec == VECTOR)
+			multiplier *= variable->vectorSize;
+
+		myTree->current->currentDeviation += multiplier * mem;
+	
+		return oldMemPtr;
+	}
+
+	int 	baseRegister()
+	{
+			if(myTree->root != myTree->current)
+				return FP;
+			return RBSS;
 	}
 	
 	

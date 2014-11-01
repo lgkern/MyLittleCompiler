@@ -10,6 +10,9 @@ struct NODE{
 	struct NODE*	child;
 	struct NODE*	father;
 	int		returnType;
+//new to e5
+	int 	defaultRegister;
+	int		currentDeviation;
 };
 
 typedef struct {
@@ -35,7 +38,8 @@ typedef struct {
 	DIC*	lookupDIC(DIC* find);
 	DIC*	recursiveLookup(int type, ...);
 	DIC*	recursiveLookupDIC(DIC* find);
-
+	int		allocateMemory(DIC* variable);
+	int 	baseRegister();
 
 //addScope adds a new level to myTree, while removeScope removes the last added level
 	int 	addScope(int returnType);

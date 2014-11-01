@@ -43,6 +43,11 @@ struct _DIC{
 	int 	idType;
 	ARG*	argList;
     DIC*	next;	
+//new to e5
+	int		baseRegister;
+	int 	deviation;
+	int		strSize;
+	int		vectorSize; //Need to be changed to support multivectors
 };
 
 typedef struct{
