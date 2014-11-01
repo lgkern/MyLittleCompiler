@@ -1,0 +1,2 @@
+int genRegister();
+int genLabel(); 

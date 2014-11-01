@@ -20,6 +20,7 @@ ADD_EXECUTABLE(main
   src/crc16.c
   src/semantics.c
   src/iloc.c
+  src/generators.c
 )
 TARGET_LINK_LIBRARIES(main ${FLEX_LIBRARIES})
 
