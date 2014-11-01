@@ -10,6 +10,7 @@
 #include <stdarg.h>
 #include "iks_ast.h"
 #include "comp_dict.h"
+#include "iloc.h"
 
 typedef struct _nodeAST nodeAST;
 
@@ -23,6 +24,8 @@ struct _nodeAST{
 //new to e4
 	int dataType;
 	int coersion;
+//new to e5
+	ILIST* code;
 };
 
 nodeAST* myAST;
