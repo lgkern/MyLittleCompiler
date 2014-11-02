@@ -160,7 +160,8 @@ Local:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VAR
 LocalFoo:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); $$ = $1;}
 
 Attribution:	ID '=' Expression {nodeAST* n = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3);  
-									n->local = genRegister(); n->code = mergeInstructionLists($3->code, createInstructionList(createInstruction(STORE,$3->local,n->local)));
+									n->local = genRegister(); 
+									n->code = mergeInstructionLists($3->code, createInstructionList(createInstruction(STORE,$3->local,n->local)));
 									$$ = n;}
 
 Expression:	ID {$1->local = genRegister(); 
@@ -169,7 +170,7 @@ Expression:	ID {$1->local = genRegister();
 				$$ = $1;}
 		| Literal {nodeAST* n = createNodeAST(IKS_AST_LITERAL, NULL, $1, $1->idType, NONE, NULL, NULL, NULL); 
 						n->local = genRegister();
-						n->code = createInstructionList(createInstruction(STORE,$1->deviation,n->local));
+						n->code = createInstructionList(createInstruction(LOADI,$1->token->description.integer,n->local));
 						addInstructionSpecialRegister(n->code->instruction,0,$1->baseRegister);
 						$$ = n;}
 		| Expression '+' Expression {nodeAST* n = createNodeAST(IKS_AST_ARIM_SOMA, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
