@@ -15,17 +15,18 @@
 typedef struct _nodeAST nodeAST;
 
 struct _nodeAST{
-    int type;
-    nodeAST* next;
-    nodeAST* c1;
-    nodeAST* c2;
-    nodeAST* c3;
-    void* symTable;
+    int 		type;
+    nodeAST* 	next;
+    nodeAST* 	c1;
+    nodeAST* 	c2;
+    nodeAST* 	c3;
+    void* 		symTable;
 //new to e4
-	int dataType;
-	int coersion;
+	int 		dataType;
+	int 		coersion;
 //new to e5
-	ILIST* code;
+	ILIST* 		code;
+	int 		local;
 };
 
 nodeAST* myAST;

@@ -519,3 +519,15 @@ void	addInstruction(ILIST* l, INST* instruction)
 	ILIST* newList = createInstructionList(instruction);
 	mergeInstructionLists(l, newList);
 }
+
+void 	printInstructionList(ILIST* l)
+{
+	if(l != NULL)
+	{
+		while(l != NULL)
+		{
+			printInstruction(l->instruction);
+			l = l->next;
+		}
+	}
+}

@@ -265,7 +265,7 @@
 		}
 	}
 
-	int		allocateMemory(DIC* variable)
+	void		allocateMemory(DIC* variable)
 	{
 		int oldMemPtr = myTree->current->currentDeviation;
 		int mem = memory(variable->idType);
@@ -275,8 +275,10 @@
 			multiplier *= variable->vectorSize;
 
 		myTree->current->currentDeviation += multiplier * mem;
-	
-		return oldMemPtr;
+
+		variable->deviation = oldMemPtr;
+		variable->baseRegister = baseRegister();
+
 	}
 
 	int 	baseRegister()

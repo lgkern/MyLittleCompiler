@@ -71,11 +71,14 @@
 %%
 /* Regras (e ações) da gramática */
 
-AST:	Program {createAST($1);}
+AST:	Program {createAST($1); printInstructionList($1->code);}
 
 Program: 	{$$ = NULL;}
 			|Global SC Program {$$ = $3;}
-			|Function Program {modify($1, 4, $2); $$ = $1;}	
+			|Function Program {modify($1, 4, $2); 
+								if($2 != NULL)
+									$1->code = mergeInstructionLists($1->code, $2->code);
+								$$ = $1;}	
 //			|error SC {yyerrok; yyclearin;}//yyclearin; yyerrok;}
 
 SC:	 	';'
@@ -86,17 +89,16 @@ SC:	 	';'
 		 yyclearin;}
 		|*/
 
-Global:	 	Type GlobalID {modifyIdType($2,$1); }
+Global:	 	Type GlobalID {modifyIdType($2,$1); allocateMemory($2);}
 
 GlobalID:	"ID"  { variableExists($1);
 					modifyIdSpec($1, VARIABLE); 
-					$$ = $1;
-					}
-			| "ID" '[' Literal ']'  {variableExists($1); modifyIdSpec($1, VECTOR); $$ = $1;}
+					$$ = $1;}
+			| "ID" '[' "litInt" ']'  {variableExists($1); modifyIdSpec($1, VECTOR); $$ = $1;}
 			| "ID" '[' LitList ']'  {variableExists($1); modifyIdSpec($1, MULTIVECTOR); addFunctionArg($1,$3); $$ = $1;}
 
-LitList:	Literal ',' Literal		{ARG* e1 = createMultiVector($1); ARG* e2 = createMultiVector($3); e1->next = e2; $$ = e1;}
-			|Literal ',' LitList	{ARG* e1 = createMultiVector($1); e1->next = $3; $$ = e1;}
+LitList:	"litInt" ',' "litInt"		{ARG* e1 = createMultiVector($1); ARG* e2 = createMultiVector($3); e1->next = e2; $$ = e1;}
+			|"litInt" ',' LitList	{ARG* e1 = createMultiVector($1); e1->next = $3; $$ = e1;}
 
 ID:		"ID" {DIC* entry = recursiveLookupDIC($1); specCheck(entry, VARIABLE); $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, entry->idType, NONE,  NULL, NULL, NULL);}
 		|"ID" Vector {DIC* entry = recursiveLookupDIC($1); specCheck(entry, VECTOR); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, entry->idType, NONE, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
@@ -114,7 +116,9 @@ MVector: '[' VExpList ']'	{$$ = createNodeAST(IKS_AST_MULTI_VETOR, NULL, NULL, N
 VExpList:	Expression ',' Expression 	{modify($1, NEXT, $3);	 $$ = $1;}
 			|Expression ',' VExpList	{modify($1, NEXT, $3);	 $$ = $1;}
 
-Function:	Header Body {$$ = createNodeAST(IKS_AST_FUNCAO, NULL, $1, $1->idType, NONE, $2);}
+Function:	Header Body {nodeAST* n = createNodeAST(IKS_AST_FUNCAO, NULL, $1, $1->idType, NONE, $2);
+						 n->code = $2->code;
+						 $$ = n;}
 		
 Header:		Type "ID" {addScope($1);} List { variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, FUNCTION); addFunctionArg($2,$4);/* printf("\nFunction Declared: = %p\n",$2);*/ $$ = $2;}
 
@@ -142,7 +146,7 @@ Block:	{$$ = NULL;}	/*empty*/
 								} }
 
 Command: Local  {$$ = NULL;}
-		| Attribution 
+		| Attribution {$$ = $1;}
 		| FlowControl
 		| Input 
 		| Output 
@@ -151,18 +155,43 @@ Command: Local  {$$ = NULL;}
 		| {addScopeNonF();} Body { $$ = createNodeAST(IKS_AST_BLOCO,NULL,NULL, NONE, NONE, $2);}
 		| SC
 
-Local:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); $$ = NULL;}
+Local:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); allocateMemory($2); $$ = NULL;}
 
 LocalFoo:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); $$ = $1;}
 
-Attribution:	ID '=' Expression {$$ = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
+Attribution:	ID '=' Expression {nodeAST* n = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3);  
+									n->local = genRegister(); n->code = mergeInstructionLists($3->code, createInstructionList(createInstruction(STORE,$3->local,n->local)));
+									$$ = n;}
 
-Expression:	ID
-		| Literal {$$=createNodeAST(IKS_AST_LITERAL, NULL, $1, $1->idType, NONE, NULL, NULL, NULL); }
-		| Expression '+' Expression {$$=createNodeAST(IKS_AST_ARIM_SOMA, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
-		| Expression '-' Expression {$$=createNodeAST(IKS_AST_ARIM_SUBTRACAO, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
-		| Expression '*' Expression {$$=createNodeAST(IKS_AST_ARIM_MULTIPLICACAO, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
-		| Expression '/' Expression {$$=createNodeAST(IKS_AST_ARIM_DIVISAO, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
+Expression:	ID {$1->local = genRegister(); 
+				$1-> code = createInstructionList(createInstruction(STORE,((DIC*)($1->symTable))->deviation,$1->local));
+				addInstructionSpecialRegister($1->code->instruction,0,((DIC*)($1->symTable))->baseRegister); 	
+				$$ = $1;}
+		| Literal {nodeAST* n = createNodeAST(IKS_AST_LITERAL, NULL, $1, $1->idType, NONE, NULL, NULL, NULL); 
+						n->local = genRegister();
+						n->code = createInstructionList(createInstruction(STORE,$1->deviation,n->local));
+						addInstructionSpecialRegister(n->code->instruction,0,$1->baseRegister);
+						$$ = n;}
+		| Expression '+' Expression {nodeAST* n = createNodeAST(IKS_AST_ARIM_SOMA, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
+									n->local = genRegister();
+									n->code = mergeInstructionLists($1->code, $3->code);
+									addInstruction(n->code, createInstruction(ADD, $1->local, $3->local, n->local));
+									$$ = n;}
+		| Expression '-' Expression {nodeAST* n =createNodeAST(IKS_AST_ARIM_SUBTRACAO, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
+									n->local = genRegister();
+									n->code = mergeInstructionLists($1->code, $3->code);
+									addInstruction(n->code, createInstruction(SUB, $1->local, $3->local, n->local));
+									$$ = n;}
+		| Expression '*' Expression {nodeAST* n =createNodeAST(IKS_AST_ARIM_MULTIPLICACAO, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
+									n->local = genRegister();
+									n->code = mergeInstructionLists($1->code, $3->code);
+									addInstruction(n->code, createInstruction(MULT, $1->local, $3->local, n->local));
+									$$ = n;}
+		| Expression '/' Expression {nodeAST* n =createNodeAST(IKS_AST_ARIM_DIVISAO, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
+									n->local = genRegister();
+									n->code = mergeInstructionLists($1->code, $3->code);
+									addInstruction(n->code, createInstruction(DIV, $1->local, $3->local, n->local));
+									$$ = n;}
 		| Expression '>' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_G, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
 		| Expression '<' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_L, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
 		| Expression "==" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_IGUAL, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }

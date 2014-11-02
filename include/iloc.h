@@ -30,6 +30,7 @@ struct _ILIST{
 
 void 	printInstruction(INST* inst);
 void 	printArg(INST* inst, int index);
+void 	printInstructionList(ILIST* l);
 
 INST*	createInstruction(int instruction, ...);
 void	destroyInstruction(INST* inst);
