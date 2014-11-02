@@ -474,6 +474,8 @@ INST*	createInstruction(int instruction, ...)
 			newInst->argType[0] = ILABEL;
 			newInst->args[0] = va_arg(arg,int);
 			break;
+		default:
+			break;
 	}
 	return newInst;	
 }
