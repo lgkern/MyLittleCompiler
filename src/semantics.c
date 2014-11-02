@@ -164,7 +164,7 @@
   			default:
   				;
   		}
-  			
+  		printf("t1: %d, t2: %d ", type1, type2);	
   		exit(IKS_ERROR_WRONG_TYPE);
   	}
   	

@@ -70,6 +70,7 @@
         tDic->next = NULL;
         tDic->idType = 0;
         tDic->idSpec = 0;
+		tDic->vectorSize = NULL;
 
         position = hash(token);
 		//printf("DIC %d position: %d\n",tDic->token->description.integer, position);
@@ -338,13 +339,24 @@
 		fooEntry->argList = argList;
 	}
 
-	ARG*	createMultiVector(DIC* type)
+	ARG*	createVector(DIC* entry)
 	{
 		ARG* newARG = calloc(1,sizeof(ARG));
-		newARG->type = -1;
+		newARG->type = entry->token->description.integer;
 		newARG->next = NULL;
 
 		return newARG;		
+	}
+
+	void 	expandVector(ARG* dimensions, DIC* newEntry)	
+	{
+		ARG* newARG = calloc(1,sizeof(ARG));
+		newARG->type = newEntry->token->description.integer;
+		newARG->next = NULL;
+
+		ARG* p = dimensions;
+		while(p->next != NULL) p = p->next;
+		p->next = newARG;	
 	}
 	/*void 	checkFunctionArg(DIC* fooEntry, int type, int reset, int isFinal)
 	{

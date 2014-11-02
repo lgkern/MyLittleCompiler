@@ -275,12 +275,11 @@
 		int multiplier = 1;
 
 		if(variable->idSpec == VECTOR)
-			multiplier *= variable->vectorSize;
+			multiplier *= calculateDimensions(variable->vectorSize);
 
 		myTree->current->currentDeviation += multiplier * mem;
-
 		variable->deviation = oldMemPtr;
-		//printf("deviation = %d",oldMemPtr);
+
 		variable->baseRegister = baseRegister();
 
 	}
@@ -290,6 +289,22 @@
 			if(myTree->root != myTree->current)
 				return FP;
 			return RBSS;
+	}
+
+	int 	calculateDimensions(ARG* dimensions)
+	{
+		ARG* p;
+		if(dimensions == NULL)
+			return 1;
+			
+		p = dimensions;
+		int ac = 1;
+		while(p != NULL)
+		{
+			ac*=p->type;
+			p = p->next;
+		}
+		return ac;
 	}
 	
 	

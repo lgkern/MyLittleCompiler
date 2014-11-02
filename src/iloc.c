@@ -320,7 +320,7 @@ void printArg(INST* inst, int index)
 			else if(inst->args[index] == RARP)
 				printf("rarp");
 			else
-				printf("t%d", inst->args[index]);
+				printf("r%d", inst->args[index]);
 			break;
 
 		case ICONSTANT:/*

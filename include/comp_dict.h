@@ -47,7 +47,7 @@ struct _DIC{
 	int		baseRegister;
 	int 	deviation;
 	int		strSize;
-	int		vectorSize; //Need to be changed to support multivectors
+	ARG*	vectorSize; //Need to be changed to support multivectors
 };
 
 typedef struct{
@@ -84,7 +84,8 @@ ARG*	createArg(int type);
 void	addFunctionArg(DIC* fooEntry, ARG* argList);
 //void 	checkFunctionArg(DIC* fooEntry, int type, int reset, int isFinal);
 
-ARG*	createMultiVector(DIC* type);
+ARG*	createVector(DIC* entry);
+void 	expandVector(ARG* dimensions, DIC* newEntry);
 
 #endif
 

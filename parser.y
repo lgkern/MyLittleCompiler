@@ -94,15 +94,15 @@ Global:	 	Type GlobalID {modifyIdType($2,$1); allocateMemory($2);}
 GlobalID:	"ID"  { variableExists($1);
 					modifyIdSpec($1, VARIABLE); 
 					$$ = $1;}
-			| "ID" '[' "litInt" ']'  {variableExists($1); modifyIdSpec($1, VECTOR); $$ = $1;}
-			| "ID" '[' LitList ']'  {variableExists($1); modifyIdSpec($1, MULTIVECTOR); addFunctionArg($1,$3); $$ = $1;}
+			| "ID" '[' "litInt" ']' {variableExists($1); modifyIdSpec($1, VECTOR); $1->vectorSize = createVector($3); $$ = $1;}
+			| "ID" '[' LitList ']'  {variableExists($1); modifyIdSpec($1, MULTIVECTOR); $1->vectorSize = $3; $$ = $1;}
 
-LitList:	"litInt" ',' "litInt"		{ARG* e1 = createMultiVector($1); ARG* e2 = createMultiVector($3); e1->next = e2; $$ = e1;}
-			|"litInt" ',' LitList	{ARG* e1 = createMultiVector($1); e1->next = $3; $$ = e1;}
+LitList:	"litInt" ',' "litInt"	{ARG* e1 = createVector($1); expandVector(e1, $3); $$ = e1;}
+			|"litInt" ',' LitList	{ARG* e1 = createVector($1); e1->next = $3; $$ = e1;}
 
-ID:		"ID" {DIC* entry = recursiveLookupDIC($1); specCheck(entry, VARIABLE); $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, entry, entry->idType, NONE,  NULL, NULL, NULL);}
-		|"ID" Vector {DIC* entry = recursiveLookupDIC($1); specCheck(entry, VECTOR); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, entry->idType, NONE, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
-		|"ID" MVector {DIC* entry = recursiveLookupDIC($1); specCheck(entry, MULTIVECTOR); checkMultiIndexer(entry, $2); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, entry->idType, NONE, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
+ID:		"ID" {DIC* entry = recursiveLookupDIC($1);  specCheck(entry, VARIABLE); $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, entry, entry->idType, NONE,  NULL, NULL, NULL);}
+		|"ID" Vector {DIC* entry = recursiveLookupDIC($1); specCheck(entry, VECTOR); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, entry, entry->idType, NONE, NULL, NULL, NULL); modify($2, 1, id); modify($2, DATA, entry->idType); modify($2, STABLE, entry); $$ = $2;}
+		|"ID" MVector {DIC* entry = recursiveLookupDIC($1); specCheck(entry, MULTIVECTOR); checkMultiIndexer(entry, $2); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, entry, entry->idType, NONE, NULL, NULL, NULL); modify($2, 1, id); modify($2, DATA, entry->idType); modify($2, STABLE, entry); $$ = $2;}
 
 Type:	"INT" 		{$$ = INT;}
 		|"FLOAT"	{$$ = FLOAT;}
@@ -110,8 +110,12 @@ Type:	"INT" 		{$$ = INT;}
 		|"CHAR"		{$$ = CHAR;}
 		|"STRING"	{$$ = STRING;}
 
-Vector: '[' Expression ']'	{checkIndexer($2); $$ = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL, NONE, NONE, NULL, $2, NULL);}
-MVector: '[' VExpList ']'	{$$ = createNodeAST(IKS_AST_MULTI_VETOR, NULL, NULL, NONE, NONE, NULL, $2, NULL);}
+Vector: '[' Expression ']'	{checkIndexer($2); nodeAST* n = createNodeAST(IKS_AST_VETOR_INDEXADO, NULL, NULL, NONE, NONE, NULL, $2, NULL);
+							 n->code = $2->code;
+						     $$ = n;}
+MVector: '[' VExpList ']'	{nodeAST* n = createNodeAST(IKS_AST_MULTI_VETOR, NULL, NULL, NONE, NONE, NULL, $2, NULL);
+							 n->code = $2->code;
+						     $$ = n;}
 
 VExpList:	Expression ',' Expression 	{modify($1, NEXT, $3);	 $$ = $1;}
 			|Expression ',' VExpList	{modify($1, NEXT, $3);	 $$ = $1;}
@@ -161,9 +165,20 @@ Local:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VAR
 LocalFoo:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); $$ = $1;}
 
 Attribution:	ID '=' Expression {nodeAST* n = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3);  
-									n->local = $3->local; //same semantics as C 
-									$1->code = createInstructionList(createInstruction(STOREAI, $3->local, ((DIC*)($1->symTable))->baseRegister, ((DIC*)($1->symTable))->deviation));
-									n->code = mergeInstructionLists($3->code, $1->code);
+									n->local = genRegister(); //same semantics as C 
+									ILIST* vDev = vectorDeviation($1, n->local);
+									if(vDev == NULL)
+									{
+										$1->code = createInstructionList(createInstruction(STOREAI, $3->local, ((DIC*)($1->symTable))->baseRegister, ((DIC*)($1->symTable))->deviation));
+										n->code = mergeInstructionLists($3->code, $1->code);
+									}
+									else
+									{										
+										$1->code = mergeInstructionLists($1->code, vDev); 
+										n->code = mergeInstructionLists($1->code, $3->code);
+										n->code = mergeInstructionLists(n->code, createInstructionList(createInstruction(STOREA0, $3->local, ((DIC*)($1->symTable))->baseRegister, n->local)));
+									}
+									
 									$$ = n;}
 
 Expression:	ID {$1->local = genRegister(); 

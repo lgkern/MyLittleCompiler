@@ -255,6 +255,8 @@
 				case 6:
 					node->coersion = va_arg(arg,int);
 					break;
+				case 7:
+					node->symTable = va_arg(arg,DIC*);
 
 			}
 
@@ -262,5 +264,14 @@
 		}
     }
 
-
-
+ILIST*  vectorDeviation(nodeAST* n, int reg)
+{
+	if(n->type == IKS_AST_VETOR_INDEXADO || n->type == IKS_AST_MULTI_VETOR)
+	{
+		DIC* sTabEntry = (DIC*)n->symTable;
+		nodeAST* exp = n->c2;
+		ILIST* newList = createInstructionList(createInstruction(ADDI, exp->local, sTabEntry->deviation, reg));
+		return newList;
+	}
+	return NULL;
+}
