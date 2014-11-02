@@ -142,6 +142,7 @@ Block:	{$$ = NULL;}	/*empty*/
 							 	else
 							 	{
 							 		modify($1, 4, $3); /*set $3 como next do comando, tudo bem ser NULL*/									
+									if($3 != NULL) $1->code = mergeInstructionLists($1->code, $3->code);
 									$$ = $1;
 								} }
 
