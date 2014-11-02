@@ -222,11 +222,52 @@ Return: 	"RETURN" Expression {returnValidation($2); $$ = createNodeAST(IKS_AST_R
 FlowControl:	If
 		| While
 
-If:		"IF" '(' Expression ')' "THEN" Command {$$ = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, NONE, NONE, $3, $6, NULL); }
-		|"IF" '(' Expression ')' "THEN" Command "ELSE" Command	{$$ = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, NONE, NONE, $3, $6, $8); }
+If:		"IF" '(' Expression ')' "THEN" Command {nodeAST* n = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, NONE, NONE, $3, $6, NULL); 
+							n->t = genLabel();
+							n->f = genLabel();
+							ILIST* comm = createInstructionList(createInstruction(NOP));
+							comm = mergeInstructionLists(comm, $6->code);
+							addInstructionLabel(comm->instruction, n->t);
+							INST* next = createInstruction(NOP);
+							addInstructionLabel(next, n->f);
+							n->code = mergeInstructionLists($3->code, comm);
+							addInstruction(n->code, next);
+							$$ = n;}
+		|"IF" '(' Expression ')' "THEN" Command "ELSE" Command	{nodeAST* n = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, NONE, NONE, $3, $6, $8); 
+							n->t = genLabel();
+							n->f = genLabel();
+							ILIST* commtrue = createInstructionList(createInstruction(NOP));
+							commtrue = mergeInstructionLists(commtrue, $3->code);
+							ILIST* commfalse = createInstructionList(createInstruction(NOP));
+							commfalse = mergeInstructionLists(commfalse, $6->code);
+							addInstructionLabel(commtrue->instruction, n->t);
+							addInstructionLabel(commfalse->instruction, n->f);
+							n->code = mergeInstructionLists($3->code, commtrue);
+							n->code = mergeInstructionLists(n->code, commfalse);
+							$$ = n;}
 
-While:	 "WHILE" '(' Expression ')'  "DO" Command {$$ = createNodeAST(IKS_AST_WHILE_DO, NULL, NULL, NONE, NONE, $3, $6); }
-		| "DO" Command "WHILE" '(' Expression ')' SC {$$ = createNodeAST(IKS_AST_DO_WHILE, NULL, NULL, NONE, NONE, $2, $5); }
+While:	 "WHILE" '(' Expression ')'  "DO" Command {nodeAST* n = createNodeAST(IKS_AST_WHILE_DO, NULL, NULL, NONE, NONE, $3, $6); 
+							n->t = genLabel();
+							n->f = genLabel();
+							INST* next = createInstruction(NOP);
+							INST* begin = createInstruction(NOP);
+							addInstructionLabel(begin, n->t);
+							addInstructionLabel(next, n->f);
+							n->code = mergeInstructionLists(createInstructionList(begin), $3->code);
+							n->code = mergeInstructionLists(n->code, $6->code);
+							addInstruction(n->code, next);
+							$$ = n;}
+		| "DO" Command "WHILE" '(' Expression ')' SC {nodeAST* n = createNodeAST(IKS_AST_DO_WHILE, NULL, NULL, NONE, NONE, $2, $5); 
+							n->t = genLabel();
+							n->f = genLabel();
+							INST* next = createInstruction(NOP);
+							INST* begin = createInstruction(NOP);
+							addInstructionLabel(begin, n->t);
+							addInstructionLabel(next, n->f);
+							n->code = mergeInstructionLists(createInstructionList(begin), $2->code);
+							n->code = mergeInstructionLists(n->code, $5->code);
+							addInstruction(n->code, next);
+							$$ = n;}
 
 Input:		"INPUT"  ID	{$$ = createNodeAST(IKS_AST_INPUT, NULL, NULL, NONE, NONE, $2); }
 
