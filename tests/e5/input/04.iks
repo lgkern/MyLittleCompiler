@@ -1,4 +1,4 @@
-int m[3][3];
+int m[3,3];
 int i;
 int j;
 int x;
