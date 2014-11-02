@@ -274,8 +274,8 @@
 		int mem = memory(variable->idType);
 		int multiplier = 1;
 
-		if(variable->idSpec == VECTOR)
-			multiplier *= calculateDimensions(variable->vectorSize);
+		if(variable->idSpec == VECTOR || variable->idSpec == MULTIVECTOR)
+			multiplier *= calculateDimensions(variable->vectorSize);		
 
 		myTree->current->currentDeviation += multiplier * mem;
 		variable->deviation = oldMemPtr;

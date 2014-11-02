@@ -4,6 +4,7 @@
 #include "main.h"
 #include "comp_dict.h"
 #include "iloc.h"
+#include "generators.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -266,11 +267,32 @@
 
 ILIST*  vectorDeviation(nodeAST* n, int reg)
 {
-	if(n->type == IKS_AST_VETOR_INDEXADO || n->type == IKS_AST_MULTI_VETOR)
+	if(n->type == IKS_AST_VETOR_INDEXADO)
 	{
 		DIC* sTabEntry = (DIC*)n->symTable;
 		nodeAST* exp = n->c2;
-		ILIST* newList = createInstructionList(createInstruction(ADDI, exp->local, sTabEntry->deviation, reg));
+		ILIST* newList = createInstructionList(createInstruction(MULTI, exp->local, memory(sTabEntry->idType), reg, INT));
+		newList = mergeInstructionLists(newList, createInstructionList(createInstruction(ADDI, reg, sTabEntry->deviation, reg)));
+		return newList;
+	}
+	else if(n->type == IKS_AST_MULTI_VETOR)
+	{
+		int tReg = genRegister();
+		DIC* sTabEntry = (DIC*)n->symTable;
+		nodeAST* exp = n->c2;
+		ARG* dimensions = sTabEntry->vectorSize;
+		ILIST* newList = createInstructionList(createInstruction(LOADI, sTabEntry->deviation, reg, INT));
+		
+		while(dimensions->next != NULL)
+		{
+			newList = mergeInstructionLists(newList, createInstructionList(createInstruction(MULTI, exp->local, memory(sTabEntry->idType), tReg, INT)));
+			newList = mergeInstructionLists(newList, createInstructionList(createInstruction(MULTI, tReg, dimensions->next->type, tReg, INT)));
+			newList = mergeInstructionLists(newList, createInstructionList(createInstruction(ADD, tReg, reg, reg)));
+			dimensions = dimensions->next;
+			exp = exp->next;
+		}
+		newList = mergeInstructionLists(newList, createInstructionList(createInstruction(MULTI, exp->local, memory(sTabEntry->idType), tReg, INT)));
+		newList = mergeInstructionLists(newList, createInstructionList(createInstruction(ADD, tReg, reg, reg)));
 		return newList;
 	}
 	return NULL;
