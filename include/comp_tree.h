@@ -41,7 +41,7 @@ void        insertNodeASTChild(nodeAST* parent, nodeAST* child, int index);
 void        trimNodeAST(nodeAST* node);
 nodeAST*    destroyNodeAST(nodeAST* node);
 void        modify(nodeAST* node, int index, ...);
-ILIST*  vectorDeviation(nodeAST* n, int reg);
+ILIST*  	vectorDeviation(nodeAST* n, int reg);
 
 #endif
 

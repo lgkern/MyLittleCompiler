@@ -245,7 +245,7 @@ void 	printInstruction(INST* inst)
 		case CBR:
 			printf("cbr ");
 			printArg(inst, 0);	
-			printf("-> ");
+			printf(" -> ");
 			printArg(inst, 1);
 			printf(", ");
 			printArg(inst, 2);
@@ -541,7 +541,14 @@ void	addInstruction(ILIST* l, INST* instruction)
 {
 	ILIST* tempList = l;
 
-	while(tempList->next != NULL){tempList = tempList->next;}
+	if(instruction == NULL)
+		return;
+
+
+	if(l != NULL)
+		while(tempList->next != NULL){
+			tempList = tempList->next;
+		}
 
 	ILIST* newList = createInstructionList(instruction);
 	mergeInstructionLists(l, newList);
