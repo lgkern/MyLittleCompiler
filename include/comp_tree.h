@@ -29,6 +29,8 @@ struct _nodeAST{
 //new to e5
 	ILIST* 		code;
 	int 		local;
+	int			t;
+	int			f;
 };
 
 nodeAST* myAST;

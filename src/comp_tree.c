@@ -41,6 +41,8 @@
         node->c1 = NULL;
         node->c2 = NULL;
         node->c3 = NULL;
+        node->t = -1;
+        node->f = -1;
 
         va_list arg;       
 		va_start (arg, coersion);

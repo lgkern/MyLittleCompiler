@@ -74,6 +74,7 @@
 
         position = hash(token);
 		//printf("DIC %d position: %d\n",tDic->token->description.integer, position);
+
         if(table->data[position]!= NULL)
         {                
             tDic = addElementToBucket(table->data[position], tDic);
@@ -102,12 +103,12 @@
 /*assumes first NOT NULL*/    
     DIC*    addElementToBucket(DIC* first, DIC* newDic)
     {
-        DIC* current = first;
+    	DIC* current = first;
         while(current != NULL)
         {
-            if (compareDICS(current, newDic) == 0)
+        	if (compareDICS(current, newDic) == 0)
             {
-				current->line = newDic->line;
+            	current->line = newDic->line;
 				destroyHashElement(newDic);
                 return current;
             }
@@ -131,17 +132,18 @@
     {
         if(token1->token == token2->token)
         {
-            int compare = 1;
+            int compare = 0;
             switch (token1->token)
             {
                 case IKS_SIMBOLO_LITERAL_STRING:
                 case IKS_SIMBOLO_IDENTIFICADOR:
                 	compare = strcmp(token1->description.string, token2->description.string);
+                	compare = !compare;
                     break;
                 case IKS_SIMBOLO_LITERAL_INT:
                 case IKS_SIMBOLO_LITERAL_BOOL:
                 	compare = (token1->description.integer == token2->description.integer);
-					break;
+                	break;
                 case IKS_SIMBOLO_LITERAL_FLOAT:
                 	compare = (token1->description.floating == token2->description.floating);
 					break;
@@ -151,7 +153,7 @@
                 default:
                 	;            
             }
-            return compare;
+            return !compare;
         }
         return 1;
     }
@@ -216,7 +218,9 @@
         myToken = calloc(1,sizeof(TOKEN));
         myToken->token = token;
         myToken->description.integer = description;
+
 //		printf("%d ", myToken->description.integer);
+
         return myToken;
     }
 

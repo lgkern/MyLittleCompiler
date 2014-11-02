@@ -210,14 +210,46 @@ Expression:	ID {$1->local = genRegister();
 									n->code = mergeInstructionLists($1->code, $3->code);
 									addInstruction(n->code, createInstruction(DIV, $1->local, $3->local, n->local));
 									$$ = n;}
-		| Expression '>' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_G, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
-		| Expression '<' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_L, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
-		| Expression "==" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_IGUAL, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
-		| Expression "!=" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_DIF, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
-		| Expression ">=" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_GE, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
-		| Expression "<=" Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_LE, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
-		| Expression "&&" Expression {$$=createNodeAST(IKS_AST_LOGICO_E, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
-		| Expression "||" Expression {$$=createNodeAST(IKS_AST_LOGICO_OU, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); }
+		| Expression '>' Expression {nodeAST* n =createNodeAST(IKS_AST_LOGICO_COMP_G, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
+									n->local = genRegister();
+									n->code = mergeInstructionLists($1->code, $3->code);
+									addInstruction(n->code, createInstruction(CMP_GT, $1->local, $3->local, n->local));
+									$$ = n;}
+		| Expression '<' Expression {nodeAST* n =createNodeAST(IKS_AST_LOGICO_COMP_L, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
+									n->local = genRegister();
+									n->code = mergeInstructionLists($1->code, $3->code);
+									addInstruction(n->code, createInstruction(CMP_LT, $1->local, $3->local, n->local));
+									$$ = n;}
+		| Expression "==" Expression {nodeAST* n =createNodeAST(IKS_AST_LOGICO_COMP_IGUAL, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
+									n->local = genRegister();
+									n->code = mergeInstructionLists($1->code, $3->code);
+									addInstruction(n->code, createInstruction(CMP_EQ, $1->local, $3->local, n->local));
+									$$ = n;}
+		| Expression "!=" Expression {nodeAST* n =createNodeAST(IKS_AST_LOGICO_COMP_DIF, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
+									n->local = genRegister();
+									n->code = mergeInstructionLists($1->code, $3->code);
+									addInstruction(n->code, createInstruction(CMP_NE, $1->local, $3->local, n->local));
+									$$ = n;}
+		| Expression ">=" Expression {nodeAST* n =createNodeAST(IKS_AST_LOGICO_COMP_GE, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
+									n->local = genRegister();
+									n->code = mergeInstructionLists($1->code, $3->code);
+									addInstruction(n->code, createInstruction(CMP_GE, $1->local, $3->local, n->local));
+									$$ = n;}
+		| Expression "<=" Expression {nodeAST* n =createNodeAST(IKS_AST_LOGICO_COMP_LE, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
+									n->local = genRegister();
+									n->code = mergeInstructionLists($1->code, $3->code);
+									addInstruction(n->code, createInstruction(CMP_LE, $1->local, $3->local, n->local));
+									$$ = n;}
+		| Expression "&&" Expression {nodeAST* n =createNodeAST(IKS_AST_LOGICO_E, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
+									n->local = genRegister();
+									n->code = mergeInstructionLists($1->code, $3->code);
+									addInstruction(n->code, createInstruction(AND, $1->local, $3->local, n->local));
+									$$ = n;}
+		| Expression "||" Expression {nodeAST* n =createNodeAST(IKS_AST_LOGICO_OU, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
+									n->local = genRegister();
+									n->code = mergeInstructionLists($1->code, $3->code);
+									addInstruction(n->code, createInstruction(OR, $1->local, $3->local, n->local));
+									$$ = n;}
 		| '-' Expression {$$=createNodeAST(IKS_AST_ARIM_INVERSAO, NULL, NULL, $2->dataType, NONE, $2); }
 		| '!' Expression {$$=createNodeAST(IKS_AST_LOGICO_COMP_NEGACAO, NULL, NULL, $2->dataType, NONE, $2); }
 		| '(' Expression ')' {$$ = $2;}
@@ -237,11 +269,59 @@ Return: 	"RETURN" Expression {returnValidation($2); $$ = createNodeAST(IKS_AST_R
 FlowControl:	If
 		| While
 
-If:		"IF" '(' Expression ')' "THEN" Command {$$ = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, NONE, NONE, $3, $6, NULL); }
-		|"IF" '(' Expression ')' "THEN" Command "ELSE" Command	{$$ = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, NONE, NONE, $3, $6, $8); }
+If:		"IF" '(' Expression ')' "THEN" Command {nodeAST* n = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, NONE, NONE, $3, $6, NULL); 
+							n->t = genLabel();
+							n->f = genLabel();
+							addInstruction($3->code, createInstruction(CBR, $3->local, n->t, n->f));
+							ILIST* comm = createInstructionList(createInstruction(NOP));
+							comm = mergeInstructionLists(comm, $6->code);
+							addInstructionLabel(comm->instruction, n->t);
+							INST* next = createInstruction(NOP);
+							addInstructionLabel(next, n->f);
+							n->code = mergeInstructionLists($3->code, comm);
+							addInstruction(n->code, next);
+							$$ = n;}
+		|"IF" '(' Expression ')' "THEN" Command "ELSE" Command	{nodeAST* n = createNodeAST(IKS_AST_IF_ELSE, NULL, NULL, NONE, NONE, $3, $6, $8); 
+							n->t = genLabel();
+							n->f = genLabel();
+							addInstruction($3->code, createInstruction(CBR, $3->local, n->t, n->f));
+							ILIST* commtrue = createInstructionList(createInstruction(NOP));
+							commtrue = mergeInstructionLists(commtrue, $3->code);
+							ILIST* commfalse = createInstructionList(createInstruction(NOP));
+							commfalse = mergeInstructionLists(commfalse, $6->code);
+							addInstructionLabel(commtrue->instruction, n->t);
+							addInstructionLabel(commfalse->instruction, n->f);
+							n->code = mergeInstructionLists($3->code, commtrue);
+							n->code = mergeInstructionLists(n->code, commfalse);
+							$$ = n;}
 
-While:	 "WHILE" '(' Expression ')'  "DO" Command {$$ = createNodeAST(IKS_AST_WHILE_DO, NULL, NULL, NONE, NONE, $3, $6); }
-		| "DO" Command "WHILE" '(' Expression ')' SC {$$ = createNodeAST(IKS_AST_DO_WHILE, NULL, NULL, NONE, NONE, $2, $5); }
+While:	 "WHILE" '(' Expression ')'  "DO" Command {nodeAST* n = createNodeAST(IKS_AST_WHILE_DO, NULL, NULL, NONE, NONE, $3, $6); 
+							n->t = genLabel();
+							n->f = genLabel();
+							addInstruction($3->code, createInstruction(CBR, $3->local, n->t, n->f));
+							INST* next = createInstruction(NOP);
+							INST* begin = createInstruction(NOP);
+							ILIST* comm = mergeInstructionLists(createInstructionList(createInstruction(NOP)), $6->code);
+							addInstructionLabel(begin, genLabel());
+							addInstruction(comm, createInstruction(JUMPI, begin->instLabel));
+							addInstructionLabel(comm->instruction, n->t);
+							addInstructionLabel(next, n->f);
+							n->code = mergeInstructionLists(createInstructionList(begin), $3->code);
+							n->code = mergeInstructionLists(n->code, comm);
+							addInstruction(n->code, next);
+							$$ = n;}
+		| "DO" Command "WHILE" '(' Expression ')' SC {nodeAST* n = createNodeAST(IKS_AST_DO_WHILE, NULL, NULL, NONE, NONE, $2, $5); 
+							n->t = genLabel();
+							n->f = genLabel();
+							addInstruction($5->code, createInstruction(CBR, $5->local, n->t, n->f));
+							INST* next = createInstruction(NOP);
+							INST* begin = createInstruction(NOP);
+							addInstructionLabel(begin, n->t);
+							addInstructionLabel(next, n->f);
+							n->code = mergeInstructionLists(createInstructionList(begin), $2->code);
+							n->code = mergeInstructionLists(n->code, $5->code);
+							addInstruction(n->code, next);
+							$$ = n;}
 
 Input:		"INPUT"  ID	{$$ = createNodeAST(IKS_AST_INPUT, NULL, NULL, NONE, NONE, $2); }
 
