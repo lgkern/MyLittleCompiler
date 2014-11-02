@@ -124,7 +124,7 @@ void 	printInstruction(INST* inst)
 			printf("\n");
 			break;
 		case LOADAI:
-			printf("add ");
+			printf("loadAI ");
 			defaultPrintArgs(inst);
 			break;
 		case LOADA0:

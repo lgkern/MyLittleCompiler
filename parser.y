@@ -167,13 +167,12 @@ Attribution:	ID '=' Expression {nodeAST* n = createNodeAST(IKS_AST_ATRIBUICAO, N
 									$$ = n;}
 
 Expression:	ID {$1->local = genRegister(); 
-				$1-> code = createInstructionList(createInstruction(STORE,((DIC*)($1->symTable))->deviation,$1->local));
-				addInstructionSpecialRegister($1->code->instruction,0,((DIC*)($1->symTable))->baseRegister); 	
+				$1-> code = createInstructionList(createInstruction(LOADAI,((DIC*)($1->symTable))->baseRegister, ((DIC*)($1->symTable))->deviation, $1->local));	
 				$$ = $1;}
 		| Literal {nodeAST* n = createNodeAST(IKS_AST_LITERAL, NULL, $1, $1->idType, NONE, NULL, NULL, NULL); 
 						n->local = genRegister();
+					//	printf("description = %d",$1->token->description.integer);
 						n->code = createInstructionList(createInstruction(LOADI,$1->token->description.integer,n->local));
-						addInstructionSpecialRegister(n->code->instruction,0,$1->baseRegister);
 						$$ = n;}
 		| Expression '+' Expression {nodeAST* n = createNodeAST(IKS_AST_ARIM_SOMA, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
 									n->local = genRegister();
@@ -214,8 +213,8 @@ Literal: Boolean		{modifyIdType($1,BOOL); $$ = $1;}
 		|"litChar"		{modifyIdType($1,CHAR); $$ = $1;}
 		|"litString"	{modifyIdType($1,STRING); $$ = $1;}
 
-Boolean:	"false"
-			|"true"
+Boolean:	"false" {$$ = $1;}
+			|"true" {$$ = $1;}
 
 Return: 	"RETURN" Expression {returnValidation($2); $$ = createNodeAST(IKS_AST_RETURN, NULL, NULL, $2->dataType, NONE, $2); }
 
