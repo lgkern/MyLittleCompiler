@@ -2,6 +2,7 @@
 #define _ILOC_H_
 
 #include "ilocInstructions.h"
+#include "comp_dict.h"
 
 #define IREGISTER 	1
 #define ICONSTANT 	2
@@ -19,6 +20,8 @@ typedef struct
 	int 	argType[3];
 	int 	args[3];
 	int		specialReg[3];
+	int		idType;
+	VALUE	literal;
 }INST;
 
 typedef struct _ILIST ILIST;

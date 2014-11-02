@@ -72,7 +72,7 @@
         tDic->idSpec = 0;
 
         position = hash(token);
-		//printf("DIC position: %d\n", position);
+		//printf("DIC %d position: %d\n",tDic->token->description.integer, position);
         if(table->data[position]!= NULL)
         {                
             tDic = addElementToBucket(table->data[position], tDic);
@@ -195,7 +195,7 @@
 		    default:
 		        length = 0;            
         }
-        length += 4;
+        length += 8;
 
         return crc16_ccitt((const void*)token,length);
     }
@@ -215,6 +215,7 @@
         myToken = calloc(1,sizeof(TOKEN));
         myToken->token = token;
         myToken->description.integer = description;
+//		printf("%d ", myToken->description.integer);
         return myToken;
     }
 

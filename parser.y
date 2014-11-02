@@ -169,10 +169,11 @@ Attribution:	ID '=' Expression {nodeAST* n = createNodeAST(IKS_AST_ATRIBUICAO, N
 Expression:	ID {$1->local = genRegister(); 
 				$1-> code = createInstructionList(createInstruction(LOADAI,((DIC*)($1->symTable))->baseRegister, ((DIC*)($1->symTable))->deviation, $1->local));	
 				$$ = $1;}
-		| Literal {nodeAST* n = createNodeAST(IKS_AST_LITERAL, NULL, $1, $1->idType, NONE, NULL, NULL, NULL); 
+		| Literal {		
+						nodeAST* n = createNodeAST(IKS_AST_LITERAL, NULL, $1, $1->idType, NONE, NULL, NULL, NULL); 
 						n->local = genRegister();
 					//	printf("description = %d",$1->token->description.integer);
-						n->code = createInstructionList(createInstruction(LOADI,$1->token->description.integer,n->local));
+						n->code = createInstructionList(createInstruction(LOADI,$1->token->description, n->local, $1->idType));
 						$$ = n;}
 		| Expression '+' Expression {nodeAST* n = createNodeAST(IKS_AST_ARIM_SOMA, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3); 
 									n->local = genRegister();
