@@ -312,14 +312,14 @@ void printArg(INST* inst, int index)
 	switch(inst->argType[index])
 	{
 		case IREGISTER:
-			if(inst->specialReg[index] == FP)
-				printf("fp+");
-			else if(inst->specialReg[index] == RBSS)
-				printf("rbss+");
-			else if(inst->specialReg[index] == RARP)
-				printf("rarp+");
-			
-			printf("t%d", inst->args[index]);
+			if(inst->args[index] == FP)
+				printf("fp");
+			else if(inst->args[index] == RBSS)
+				printf("rbss");
+			else if(inst->args[index] == RARP)
+				printf("rarp");
+			else
+				printf("t%d", inst->args[index]);
 			break;
 
 		case ICONSTANT:

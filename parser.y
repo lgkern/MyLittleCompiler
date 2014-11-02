@@ -100,7 +100,7 @@ GlobalID:	"ID"  { variableExists($1);
 LitList:	"litInt" ',' "litInt"		{ARG* e1 = createMultiVector($1); ARG* e2 = createMultiVector($3); e1->next = e2; $$ = e1;}
 			|"litInt" ',' LitList	{ARG* e1 = createMultiVector($1); e1->next = $3; $$ = e1;}
 
-ID:		"ID" {DIC* entry = recursiveLookupDIC($1); specCheck(entry, VARIABLE); $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, entry->idType, NONE,  NULL, NULL, NULL);}
+ID:		"ID" {DIC* entry = recursiveLookupDIC($1); specCheck(entry, VARIABLE); $$ = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, entry, entry->idType, NONE,  NULL, NULL, NULL);}
 		|"ID" Vector {DIC* entry = recursiveLookupDIC($1); specCheck(entry, VECTOR); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, entry->idType, NONE, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
 		|"ID" MVector {DIC* entry = recursiveLookupDIC($1); specCheck(entry, MULTIVECTOR); checkMultiIndexer(entry, $2); nodeAST* id = createNodeAST(IKS_AST_IDENTIFICADOR, NULL, $1, entry->idType, NONE, NULL, NULL, NULL); modify($2, 1, id); $$ = $2;}
 
@@ -161,8 +161,9 @@ Local:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VAR
 LocalFoo:		Type "ID" {variableExists($2); modifyIdType($2,$1); modifyIdSpec($2, VARIABLE); $$ = $1;}
 
 Attribution:	ID '=' Expression {nodeAST* n = createNodeAST(IKS_AST_ATRIBUICAO, NULL, NULL, typeCompatibility($1, $3), coerced($1->dataType, $3->dataType), $1, $3);  
-									n->local = genRegister(); 
-									n->code = mergeInstructionLists($3->code, createInstructionList(createInstruction(STORE,$3->local,n->local)));
+									n->local = $3->local; //same semantics as C 
+									$1->code = createInstructionList(createInstruction(STOREAI, $3->local, ((DIC*)($1->symTable))->baseRegister, $3->local,((DIC*)($1->symTable))->deviation));
+									n->code = mergeInstructionLists($3->code, $1->code);
 									$$ = n;}
 
 Expression:	ID {$1->local = genRegister(); 
