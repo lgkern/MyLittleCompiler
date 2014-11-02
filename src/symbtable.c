@@ -258,9 +258,12 @@
 			case CHAR:
 			case STRING:
 				return 1;
+			//	printf("allocated 1 byte");
 			case INT:
+			//	printf("allocated 4 bytes");
 				return 4;
 			case FLOAT:
+			//	printf("allocated 8 bytes");
 				return 8;
 		}
 	}
@@ -277,6 +280,7 @@
 		myTree->current->currentDeviation += multiplier * mem;
 
 		variable->deviation = oldMemPtr;
+		//printf("deviation = %d",oldMemPtr);
 		variable->baseRegister = baseRegister();
 
 	}

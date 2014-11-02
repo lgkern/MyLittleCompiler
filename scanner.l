@@ -10,6 +10,7 @@ INTEGER {-?{DIGIT}+}
 #include "comp_dict.h"
 #include "parser.h" //arquivo automaticamente gerado pelo bison
 #include <stdlib.h>
+#include <stdio.h>
 #include "symbtable.h"
 #include "main.h"
 
@@ -79,7 +80,7 @@ int numLines = 1;
 
 ({ALPHA}|_)({ALPHA}|{DIGIT}|_)*    {yylval.symbol = addSymbol(createToken(IKS_SIMBOLO_IDENTIFICADOR, yytext), numLines); return    TK_IDENTIFICADOR;}                
 
--?{DIGIT}+      {yylval.symbol = addSymbol(createIntToken(IKS_SIMBOLO_LITERAL_INT, atoi(yytext)), numLines);        return    TK_LIT_INT;}
+-?{DIGIT}+      {yylval.symbol = addSymbol(createIntToken(IKS_SIMBOLO_LITERAL_INT, atoi(yytext)), numLines);      return    TK_LIT_INT;}
 -?{DIGIT}+"."{DIGIT}+    {yylval.symbol = addSymbol(createFltToken(IKS_SIMBOLO_LITERAL_FLOAT, atof(yytext)), numLines);     return    TK_LIT_FLOAT;}
 "\'"."\'"       {yylval.symbol = addSymbol(createChrToken(IKS_SIMBOLO_LITERAL_CHAR, yytext[1]), numLines);     return    TK_LIT_CHAR;}
 

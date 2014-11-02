@@ -1,5 +1,6 @@
 #include "iloc.h"
 #include "generators.h"
+#include "comp_dict.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
@@ -322,15 +323,37 @@ void printArg(INST* inst, int index)
 				printf("t%d", inst->args[index]);
 			break;
 
-		case ICONSTANT:
+		case ICONSTANT:/*
 			if(inst->specialReg[index] == FP)
 				printf("fp+");
 			else if(inst->specialReg[index] == RBSS)
 				printf("rbss+");
 			else if(inst->specialReg[index] == RARP)
-				printf("rarp+");
-
-			printf("%d", inst->args[index]);
+				printf("rarp+");*/
+			if(inst->idType == NONE)
+				printf("%d", inst->args[index]);
+			else
+				switch(inst->idType)
+				{
+					case BOOL:
+						if(inst->literal.integer == 0) //true
+							printf("true");
+						else
+							printf("false");
+						break;
+					case INT:	
+						printf("%d", inst->literal.integer);
+						break;
+					case FLOAT:
+						printf("%f", inst->literal.floating);
+						break;
+					case CHAR:
+						printf("%c", inst->literal.character);
+						break;
+					case STRING:
+						printf("%s", inst->literal.string);
+						break;
+				}				
 			break;
 
 		case ILABEL:
@@ -348,6 +371,7 @@ INST*	createInstruction(int instruction, ...)
 	
 	newInst->instruction = instruction;
 	newInst->instLabel = -1;
+	newInst->idType = NONE;
 
 	switch(instruction)
 	{
@@ -436,8 +460,9 @@ INST*	createInstruction(int instruction, ...)
 		case LOADI:
 			newInst->argType[0] = ICONSTANT;
 			newInst->argType[1] = IREGISTER;
-			newInst->args[0] = va_arg(arg,int);
+			newInst->literal = va_arg(arg,VALUE);
 			newInst->args[1] = va_arg(arg,int);
+			newInst->idType = va_arg(arg,int);
 			break;
 	//Single Register
 		case JUMP:
