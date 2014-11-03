@@ -289,14 +289,14 @@ If:		"IF" '(' Expression ')' "THEN" Command {nodeAST* n = createNodeAST(IKS_AST_
 							addInstructionLabel(tmp, endLbl);
 							addInstruction($3->code, createInstruction(CBR, $3->local, n->t, n->f));
 							ILIST* commtrue = createInstructionList(createInstruction(NOP));
-							commtrue = mergeInstructionLists(commtrue, $3->code);
+							commtrue = mergeInstructionLists(commtrue, $6->code);
 							ILIST* commfalse = createInstructionList(createInstruction(NOP));
-							commfalse = mergeInstructionLists(commfalse, $6->code);
+							commfalse = mergeInstructionLists(commfalse, $8->code);
 							addInstructionLabel(commtrue->instruction, n->t);
 							addInstructionLabel(commfalse->instruction, n->f);
-							n->code = mergeInstructionLists($3->code, commtrue);
+							n->code = mergeInstructionLists($3->code, commtrue);						
 							addInstruction(n->code, createInstruction(JUMPI, endLbl));
-							n->code = mergeInstructionLists(n->code, commfalse);
+							n->code = mergeInstructionLists(n->code, commfalse);									
 							addInstruction(n->code, tmp);
 							$$ = n;}
 
