@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if [[ 1 -ne $# || ! -d "$1/e1/input" ]]; then
 	cat << EOF
 Usage: $0 TEST_DIR
