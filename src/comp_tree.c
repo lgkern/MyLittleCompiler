@@ -271,10 +271,12 @@ ILIST*  vectorDeviation(nodeAST* n, int reg)
 {
 	if(n->type == IKS_AST_VETOR_INDEXADO)
 	{
+		int tReg = genRegister();
 		DIC* sTabEntry = (DIC*)n->symTable;
 		nodeAST* exp = n->c2;
 		ILIST* newList = createInstructionList(createInstruction(MULTI, exp->local, memory(sTabEntry->idType), reg, INT));
-		newList = mergeInstructionLists(newList, createInstructionList(createInstruction(ADDI, reg, sTabEntry->deviation, reg)));
+		newList = mergeInstructionLists(newList, createInstructionList(createInstruction(LOADAI, sTabEntry->baseRegister, sTabEntry->deviation, tReg, INT)));
+		newList = mergeInstructionLists(newList, createInstructionList(createInstruction(ADDI, reg, tReg, reg)));
 		return newList;
 	}
 	else if(n->type == IKS_AST_MULTI_VETOR)
@@ -283,7 +285,7 @@ ILIST*  vectorDeviation(nodeAST* n, int reg)
 		DIC* sTabEntry = (DIC*)n->symTable;
 		nodeAST* exp = n->c2;
 		ARG* dimensions = sTabEntry->vectorSize;
-		ILIST* newList = createInstructionList(createInstruction(LOADI, sTabEntry->deviation, reg, INT));
+		ILIST* newList = createInstructionList(createInstruction(LOADAI, sTabEntry->baseRegister, sTabEntry->deviation, reg, INT));
 		
 		while(dimensions->next != NULL)
 		{
