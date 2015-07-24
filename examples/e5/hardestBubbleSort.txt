@@ -1,0 +1,68 @@
+loadI 9 => r0
+storeAI r0 => fp, 0
+loadI 0 => r2
+storeAI r2 => fp, 4
+loadI 10000 => r4
+storeAI r4 => fp, 8
+L2:nop
+loadAI fp, 0 => r6
+loadI 9 => r7
+cmp_LT r6, r7 -> r8
+cbr r8 -> L0, L1
+L0:nop
+loadAI fp, 0 => r9
+multI r9, 4 => r13
+loadAI rbss, 0 => r14
+addI r13, 14 => r13
+loadI 10 => r10
+loadAI fp, 0 => r11
+sub r10, r11 => r12
+storeA0 r12 => rbss, r13
+loadAI fp, 0 => r15
+loadI 1 => r16
+add r15, r16 => r17
+storeAI r17 => fp, 0
+jumpI -> L2
+L1:nop
+loadI 0 => r19
+storeAI r19 => fp, 0
+L9:nop
+loadAI fp, 4 => r21
+loadI 10 => r22
+cmp_LT r21, r22 -> r23
+cbr r23 -> L7, L8
+L7:nop
+loadAI rbss, 0 => r25
+loadAI fp, 8 => r26
+cmp_LT r25, r26 -> r27
+cbr r27 -> L3, L4
+L3:nop
+loadAI rbss, 0 => r29
+storeAI r29 => fp, 8
+L4:nop
+loadAI fp, 0 => r31
+loadAI fp, 4 => r32
+cmp_EQ r31, r32 -> r33
+cbr r33 -> L5, L6
+L5:nop
+loadAI fp, 4 => r34
+multI r34, 4 => r36
+loadAI rbss, 40 => r37
+addI r36, 37 => r36
+loadAI fp, 8 => r35
+storeA0 r35 => rbss, r36
+loadAI fp, 4 => r38
+loadI 1 => r39
+add r38, r39 => r40
+storeAI r40 => fp, 4
+loadI 10 => r42
+storeAI r42 => fp, 0
+loadI 10000 => r44
+storeAI r44 => fp, 8
+L6:nop
+loadAI fp, 0 => r46
+loadI 1 => r47
+sub r46, r47 => r48
+storeAI r48 => fp, 0
+jumpI -> L9
+L8:nop
